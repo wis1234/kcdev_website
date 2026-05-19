@@ -8,6 +8,7 @@
   <meta name="keywords" content="formations, ateliers, développement, recherche">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/css/main.css" rel="stylesheet">
 </head>
 <body class="lang-fr">
@@ -22,31 +23,36 @@
   <section class="section py-5">
     <div class="container">
       <div class="row gy-4">
-        <div class="col-lg-6">
+        <div class="col-lg-6" data-aos="fade-up">
           <div class="p-4 bg-white rounded-4 shadow-sm h-100">
             <h3><span data-lang="fr">Ateliers méthodologiques</span><span data-lang="en" class="d-none">Methodology workshops</span></h3>
             <p><span data-lang="fr">Techniques de collecte de données, évaluation et communication de la recherche.</span><span data-lang="en" class="d-none">Data collection, evaluation, and research communication techniques.</span></p>
           </div>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="40">
           <div class="p-4 bg-white rounded-4 shadow-sm h-100">
             <h3><span data-lang="fr">Séminaires stratégiques</span><span data-lang="en" class="d-none">Strategic seminars</span></h3>
             <p><span data-lang="fr">Approches pour renforcer l’impact des politiques publiques.</span><span data-lang="en" class="d-none">Approaches to strengthen public policy impact.</span></p>
+          </div>
+        </div>
+        <div class="col-12 mt-3" data-aos="fade-up" data-aos-delay="80">
+          <div class="p-4 bg-white rounded-4 shadow-sm">
+            <h4>Study abroad & tourism programs</h4>
+            <p>Tourisme — STUDY ABROAD PROGRAM available for selected partners and students.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 </main>
-<footer class="footer dark-background py-4">
-  <div class="container text-center text-white">
-    <p><span data-lang="fr">KEMT Center - Centre international de recherche</span><span data-lang="en" class="d-none">KEMT Center - International research hub</span></p>
-  </div>
-</footer>
-<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="assets/js/include-html.js"></script>
-<script src="assets/js/lang-switcher.js"></script>
-<script src="assets/js/main.js"></script>
+  <div data-include="includes/footer.html"></div>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/js/include-html.js"></script>
+  <script src="assets/js/lang-switcher.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){ if(window.AOS) AOS.init({once:true}); });
+  </script>
 </body>
 </html>
 

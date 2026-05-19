@@ -1,42 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!DOCTYPE html>
+<html lang="fr">
 <head>
   <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Portfolio - Company Bootstrap Template</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
-
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projets - KEMT Center</title>
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Main CSS File -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/css/main.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: Company
-  * Template URL: https://bootstrapmade.com/company-free-html-bootstrap-template/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
+<body class="lang-fr">
+  <div data-include="includes/header.html"></div>
+  <main class="main">
+    <section class="hero py-5">
+      <div class="container">
+        <div class="swiper hero-carousel">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background-image:url('assets/img/hero-carousel/hero-carousel-2.jpg_old')">
+              <div class="hero-caption" data-aos="fade-up">
+                <h1><span data-lang="fr">Projets & Portfolio</span><span data-lang="en" class="d-none">Projects & Portfolio</span></h1>
+                <p class="lead"><span data-lang="fr">Des interventions concrètes pour transformer les politiques et pratiques.</span><span data-lang="en" class="d-none">Impactful projects that inform policy and practice.</span></p>
+              </div>
+            </div>
+            <div class="swiper-slide" style="background-image:url('assets/img/hero-carousel/hero-carousel-1.jpg_old')"></div>
+            <div class="swiper-slide" style="background-image:url('assets/img/hero-carousel/hero-carousel-3.jpeg__')"></div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
 
-<body class="portfolio-page">
+    <section class="content-section">
+      <div class="container">
+        <h2 data-aos="fade-up"><span data-lang="fr">Projets récents</span><span data-lang="en" class="d-none">Recent Projects</span></h2>
+        <div class="row gy-4 mt-3">
+          <div class="col-md-6 col-lg-4" data-aos="fade-up">
+            <div class="card">
+              <img src="assets/img/hero-carousel/hero-carousel-1.jpg_old" class="card-img-top" alt="Project A">
+              <div class="card-body">
+                <h5 class="card-title">Parental Monitoring Study</h5>
+                <p class="card-text">Examining the role of monitoring in student outcomes.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="60">
+            <div class="card">
+              <img src="assets/img/hero-carousel/hero-carousel-2.jpg_old" class="card-img-top" alt="Project B">
+              <div class="card-body">
+                <h5 class="card-title">School Report Cards</h5>
+                <p class="card-text">Evaluating the impact of performance reporting.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="120">
+            <div class="card">
+              <img src="assets/img/hero-carousel/hero-carousel-3.jpeg__" class="card-img-top" alt="Project C">
+              <div class="card-body">
+                <h5 class="card-title">Women's Empowerment in Cameroon</h5>
+                <p class="card-text">Exploring historical legacies and empowerment.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <div data-include="includes/footer.html"></div>
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/js/include-html.js"></script>
+  <script src="assets/js/lang-switcher.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){ if(window.AOS) AOS.init({once:true}); if(window.Swiper) new Swiper('.hero-carousel',{loop:true,autoplay:{delay:4200},pagination:{el:'.swiper-pagination',clickable:true}}); });
+  </script>
+</body>
+</html>
 
   <div data-include="includes/header.html"></div>
 <main class="main">

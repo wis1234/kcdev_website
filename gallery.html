@@ -8,6 +8,8 @@
   <meta name="keywords" content="galerie, médias, images, vidéos, événements">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/css/main.css" rel="stylesheet">
 </head>
 <body class="lang-fr">
@@ -22,31 +24,29 @@
   <section class="section py-5">
     <div class="container">
       <div class="row gy-4">
-        <div class="col-md-6">
-          <div class="p-4 bg-white rounded-4 shadow-sm h-100">
-            <h3><span data-lang="fr">Événements</span><span data-lang="en" class="d-none">Events</span></h3>
-            <p><span data-lang="fr">Photographies et vidéos de nos conférences et ateliers.</span><span data-lang="en" class="d-none">Photos and videos from our conferences and workshops.</span></p>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="p-4 bg-white rounded-4 shadow-sm h-100">
-            <h3><span data-lang="fr">Publications</span><span data-lang="en" class="d-none">Publications</span></h3>
-            <p><span data-lang="fr">Visuels et infographies associées à nos rapports de recherche.</span><span data-lang="en" class="d-none">Visuals and infographics linked to our research reports.</span></p>
+        <div class="col-12" data-aos="fade-up">
+          <div class="swiper gallery-slider">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><img src="assets/img/hero-carousel/hero-carousel-1.jpg_old" alt="" class="img-fluid rounded-4"></div>
+              <div class="swiper-slide"><img src="assets/img/hero-carousel/hero-carousel-2.jpg_old" alt="" class="img-fluid rounded-4"></div>
+              <div class="swiper-slide"><img src="assets/img/hero-carousel/hero-carousel-3.jpeg__" alt="" class="img-fluid rounded-4"></div>
+            </div>
+            <div class="swiper-pagination"></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 </main>
-<footer class="footer dark-background py-4">
-  <div class="container text-center text-white">
-    <p><span data-lang="fr">KEMT Center - Centre international de recherche</span><span data-lang="en" class="d-none">KEMT Center - International research hub</span></p>
-  </div>
-</footer>
-<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="assets/js/include-html.js"></script>
-<script src="assets/js/lang-switcher.js"></script>
-<script src="assets/js/main.js"></script>
+  <div data-include="includes/footer.html"></div>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/js/include-html.js"></script>
+  <script src="assets/js/lang-switcher.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){ if(window.AOS) AOS.init({once:true}); if(window.Swiper) new Swiper('.gallery-slider',{loop:true,autoplay:{delay:3500},pagination:{el:'.swiper-pagination',clickable:true}}); });
+  </script>
 </body>
 </html>
 

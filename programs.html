@@ -5,62 +5,165 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Programmes - KEMT Center</title>
   <meta name="description" content="Programmes et départements du KEMT Center pour la recherche et l'engagement institutionnel.">
-  <meta name="keywords" content="programmes, départements, recherche, KEMT Center">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/css/main.css" rel="stylesheet">
 </head>
 <body class="lang-fr">
-<div data-include="includes/header.html"></div>
-<main class="main">
-  <section class="section hero pt-5 pb-5 bg-light text-dark">
-    <div class="container">
-      <h1><span data-lang="fr">Départements & Programmes</span><span data-lang="en" class="d-none">Departments & Programs</span></h1>
-      <p class="lead"><span data-lang="fr">Découvrez nos axes de recherche et nos programmes structurants pour l'impact social.</span><span data-lang="en" class="d-none">Explore our research tracks and flagship programs that drive social impact.</span></p>
-    </div>
-  </section>
-  <section class="section py-5">
-    <div class="container">
-      <div class="row gy-4">
-        <div class="col-lg-6">
-          <div class="p-4 bg-white rounded-4 shadow-sm h-100">
-            <h2><span data-lang="fr">Département d'analyse des politiques</span><span data-lang="en" class="d-none">Policy Analysis Unit</span></h2>
-            <p><span data-lang="fr">Évaluations rigoureuses, recommandations stratégiques et soutien aux décideurs publics.</span><span data-lang="en" class="d-none">Rigorous evaluations, strategic recommendations, and decision-maker support.</span></p>
+  <div data-include="includes/header.html"></div>
+  <main class="main">
+    <section class="hero py-5">
+      <div class="container">
+        <div class="swiper hero-carousel">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background-image:url('assets/img/hero-carousel/hero-carousel-1.jpg_old')">
+              <div class="hero-caption ms-3" data-aos="fade-up">
+                <h1><span data-lang="fr">Départements & Programmes</span><span data-lang="en" class="d-none">Departments & Programs</span></h1>
+                <p class="lead"><span data-lang="fr">Découvrez nos axes de recherche et programmes structurants pour un impact durable.</span><span data-lang="en" class="d-none">Explore our impactful research initiatives driving evidence-based solutions.</span></p>
+              </div>
+            </div>
+            <div class="swiper-slide" style="background-image:url('assets/img/hero-carousel/hero-carousel-2.jpg_old')"></div>
+            <div class="swiper-slide" style="background-image:url('assets/img/hero-carousel/hero-carousel-3.jpeg__')"></div>
           </div>
+          <div class="swiper-pagination"></div>
         </div>
-        <div class="col-lg-6">
-          <div class="p-4 bg-white rounded-4 shadow-sm h-100">
-            <h2><span data-lang="fr">Programme de données ouvertes</span><span data-lang="en" class="d-none">Open Data Program</span></h2>
-            <p><span data-lang="fr">Publication de jeux de données, indicateurs et tableaux de bord interactifs.</span><span data-lang="en" class="d-none">Publishing datasets, indicators, and interactive dashboards.</span></p>
+      </div>
+    </section>
+
+    <section class="content-section" aria-labelledby="research-initiatives">
+      <div class="container">
+        <div class="row align-items-center gy-4">
+          <div class="col-12 mb-3">
+            <h2 id="research-initiatives" data-aos="fade-up"> <span data-lang="fr">Axes de recherche</span><span data-lang="en" class="d-none">Research Initiatives</span></h2>
+            <p class="lead" data-aos="fade-up" data-aos-delay="80"><span data-lang="fr">Nos travaux couvrent l'éducation, la santé, les politiques publiques et l'environnement.</span><span data-lang="en" class="d-none">All Education Policy Health</span></p>
+          </div>
+
+          <!-- Initiative cards -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="120">
+            <div class="card stat-card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Parental Involvement & Learning</h5>
+                <p class="card-text">Examining the role of monitoring in student outcomes.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="140">
+            <div class="card stat-card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Fertility and Contraceptive Use</h5>
+                <p class="card-text">Understanding the determinants of fertility and contraception.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="160">
+            <div class="card stat-card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Gender Norms & Girls' Education</h5>
+                <p class="card-text">How gender norms hinder girls' education.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="180">
+            <div class="card stat-card h-100">
+              <div class="card-body">
+                <h5 class="card-title">School Report Cards</h5>
+                <p class="card-text">Evaluating the impact of performance reporting.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="card stat-card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Spillover Effects</h5>
+                <p class="card-text">Evidence from friends and siblings.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="220">
+            <div class="card stat-card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Women's Empowerment in Cameroon</h5>
+                <p class="card-text">Exploring colonial legacies and women’s roles.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="row gy-4 mt-4">
-        <div class="col-lg-6">
-          <div class="p-4 bg-white rounded-4 shadow-sm h-100">
-            <h2><span data-lang="fr">Programme de formation</span><span data-lang="en" class="d-none">Training Program</span></h2>
-            <p><span data-lang="fr">Ateliers et séminaires pour chercheurs, praticiens et décideurs.</span><span data-lang="en" class="d-none">Workshops and seminars for researchers, practitioners, and policymakers.</span></p>
+    </section>
+
+    <section class="content-section bg-light" aria-labelledby="impact-stats">
+      <div class="container">
+        <div class="row align-items-center gy-4">
+          <div class="col-lg-6" data-aos="fade-right">
+            <h3 id="impact-stats"> <span data-lang="fr">Nos initiatives sociales</span><span data-lang="en" class="d-none">Our Social Initiatives</span></h3>
+            <p><span data-lang="fr">Découvrez comment nous agissons dans l'éducation, la santé et l'environnement.</span><span data-lang="en" class="d-none">Discover how we’re making a positive difference through education, health, and environmental actions.</span></p>
+            <div class="stat-grid mt-4">
+              <div class="stat-card">
+                <h3>50+</h3>
+                <p>Students received full tuition support in rural areas (2022–2023)</p>
+              </div>
+              <div class="stat-card">
+                <h3>3</h3>
+                <p>Urban students supported with tuition and allowances (2023–2024)</p>
+              </div>
+              <div class="stat-card">
+                <h3>1,000,000+</h3>
+                <p>Invested in emergency healthcare aid (CFA)</p>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="col-lg-6">
-          <div class="p-4 bg-white rounded-4 shadow-sm h-100">
-            <h2><span data-lang="fr">Partenariats internationaux</span><span data-lang="en" class="d-none">International partnerships</span></h2>
-            <p><span data-lang="fr">Collaboration avec universités, ONG et institutions de recherche mondiales.</span><span data-lang="en" class="d-none">Collaboration with universities, NGOs and global research institutions.</span></p>
+          <div class="col-lg-6" data-aos="fade-left">
+            <img src="assets/img/hero-carousel/hero-carousel-2.jpg_old" alt="Empowering education" class="img-fluid rounded-4">
           </div>
         </div>
       </div>
-    </div>
-  </section>
-</main>
-<footer class="footer dark-background py-4">
-  <div class="container text-center text-white">
-    <p><span data-lang="fr">KEMT Center - Centre international de recherche</span><span data-lang="en" class="d-none">KEMT Center - International research hub</span></p>
-  </div>
-</footer>
-<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="assets/js/include-html.js"></script>
-<script src="assets/js/lang-switcher.js"></script>
-<script src="assets/js/main.js"></script>
+    </section>
+
+    <section class="content-section" aria-labelledby="voices">
+      <div class="container">
+        <h3 id="voices" data-aos="fade-up"> <span data-lang="fr">Voices of Impact</span><span data-lang="en" class="d-none">Voices of Impact</span></h3>
+        <div class="row gy-4 mt-3">
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="60">
+            <div class="testimonial p-4 bg-white rounded-4">
+              <p>"Thanks to the tuition support program, I was able to continue my studies without interruption."</p>
+              <p class="mb-0"><strong>– Aline, Student</strong></p>
+            </div>
+          </div>
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="80">
+            <div class="testimonial p-4 bg-white rounded-4">
+              <p>"Your intervention during my daughter's health emergency saved her life."</p>
+              <p class="mb-0"><strong>– Rodrigue, Parent</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <div data-include="includes/footer.html"></div>
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/js/include-html.js"></script>
+  <script src="assets/js/lang-switcher.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      // init include-html (already runs) and AOS
+      if(window.AOS) AOS.init({once:true, duration:700});
+      // init Swiper
+      if(window.Swiper){
+        new Swiper('.hero-carousel',{
+          loop:true,
+          autoplay:{delay:4500,disableOnInteraction:false},
+          pagination:{el:'.swiper-pagination',clickable:true},
+        });
+      }
+    });
+  </script>
 </body>
 </html>
 

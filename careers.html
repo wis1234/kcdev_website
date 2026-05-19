@@ -8,6 +8,7 @@
   <meta name="keywords" content="recrutement, opportunités, emploi, recherche">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/css/main.css" rel="stylesheet">
 </head>
 <body class="lang-fr">
@@ -22,7 +23,7 @@
   <section class="section py-5">
     <div class="container">
       <div class="row gy-4">
-        <div class="col-lg-12">
+        <div class="col-lg-12" data-aos="fade-up">
           <div class="p-4 bg-white rounded-4 shadow-sm h-100">
             <h3><span data-lang="fr">Postes ouverts</span><span data-lang="en" class="d-none">Open positions</span></h3>
             <ul>
@@ -30,21 +31,21 @@
               <li><span data-lang="fr">Analyste de données</span><span data-lang="en" class="d-none">Data analyst</span></li>
               <li><span data-lang="fr">Chargé de projets de recherche</span><span data-lang="en" class="d-none">Research project manager</span></li>
             </ul>
+            <a href="contact.html" class="btn btn-primary mt-3">Postuler</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 </main>
-<footer class="footer dark-background py-4">
-  <div class="container text-center text-white">
-    <p><span data-lang="fr">KEMT Center - Centre international de recherche</span><span data-lang="en" class="d-none">KEMT Center - International research hub</span></p>
-  </div>
-</footer>
-<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="assets/js/include-html.js"></script>
-<script src="assets/js/lang-switcher.js"></script>
-<script src="assets/js/main.js"></script>
+  <div data-include="includes/footer.html"></div>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/js/include-html.js"></script>
+  <script src="assets/js/lang-switcher.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){ if(window.AOS) AOS.init({once:true}); });
+  </script>
 </body>
 </html>
 

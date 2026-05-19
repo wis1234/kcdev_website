@@ -9,35 +9,164 @@
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/css/main.css" rel="stylesheet">
+  <style>
+    .partner-hero {
+      background: linear-gradient(rgba(9, 30, 66, 0.72), rgba(9, 30, 66, 0.72)), url('assets/img/about.jpg') center/cover no-repeat;
+      color: #fff;
+      position: relative;
+    }
+    .partner-hero .container {
+      position: relative;
+      z-index: 2;
+    }
+    .partner-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(9, 30, 66, 0.5);
+      z-index: 1;
+    }
+    .partner-hero h1,
+    .partner-hero p {
+      color: #fff !important;
+    }
+    .partner-title {
+      font-size: 2.1rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      margin-bottom: 0.75rem;
+    }
+    .partner-label {
+      display: inline-block;
+      padding: 0.35rem 0.95rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.14);
+      color: #fff;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      margin-bottom: 1rem;
+    }
+    .partner-card {
+      background: #fff;
+      border-radius: 1.2rem;
+      overflow: hidden;
+      box-shadow: 0 28px 65px rgba(15, 23, 42, 0.12);
+      border: 1px solid rgba(15, 23, 42, 0.06);
+    }
+    .partner-card .partner-image {
+      min-height: 340px;
+      background-size: cover;
+      background-position: center;
+    }
+    .partner-card .partner-image::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.42) 100%);
+    }
+    .partner-card .partner-info {
+      padding: 2.5rem 2rem;
+    }
+    .partner-card .partner-info p {
+      color: #4d5563;
+      line-height: 1.75;
+    }
+    .partner-card .partner-details {
+      list-style: none;
+      padding: 0;
+      margin: 1.5rem 0 0;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+    .partner-card .partner-details li {
+      font-weight: 600;
+      color: #334155;
+    }
+    .partner-card .partner-details li span {
+      display: block;
+      color: #64748b;
+      font-weight: 400;
+      margin-top: 0.35rem;
+    }
+    .partner-card.alt .partner-info {
+      padding: 2.5rem 2rem 2.5rem 2.5rem;
+    }
+    @media (max-width: 991px) {
+      .partner-card .row {
+        flex-direction: column;
+      }
+      .partner-card .partner-image {
+        min-height: 260px;
+      }
+      .partner-card .partner-details {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body class="lang-fr">
 <div data-include="includes/header.html"></div>
 <main class="main">
-  <section class="section hero pt-5 pb-5 bg-light text-dark">
+  <section class="section partner-hero py-6">
     <div class="container">
-      <h1><span data-lang="fr">Partenaires & réseaux</span><span data-lang="en" class="d-none">Partners & networks</span></h1>
-      <p class="lead"><span data-lang="fr">Présentation de nos collaborations nationales et internationales.</span><span data-lang="en" class="d-none">A presentation of our national and international collaborations.</span></p>
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <p class="text-uppercase text-white-50 mb-3" style="letter-spacing:0.2em; font-size:0.85rem;"><span data-lang="fr">Collaboration stratégique</span><span data-lang="en" class="d-none">Strategic collaboration</span></p>
+          <h1 class="display-5 fw-bold"><span data-lang="fr">Partenaires d’impact</span><span data-lang="en" class="d-none">Impact Partners</span></h1>
+          <p class="lead mt-4"><span data-lang="fr">Découvrez nos partenariats professionnels qui allient innovation numérique, excellence académique et développement durable au Bénin.</span><span data-lang="en" class="d-none">Discover our professional partnerships that combine digital innovation, academic excellence and sustainable development in Benin.</span></p>
+        </div>
+      </div>
     </div>
   </section>
+
   <section class="section py-5">
     <div class="container">
-      <div class="row gy-4">
-        <div class="col-lg-4">
-          <div class="p-4 bg-white rounded-4 shadow-sm h-100">
-            <h3><span data-lang="fr">Universités</span><span data-lang="en" class="d-none">Universities</span></h3>
-            <p><span data-lang="fr">Partenariats académiques pour des recherches de haut niveau.</span><span data-lang="en" class="d-none">Academic partnerships for high-level research.</span></p>
+      <div class="section-title">
+        <h2><span data-lang="fr">Nos collaborations principales</span><span data-lang="en" class="d-none">Our flagship collaborations</span></h2>
+        <p><span data-lang="fr">Deux partenariats illustrant notre capacité à conduire des programmes professionnels et à générer des résultats concrets.</span><span data-lang="en" class="d-none">Two partnerships demonstrating our ability to deliver professional programs and generate measurable outcomes.</span></p>
+      </div>
+
+      <div class="partner-card mb-5">
+        <div class="row g-0 align-items-center">
+          <div class="col-lg-6">
+            <div class="partner-image" style="background-image:url('assets/img/about.jpg');"></div>
+          </div>
+          <div class="col-lg-6">
+            <div class="partner-info">
+              <span class="partner-label"><span data-lang="fr">Revelateur Benin</span><span data-lang="en" class="d-none">Revelateur Benin</span></span>
+              <h3 class="partner-title"><span data-lang="fr">Digitalisation du paiement des frais via l’application Successco</span><span data-lang="en" class="d-none">Digitalization of tuition payments with the Successco app</span></h3>
+              <p><span data-lang="fr">Nous avons conduit un programme de transformation digitale avec Revelateur Benin pour moderniser le paiement des frais de scolarité. Successco offre une expérience fluide pour les parents, les étudiants et les établissements, avec des paiements sécurisés et un suivi transparent des transactions.</span><span data-lang="en" class="d-none">We delivered a digital transformation program with Revelateur Benin to modernize tuition payment. Successco provides a smooth experience for parents, students and institutions with secure payments and transparent transaction tracking.</span></p>
+              <ul class="partner-details">
+                <li><strong><span data-lang="fr">Programme</span><span data-lang="en" class="d-none">Program</span></strong><span><span data-lang="fr">Digitalisation des frais de scolarité</span><span data-lang="en" class="d-none">Tuition payment digitalization</span></span></li>
+                <li><strong><span data-lang="fr">Solution</span><span data-lang="en" class="d-none">Solution</span></strong><span><span data-lang="fr">Application Successco</span><span data-lang="en" class="d-none">Successco app</span></span></li>
+                <li><strong><span data-lang="fr">Impact</span><span data-lang="en" class="d-none">Impact</span></strong><span><span data-lang="fr">Paiements rapides, réduction des erreurs et meilleure transparence</span><span data-lang="en" class="d-none">Faster payments, fewer errors and improved transparency</span></span></li>
+                <li><strong><span data-lang="fr">Zone</span><span data-lang="en" class="d-none">Region</span></strong><span><span data-lang="fr">Bénin</span><span data-lang="en" class="d-none">Benin</span></span></li>
+              </ul>
+            </div>
           </div>
         </div>
-        <div class="col-lg-4">
-          <div class="p-4 bg-white rounded-4 shadow-sm h-100">
-            <h3><span data-lang="fr">Institutions</span><span data-lang="en" class="d-none">Institutions</span></h3>
-            <p><span data-lang="fr">Collaboration avec ministères, ONG et organismes internationaux.</span><span data-lang="en" class="d-none">Collaboration with ministries, NGOs and international agencies.</span></p>
+      </div>
+
+      <div class="partner-card mb-5 alt">
+        <div class="row g-0 align-items-center flex-lg-row-reverse">
+          <div class="col-lg-6">
+            <div class="partner-image" style="background-image:url('assets/img/services.jpg');"></div>
           </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="p-4 bg-white rounded-4 shadow-sm h-100">
-            <h3><span data-lang="fr">Réseaux</span><span data-lang="en" class="d-none">Networks</span></h3>
-            <p><span data-lang="fr">Réseaux de recherche orientés vers l’impact social.</span><span data-lang="en" class="d-none">Research networks focused on social impact.</span></p>
+          <div class="col-lg-6">
+            <div class="partner-info">
+              <span class="partner-label"><span data-lang="fr">Illinois University</span><span data-lang="en" class="d-none">Illinois University</span></span>
+              <h3 class="partner-title"><span data-lang="fr">Programme d’études à l’étranger au Bénin</span><span data-lang="en" class="d-none">Study abroad program in Benin</span></h3>
+              <p><span data-lang="fr">Notre partenariat avec Illinois University a permis de lancer un programme académique international au Bénin. Les étudiants bénéficient de cours immersifs, de recherches de terrain et d’un engagement direct avec les acteurs locaux.</span><span data-lang="en" class="d-none">Our partnership with Illinois University led to an international academic program in Benin. Students benefit from immersive courses, field research and direct engagement with local stakeholders.</span></p>
+              <ul class="partner-details">
+                <li><strong><span data-lang="fr">Programme</span><span data-lang="en" class="d-none">Program</span></strong><span><span data-lang="fr">Études à l’étranger</span><span data-lang="en" class="d-none">Study abroad</span></span></li>
+                <li><strong><span data-lang="fr">Objectif</span><span data-lang="en" class="d-none">Objective</span></strong><span><span data-lang="fr">Renforcer les échanges académiques et la mobilité étudiante</span><span data-lang="en" class="d-none">Strengthen academic exchange and student mobility</span></span></li>
+                <li><strong><span data-lang="fr">Résultats</span><span data-lang="en" class="d-none">Outcomes</span></strong><span><span data-lang="fr">Expérience interculturelle, projets de recherche sur le terrain</span><span data-lang="en" class="d-none">Cross-cultural experience and field research projects</span></span></li>
+                <li><strong><span data-lang="fr">Localisation</span><span data-lang="en" class="d-none">Location</span></strong><span><span data-lang="fr">Bénin</span><span data-lang="en" class="d-none">Benin</span></span></li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>

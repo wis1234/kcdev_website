@@ -2779,3 +2779,27 @@ section,
   color: color-mix(in srgb, var(--default-color), transparent 60%);
   font-size: 14px;
 }
+
+/* New: Enhanced layout components for carousels, alternating sections, stats, testimonials */
+.hero-carousel .swiper-slide{min-height:360px;background-position:center;background-size:cover;border-radius:8px;overflow:hidden}
+.hero-carousel .hero-caption{background:linear-gradient(0deg,rgba(0,0,0,0.45),rgba(0,0,0,0.15));color:#fff;padding:2.5rem;border-radius:8px;max-width:780px}
+.content-section{padding:4rem 0}
+.content-section .section-image{border-radius:8px;overflow:hidden}
+.content-section .section-image img{width:100%;height:100%;object-fit:cover;display:block}
+.content-section .section-text{display:flex;flex-direction:column;justify-content:center}
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.stat-card{background:var(--surface-color);padding:1.6rem;border-radius:12px;text-align:center}
+.stat-card h3{font-size:1.8rem;margin:0;font-weight:700}
+.stat-card p{margin:0.5rem 0 0;color:color-mix(in srgb, var(--default-color), transparent 40%)}
+.testimonial-slider .testimonial{padding:1.25rem;background:var(--surface-color);border-radius:12px}
+.partners-logos{display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:center}
+.partners-logos img{max-height:48px;opacity:0.9;filter:grayscale(10%)}
+
+@media (max-width: 767px){
+  .stat-grid{grid-template-columns:repeat(1,1fr)}
+  .hero-carousel .hero-caption{padding:1.2rem}
+}
+
+/* AOS tweaks */
+[data-aos]{opacity:0;transform:translateY(10px);transition:opacity .6s ease, transform .6s ease}
+[data-aos].aos-animate{opacity:1;transform:none}
