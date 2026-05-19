@@ -1,0 +1,8 @@
+# Bloquer l'accès direct au dossier admin
+Options -Indexes
+
+# Autoriser uniquement les fichiers PHP (authentification par session)
+<FilesMatch "^(?!.*\.php$)">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>

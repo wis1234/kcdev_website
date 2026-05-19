@@ -1,0 +1,35 @@
+# ─── Dépendances & packages ───────────────────────────────────────────────
+node_modules/
+vendor/
+
+# ─── Fichiers de configuration sensibles (SECRETS) ───────────────────────
+forms/config.php
+.env
+.env.local
+.env.production
+
+# ─── Logs & debug ────────────────────────────────────────────────────────
+*.log
+error_log
+php_errors.log
+
+# ─── Uploads utilisateur ─────────────────────────────────────────────────
+uploads/
+admin/uploads/
+
+# ─── Fichiers système OS ─────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ─── IDE & éditeurs ──────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.suo
+*.user
+
+# ─── Builds & caches ─────────────────────────────────────────────────────
+dist/
+.cache/
+*.min.css.map
+*.min.js.map

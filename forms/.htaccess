@@ -1,0 +1,5 @@
+# Bloquer l'accès direct aux fichiers de configuration sensibles
+<FilesMatch "^(config\.php|schema\.sql|Readme\.txt)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
