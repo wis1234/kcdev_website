@@ -72,7 +72,7 @@
     localStorage.setItem('site-language', lang);
   }
 
-  document.addEventListener('DOMContentLoaded', () => {
+  function initLanguageSwitcher() {
     setLanguage(defaultLang);
 
     document.querySelectorAll('[data-lang-switch]').forEach((btn) => {
@@ -108,5 +108,12 @@
         closeLanguageMenu();
       }
     });
-  });
+  }
+
+  // Initialize immediately if DOM is already ready, otherwise wait for DOMContentLoaded
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initLanguageSwitcher);
+  } else {
+    initLanguageSwitcher();
+  }
 })();
