@@ -1,473 +1,1296 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="fr">
 <head>
 <meta charset="utf-8">
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KEMT Center for Development (CKDEV) | Centre international de recherche</title>
-
-<meta name="description" content="KEMT Center for Development est un centre de recherche et d’action dédié à l’innovation sociale, aux politiques publiques et au développement durable en Afrique.">
-
+<meta name="description" content="KEMT Center for Development est un centre de recherche et d'action dédié à l'innovation sociale, aux politiques publiques et au développement durable en Afrique.">
 <meta name="keywords" content="KEMT Center, CKDEV, recherche, innovation sociale, politiques publiques, développement durable, institution de recherche Afrique">
-
 <meta name="author" content="KEMT Center for Development">
-
 <meta name="robots" content="index, follow">
-
-<!-- Open Graph (for Google & social sharing) -->
 <meta property="og:title" content="KEMT Center for Development - Centre international de recherche">
 <meta property="og:description" content="Promotion de la recherche, du développement social et des politiques durables pour les communautés.">
 <meta property="og:image" content="https://kemtcenter.org/assets/img/kemt_center.png">
 <meta property="og:url" content="https://kemtcenter.org">
 <meta property="og:type" content="website">
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+<style>
+:root {
+  --navy: #0a1628;
+  --navy-mid: #122240;
+  --navy-light: #1c3356;
+  --gold: #c9a84c;
+  --gold-light: #e8c97a;
+  --gold-pale: #f5e9c8;
+  --ivory: #f8f5ef;
+  --white: #ffffff;
+  --gray-100: #f4f3f0;
+  --gray-200: #e8e5df;
+  --gray-400: #a0998e;
+  --gray-600: #6b6459;
+  --gray-800: #3a342c;
+  --accent-teal: #1a7a6e;
+  --accent-teal-light: #e8f5f3;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'IBM Plex Sans', 'Helvetica Neue', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+  --transition: 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow-sm: 0 1px 4px rgba(10,22,40,0.06), 0 1px 2px rgba(10,22,40,0.04);
+  --shadow-md: 0 4px 16px rgba(10,22,40,0.1), 0 2px 6px rgba(10,22,40,0.06);
+  --shadow-lg: 0 12px 40px rgba(10,22,40,0.14), 0 4px 12px rgba(10,22,40,0.08);
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+}
 
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
-    <link href="assets/css/index.css" rel="stylesheet">
-    <style >
-        
-  * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    
-    
-    .hero {
-      position: relative;
-      height: 60vh;
-      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/assets/img/team/spillover.png') center/cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
-      overflow: hidden;
-    }
-    
-    .hero-content {
-      z-index: 2;
-      max-width: 800px;
-      padding: 0 20px;
-    }
-    .hero-content h1 {
-     color: white;
-    }
-    
-    .project-content h3 {
-        color:#0767a7 !important;
-    }
-    .hero h1 {
-      font-size: 3.5rem;
-      margin-bottom: 20px;
-      animation: fadeInUp 1.2s ease-out;
-    }
-    
-    .hero p {
-      font-size: 1.4rem;
-      margin-bottom: 30px;
-      animation: fadeInUp 1.5s ease-out;
-    }
-    
-    .btn {
-      display: inline-block;
-      padding: 12px 30px;
-      background: #0767a7;
-      color: white;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: all 0.3s ease;
-      animation: fadeInUp 1.8s ease-out;
-    }
-    
-    .btn:hover {
-      background: #0767a7;
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    }
-    
-    .impact-stats {
-      padding: 80px 20px;
-      background: white;
-      text-align: center;
-    }
-    
-    .stats-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-    }
-    
-    .stat-card {
-      flex: 1;
-      min-width: 250px;
-      max-width: 350px;
-      padding: 30px 20px;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    
-    .stat-card:hover {
-      transform: translateY(-10px);
-    }
-    
-    .stat-card h3 {
-      font-size: 2.5rem;
-      color: #0767a7;
-      margin-bottom: 15px;
-    }
-    
-    .stat-card p {
-      font-size: 1.1rem;
-      color: #555;
-    }
-    
-    .projects {
-      padding: 80px 20px;
-      background: #f0f7f0;
-    }
-    
-    .projects-container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    
-    .projects h2 {
-      text-align: center;
-      font-size: 2.5rem;
-      margin-bottom: 50px;
-      color: #333;
-    }
-    
-    .project-card {
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 60px;
-      background: white;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    
-    @media (min-width: 768px) {
-      .project-card {
-        flex-direction: row;
-      }
-      
-      .project-card:nth-child(even) {
-        flex-direction: row-reverse;
-      }
-    }
-    
-    .project-image {
-      flex: 1;
-      min-height: 300px;
-      background: url('/api/placeholder/600/400') center/cover no-repeat;
-    }
-    
-    .project-card:nth-child(2) .project-image {
-      background-image: url('/api/placeholder/600/401');
-    }
-    
-    .project-card:nth-child(3) .project-image {
-      background-image: url('/api/placeholder/600/402');
-    }
-    
-    .project-content {
-      flex: 1;
-      padding: 40px;
-    }
-    
-    .project-content h3 {
-      font-size: 1.8rem;
-      margin-bottom: 15px;
-      color: #4CAF50;
-    }
-    
-    .project-content p {
-      margin-bottom: 20px;
-      line-height: 1.7;
-    }
-    
-    .testimonials {
-      padding: 80px 20px;
-      background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('./assets/img/team/b0147-testimonial-advertising-small.webp') center/cover fixed;
-      color: white;
-      text-align: center;
-    }
-    
-    .testimonials-container {
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    
-    .testimonials h2 {
-      font-size: 2.5rem;
-      margin-bottom: 50px;
-      color: white !important;
-    }
-    
-    .testimonial-card {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 30px;
-      border-radius: 10px;
-      margin-bottom: 30px;
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    
-    .testimonial-text {
-      font-style: italic;
-      font-size: 1.2rem;
-      margin-bottom: 20px;
-    }
-    
-    .testimonial-author {
-      font-weight: bold;
-      font-size: 1.1rem;
-    }
-    
-    .cta {
-      padding: 100px 20px;
-      background: #4CAF50;
-      color: white;
-      text-align: center;
-    }
-    
-    .cta-container {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    
-    .cta h2 {
-      font-size: 2.8rem;
-      margin-bottom: 30px;
-    }
-    
-    .cta p {
-      font-size: 1.3rem;
-      margin-bottom: 40px;
-    }
-    
-    .cta-btn {
-      display: inline-block;
-      padding: 15px 40px;
-      background: white;
-      color: #4CAF50;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1.2rem;
-      transition: all 0.3s ease;
-    }
-    
-    .cta-btn:hover {
-      background: #f1f1f1;
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    }
-    
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    
-    .social-icons {
-      margin: 20px 0;
-    }
-    
+html { scroll-behavior: smooth; }
 
-    
-    .social-icons a:hover {
-      color: #4CAF50;
-    }
-    
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    
-    .animated {
-      opacity: 1;
-      transform: translateY(0);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-    
-    .counter {
-      display: inline-block;
-      font-weight: bold;
-    }
-    
-    .floating-element {
-      position: absolute;
-      opacity: 0.6;
-      z-index: 1;
-      animation: float 6s ease-in-out infinite;
-    }
-    
-    @keyframes float {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(-20px); }
-      100% { transform: translateY(0px); }
-    }
-    
- 
- 
- 
- /* BANNIÈRE RECRUTEMENT */
-.hiring-banner {
-  background: #ffcc00;
-  color: #000;
-  text-align: center;
-  font-weight: 700;
-  padding: 12px 0;
+body {
+  font-family: var(--font-body);
   font-size: 16px;
-  letter-spacing: 1px;
-  position: absolute;
-  top: 70px; /* IMPORTANT : pour passer SOUS le header */
-  width: 100%;
+  line-height: 1.7;
+  color: var(--gray-800);
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── PRELOADER ─── */
+#preloader {
+  position: fixed; inset: 0;
+  background: var(--navy);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
   z-index: 9999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+#preloader.hidden { opacity: 0; visibility: hidden; }
+.preloader-logo {
+  font-family: var(--font-display);
+  font-size: 2rem; font-weight: 700;
+  color: var(--white); letter-spacing: 0.05em;
+  margin-bottom: 1.5rem;
+}
+.preloader-logo span { color: var(--gold); }
+.preloader-bar {
+  width: 180px; height: 2px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 2px; overflow: hidden;
+}
+.preloader-bar::after {
+  content: '';
+  display: block; height: 100%;
+  background: var(--gold);
+  animation: preload 1.8s ease-in-out forwards;
+}
+@keyframes preload {
+  0% { width: 0; }
+  60% { width: 80%; }
+  100% { width: 100%; }
 }
 
-/* Le TEXTE clignote */
-.banner-text {
-  animation: blink 3s infinite;
+/* ─── ANNOUNCEMENT BANNER ─── */
+.announcement-banner {
+  background: var(--navy);
+  color: rgba(255,255,255,0.85);
+  font-size: 13px; letter-spacing: 0.03em;
+  padding: 8px 0;
+  text-align: center;
+  border-bottom: 1px solid rgba(201,168,76,0.3);
 }
-
-@keyframes blink {
-  0%   { opacity: 1; }
-  50%  { opacity: 0; }
-  100% { opacity: 1; }
+.announcement-banner .ticker span {
+  color: var(--gold-light);
+  font-weight: 500;
+  animation: blink-gold 2.8s ease-in-out infinite;
 }
-
-/* Bouton fixe */
-.apply-btn {
-  background: #000;
-  color: #fff;
-  padding: 8px 16px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 700;
-  transition: 0.3s;
+@keyframes blink-gold {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
 }
-
-.apply-btn:hover {
-  background: #333;
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-  .hiring-banner {
-    flex-direction: column;
-    padding: 10px 5px;
-    gap: 10px;
-  }
-
-  .banner-text {
-    font-size: 14px;
-    text-align: center;
-  }
-
-  .apply-btn {
-    font-size: 13px;
-    padding: 6px 12px;
-  }
-}
-
-.countdown {
-  margin-top: 8px;
+.announcement-banner a.apply-link {
+  display: inline-block;
+  margin-left: 16px;
+  background: var(--gold);
+  color: var(--navy);
   font-weight: 600;
-  color: #c62828; /* rouge professionnel */
-  font-size: 14px;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 3px 12px;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: background var(--transition);
+}
+.announcement-banner a.apply-link:hover { background: var(--gold-light); }
+
+/* ─── HEADER ─── */
+#header {
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--gray-200);
+  position: sticky; top: 0; z-index: 1000;
+  transition: box-shadow var(--transition);
+}
+#header.scrolled { box-shadow: var(--shadow-md); }
+#header .container { padding: 0 1.5rem; height: 68px; display: flex; align-items: center; gap: 2rem; }
+
+.logo { text-decoration: none; display: flex; align-items: center; gap: 0.45rem; }
+.logo img.logo-mark { height: 34px; width: auto; display: inline-block; margin-right: 0.35rem; }
+.logo .sitename {
+  font-family: var(--font-display);
+  font-size: 1.4rem; font-weight: 700;
+  color: var(--navy); letter-spacing: 0.01em;
+}
+.logo .dot { color: var(--gold); font-size: 1.8rem; line-height: 1; margin-bottom: -2px; }
+
+#navmenu { flex: 1; }
+#navmenu ul { list-style: none; display: flex; align-items: center; gap: 0.25rem; padding: 0; margin: 0; }
+#navmenu ul li a {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 6px 12px;
+  font-size: 14px; font-weight: 500;
+  color: var(--gray-600);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  transition: color var(--transition), background var(--transition);
+  letter-spacing: 0.01em;
+}
+#navmenu ul li a:hover, #navmenu ul li a.active { color: var(--navy); background: var(--gray-100); }
+#navmenu ul li.dropdown { position: relative; }
+#navmenu ul li.dropdown > a::after {
+  content: '';
+  display: inline-block;
+  width: 0; height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid currentColor;
+  transition: transform var(--transition);
+}
+#navmenu ul li.dropdown:hover > a::after,
+#navmenu ul li.dropdown:focus-within > a::after { transform: rotate(180deg); }
+#navmenu ul li.dropdown ul {
+  display: none;
+  position: absolute; top: 100%; left: 0;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  min-width: 200px;
+  padding: 6px;
+  flex-direction: column; gap: 0;
+  align-items: flex-start;
+}
+#navmenu ul li.dropdown:hover ul,
+#navmenu ul li.dropdown:focus-within ul { display: flex; }
+#navmenu ul li.dropdown ul li a {
+  display: block; width: 100%;
+  padding: 8px 14px;
+  font-size: 13.5px;
+  border-radius: var(--radius-sm);
+  color: var(--gray-800);
+  text-align: left;
 }
 
+.header-actions { display: flex; align-items: center; gap: 12px; margin-left: auto; }
+.btn-researcher {
+  font-size: 13px; font-weight: 500;
+  padding: 7px 18px;
+  border: 1.5px solid var(--navy);
+  border-radius: var(--radius-sm);
+  color: var(--navy);
+  text-decoration: none;
+  transition: all var(--transition);
+  letter-spacing: 0.02em;
+}
+.btn-researcher:hover { background: var(--navy); color: var(--white); }
 
-  </style>
+/* Flag switcher styles */
+.flag-icon {
+  width: 16px;
+  height: auto;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 2px;
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+
+.lang-switcher {
+  position: relative;
+}
+
+.lang-switcher .lang-select-wrapper {
+  position: relative;
+}
+
+.lang-switcher .lang-select {
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--radius-sm);
+  padding: 6px 10px;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  color: var(--gray-600);
+  cursor: pointer;
+  min-width: 42px;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition);
+}
+
+.lang-switcher .lang-select:hover {
+  background: var(--gray-100);
+  color: var(--navy);
+  border-color: var(--gray-400);
+}
+
+.lang-switcher .lang-select .current-flag {
+  width: 16px;
+  height: auto;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 2px;
+}
+
+.lang-switcher .lang-select-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  min-width: 150px;
+  padding: 6px 0;
+  margin: 0;
+  list-style: none;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  display: none;
+  z-index: 3000;
+}
+
+.lang-switcher .lang-select-wrapper.open .lang-select-menu {
+  display: block;
+}
+
+.lang-switcher .lang-select-menu li {
+  margin: 0;
+}
+
+.lang-switcher .lang-select-menu button {
+  width: 100%;
+  border: none;
+  background: transparent;
+  color: var(--gray-800);
+  text-align: left;
+  padding: 8px 14px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all var(--transition);
+  display: flex;
+  align-items: center;
+}
+
+.lang-switcher .lang-select-menu button:hover,
+.lang-switcher .lang-select-menu button:focus {
+  background: var(--gray-100);
+  color: var(--navy);
+  outline: none;
+}
+
+.lang-switcher .lang-select-menu button.active {
+  background: var(--accent-teal-light);
+  color: var(--accent-teal);
+  font-weight: 500;
+}
+
+.lang-switcher .lang-select-menu button .flag-icon {
+  margin-right: 8px;
+  width: 18px;
+}
+
+.mobile-nav-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--navy);
+  background: none; border: none;
+}
+
+/* ─── HERO CAROUSEL ─── */
+#hero { position: relative; overflow: hidden; }
+.hero-carousel { position: relative; height: 92vh; min-height: 580px; max-height: 900px; }
+.hero-slide {
+  position: absolute; inset: 0;
+  opacity: 0;
+  transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+.hero-slide.active { opacity: 1; pointer-events: auto; }
+.hero-slide img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(10, 22, 40, 0.82) 0%,
+    rgba(10, 22, 40, 0.55) 50%,
+    rgba(10, 22, 40, 0.35) 100%
+  );
+}
+.hero-content {
+  position: absolute;
+  bottom: 14%; left: 0; right: 0;
+  padding: 0 5%;
+  max-width: 780px;
+}
+.hero-tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 11px; font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  border: 1px solid rgba(201,168,76,0.5);
+  padding: 4px 12px;
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+}
+.hero-content h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 600;
+  color: var(--white);
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.2rem;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+}
+.hero-content p {
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+  color: rgba(255,255,255,0.82);
+  line-height: 1.65;
+  margin-bottom: 2rem;
+  max-width: 560px;
+  font-weight: 300;
+}
+.btn-hero {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 14px; font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--navy);
+  background: var(--gold);
+  padding: 12px 28px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: all var(--transition);
+}
+.btn-hero:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,168,76,0.35); }
+
+.hero-controls {
+  position: absolute; bottom: 5%; right: 5%;
+  display: flex; align-items: center; gap: 10px;
+}
+.hero-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.35);
+  border: none; cursor: pointer;
+  transition: all var(--transition);
+  padding: 0;
+}
+.hero-dot.active {
+  background: var(--gold);
+  width: 24px; border-radius: 4px;
+}
+.hero-prev, .hero-next {
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: var(--white);
+  font-size: 18px;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all var(--transition);
+  position: absolute;
+  top: 50%; transform: translateY(-50%);
+}
+.hero-prev { left: 20px; }
+.hero-next { right: 20px; }
+.hero-prev:hover, .hero-next:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--navy);
+}
+
+.hero-scroll-hint {
+  position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  color: rgba(255,255,255,0.5);
+  font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+  font-family: var(--font-mono);
+}
+.scroll-line {
+  width: 1px; height: 32px;
+  background: rgba(255,255,255,0.3);
+  animation: scroll-pulse 2s ease-in-out infinite;
+}
+@keyframes scroll-pulse {
+  0%, 100% { height: 16px; opacity: 0.3; }
+  50% { height: 32px; opacity: 0.7; }
+}
+
+/* ─── SECTION UTILITIES ─── */
+section { padding: 96px 0; }
+.section-title {
+  max-width: 680px;
+  margin: 0 auto 4rem;
+  text-align: center;
+}
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 11px; font-weight: 500;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--gold);
+  display: block; margin-bottom: 0.75rem;
+}
+.section-title h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.22;
+  letter-spacing: -0.01em;
+  margin-bottom: 1rem;
+}
+.section-title p {
+  font-size: 1.05rem;
+  color: var(--gray-600);
+  line-height: 1.7;
+  font-weight: 300;
+}
+.divider {
+  width: 48px; height: 3px;
+  background: var(--gold);
+  border-radius: 2px;
+  margin: 1rem auto 0;
+}
+
+/* ─── STAT BAR ─── */
+.stat-bar {
+  background: var(--navy);
+  padding: 0;
+}
+.stat-bar-inner {
+  display: flex; flex-wrap: wrap;
+  border-left: 1px solid rgba(255,255,255,0.08);
+}
+.stat-item {
+  flex: 1; min-width: 160px;
+  padding: 2rem 2.5rem;
+  border-right: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  text-align: center;
+  transition: background var(--transition);
+}
+.stat-item:hover { background: rgba(255,255,255,0.04); }
+.stat-num {
+  font-family: var(--font-display);
+  font-size: 2.4rem; font-weight: 600;
+  color: var(--gold-light);
+  display: block;
+  letter-spacing: -0.02em;
+}
+.stat-label {
+  font-size: 12px; font-weight: 400;
+  color: rgba(255,255,255,0.55);
+  letter-spacing: 0.06em; text-transform: uppercase;
+  font-family: var(--font-mono);
+  display: block; margin-top: 4px;
+}
+
+/* ─── ABOUT / MISSION ─── */
+#about { background: var(--ivory); }
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  align-items: stretch;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  min-height: 540px;
+}
+.about-img-col { position: relative; overflow: hidden; }
+.about-img-col img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+.about-img-col:hover img { transform: scale(1.03); }
+.about-img-badge {
+  position: absolute; bottom: 2rem; left: 2rem;
+  background: var(--gold);
+  color: var(--navy);
+  font-family: var(--font-mono);
+  font-size: 12px; font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 2px;
+  letter-spacing: 0.06em; text-transform: uppercase;
+}
+.about-content {
+  background: var(--white);
+  padding: 4rem;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.about-content .section-label { text-align: left; }
+.about-content h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 2.8vw, 2.4rem);
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.22;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.5rem;
+}
+.about-content p {
+  font-size: 1rem;
+  color: var(--gray-600);
+  line-height: 1.75;
+  font-weight: 300;
+  margin-bottom: 1.25rem;
+}
+.pillars {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1rem; margin: 1.5rem 0 2rem;
+}
+.pillar {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 12px;
+  background: var(--gray-100);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--gold);
+}
+.pillar i { color: var(--gold); font-size: 18px; margin-top: 1px; flex-shrink: 0; }
+.pillar span { font-size: 13.5px; color: var(--gray-800); font-weight: 400; }
+.btn-about {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 14px; font-weight: 500;
+  letter-spacing: 0.03em;
+  color: var(--navy);
+  text-decoration: none;
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 2px;
+  transition: color var(--transition), border-color var(--transition);
+  align-self: flex-start;
+}
+.btn-about:hover { color: var(--gold); }
+
+/* ─── EXPERTISE / SERVICES ─── */
+#services { background: var(--white); }
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5px;
+  background: var(--gray-200);
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.service-cell {
+  background: var(--white);
+  padding: 2.5rem 2rem;
+  transition: background var(--transition);
+  position: relative;
+}
+.service-cell::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition);
+}
+.service-cell:hover { background: var(--ivory); }
+.service-cell:hover::before { transform: scaleX(1); }
+.service-icon {
+  width: 52px; height: 52px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--navy);
+  border-radius: var(--radius-md);
+  margin-bottom: 1.25rem;
+  color: var(--gold-light);
+  font-size: 22px;
+}
+.service-cell h5 {
+  font-family: var(--font-display);
+  font-size: 1.1rem; font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 0.6rem;
+}
+.service-cell p {
+  font-size: 14px; color: var(--gray-600);
+  line-height: 1.65; font-weight: 300;
+}
+
+/* ─── PUBLICATIONS ─── */
+#publications { background: var(--ivory); }
+.publications-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+.pub-featured {
+  grid-row: span 2;
+  background: var(--navy);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  display: flex; flex-direction: column;
+  min-height: 420px;
+}
+.pub-featured-img {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+.pub-featured-img img {
+  width: 100%; height: 100%;
+  object-fit: cover; opacity: 0.55;
+  transition: transform 0.8s ease, opacity 0.4s;
+}
+.pub-featured:hover .pub-featured-img img { transform: scale(1.04); opacity: 0.65; }
+.pub-featured-body {
+  padding: 2rem;
+  position: relative;
+  z-index: 2;
+  background: linear-gradient(to top, rgba(10,22,40,0.98) 0%, rgba(10,22,40,0.7) 100%);
+}
+.pub-type {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--gold-light);
+  border: 1px solid rgba(201,168,76,0.4);
+  padding: 3px 10px; border-radius: 2px;
+  margin-bottom: 0.75rem;
+}
+.pub-featured-body h3 {
+  font-family: var(--font-display);
+  font-size: 1.4rem; font-weight: 600;
+  color: var(--white);
+  line-height: 1.3;
+  margin-bottom: 0.75rem;
+}
+.pub-featured-body p { font-size: 14px; color: rgba(255,255,255,0.65); font-weight: 300; margin-bottom: 1.2rem; }
+.pub-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 13px; font-weight: 500;
+  color: var(--gold-light);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: gap var(--transition);
+}
+.pub-link:hover { gap: 10px; color: var(--gold); }
+
+.pub-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  border: 1px solid var(--gray-200);
+  display: flex; flex-direction: column;
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+.pub-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+.pub-card h4 {
+  font-family: var(--font-display);
+  font-size: 1.1rem; font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 0.6rem;
+  line-height: 1.35;
+}
+.pub-card p { font-size: 13.5px; color: var(--gray-600); font-weight: 300; line-height: 1.6; flex: 1; margin-bottom: 1rem; }
+
+/* ─── DASHBOARD ─── */
+#dashboard { background: var(--navy); }
+#dashboard .section-title h2 { color: var(--white); }
+#dashboard .section-title p { color: rgba(255,255,255,0.6); }
+#dashboard .section-label { color: var(--gold-light); }
+.dashboard-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.dash-panel {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  transition: background var(--transition);
+}
+.dash-panel:hover { background: rgba(255,255,255,0.08); }
+.dash-panel h4 {
+  font-family: var(--font-display);
+  font-size: 1.1rem; font-weight: 600;
+  color: var(--white); margin-bottom: 0.4rem;
+}
+.dash-panel p { font-size: 13px; color: rgba(255,255,255,0.5); margin-bottom: 1.5rem; font-weight: 300; }
+.dash-meter-wrap { margin-bottom: 0.5rem; }
+.dash-meter-label {
+  display: flex; justify-content: space-between;
+  font-size: 12px; font-family: var(--font-mono);
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 6px;
+}
+.dash-meter {
+  height: 4px; background: rgba(255,255,255,0.1);
+  border-radius: 2px; overflow: hidden;
+}
+.dash-meter span {
+  display: block; height: 100%;
+  background: var(--gold);
+  border-radius: 2px;
+  animation: meter-fill 1.8s cubic-bezier(0.4, 0, 0.2, 1) both;
+  animation-play-state: paused;
+}
+.dash-panel.visible .dash-meter span { animation-play-state: running; }
+@keyframes meter-fill {
+  from { width: 0 !important; }
+}
+.dash-big-num {
+  font-family: var(--font-display);
+  font-size: 3rem; font-weight: 600;
+  color: var(--gold-light);
+  display: block;
+  margin-top: 0.5rem;
+}
+
+/* ─── TIMELINE ─── */
+#timeline { background: var(--ivory); }
+.timeline-track {
+  position: relative;
+  padding-left: 2.5rem;
+}
+.timeline-track::before {
+  content: '';
+  position: absolute; left: 6px; top: 6px; bottom: 6px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--gold), var(--gold-pale));
+}
+.tl-item {
+  position: relative;
+  margin-bottom: 3rem;
+  padding-left: 2rem;
+}
+.tl-item::before {
+  content: '';
+  position: absolute; left: -2rem; top: 6px;
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: 3px solid var(--ivory);
+  box-shadow: 0 0 0 2px var(--gold);
+}
+.tl-year {
+  font-family: var(--font-mono);
+  font-size: 12px; font-weight: 500;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--gold);
+  display: block; margin-bottom: 0.5rem;
+}
+.tl-item h4 {
+  font-family: var(--font-display);
+  font-size: 1.2rem; font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+}
+.tl-item p { font-size: 14.5px; color: var(--gray-600); font-weight: 300; line-height: 1.65; }
+
+/* ─── PORTFOLIO ─── */
+#portfolio { background: var(--white); }
+.portfolio-filters {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  list-style: none; padding: 0;
+  justify-content: center; margin-bottom: 3rem;
+}
+.portfolio-filters li {
+  font-size: 13px; font-weight: 500;
+  padding: 6px 20px;
+  border: 1.5px solid var(--gray-200);
+  border-radius: 100px;
+  cursor: pointer;
+  color: var(--gray-600);
+  transition: all var(--transition);
+  letter-spacing: 0.03em;
+}
+.portfolio-filters li:hover, .portfolio-filters li.active {
+  background: var(--navy); color: var(--white); border-color: var(--navy);
+}
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.portfolio-item {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 4/3;
+  box-shadow: var(--shadow-sm);
+}
+.portfolio-item img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  display: block;
+}
+.portfolio-item:hover img { transform: scale(1.06); }
+.portfolio-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(10,22,40,0.9) 0%, rgba(10,22,40,0.2) 60%, transparent 100%);
+  opacity: 0; padding: 1.5rem;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  transition: opacity var(--transition);
+}
+.portfolio-item:hover .portfolio-overlay { opacity: 1; }
+.portfolio-cat {
+  font-family: var(--font-mono);
+  font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 4px; display: block;
+}
+.portfolio-overlay h5 {
+  font-family: var(--font-display);
+  font-size: 1rem; font-weight: 600;
+  color: var(--white); line-height: 1.3;
+  margin-bottom: 0.5rem;
+}
+.portfolio-overlay p { font-size: 13px; color: rgba(255,255,255,0.7); font-weight: 300; }
+.portfolio-actions {
+  display: flex; gap: 8px; margin-top: 12px;
+}
+.portfolio-actions a {
+  width: 34px; height: 34px;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 50%;
+  color: var(--white); font-size: 15px;
+  text-decoration: none;
+  transition: all var(--transition);
+}
+.portfolio-actions a:hover { background: var(--gold); border-color: var(--gold); color: var(--navy); }
+
+/* ─── EVENTS ─── */
+#events { background: var(--ivory); }
+.events-carousel-wrapper { position: relative; overflow: hidden; }
+.events-track {
+  display: flex; gap: 1.5rem;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.event-card {
+  flex: 0 0 calc(33.333% - 1rem);
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--gray-200);
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+.event-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); }
+.event-img { height: 200px; overflow: hidden; }
+.event-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+.event-card:hover .event-img img { transform: scale(1.05); }
+.event-body { padding: 1.5rem; }
+.event-date {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+}
+.event-body h5 {
+  font-family: var(--font-display);
+  font-size: 1.05rem; font-weight: 600;
+  color: var(--navy); margin-bottom: 0.5rem; line-height: 1.3;
+}
+.event-body p { font-size: 13.5px; color: var(--gray-600); font-weight: 300; line-height: 1.6; }
+.events-nav {
+  display: flex; justify-content: center; gap: 12px; margin-top: 2rem;
+}
+.events-nav button {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 1.5px solid var(--gray-200);
+  color: var(--navy); font-size: 18px;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all var(--transition);
+}
+.events-nav button:hover { background: var(--navy); color: var(--white); border-color: var(--navy); }
+
+/* ─── RESOURCES ─── */
+#resources { background: var(--white); }
+.resources-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+.resource-card {
+  background: var(--ivory);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  border: 1px solid transparent;
+  transition: all var(--transition);
+  cursor: pointer;
+}
+.resource-card:hover {
+  background: var(--white);
+  border-color: var(--gold-pale);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+.resource-icon {
+  width: 60px; height: 60px;
+  margin: 0 auto 1.25rem;
+  background: var(--navy);
+  border-radius: var(--radius-md);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gold-light); font-size: 24px;
+  transition: transform var(--transition);
+}
+.resource-card:hover .resource-icon { transform: scale(1.08); }
+.resource-card h5 {
+  font-family: var(--font-display);
+  font-size: 1rem; font-weight: 600;
+  color: var(--navy); margin-bottom: 0.5rem;
+}
+.resource-card p { font-size: 13px; color: var(--gray-600); font-weight: 300; line-height: 1.6; }
+
+/* ─── COLLABORATORS ─── */
+#collaborators { background: var(--ivory); padding: 64px 0; }
+.collab-title {
+  text-align: center; margin-bottom: 3rem;
+}
+.collab-title h2 {
+  font-family: var(--font-display);
+  font-size: 1.8rem; font-weight: 600;
+  color: var(--navy);
+}
+.collab-title p { font-size: 1rem; color: var(--gray-600); font-weight: 300; margin-top: 0.5rem; }
+.collab-track-wrap { overflow: hidden; position: relative; }
+.collab-track-wrap::before, .collab-track-wrap::after {
+  content: ''; position: absolute; top: 0; bottom: 0; width: 100px; z-index: 2;
+}
+.collab-track-wrap::before { left: 0; background: linear-gradient(to right, var(--ivory), transparent); }
+.collab-track-wrap::after { right: 0; background: linear-gradient(to left, var(--ivory), transparent); }
+.collab-track {
+  display: flex; gap: 4rem;
+  animation: collab-scroll 28s linear infinite;
+  width: max-content;
+}
+.collab-track:hover { animation-play-state: paused; }
+@keyframes collab-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.collab-logo {
+  height: 54px; width: auto;
+  filter: grayscale(100%) opacity(0.55);
+  transition: filter var(--transition);
+  flex-shrink: 0;
+}
+.collab-logo:hover { filter: grayscale(0%) opacity(1); }
+
+/* ─── CTA ─── */
+#cta {
+  background: var(--navy);
+  padding: 96px 0;
+  position: relative; overflow: hidden;
+}
+#cta::before {
+  content: '';
+  position: absolute; top: -50%; right: -10%;
+  width: 600px; height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
+}
+.cta-inner { text-align: center; position: relative; z-index: 2; }
+.cta-inner h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600; color: var(--white);
+  line-height: 1.2; margin-bottom: 1.2rem;
+  letter-spacing: -0.01em;
+}
+.cta-inner p { font-size: 1.1rem; color: rgba(255,255,255,0.6); font-weight: 300; margin-bottom: 2.5rem; }
+.cta-btns { display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+.btn-primary-gold {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 14px; font-weight: 500; letter-spacing: 0.04em;
+  background: var(--gold); color: var(--navy);
+  padding: 13px 32px; border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: all var(--transition);
+}
+.btn-primary-gold:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,168,76,0.3); }
+.btn-outline-white {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 14px; font-weight: 500; letter-spacing: 0.04em;
+  background: transparent; color: var(--white);
+  padding: 12px 28px;
+  border: 1.5px solid rgba(255,255,255,0.35);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: all var(--transition);
+}
+.btn-outline-white:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.6); }
+
+/* ─── FOOTER ─── */
+#footer {
+  background: #060e1a;
+  color: rgba(255,255,255,0.6);
+  padding: 80px 0 0;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 2fr;
+  gap: 3rem;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.footer-brand .logo .sitename { font-size: 1.5rem; color: var(--white); }
+.footer-brand p {
+  font-size: 14px; color: rgba(255,255,255,0.5);
+  font-weight: 300; line-height: 1.7;
+  margin: 1rem 0 1.5rem;
+}
+.footer-socials { display: flex; gap: 10px; }
+.footer-social-btn {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255,255,255,0.5); font-size: 16px;
+  text-decoration: none;
+  transition: all var(--transition);
+}
+.footer-social-btn:hover { background: var(--gold); border-color: var(--gold); color: var(--navy); }
+.footer-col h4 {
+  font-size: 13px; font-weight: 600;
+  color: var(--white); letter-spacing: 0.1em; text-transform: uppercase;
+  font-family: var(--font-mono);
+  margin-bottom: 1.25rem;
+}
+.footer-col ul { list-style: none; padding: 0; }
+.footer-col ul li { margin-bottom: 8px; }
+.footer-col ul li a {
+  font-size: 14px; color: rgba(255,255,255,0.5);
+  text-decoration: none; font-weight: 300;
+  transition: color var(--transition);
+}
+.footer-col ul li a:hover { color: var(--gold-light); }
+.newsletter-form-footer { display: flex; gap: 0; }
+.newsletter-form-footer input {
+  flex: 1;
+  padding: 10px 14px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-right: none;
+  border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+  color: var(--white); font-size: 14px;
+  outline: none;
+  font-family: var(--font-body);
+}
+.newsletter-form-footer input::placeholder { color: rgba(255,255,255,0.3); }
+.newsletter-form-footer button {
+  padding: 10px 18px;
+  background: var(--gold); color: var(--navy);
+  border: none; cursor: pointer;
+  font-weight: 600; font-size: 13px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-family: var(--font-body);
+  transition: background var(--transition);
+  white-space: nowrap;
+}
+.newsletter-form-footer button:hover { background: var(--gold-light); }
+.footer-contact-info { margin-top: 1.25rem; }
+.footer-contact-info li {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: 13.5px; color: rgba(255,255,255,0.45);
+  margin-bottom: 8px; font-weight: 300;
+}
+.footer-contact-info li i { color: var(--gold); margin-top: 2px; flex-shrink: 0; }
+.footer-bottom {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.5rem 0;
+  font-size: 13px;
+  color: rgba(255,255,255,0.35);
+  flex-wrap: wrap; gap: 1rem;
+}
+.footer-bottom a { color: rgba(255,255,255,0.4); text-decoration: none; transition: color var(--transition); }
+.footer-bottom a:hover { color: var(--gold-light); }
+
+/* ─── BACK TO TOP ─── */
+#scroll-top {
+  position: fixed; bottom: 2rem; right: 2rem;
+  width: 46px; height: 46px;
+  background: var(--navy);
+  border: 1.5px solid var(--gold);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gold); font-size: 20px;
+  text-decoration: none;
+  opacity: 0; pointer-events: none;
+  transition: all var(--transition);
+  z-index: 999;
+}
+#scroll-top.visible { opacity: 1; pointer-events: auto; }
+#scroll-top:hover { background: var(--gold); color: var(--navy); transform: translateY(-3px); }
+
+/* ─── ANIMATE ON SCROLL ─── */
+[data-aos] {
+  opacity: 0; transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+[data-aos].aos-in { opacity: 1; transform: translateY(0); }
+[data-aos-delay="100"] { transition-delay: 0.1s; }
+[data-aos-delay="200"] { transition-delay: 0.2s; }
+[data-aos-delay="300"] { transition-delay: 0.3s; }
+[data-aos-delay="400"] { transition-delay: 0.4s; }
+[data-aos-delay="500"] { transition-delay: 0.5s; }
+[data-aos-delay="600"] { transition-delay: 0.6s; }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 1100px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .dashboard-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 900px) {
+  .about-grid { grid-template-columns: 1fr; }
+  .about-img-col { min-height: 320px; }
+  .publications-layout { grid-template-columns: 1fr; }
+  .pub-featured { grid-row: auto; min-height: 300px; }
+  .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+  .resources-grid { grid-template-columns: repeat(2, 1fr); }
+  .event-card { flex: 0 0 calc(50% - 0.75rem); }
+  .pillars { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  section { padding: 64px 0; }
+  #navmenu { display: none; }
+  .mobile-nav-toggle { display: block; }
+  .stat-bar-inner { flex-direction: column; }
+  .portfolio-grid { grid-template-columns: 1fr; }
+  .resources-grid { grid-template-columns: 1fr 1fr; }
+  .event-card { flex: 0 0 calc(100% - 0); }
+  .footer-grid { grid-template-columns: 1fr; }
+  .dashboard-grid { grid-template-columns: 1fr; }
+  .hero-content { bottom: 12%; padding: 0 7%; }
+  .hero-carousel { height: 75vh; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+}
+@media (max-width: 480px) {
+  .resources-grid { grid-template-columns: 1fr; }
+  .services-grid { grid-template-columns: 1fr; }
+}
+
+/* Mobile nav overlay */
+.mobile-nav-active #navmenu {
+  display: block;
+  position: fixed; inset: 0; top: 68px;
+  background: var(--white);
+  z-index: 999;
+  padding: 2rem;
+  overflow-y: auto;
+}
+.mobile-nav-active #navmenu ul { flex-direction: column; gap: 0; }
+.mobile-nav-active #navmenu ul li.dropdown ul {
+  position: static; display: none;
+  box-shadow: none; border: none;
+  background: var(--gray-100);
+  border-radius: var(--radius-md);
+  margin-top: 4px; padding: 6px;
+}
+.mobile-nav-active #navmenu ul li.dropdown.open ul { display: flex; }
+</style>
 </head>
 
 <body class="index-page">
 
-<header id="header" class="header d-flex align-items-center sticky-top">
-  <div class="container d-flex align-items-center justify-content-between">
-    <a href="index.html" class="logo d-flex align-items-center me-auto">
-      <h1 class="sitename m-0">KEMT Center</h1><span class="ms-2">.</span>
+<!-- PRELOADER -->
+<div id="preloader">
+  <div class="preloader-logo">KEMT<span>.</span>Center</div>
+  <div class="preloader-bar"></div>
+</div>
+
+<!-- ANNOUNCEMENT BANNER -->
+<div class="announcement-banner">
+  <div class="ticker" data-lang-fr="🎓 Recrutement ouvert — Chercheurs & Associés 2025&nbsp;|&nbsp; Candidatures acceptées jusqu'au 30 juin 2025" data-lang-en="🎓 Open recruitment — Researchers & Associates 2025&nbsp;|&nbsp; Applications accepted until June 30, 2025">🎓 Recrutement ouvert — Chercheurs & Associés 2025&nbsp;|&nbsp; Candidatures acceptées jusqu'au 30 juin 2025</div>
+  <a href="careers.html" class="apply-link" data-lang-fr="Postuler" data-lang-en="Apply">Postuler</a>
+</div>
+
+<!-- HEADER -->
+<header id="header">
+  <div class="container">
+    <a href="index.html" class="logo">
+      <img src="assets/img/logo/LOGO.png" alt="KEMT Center logo" class="logo-mark">
+      <span class="sitename"></span><span class="dot">.</span>
     </a>
-
-    <nav id="navmenu" class="navmenu">
+    <nav id="navmenu">
       <ul>
-        <li><a href="index.html" class="active"><span data-lang="fr">Accueil</span><span data-lang="en" class="d-none">Home</span></a></li>
+        <li><a href="index.html" class="active" data-lang-fr="Accueil" data-lang-en="Home">Accueil</a></li>
         <li class="dropdown">
-          <a href="#"><span data-lang="fr">Institution</span><span data-lang="en" class="d-none">Institution</span></a>
+          <a href="#" data-lang-fr="Institution" data-lang-en="Institution">Institution</a>
           <ul>
-            <li><a href="about.html"><span data-lang="fr">À propos</span><span data-lang="en" class="d-none">About</span></a></li>
-            <li><a href="team.html"><span data-lang="fr">Équipe de recherche</span><span data-lang="en" class="d-none">Research team</span></a></li>
-            <li><a href="partners.html"><span data-lang="fr">Partenaires</span><span data-lang="en" class="d-none">Partners</span></a></li>
+            <li><a href="about.html" data-lang-fr="À propos" data-lang-en="About">À propos</a></li>
+            <li><a href="team.html" data-lang-fr="Équipe de recherche" data-lang-en="Research team">Équipe de recherche</a></li>
+            <li><a href="partners.html" data-lang-fr="Partenaires" data-lang-en="Partners">Partenaires</a></li>
           </ul>
         </li>
         <li class="dropdown">
-          <a href="#"><span data-lang="fr">Programmes</span><span data-lang="en" class="d-none">Programs</span></a>
+          <a href="#" data-lang-fr="Programmes" data-lang-en="Programs">Programmes</a>
           <ul>
-            <li><a href="programs.html"><span data-lang="fr">Départements</span><span data-lang="en" class="d-none">Departments</span></a></li>
-            <li><a href="portfolio.html"><span data-lang="fr">Projets</span><span data-lang="en" class="d-none">Projects</span></a></li>
-            <li><a href="publications.html"><span data-lang="fr">Publications</span><span data-lang="en" class="d-none">Publications</span></a></li>
+            <li><a href="programs.html" data-lang-fr="Départements" data-lang-en="Departments">Départements</a></li>
+            <li><a href="portfolio.html" data-lang-fr="Projets" data-lang-en="Projects">Projets</a></li>
+            <li><a href="publications.html" data-lang-fr="Publications" data-lang-en="Publications">Publications</a></li>
           </ul>
         </li>
         <li class="dropdown">
-          <a href="#"><span data-lang="fr">Ressources</span><span data-lang="en" class="d-none">Resources</span></a>
+          <a href="#" data-lang-fr="Ressources" data-lang-en="Resources">Ressources</a>
           <ul>
-            <li><a href="resources.html"><span data-lang="fr">Bases de données</span><span data-lang="en" class="d-none">Databases</span></a></li>
-            <li><a href="docs.html"><span data-lang="fr">Documentation</span><span data-lang="en" class="d-none">Documentation</span></a></li>
-            <li><a href="gallery.html"><span data-lang="fr">Galerie</span><span data-lang="en" class="d-none">Gallery</span></a></li>
+            <li><a href="resources.html" data-lang-fr="Bases de données" data-lang-en="Data portals">Bases de données</a></li>
+            <li><a href="docs.html" data-lang-fr="Documentation" data-lang-en="Documentation">Documentation</a></li>
+            <li><a href="gallery.html" data-lang-fr="Galerie" data-lang-en="Gallery">Galerie</a></li>
           </ul>
         </li>
         <li class="dropdown">
-          <a href="#"><span data-lang="fr">Engagement</span><span data-lang="en" class="d-none">Engagement</span></a>
+          <a href="#" data-lang-fr="Engagement" data-lang-en="Engagement">Engagement</a>
           <ul>
-            <li><a href="events.html"><span data-lang="fr">Événements</span><span data-lang="en" class="d-none">Events</span></a></li>
-            <li><a href="careers.html"><span data-lang="fr">Opportunités</span><span data-lang="en" class="d-none">Careers</span></a></li>
-            <li><a href="training.html"><span data-lang="fr">Formations</span><span data-lang="en" class="d-none">Training</span></a></li>
+            <li><a href="events.html" data-lang-fr="Événements" data-lang-en="Events">Événements</a></li>
+            <li><a href="careers.html" data-lang-fr="Opportunités" data-lang-en="Opportunities">Opportunités</a></li>
+            <li><a href="training.html" data-lang-fr="Formations" data-lang-en="Training">Formations</a></li>
           </ul>
         </li>
-        <li><a href="contact.html"><span data-lang="fr">Contact</span><span data-lang="en" class="d-none">Contact</span></a></li>
+        <li><a href="contact.html" data-lang-fr="Contact" data-lang-en="Contact">Contact</a></li>
       </ul>
-      <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
     </nav>
-
-      <div class="header-actions d-flex align-items-center">
-      <a href="member.html" class="btn btn-outline-primary btn-sm me-2"><span data-lang="fr">Espace chercheur</span><span data-lang="en" class="d-none">Researcher area</span></a>
-      <div class="lang-switcher ms-3" role="navigation" aria-label="Language switcher">
+    <div class="header-actions">
+      <a href="member.html" class="btn-researcher" data-lang-fr="Espace chercheur" data-lang-en="Researcher portal">Espace chercheur</a>
+      <div class="lang-switcher" role="navigation" aria-label="Language switcher">
         <div class="lang-select-wrapper">
           <button class="lang-select" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Switch language">
             <img src="assets/img/flags/fr.svg" alt="Français" class="current-flag">
@@ -479,864 +1302,744 @@
         </div>
       </div>
     </div>
+    <button class="mobile-nav-toggle" id="mobileNavToggle">
+      <i class="bi bi-list"></i>
+    </button>
   </div>
 </header>
 
-  <main class="main">
+<main>
 
+<!-- ─── HERO ─── -->
+<section id="hero">
+  <div class="hero-carousel" id="heroCarousel">
 
-    <!-- Hero Section -->
-<section id="hero" class="hero section dark-background">
-  <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
-
-    <div class="carousel-item active">
-      <img src="assets/img/hero-carousel/hero-carousel-1.jpeg" alt="Équipe de recherche collaborant">
-      <div class="container">
-        <h2><span data-lang="fr">Nous sommes le KEMT CENTER FOR DEVELOPMENT</span><span data-lang="en" class="d-none">We are KEMT CENTER FOR DEVELOPMENT</span></h2>
-        <p><span data-lang="fr">Relier la recherche et la politique pour améliorer la vie des communautés vulnérables.</span><span data-lang="en" class="d-none">Bridging research and policy to improve lives in underserved communities.</span></p>
-           <a href="about.html" class="btn-get-started"><span data-lang="fr">En savoir plus</span><span data-lang="en" class="d-none">Read more</span></a>
-
-    </div>
-    
-    <div class="carousel-item">
-      <img src="assets/img/hero-carousel/hero-carousel-2.jpeg" alt="Innovation en recherche">
-      <div class="container">
-        <h2><span data-lang="fr">Innover pour la recherche</span><span data-lang="en" class="d-none">Pioneering innovation in research</span></h2>
-        <p><span data-lang="fr">En partenariat, nous repoussons les frontières du savoir pour des solutions sociétales concrètes.</span><span data-lang="en" class="d-none">Through collaborative efforts, we push the boundaries of knowledge to develop impactful solutions for societal challenges.</span></p>
-        <a href="about.html" class="btn-get-started"><span data-lang="fr">En savoir plus</span><span data-lang="en" class="d-none">Read more</span></a>
-
-
+    <div class="hero-slide active">
+      <img src="assets/img/hero-carousel/hero-carousel-1.jpeg" alt="Équipe de recherche collaborant" data-lang-alt-fr="Équipe de recherche collaborant" data-lang-alt-en="Research team collaborating" loading="eager">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <span class="hero-tag" data-lang-fr="Recherche & Impact — Bénin" data-lang-en="Research & Impact — Benin">Recherche & Impact — Bénin</span>
+        <h1 data-lang-fr="Nous sommes le<br>KEMT Center for Development" data-lang-en="We are the<br>KEMT Center for Development">Nous sommes le<br>KEMT Center for Development</h1>
+        <p data-lang-fr="Relier la recherche et la politique pour améliorer la vie des communautés vulnérables à travers l'Afrique." data-lang-en="Connecting research and policy to improve the lives of vulnerable communities across Africa.">Relier la recherche et la politique pour améliorer la vie des communautés vulnérables à travers l'Afrique.</p>
+        <a href="about.html" class="btn-hero" data-lang-fr="En savoir plus" data-lang-en="Learn more">En savoir plus <i class="bi bi-arrow-right"></i></a>
+      </div>
     </div>
 
-    <div class="carousel-item">
-      <img src="assets/img/hero-carousel/hero-carousel-3.jpeg" alt="Science et avenir">
-      <div class="container">
-        <h2><span data-lang="fr">Donner du pouvoir à l’avenir grâce à la science</span><span data-lang="en" class="d-none">Empowering the future with science</span></h2>
-        <p><span data-lang="fr">Notre approche axée sur la recherche favorise l’innovation au service d’une société durable et responsable.</span><span data-lang="en" class="d-none">Our research-driven approach fosters innovation, ensuring that science serves humanity in meaningful and sustainable ways.</span></p>
-        <a href="about.html" class="btn-get-started"><span data-lang="fr">En savoir plus</span><span data-lang="en" class="d-none">Read more</span></a>
-
-
+    <div class="hero-slide">
+      <img src="assets/img/hero-carousel/hero-carousel-2.jpeg" alt="Innovation en recherche" data-lang-alt-fr="Innovation en recherche" data-lang-alt-en="Research innovation" loading="lazy">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <span class="hero-tag" data-lang-fr="Innovation scientifique" data-lang-en="Scientific innovation">Innovation scientifique</span>
+        <h1 data-lang-fr="Innover pour<br>la recherche" data-lang-en="Innovating for<br>research">Innover pour<br>la recherche</h1>
+        <p data-lang-fr="En partenariat, nous repoussons les frontières du savoir pour développer des solutions sociétales concrètes." data-lang-en="In partnership, we push the boundaries of knowledge to develop concrete societal solutions.">En partenariat, nous repoussons les frontières du savoir pour développer des solutions sociétales concrètes.</p>
+        <a href="about.html" class="btn-hero" data-lang-fr="Nos programmes" data-lang-en="Our programs">Nos programmes <i class="bi bi-arrow-right"></i></a>
+      </div>
     </div>
 
-    <div class="carousel-item">
-      <img src="assets/img/hero-carousel/hero-carousel-4.jpeg" alt="Politiques fondées sur des preuves">
-      <div class="container">
-        <h2><span data-lang="fr">Des politiques fondées sur des preuves</span><span data-lang="en" class="d-none">Driving evidence-based policies</span></h2>
-        <p><span data-lang="fr">Nous faisons le lien entre recherche et décision publique avec des analyses basées sur des données fiables.</span><span data-lang="en" class="d-none">We bridge the gap between research and policy, equipping decision-makers with data-driven insights to address critical global issues.</span></p>
-        <a href="about.html" class="btn-get-started"><span data-lang="fr">En savoir plus</span><span data-lang="en" class="d-none">Read more</span></a>
-
+    <div class="hero-slide">
+      <img src="assets/img/hero-carousel/hero-carousel-3.jpeg" alt="Science et avenir" data-lang-alt-fr="Science et avenir" data-lang-alt-en="Science and future" loading="lazy">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <span class="hero-tag" data-lang-fr="Science & Avenir" data-lang-en="Science & Future">Science & Avenir</span>
+        <h1 data-lang-fr="Donner du pouvoir<br>à l'avenir par la science" data-lang-en="Empowering the future through science">Donner du pouvoir<br>à l'avenir par la science</h1>
+        <p data-lang-fr="Notre approche axée sur la recherche favorise l'innovation au service d'une société durable et responsable." data-lang-en="Our research-driven approach fosters innovation in service of a sustainable, responsible society.">Notre approche axée sur la recherche favorise l'innovation au service d'une société durable et responsable.</p>
+        <a href="about.html" class="btn-hero" data-lang-fr="Découvrir" data-lang-en="Discover">Découvrir <i class="bi bi-arrow-right"></i></a>
+      </div>
     </div>
 
-    <div class="carousel-item">
-      <img src="assets/img/hero-carousel/hero-carousel-2.jpeg" alt="Recherche collaborative">
-      <div class="container">
-        <h2><span data-lang="fr">Collaborer pour un avenir meilleur</span><span data-lang="en" class="d-none">Collaborating for a better tomorrow</span></h2>
-        <p><span data-lang="fr">Grâce aux partenariats interdisciplinaires, nous élaborons des solutions qui renforcent l’éducation, la santé et le développement durable.</span><span data-lang="en" class="d-none">By fostering interdisciplinary partnerships, we create innovative solutions that enhance education, healthcare, and sustainable development.</span></p>
-        <a href="about.html" class="btn-get-started"><span data-lang="fr">En savoir plus</span><span data-lang="en" class="d-none">Read more</span></a>
-
-
+    <div class="hero-slide">
+      <img src="assets/img/hero-carousel/hero-carousel-4.jpeg" alt="Politiques fondées sur des preuves" data-lang-alt-fr="Politiques fondées sur des preuves" data-lang-alt-en="Evidence-based policy" loading="lazy">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <span class="hero-tag" data-lang-fr="Politiques publiques" data-lang-en="Public policy">Politiques publiques</span>
+        <h1 data-lang-fr="Des politiques<br>fondées sur des preuves" data-lang-en="Policies<br>based on evidence">Des politiques<br>fondées sur des preuves</h1>
+        <p data-lang-fr="Nous équipons les décideurs d'analyses basées sur des données fiables pour traiter les enjeux mondiaux critiques." data-lang-en="We equip decision-makers with data-driven analysis to address critical global challenges.">Nous équipons les décideurs d'analyses basées sur des données fiables pour traiter les enjeux mondiaux critiques.</p>
+        <a href="about.html" class="btn-hero" data-lang-fr="Nos publications" data-lang-en="Our publications">Nos publications <i class="bi bi-arrow-right"></i></a>
+      </div>
     </div>
 
-    <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
-    </a>
+    <button class="hero-prev" id="heroPrev" aria-label="Diapositive précédente"><i class="bi bi-chevron-left"></i></button>
+    <button class="hero-next" id="heroNext" aria-label="Diapositive suivante"><i class="bi bi-chevron-right"></i></button>
 
-    <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
-      <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
-    </a>
-
-    <ol class="carousel-indicators"></ol>
-
+    <div class="hero-controls" id="heroDots"></div>
   </div>
-</section>    
-    <!-- /Hero Section -->
-
-    <!-- About Section -->
-    <section id="about" class="about section">
-      <div class="container">
-        <div class="row position-relative">
-    
-          <!-- Image Column -->
-          <div class="col-lg-7 about-img" data-aos="zoom-out" data-aos-delay="200">
-           <!-- <img src="assets/img/services.jpg" alt="KEMT Center Team">-->
-            <img src="assets/img/hero-carousel/hero-carousel-2.jpeg" alt="Équipe KEMT Center">
-
-           
-          </div>
-    
-          <!-- Content Column -->
-          <div class="col-lg-7" data-aos="fade-up" data-aos-delay="100">
-            <!-- <h2 class="inner-title">KEMT Research Center</h2> -->
-    <div class="our-story font-sans">
-     <!-- Header with subtle accent -->
-      <div class="story-header mb-4">
-<!--    <span class="badge bg-light text-primary rounded-pill mb-2">Est. 2015</span>-->
-    <h2 class="display-5 fw-bold" data-lang-fr="Notre <span class='text-primary'>Mission</span>" data-lang-en="Our <span class='text-primary'>Mission</span>">Notre <span class="text-primary">Mission</span></h2>
-     </div>
-
-  <!-- Core mission statement -->
-  <div class="mission-statement mb-4">
-    <p class="lead fs-6" data-lang-fr="Le KEMT Center relie la recherche de pointe à l’impact concret, comme institution scientifique et organisation engagée. Nous transformons le savoir en solutions durables pour les communautés." data-lang-en="KEMT Center connects leading research to tangible impact as a scientific institution and engaged organization. We turn knowledge into sustainable solutions for communities.">Le KEMT Center relie la recherche de pointe à l’impact concret, comme institution scientifique et organisation engagée. Nous transformons le savoir en solutions durables pour les communautés.</p>
+  <div class="hero-scroll-hint" data-lang-fr="Défiler" data-lang-en="Scroll"> 
+    <div class="scroll-line"></div>
+    Défiler
   </div>
+</section>
 
-  <!-- Key points -->
-<ul class="list-unstyled fs-6 lead">
-  <li data-lang-fr="Mettre les résultats de recherche à disposition des acteurs locaux" data-lang-en="Make research findings available to local stakeholders"><i class="bi bi-book-half me-2"></i></li>
-  <li data-lang-fr="Concevoir des solutions pratiques fondées sur des données fiables" data-lang-en="Design practical solutions based on reliable data"><i class="bi bi-lightbulb me-2"></i></li>
-  <li data-lang-fr="Faire le lien entre institutions de recherche et populations" data-lang-en="Connect research institutions with communities"><i class="bi bi-diagram-3 me-2"></i></li>
-</ul>
-
-
-
-  <!-- Supporting paragraph -->
-  <p class="lead fs-6" data-lang-fr="Notre équipe multidisciplinaire de chercheurs, experts en données et décideurs produit des analyses qui favorisent des changements mesurables. Nous croyons au pouvoir des données pour transformer des vies." data-lang-en="Our multidisciplinary team of researchers, data experts and policymakers produces analyses that drive measurable change. We believe in the power of data to transform lives.">Notre équipe multidisciplinaire de chercheurs, experts en données et décideurs produit des analyses qui favorisent des changements mesurables. Nous croyons au pouvoir des données pour transformer des vies.</p>
-
-  <!-- Video Section -->
-  <div class="watch-video d-flex align-items-center position-relative fs-5">
-    <i class="bi bi-play-circle fs-3 text-primary me-2"></i>
-    <a href="https://www.youtube.com/watch?v=research-video" class="glightbox stretched-link text-decoration-none" data-lang-fr="Voir notre histoire" data-lang-en="Watch our story">Voir notre histoire</a>
+<!-- ─── STAT BAR ─── -->
+<div class="stat-bar">
+  <div class="container">
+    <div class="stat-bar-inner">
+      <div class="stat-item" data-aos>
+        <span class="stat-num" data-target="48">0</span>
+        <span class="stat-label" data-lang-fr="Publications" data-lang-en="Publications">Publications</span>
+      </div>
+      <div class="stat-item" data-aos data-aos-delay="100">
+        <span class="stat-num" data-target="12">0</span>
+        <span class="stat-label" data-lang-fr="Projets actifs" data-lang-en="Active projects">Projets actifs</span>
+      </div>
+      <div class="stat-item" data-aos data-aos-delay="200">
+        <span class="stat-num" data-target="6">0</span>
+        <span class="stat-label" data-lang-fr="Pays couverts" data-lang-en="Countries covered">Pays couverts</span>
+      </div>
+      <div class="stat-item" data-aos data-aos-delay="300">
+        <span class="stat-num" data-target="18">0</span>
+        <span class="stat-label" data-lang-fr="Chercheurs" data-lang-en="Researchers">Chercheurs</span>
+      </div>
+      <div class="stat-item" data-aos data-aos-delay="400">
+        <span class="stat-num" data-target="9">0</span>
+        <span class="stat-label" data-lang-fr="Partenaires institutionnels" data-lang-en="Institutional partners">Partenaires institutionnels</span>
+      </div>
+    </div>
   </div>
 </div>
 
-          </div>
-
-
-
-          </div>
-    
-        </div>
-      </div>
-    </section>
-
-    <!-- Rapport annuel (bilingue) ajouté -->
-    <section class="section py-4">
-      <div class="container">
-        <div class="report-section p-4 rounded shadow-sm" style="background:linear-gradient(135deg,#fff,#f7fbff);font-family:var(--default-font);">
-          <div class="d-flex justify-content-between align-items-center mb-3">
-            <h2 class="mb-0"><span data-lang="fr">Rapport annuel 2025 — Analyse & Recommandations</span><span data-lang="en" class="d-none">Annual Report 2025 — Analysis & Recommendations</span></h2>
-          </div>
-
-          <div class="row gx-3 gy-3">
-            <div class="col-md-4">
-              <div class="card h-100 border-0 shadow-sm">
-                <div class="card-body">
-                  <h5 data-lang-fr="Télécharger" data-lang-en="Download">Télécharger</h5>
-                  <p class="card-text small" data-lang-fr="nnuel 2025 — Analyse des résultats, recommandations stratégiques et direction future." data-lang-en="Annual 2025 — Results analysis, strategic recommendations and future direction."></p>
-                  <a href="#" class="btn btn-primary btn-sm">📥 <span data-lang-fr="Télécharger" data-lang-en="Download">Télécharger</span></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <div class="card h-100 border-0 shadow-sm">
-                <div class="card-body">
-                  <h5 data-lang-fr="Working paper : Éducation" data-lang-en="Working paper: Education">Working paper : Éducation</h5>
-                  <p class="card-text small" data-lang-fr="Étude approfondie sur l’impact des programmes éducatifs dans les zones rurales." data-lang-en="In-depth study on impact of educational programs in rural areas."></p>
-                  <a href="#" class="btn btn-outline-primary btn-sm" data-lang-fr="Voir" data-lang-en="View">Voir</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <div class="card h-100 border-0 shadow-sm">
-                <div class="card-body">
-                  <h5 data-lang-fr="Base de données ouverte" data-lang-en="Open Database">Base de données ouverte</h5>
-                  <p class="card-text small" data-lang-fr="Accès aux indicateurs sociaux, économiques et environnementaux." data-lang-en="Access social, economic and environmental indicators."></p>
-                  <a href="#" class="btn btn-outline-primary btn-sm" data-lang-fr="Explorer" data-lang-en="Explore">Explorer</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-12 mt-3">
-              <div class="card border-0 shadow-sm">
-                <div class="card-body">
-                  <h4 data-lang-fr="Œuvres sociales du centre" data-lang-en="Center's Social Initiatives">Œuvres sociales du centre</h4>
-                  <p class="small text-muted" data-lang-fr="Le centre soutient des programmes communautaires : distribution de fournitures scolaires, cliniques mobiles, formations professionnelles et ateliers d’insertion. Ces initiatives visent l’autonomie locale et la résilience sociale." data-lang-en="The center supports community programs: school supplies distribution, mobile clinics, vocational training and reintegration workshops. These initiatives promote local autonomy and social resilience."></p>
-                  <ul class="mb-0">
-                    <li data-lang-fr="Ateliers éducatifs pour 1 200 enfants en 2025" data-lang-en="Educational workshops for 1,200 children in 2025">Ateliers éducatifs pour 1 200 enfants en 2025</li>
-                    <li data-lang-fr="Clinique mobile : 3 400 consultations" data-lang-en="Mobile clinic: 3,400 consultations">Clinique mobile : 3 400 consultations</li>
-                    <li data-lang-fr="Programme d’appui aux entrepreneurs locaux" data-lang-en="Local entrepreneurs support program">Programme d’appui aux entrepreneurs locaux</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-12 mt-3 text-center">
-              <a href="#" class="btn btn-lg btn-gradient-primary me-2" data-lang-fr="Voir le tableau de bord" data-lang-en="View Dashboard">Voir le tableau de bord</a>
-              <a href="#" class="btn btn-outline-secondary" data-lang-fr="Recherche" data-lang-en="Research">Recherche</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- /About Section -->
-
-<!-- Services Section -->
-<section id="services" class="services section py-5 bg-light">
+<!-- ─── ABOUT / MISSION ─── -->
+<section id="about">
   <div class="container">
-    <div class="section-title text-center mb-5" data-aos="fade-up">
-      <h2 class="fw-bold" data-lang-fr="Nos expertises de recherche" data-lang-en="Our research expertise">Nos expertises de recherche</h2>
-      <p class="text-muted" data-lang-fr="Innovation et impact à travers des solutions fondées sur des preuves." data-lang-en="Innovation and impact through evidence-based solutions.">Innovation et impact à travers des solutions fondées sur des preuves.</p>
-    </div>
-
-    <div class="row g-4">
-
-      <!-- Service Item -->
-      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-        <div class="service-item p-4 shadow-sm bg-white rounded-4 h-100 text-center hover-up transition">
-          <div class="icon mb-3">
-            <div class="icon-circle bg-cyan text-white mx-auto">
-              <i class="bi bi-clipboard-data fs-2"></i>
-            </div>
-          </div>
-          <h5 class="fw-semibold" data-lang-fr="Data Collection" data-lang-en="Data Collection">Data Collection</h5>
-          <p data-lang-fr="Méthodologies robustes pour les expériences de terrain, les essais randomisés contrôlés et les études longitudinales." data-lang-en="Robust methodologies for field experiments, RCTs, and longitudinal studies.">Robust methodologies for field experiments, RCTs, and longitudinal studies.</p>
-          <!--<a href="#" class="btn btn-link text-decoration-none">Learn More <i class="bi bi-arrow-right"></i></a>-->
-        </div>
+    <div class="about-grid" data-aos>
+      <div class="about-img-col">
+        <img src="assets/img/hero-carousel/hero-carousel-2.jpeg" alt="Équipe KEMT Center" data-lang-alt-fr="Équipe KEMT Center" data-lang-alt-en="KEMT Center team">
+        <span class="about-img-badge" data-lang-fr="Est. Abomey-Calavi, Bénin" data-lang-en="Est. Abomey-Calavi, Benin">Est. Abomey-Calavi, Bénin</span>
       </div>
-
-      <!-- Data Analytics -->
-      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-        <div class="service-item p-4 shadow-sm bg-white rounded-4 h-100 text-center hover-up transition">
-          <div class="icon mb-3">
-            <div class="icon-circle bg-teal text-white mx-auto">
-              <i class="bi bi-diagram-3 fs-2"></i>
-            </div>
+      <div class="about-content">
+        <span class="section-label" data-lang-fr="Notre Mission" data-lang-en="Our Mission">Notre Mission</span>
+        <h2 data-lang-fr="Transformer le savoir en solutions durables pour les communautés" data-lang-en="Turning knowledge into sustainable solutions for communities">Transformer le savoir en solutions durables pour les communautés</h2>
+        <p data-lang-fr="Le KEMT Center relie la recherche de pointe à l'impact concret. Institution scientifique et organisation engagée, nous développons des analyses qui favorisent des changements mesurables et durables." data-lang-en="KEMT Center connects cutting-edge research with concrete impact. As a scientific institution and committed organization, we develop analysis that drives measurable, lasting change.">Le KEMT Center relie la recherche de pointe à l'impact concret. Institution scientifique et organisation engagée, nous développons des analyses qui favorisent des changements mesurables et durables.</p>
+        <div class="pillars">
+          <div class="pillar">
+            <i class="bi bi-book-half"></i>
+            <span data-lang-fr="Résultats de recherche accessibles aux acteurs locaux" data-lang-en="Research results accessible to local stakeholders">Résultats de recherche accessibles aux acteurs locaux</span>
           </div>
-          <h5 class="fw-semibold" data-lang-fr="Data Analytics" data-lang-en="Data Analytics">Data Analytics</h5>
-          <p data-lang-fr="Traitement avancé, visualisation et analyses par machine learning." data-lang-en="Advanced processing, visualization, and machine learning insights.">Advanced processing, visualization, and machine learning insights.</p>
-          <!--<a href="#" class="btn btn-link text-decoration-none">Learn More <i class="bi bi-arrow-right"></i></a>-->
-        </div>
-      </div>
-
-      <!-- Analyse des politiques -->
-      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-        <div class="service-item p-4 shadow-sm bg-white rounded-4 h-100 text-center hover-up transition">
-          <div class="icon mb-3">
-            <div class="icon-circle bg-orange text-white mx-auto">
-              <i class="bi bi-bar-chart-line fs-2"></i>
-            </div>
+          <div class="pillar">
+            <i class="bi bi-lightbulb"></i>
+            <span data-lang-fr="Solutions pratiques fondées sur des données fiables" data-lang-en="Practical solutions based on reliable data">Solutions pratiques fondées sur des données fiables</span>
           </div>
-          <h5 class="fw-semibold" data-lang-fr="Analyse des politiques" data-lang-en="Policy analysis">Analyse des politiques</h5>
-          <p data-lang-fr="Transformer les données en recommandations exploitables pour les États et les ONG." data-lang-en="Turning data into actionable recommendations for governments and NGOs.">Transformer les données en recommandations exploitables pour États et ONG.</p>
-          <!--<a href="#" class="btn btn-link text-decoration-none">En savoir plus <i class="bi bi-arrow-right"></i></a>-->
-        </div>
-      </div>
-
-      <!-- Renforcement de capacités -->
-      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-        <div class="service-item p-4 shadow-sm bg-white rounded-4 h-100 text-center hover-up transition">
-          <div class="icon mb-3">
-            <div class="icon-circle bg-danger text-white mx-auto">
-              <i class="bi bi-people fs-2"></i>
-            </div>
+          <div class="pillar">
+            <i class="bi bi-diagram-3"></i>
+            <span data-lang-fr="Lien entre institutions et populations" data-lang-en="Link between institutions and communities">Lien entre institutions et populations</span>
           </div>
-          <h5 class="fw-semibold" data-lang-fr="Renforcement de capacités" data-lang-en="Capacity building">Renforcement de capacités</h5>
-          <p data-lang-fr="Programmes de formation pour chercheurs et décideurs à l’échelle internationale." data-lang-en="Training programs for researchers and policymakers worldwide.">Programmes de formation pour chercheurs et décideurs au niveau international.</p>
-          <!--<a href="#" class="btn btn-link text-decoration-none">En savoir plus <i class="bi bi-arrow-right"></i></a>-->
-        </div>
-      </div>
-
-      <!-- Impact Evaluation -->
-      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-        <div class="service-item p-4 shadow-sm bg-white rounded-4 h-100 text-center hover-up transition">
-          <div class="icon mb-3">
-            <div class="icon-circle bg-indigo text-white mx-auto">
-              <i class="bi bi-graph-up fs-2"></i>
-            </div>
+          <div class="pillar">
+            <i class="bi bi-graph-up"></i>
+            <span data-lang-fr="Analyses à fort impact pour les politiques publiques" data-lang-en="High-impact analysis for public policy">Analyses à fort impact pour les politiques publiques</span>
           </div>
-          <h5 class="fw-semibold" data-lang-fr="Impact Evaluation" data-lang-en="Impact Evaluation">Impact Evaluation</h5>
-          <p data-lang-fr="Évaluer l’efficacité des programmes pour optimiser les résultats sociaux." data-lang-en="Assessing the effectiveness of programs to optimize social outcomes.">Assessing the effectiveness of programs to optimize social outcomes.</p>
-          <!--<a href="#" class="btn btn-link text-decoration-none">Learn More <i class="bi bi-arrow-right"></i></a>-->
         </div>
+        <a href="about.html" class="btn-about" data-lang-fr="Découvrir notre histoire" data-lang-en="Discover our story">Découvrir notre histoire <i class="bi bi-arrow-right"></i></a>
       </div>
-
-      <!-- Diffusion des connaissances -->
-      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-        <div class="service-item p-4 shadow-sm bg-white rounded-4 h-100 text-center hover-up transition">
-          <div class="icon mb-3">
-            <div class="icon-circle bg-pink text-white mx-auto">
-              <i class="bi bi-journal fs-2"></i>
-            </div>
-          </div>
-          <h5 class="fw-semibold" data-lang-fr="Diffusion des connaissances" data-lang-en="Knowledge dissemination">Diffusion des connaissances</h5>
-          <p data-lang-fr="Publication de recherches et présentations lors de forums internationaux." data-lang-en="Publishing research and presenting at international forums.">Publication de recherches et présentations lors de forums internationaux.</p>
-          <!--<a href="#" class="btn btn-link text-decoration-none">En savoir plus <i class="bi bi-arrow-right"></i></a>-->
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
-<!-- /Services Section -->
 
-    <!-- Publications & Working Papers -->
-    <section id="publications" class="section py-5">
-      <div class="container">
-        <div class="section-title text-center mb-5" data-aos="fade-up">
-          <h2 data-lang-fr="Publications & Working Papers" data-lang-en="Publications & Working Papers">Publications & Working Papers</h2>
-          <p data-lang-fr="Accédez à nos rapports, analyses et ressources de recherche institutionnelle." data-lang-en="Access our reports, analyses, and institutional research resources.">Accédez à nos rapports, analyses et ressources de recherche institutionnelle.</p>
-        </div>
-        <div class="row g-4">
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="publication-card p-4 rounded-4 shadow-sm h-100 bg-white">
-              <h3 data-lang-fr="Rapport annuel 2025" data-lang-en="Annual Report 2025">Rapport annuel 2025</h3>
-              <p data-lang-fr="Analyse des résultats, recommandations stratégiques et direction future." data-lang-en="Analysis of results, strategic recommendations and future direction.">Analyse des résultats, recommandations stratégiques et direction future.</p>
-              <a href="#" class="link-primary" data-lang-fr="Télécharger" data-lang-en="Download">Télécharger</a>
-            </div>
-          </div>
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="publication-card p-4 rounded-4 shadow-sm h-100 bg-white">
-              <h3 data-lang-fr="Working paper : Éducation" data-lang-en="Working paper: Education">Working paper: Éducation</h3>
-              <p data-lang-fr="Étude approfondie sur l’impact des programmes éducatifs dans les zones rurales." data-lang-en="In-depth study of the impact of educational programs in rural areas.">Étude approfondie sur l’impact des programmes éducatifs dans les zones rurales.</p>
-              <a href="#" class="link-primary" data-lang-fr="Voir le dossier" data-lang-en="View the report">Voir le dossier</a>
-            </div>
-          </div>
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
-            <div class="publication-card p-4 rounded-4 shadow-sm h-100 bg-white">
-              <h3 data-lang-fr="Base de données ouverte" data-lang-en="Open data portal">Base de données ouverte</h3>
-              <p data-lang-fr="Accès aux indicateurs sociaux, économiques et environnementaux." data-lang-en="Access to social, economic and environmental indicators.">Accès aux indicateurs sociaux, économiques et environnementaux.</p>
-              <a href="#" class="link-primary" data-lang-fr="Explorer" data-lang-en="Explore">Explorer</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Dashboard & Analytics -->
-    <section id="dashboard" class="section bg-light py-5">
-      <div class="container">
-        <div class="section-title text-center mb-5" data-aos="fade-up">
-          <h2 data-lang-fr="Tableau de bord" data-lang-en="Dashboard">Tableau de bord</h2>
-          <p data-lang-fr="Suivez les indicateurs clés de nos programmes et de nos publications." data-lang-en="Track key indicators for our programs and publications.">Suivez les indicateurs clés de nos programmes et de nos publications.</p>
-        </div>
-        <div class="row g-4">
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="dashboard-panel p-4 rounded-4 shadow-sm h-100 bg-white">
-              <h4 data-lang-fr="Recherche" data-lang-en="Research">Recherche</h4>
-              <p class="text-muted mb-3" data-lang-fr="Publications récentes et indicateurs d’usage." data-lang-en="Recent publications and usage metrics.">Publications récentes et indicateurs d’usage.</p>
-              <div class="dashboard-meter mb-3"><span style="width: 82%"></span></div>
-              <small class="text-muted" data-lang-fr="82% de progression annuelle" data-lang-en="82% annual progress">82% de progression annuelle</small>
-            </div>
-          </div>
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="dashboard-panel p-4 rounded-4 shadow-sm h-100 bg-white">
-              <h4 data-lang-fr="Impact" data-lang-en="Impact">Impact</h4>
-              <p class="text-muted mb-3" data-lang-fr="Partenariats internationaux et visibilité." data-lang-en="International partnerships and visibility.">Partenariats internationaux et visibilité.</p>
-              <div class="dashboard-meter mb-3"><span style="width: 91%"></span></div>
-              <small class="text-muted" data-lang-fr="91% d’engagement" data-lang-en="91% engagement">91% d’engagement</small>
-            </div>
-          </div>
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
-            <div class="dashboard-panel p-4 rounded-4 shadow-sm h-100 bg-white">
-              <h4 data-lang-fr="Données" data-lang-en="Data">Données</h4>
-              <p class="text-muted mb-3" data-lang-fr="Accès aux bases et ressources documentaires." data-lang-en="Access to data repositories and resources.">Accès aux bases et ressources documentaires.</p>
-              <div class="dashboard-meter mb-3"><span style="width: 95%"></span></div>
-              <small class="text-muted" data-lang-fr="95% de disponibilité" data-lang-en="95% availability">95% de disponibilité</small>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Timeline des projets -->
-    <section id="timeline" class="section py-5">
-      <div class="container">
-        <div class="section-title text-center mb-5" data-aos="fade-up">
-          <h2 data-lang-fr="Timeline des projets" data-lang-en="Project timeline">Timeline des projets</h2>
-          <p data-lang-fr="Une vue chronologique des jalons majeurs et des réalisations." data-lang-en="A timeline view of major milestones and achievements.">Une vue chronologique des jalons majeurs et des réalisations.</p>
-        </div>
-        <div class="timeline-list">
-          <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
-            <span class="timeline-year">2025</span>
-            <div class="timeline-content">
-              <h4 data-lang-fr="Lancement du portail de données" data-lang-en="Launch of the data portal">Lancement du portail de données</h4>
-              <p data-lang-fr="Mise en ligne d’un observatoire statistique dédié aux politiques publiques." data-lang-en="Publishing a statistical observatory dedicated to public policies.">Mise en ligne d’un observatoire statistique dédié aux politiques publiques.</p>
-            </div>
-          </div>
-          <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
-            <span class="timeline-year">2024</span>
-            <div class="timeline-content">
-              <h4 data-lang-fr="Publication d’un working paper majeur" data-lang-en="Publication of a major working paper">Publication d’un working paper majeur</h4>
-              <p data-lang-fr="Analyse comparative sur l’éducation inclusive en Afrique de l’Ouest." data-lang-en="Comparative analysis of inclusive education in West Africa.">Analyse comparative sur l’éducation inclusive en Afrique de l’Ouest.</p>
-            </div>
-          </div>
-          <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
-            <span class="timeline-year">2023</span>
-            <div class="timeline-content">
-              <h4 data-lang-fr="Déploiement d’un programme de formation" data-lang-en="Launch of a training program">Déploiement d’un programme de formation</h4>
-              <p data-lang-fr="Ateliers pour chercheurs, décideurs et partenaires internationaux." data-lang-en="Workshops for researchers, policymakers and international partners.">Ateliers pour chercheurs, décideurs et partenaires internationaux.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Ressources -->
-    <section id="resources" class="section bg-light py-5">
-      <div class="container">
-        <div class="section-title text-center mb-5" data-aos="fade-up">
-          <h2 data-lang-fr="Ressources" data-lang-en="Resources">Ressources</h2>
-          <p data-lang-fr="Accédez à nos guides, rapports, médias et supports de formation." data-lang-en="Access our guides, reports, media and training resources.">Accédez à nos guides, rapports, médias et supports de formation.</p>
-        </div>
-        <div class="row g-4">
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="resource-card p-4 rounded-4 bg-white shadow-sm h-100 text-center">
-              <i class="bi bi-file-earmark-text fs-1 text-primary mb-3"></i>
-              <h5 data-lang-fr="Rapports annuels" data-lang-en="Annual reports">Rapports annuels</h5>
-              <p data-lang-fr="Analyse détaillée des activités et de l’impact institutionnel." data-lang-en="Detailed analysis of activities and institutional impact.">Analyse détaillée des activités et de l’impact institutionnel.</p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="resource-card p-4 rounded-4 bg-white shadow-sm h-100 text-center">
-              <i class="bi bi-journal-bookmark fs-1 text-primary mb-3"></i>
-              <h5 data-lang-fr="Working papers" data-lang-en="Working papers">Working papers</h5>
-              <p data-lang-fr="Études en accès libre pour les chercheurs et décideurs." data-lang-en="Open-access studies for researchers and policymakers.">Études en accès libre pour les chercheurs et décideurs.</p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="resource-card p-4 rounded-4 bg-white shadow-sm h-100 text-center">
-              <i class="bi bi-database fs-1 text-primary mb-3"></i>
-              <h5 data-lang-fr="Bases de données" data-lang-en="Data repositories">Bases de données</h5>
-              <p data-lang-fr="Portail de données ouvertes pour analyses et visualisation." data-lang-en="Open data portal for analysis and visualization.">Portail de données ouvertes pour analyses et visualisation.</p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="resource-card p-4 rounded-4 bg-white shadow-sm h-100 text-center">
-              <i class="bi bi-camera-reels fs-1 text-primary mb-3"></i>
-              <h5 data-lang-fr="Galerie média" data-lang-en="Media gallery">Galerie média</h5>
-              <p data-lang-fr="Visuels, vidéos et archives de nos événements." data-lang-en="Visuals, videos and archives of our events.">Visuels, vidéos et archives de nos événements.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Section Événements -->
-    <section id="events" class="section py-5">
-      <div class="container">
-        <div class="section-title text-center mb-5" data-aos="fade-up">
-          <h2 data-lang-fr="Événements & conférences" data-lang-en="Events & conferences">Événements & conférences</h2>
-          <p data-lang-fr="Participez à nos forums, ateliers et rencontres internationales." data-lang-en="Join our forums, workshops and international meetings.">Participez à nos forums, ateliers et rencontres internationales.</p>
-        </div>
-        <div class="row g-4">
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="event-card p-4 rounded-4 shadow-sm bg-white h-100">
-              <h5 data-lang-fr="Symposium sur l’éducation" data-lang-en="Education symposium">Symposium sur l’éducation</h5>
-              <p data-lang-fr="Rencontre annuelle sur les enjeux d’accès et d’équité scolaire." data-lang-en="Annual meeting on access and equity in education.">Rencontre annuelle sur les enjeux d’accès et d’équité scolaire.</p>
-            </div>
-          </div>
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="event-card p-4 rounded-4 shadow-sm bg-white h-100">
-              <h5 data-lang-fr="Atelier Data & politique" data-lang-en="Data & policy workshop">Atelier Data & politique</h5>
-              <p data-lang-fr="Formation sur l’usage des données pour l’élaboration de politiques publiques." data-lang-en="Training on using data for public policy development.">Formation sur l’usage des données pour l’élaboration de politiques publiques.</p>
-            </div>
-          </div>
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
-            <div class="event-card p-4 rounded-4 shadow-sm bg-white h-100">
-              <h5 data-lang-fr="Conférence internationale" data-lang-en="International conference">Conférence internationale</h5>
-              <p data-lang-fr="Plateforme d’échanges entre chercheurs, ONG et institutions." data-lang-en="A platform for exchanges between researchers, NGOs, and institutions.">Plateforme d’échanges entre chercheurs, ONG et institutions.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="members" class="section py-5 bg-light">
-      <div class="container">
-        <div id="admin"></div>
-        <div class="row align-items-center gy-4">
-          <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
-            <h2 data-lang-fr="Portail membre & administrateur" data-lang-en="Member & administrator portal">Portail membre & administrateur</h2>
-            <p data-lang-fr="Accédez à l’espace réservé aux chercheurs, partenaires et gestionnaires institutionnels." data-lang-en="Access the reserved area for researchers, partners and institutional managers.">Accédez à l’espace réservé aux chercheurs, partenaires et gestionnaires institutionnels.</p>
-          </div>
-          <div class="col-lg-4 text-lg-end" data-aos="fade-up" data-aos-delay="200">
-            <a href="#admin" class="btn btn-primary btn-lg me-2" data-lang-fr="Portail administrateur" data-lang-en="Administrator portal">Portail administrateur</a>
-            <a href="#members" class="btn btn-outline-primary btn-lg" data-lang-fr="Espace chercheur" data-lang-en="Researcher area">Espace chercheur</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Portfolio Section -->
-<section id="portfolio" class="portfolio section">
-
-  <!-- Section Title -->
-  <div class="container section-title" data-aos="fade-up">
-    <h2 data-lang-fr="Projets de recherche" data-lang-en="Research projects">Projets de recherche</h2>
-    <p data-lang-fr="Découvrez nos initiatives structurantes et études à fort impact." data-lang-en="Discover our flagship initiatives and high-impact studies.">Découvrez nos initiatives structurantes et études à fort impact.</p>
-  </div>
-
+<!-- ─── SERVICES / EXPERTISE ─── -->
+<section id="services">
   <div class="container">
-    <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-
-      <!-- Filters -->
-      <ul class="portfolio-filters isotope-filters list-inline text-center mb-4" data-aos="fade-up" data-aos-delay="100">
-        <li class="list-inline-item active" data-filter="*" data-lang-fr="Tous" data-lang-en="All">Tous</li>
-        <li class="list-inline-item" data-filter=".filter-education" data-lang-fr="Éducation" data-lang-en="Education">Éducation</li>
-        <li class="list-inline-item" data-filter=".filter-policy" data-lang-fr="Politique" data-lang-en="Policy">Politique</li>
-        <li class="list-inline-item" data-filter=".filter-health" data-lang-fr="Santé" data-lang-en="Health">Santé</li>
-      </ul>
-
-      <!-- Portfolio Items -->
-      <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-
-        <!-- Portfolio Item -->
-        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-education">
-          <div class="bg-light rounded overflow-hidden">
-            <div class="ratio ratio-4x3">
-              <img src="assets/img/team/parental-involvement-in-education.jpg" class="img-fluid object-fit-cover w-100 h-100" alt="">
-            </div>
-            <div class="p-3">
-              <h5><span data-lang="fr">Implication des parents et apprentissage</span><span data-lang="en" class="d-none">Parental Involvement & Learning</span></h5>
-              <p><span data-lang="fr">Examiner le rôle du suivi dans les résultats des élèves</span><span data-lang="en" class="d-none">Examining the role of monitoring in student outcomes</span></p>
-              <a href="assets/img/team/parental-involvement-in-education.jpg" class="glightbox me-2"><i class="bi bi-zoom-in"></i></a>
-              <a href="portfolio-details.html"><i class="bi bi-link-45deg"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Health -->
-        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-health">
-          <div class="bg-light rounded overflow-hidden">
-            <div class="ratio ratio-4x3">
-              <img src="assets/img/team/planning.png" class="img-fluid object-fit-cover w-100 h-100" alt="">
-            </div>
-            <div class="p-3">
-              <h5><span data-lang="fr">Fécondité et utilisation de contraceptifs</span><span data-lang="en" class="d-none">Fertility and Contraceptive Use</span></h5>
-              <p><span data-lang="fr">Comprendre les déterminants de la fécondité et de la contraception</span><span data-lang="en" class="d-none">Understanding the determinants of fertility and contraception</span></p>
-              <a href="assets/img/team/planning.png" class="glightbox me-2"><i class="bi bi-zoom-in"></i></a>
-              <a href="portfolio-details.html"><i class="bi bi-link-45deg"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Gender Education -->
-        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-education">
-          <div class="bg-light rounded overflow-hidden">
-            <div class="ratio ratio-4x3">
-              <img src="assets/img/team/g-education.jpg" class="img-fluid object-fit-cover w-100 h-100" alt="">
-            </div>
-            <div class="p-3">
-              <h5><span data-lang="fr">Normes de genre et éducation des filles</span><span data-lang="en" class="d-none">Gender Norms & Girls' Education</span></h5>
-              <p><span data-lang="fr">Comment les normes de genre freinent l’éducation des filles</span><span data-lang="en" class="d-none">How gender norms hinder girls' education</span></p>
-              <a href="assets/img/team/g-education.jpg" class="glightbox me-2"><i class="bi bi-zoom-in"></i></a>
-              <a href="portfolio-details.html"><i class="bi bi-link-45deg"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Report Cards -->
-        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-education">
-          <div class="bg-light rounded overflow-hidden">
-            <div class="ratio ratio-4x3">
-              <img src="assets/img/team/report_card.png" class="img-fluid object-fit-cover w-100 h-100" alt="">
-            </div>
-            <div class="p-3">
-              <h5><span data-lang="fr">Bulletins scolaires</span><span data-lang="en" class="d-none">School Report Cards</span></h5>
-              <p><span data-lang="fr">Évaluer l’impact des rapports de performance</span><span data-lang="en" class="d-none">Evaluating the impact of performance reporting</span></p>
-              <a href="assets/img/team/report_card.png" class="glightbox me-2"><i class="bi bi-zoom-in"></i></a>
-              <a href="portfolio-details.html"><i class="bi bi-link-45deg"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Spillover Effects -->
-        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-policy">
-          <div class="bg-light rounded overflow-hidden">
-            <div class="ratio ratio-4x3">
-              <img src="assets/img/team/spillove.png" class="img-fluid object-fit-cover w-100 h-100" alt="">
-            </div>
-            <div class="p-3">
-              <h5><span data-lang="fr">Effets de débordement</span><span data-lang="en" class="d-none">Spillover Effects</span></h5>
-              <p><span data-lang="fr">Preuves issues d'ami·e·s et de frères et sœurs</span><span data-lang="en" class="d-none">Evidence from friends and siblings</span></p>
-              <a href="assets/img/team/spillove.png" class="glightbox me-2"><i class="bi bi-zoom-in"></i></a>
-              <a href="portfolio-details.html"><i class="bi bi-link-45deg"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Women's Empowerment -->
-        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-policy">
-          <div class="bg-light rounded overflow-hidden">
-            <div class="ratio ratio-4x3">
-              <img src="assets/img/team/cam_woman.png" class="img-fluid object-fit-cover w-100 h-100" alt="">
-            </div>
-            <div class="p-3">
-              <h5><span data-lang="fr">Autonomisation des femmes au Cameroun</span><span data-lang="en" class="d-none">Women's Empowerment in Cameroon</span></h5>
-              <p><span data-lang="fr">Explorer les héritages coloniaux et les rôles des femmes</span><span data-lang="en" class="d-none">Exploring colonial legacies and women’s roles</span></p>
-              <a href="assets/img/team/cam_woman.png" class="glightbox me-2"><i class="bi bi-zoom-in"></i></a>
-              <a href="portfolio-details.html"><i class="bi bi-link-45deg"></i></a>
-            </div>
-          </div>
-        </div>
-
-      </div><!-- End Portfolio Row -->
-
+    <div class="section-title" data-aos>
+      <span class="section-label" data-lang-fr="Expertises" data-lang-en="Expertise">Expertises</span>
+      <h2 data-lang-fr="Nos domaines de recherche" data-lang-en="Our research areas">Nos domaines de recherche</h2>
+      <p data-lang-fr="Innovation et impact à travers des solutions fondées sur des preuves, au service du développement en Afrique." data-lang-en="Innovation and impact through evidence-based solutions, serving development in Africa.">Innovation et impact à travers des solutions fondées sur des preuves, au service du développement en Afrique.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="services-grid" data-aos>
+      <div class="service-cell">
+        <div class="service-icon"><i class="bi bi-clipboard-data"></i></div>
+        <h5 data-lang-fr="Collecte de données" data-lang-en="Data collection">Collecte de données</h5>
+        <p data-lang-fr="Méthodologies robustes pour les expériences de terrain, les essais randomisés contrôlés et les études longitudinales." data-lang-en="Robust methodologies for field experiments, randomized controlled trials and longitudinal studies.">Méthodologies robustes pour les expériences de terrain, les essais randomisés contrôlés et les études longitudinales.</p>
+      </div>
+      <div class="service-cell">
+        <div class="service-icon"><i class="bi bi-diagram-3"></i></div>
+        <h5 data-lang-fr="Analyse de données" data-lang-en="Data analysis">Analyse de données</h5>
+        <p data-lang-fr="Traitement avancé, visualisation et analyses par apprentissage automatique pour des insights actionnables." data-lang-en="Advanced processing, visualization and machine learning analysis for actionable insights.">Traitement avancé, visualisation et analyses par apprentissage automatique pour des insights actionnables.</p>
+      </div>
+      <div class="service-cell">
+        <div class="service-icon"><i class="bi bi-bar-chart-line"></i></div>
+        <h5 data-lang-fr="Analyse des politiques" data-lang-en="Policy analysis">Analyse des politiques</h5>
+        <p data-lang-fr="Transformer les données en recommandations exploitables pour les États, les ONG et les organisations internationales." data-lang-en="Turning data into actionable recommendations for governments, NGOs and international organizations.">Transformer les données en recommandations exploitables pour les États, les ONG et les organisations internationales.</p>
+      </div>
+      <div class="service-cell">
+        <div class="service-icon"><i class="bi bi-people"></i></div>
+        <h5 data-lang-fr="Renforcement de capacités" data-lang-en="Capacity building">Renforcement de capacités</h5>
+        <p data-lang-fr="Programmes de formation pour chercheurs et décideurs à l'échelle internationale, adaptés aux réalités locales." data-lang-en="Training programs for researchers and decision-makers at an international level, tailored to local realities.">Programmes de formation pour chercheurs et décideurs à l'échelle internationale, adaptés aux réalités locales.</p>
+      </div>
+      <div class="service-cell">
+        <div class="service-icon"><i class="bi bi-graph-up"></i></div>
+        <h5 data-lang-fr="Évaluation d'impact" data-lang-en="Impact evaluation">Évaluation d'impact</h5>
+        <p data-lang-fr="Évaluer l'efficacité des programmes sociaux pour optimiser les résultats et guider les investissements futurs." data-lang-en="Evaluating the effectiveness of social programs to optimize outcomes and guide future investments.">Évaluer l'efficacité des programmes sociaux pour optimiser les résultats et guider les investissements futurs.</p>
+      </div>
+      <div class="service-cell">
+        <div class="service-icon"><i class="bi bi-journal"></i></div>
+        <h5 data-lang-fr="Diffusion des connaissances" data-lang-en="Knowledge sharing">Diffusion des connaissances</h5>
+        <p data-lang-fr="Publication de recherches et présentations lors de forums internationaux pour maximiser la portée." data-lang-en="Publishing research and presenting at international forums to maximize reach.">Publication de recherches et présentations lors de forums internationaux pour maximiser la portée.</p>
+      </div>
     </div>
   </div>
 </section>
-    <!-- /Portfolio Section -->
 
-
-<!-- Collaborators Section -->
-<section id="collaborators" class="clients section">
-
-  <!-- Section Title -->
-  <div class="container section-title" data-aos="fade-up">
-    <h2><span data-lang="fr">Nos collaborateurs</span><span data-lang="en" class="d-none">Our Collaborators</span></h2>
-    <p><span data-lang="fr">Nous avons collaboré avec des chercheur·e·s des institutions suivantes</span><span data-lang="en" class="d-none">We have collaborated with researchers from the following institutions</span></p>
-  </div><!-- End Section Title -->
-
-  <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-    <div class="row g-0 clients-wrap">
-
-      <!-- Collaborator 1 -->
-      <div class="col-xl-3 col-md-4 client-logo">
-        <img src="assets/img/clients/dartmouth.png" class="img-fluid" alt="Dartmouth College">
-      </div><!-- End Collaborator Item -->
-
-      <!-- Collaborator 2 -->
-      <div class="col-xl-3 col-md-4 client-logo">
-        <img src="assets/img/clients/banque_mondiale.jpeg" class="img-fluid" alt="UNICEF">
-      </div><!-- End Collaborator Item -->
-
-      <!-- Collaborator 3 -->
-      <div class="col-xl-3 col-md-4 client-logo">
-        <img src="assets/img/clients/illinois.jpg" class="img-fluid" alt="World Bank">
-      </div><!-- End Collaborator Item -->
-
-      <!-- Collaborator 4 -->
-      <div class="col-xl-3 col-md-4 client-logo">
-        <img src="assets/img/clients/william_college.png" class="img-fluid" alt="Northwestern University">
-      </div><!-- End Collaborator Item -->
-
+<!-- ─── PUBLICATIONS ─── -->
+<section id="publications">
+  <div class="container">
+    <div class="section-title" data-aos>
+      <span class="section-label" data-lang-fr="Savoir & Recherche" data-lang-en="Knowledge & Research">Savoir & Recherche</span>
+      <h2 data-lang-fr="Publications & Working Papers" data-lang-en="Publications & Working Papers">Publications & Working Papers</h2>
+      <p data-lang-fr="Accédez à nos rapports, analyses et ressources de recherche institutionnelle en libre accès." data-lang-en="Access our reports, analyses and institutional research resources in open access.">Accédez à nos rapports, analyses et ressources de recherche institutionnelle en libre accès.</p>
+      <div class="divider"></div>
     </div>
-
+    <div class="publications-layout" data-aos>
+      <div class="pub-featured">
+        <div class="pub-featured-img">
+          <img src="assets/img/hero-carousel/hero-carousel-3.jpeg" alt="Rapport annuel 2025" data-lang-alt-fr="Rapport annuel 2025" data-lang-alt-en="Annual report 2025">
+        </div>
+        <div class="pub-featured-body">
+          <span class="pub-type" data-lang-fr="Rapport annuel" data-lang-en="Annual report">Rapport annuel</span>
+          <h3 data-lang-fr="Rapport Institutionnel 2025" data-lang-en="Institutional Report 2025">Rapport Institutionnel 2025</h3>
+          <p data-lang-fr="Analyse complète des résultats, recommandations stratégiques et perspectives pour les années à venir. Un regard sur l'impact de nos programmes." data-lang-en="Comprehensive analysis of results, strategic recommendations and outlook for the coming years. A look at our program impact.">Analyse complète des résultats, recommandations stratégiques et perspectives pour les années à venir. Un regard sur l'impact de nos programmes.</p>
+          <a href="#" class="pub-link" data-lang-fr="Télécharger le rapport" data-lang-en="Download the report">Télécharger le rapport <i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="pub-card">
+        <span class="pub-type" style="display:inline-block;margin-bottom:0.75rem;font-family:var(--font-mono);font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold-pale);padding:3px 10px;border-radius:2px;" data-lang-fr="Working Paper" data-lang-en="Working Paper">Working Paper</span>
+        <h4 data-lang-fr="Éducation inclusive en Afrique de l'Ouest" data-lang-en="Inclusive education in West Africa">Éducation inclusive en Afrique de l'Ouest</h4>
+        <p data-lang-fr="Étude approfondie sur l'impact des programmes éducatifs dans les zones rurales du Bénin, du Cameroun et du Sénégal." data-lang-en="In-depth study of the impact of educational programs in rural areas of Benin, Cameroon and Senegal.">Étude approfondie sur l'impact des programmes éducatifs dans les zones rurales du Bénin, du Cameroun et du Sénégal.</p>
+        <a href="#" class="pub-link" style="font-size:13px;font-weight:500;color:var(--navy);text-decoration:none;display:inline-flex;align-items:center;gap:6px;border-bottom:1.5px solid var(--gold);padding-bottom:2px;" data-lang-fr="Voir le dossier" data-lang-en="View the brief">Voir le dossier <i class="bi bi-arrow-right"></i></a>
+      </div>
+      <div class="pub-card">
+        <span class="pub-type" style="display:inline-block;margin-bottom:0.75rem;font-family:var(--font-mono);font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold-pale);padding:3px 10px;border-radius:2px;" data-lang-fr="Base de données" data-lang-en="Database">Base de données</span>
+        <h4 data-lang-fr="Portail de données ouvertes" data-lang-en="Open data portal">Portail de données ouvertes</h4>
+        <p data-lang-fr="Accès libre aux indicateurs sociaux, économiques et environnementaux collectés dans le cadre de nos programmes de terrain." data-lang-en="Free access to social, economic and environmental indicators collected through our field programs.">Accès libre aux indicateurs sociaux, économiques et environnementaux collectés dans le cadre de nos programmes de terrain.</p>
+        <a href="#" class="pub-link" style="font-size:13px;font-weight:500;color:var(--navy);text-decoration:none;display:inline-flex;align-items:center;gap:6px;border-bottom:1.5px solid var(--gold);padding-bottom:2px;" data-lang-fr="Explorer les données" data-lang-en="Explore the data">Explorer les données <i class="bi bi-arrow-right"></i></a>
+      </div>
+    </div>
   </div>
+</section>
 
-</section><!-- /Collaborators Section -->
+<!-- ─── DASHBOARD ─── -->
+<section id="dashboard">
+  <div class="container">
+    <div class="section-title" data-aos>
+      <span class="section-label" data-lang-fr="Indicateurs" data-lang-en="Metrics">Indicateurs</span>
+      <h2 data-lang-fr="Tableau de bord institutionnel" data-lang-en="Institutional dashboard">Tableau de bord institutionnel</h2>
+      <p data-lang-fr="Suivez les indicateurs clés de nos programmes, publications et engagements sur le terrain." data-lang-en="Track key metrics for our programs, publications and field commitments.">Suivez les indicateurs clés de nos programmes, publications et engagements sur le terrain.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="dashboard-grid">
+      <div class="dash-panel" data-aos data-aos-delay="100">
+        <h4 data-lang-fr="Activité de recherche" data-lang-en="Research activity">Activité de recherche</h4>
+        <p data-lang-fr="Publications récentes et citations académiques" data-lang-en="Recent publications and academic citations">Publications récentes et citations académiques</p>
+        <div class="dash-meter-wrap">
+          <div class="dash-meter-label"><span data-lang-fr="Progression annuelle" data-lang-en="Annual progress">Progression annuelle</span><span>82%</span></div>
+          <div class="dash-meter"><span style="width:82%"></span></div>
+        </div>
+        <div class="dash-meter-wrap">
+          <div class="dash-meter-label"><span data-lang-fr="Taux de citation" data-lang-en="Citation rate">Taux de citation</span><span>74%</span></div>
+          <div class="dash-meter"><span style="width:74%"></span></div>
+        </div>
+        <span class="dash-big-num">48</span>
+      </div>
+      <div class="dash-panel" data-aos data-aos-delay="200">
+        <h4 data-lang-fr="Impact & Partenariats" data-lang-en="Impact & Partnerships">Impact & Partenariats</h4>
+        <p data-lang-fr="Collaboration internationale et visibilité" data-lang-en="International collaboration and visibility">Collaboration internationale et visibilité</p>
+        <div class="dash-meter-wrap">
+          <div class="dash-meter-label"><span data-lang-fr="Engagement partenaires" data-lang-en="Partner engagement">Engagement partenaires</span><span>91%</span></div>
+          <div class="dash-meter"><span style="width:91%"></span></div>
+        </div>
+        <div class="dash-meter-wrap">
+          <div class="dash-meter-label"><span data-lang-fr="Couverture géographique" data-lang-en="Geographic coverage">Couverture géographique</span><span>67%</span></div>
+          <div class="dash-meter"><span style="width:67%"></span></div>
+        </div>
+        <span class="dash-big-num">9</span>
+      </div>
+      <div class="dash-panel" data-aos data-aos-delay="300">
+        <h4 data-lang-fr="Accès aux données" data-lang-en="Data access">Accès aux données</h4>
+        <p data-lang-fr="Bases de données et ressources ouvertes" data-lang-en="Open data portals and resources">Bases de données et ressources ouvertes</p>
+        <div class="dash-meter-wrap">
+          <div class="dash-meter-label"><span data-lang-fr="Disponibilité" data-lang-en="Availability">Disponibilité</span><span>95%</span></div>
+          <div class="dash-meter"><span style="width:95%"></span></div>
+        </div>
+        <div class="dash-meter-wrap">
+          <div class="dash-meter-label"><span data-lang-fr="Utilisation externe" data-lang-en="External usage">Utilisation externe</span><span>88%</span></div>
+          <div class="dash-meter"><span style="width:88%"></span></div>
+        </div>
+        <span class="dash-big-num">3.2K</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-
-  </main>
-
-  <footer id="footer" class="footer dark-background">
-    <div class="container footer-top">
-      <div class="row gy-4">
-        <div class="col-lg-4 col-md-6 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center">
-            <span class="sitename">KEMT Center</span>
-          </a>
-          <div class="footer-contact pt-3">
-            <p><span data-lang="fr">République du Bénin</span><span data-lang="en" class="d-none">Benin Republic</span></p>
-            <p><span data-lang="fr">Abomey-Calavi, TANKPE</span><span data-lang="en" class="d-none">Abomey-calavi, TANKPE</span></p>
-            <p class="mt-3"><strong><span data-lang="fr">Email :</span><span data-lang="en" class="d-none">Email:</span></strong> <span>research@kemt.com</span></p>
+<!-- ─── TIMELINE ─── -->
+<section id="timeline">
+  <div class="container">
+    <div class="section-title" data-aos>
+      <span class="section-label" data-lang-fr="Jalons" data-lang-en="Milestones">Jalons</span>
+      <h2 data-lang-fr="Notre parcours institutionnel" data-lang-en="Our institutional journey">Notre parcours institutionnel</h2>
+      <p data-lang-fr="Une vue chronologique des étapes clés et des réalisations qui ont façonné notre institution." data-lang-en="A timeline view of key milestones and achievements that shaped our institution.">Une vue chronologique des étapes clés et des réalisations qui ont façonné notre institution.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="row">
+      <div class="col-lg-7 mx-auto">
+        <div class="timeline-track">
+          <div class="tl-item" data-aos data-aos-delay="100">
+            <span class="tl-year">2025</span>
+            <h4 data-lang-fr="Lancement du portail de données ouvertes" data-lang-en="Launch of the open data portal">Lancement du portail de données ouvertes</h4>
+            <p data-lang-fr="Mise en ligne d'un observatoire statistique dédié aux politiques publiques en Afrique de l'Ouest, accessible aux chercheurs du monde entier." data-lang-en="Launched a statistical observatory for public policy in West Africa, accessible to researchers worldwide.">Mise en ligne d'un observatoire statistique dédié aux politiques publiques en Afrique de l'Ouest, accessible aux chercheurs du monde entier.</p>
           </div>
-          <div class="social-links d-flex mt-4">
-            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-            <a href="#" class="researchgate"><i class="bi bi-journal"></i></a>
-            <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+          <div class="tl-item" data-aos data-aos-delay="200">
+            <span class="tl-year">2024</span>
+            <h4 data-lang-fr="Publication d'un working paper majeur" data-lang-en="Publication of a major working paper">Publication d'un working paper majeur</h4>
+            <p data-lang-fr="Analyse comparative sur l'éducation inclusive en Afrique de l'Ouest, citée par quatre institutions partenaires internationales." data-lang-en="Comparative analysis of inclusive education in West Africa, cited by four international partner institutions.">Analyse comparative sur l'éducation inclusive en Afrique de l'Ouest, citée par quatre institutions partenaires internationales.</p>
           </div>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4><span data-lang="fr">Éthique de la recherche</span><span data-lang="en" class="d-none">Research Ethics</span></h4>
-          <ul>
-            <li><a href="#"><span data-lang="fr">Protocoles IRB</span><span data-lang="en" class="d-none">IRB protocols</span></a></li>
-            <li><a href="#"><span data-lang="fr">Confidentialité des données</span><span data-lang="en" class="d-none">Data privacy</span></a></li>
-            <li><a href="#"><span data-lang="fr">Normes de terrain</span><span data-lang="en" class="d-none">Field standards</span></a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4><span data-lang="fr">Publications</span><span data-lang="en" class="d-none">Publications</span></h4>
-          <ul>
-            <li><a href="#"><span data-lang="fr">Documents de travail</span><span data-lang="en" class="d-none">Working Papers</span></a></li>
-            <li><a href="#"><span data-lang="fr">Articles scientifiques</span><span data-lang="en" class="d-none">Research articles</span></a></li>
-            <li><a href="#"><span data-lang="fr">Notes de politique</span><span data-lang="en" class="d-none">Policy briefs</span></a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-4 col-md-12 footer-newsletter">
-          <h4><span data-lang="fr">Actualités de la recherche</span><span data-lang="en" class="d-none">Research Updates</span></h4>
-          <p><span data-lang="fr">Abonnez-vous pour recevoir nos dernières publications et mises à jour de projets</span><span data-lang="en" class="d-none">Subscribe to receive our latest publications and project updates</span></p>
-          <form action="forms/newsletter.php" method="post" class="php-email-form">
-            <div class="newsletter-form"><input type="email" name="email" data-lang-placeholder-fr="Votre email" data-lang-placeholder-en="Your email" placeholder="Votre email">
-            <button type="submit"><span data-lang="fr">S'abonner</span><span data-lang="en" class="d-none">Subscribe</span></button></div>
-          </form>
+          <div class="tl-item" data-aos data-aos-delay="300">
+            <span class="tl-year">2023</span>
+            <h4 data-lang-fr="Déploiement du programme de formation" data-lang-en="Launch of the training program">Déploiement du programme de formation</h4>
+            <p data-lang-fr="Ateliers pour chercheurs, décideurs et partenaires internationaux dans cinq pays de la sous-région." data-lang-en="Workshops for researchers, policymakers and international partners across five countries in the sub-region.">Ateliers pour chercheurs, décideurs et partenaires internationaux dans cinq pays de la sous-région.</p>
+          </div>
+          <div class="tl-item" data-aos data-aos-delay="400">
+            <span class="tl-year">2022</span>
+            <h4 data-lang-fr="Partenariat avec Dartmouth College" data-lang-en="Partnership with Dartmouth College">Partenariat avec Dartmouth College</h4>
+            <p data-lang-fr="Accord cadre de collaboration scientifique portant sur l'évaluation d'impact des programmes d'éducation et de santé." data-lang-en="Framework agreement for scientific collaboration on impact evaluation of education and health programs.">Accord cadre de collaboration scientifique portant sur l'évaluation d'impact des programmes d'éducation et de santé.</p>
+          </div>
         </div>
       </div>
     </div>
+  </div>
+</section>
 
-    <div class="container copyright text-center mt-4">
-      <div class="social-icons">
-      <a href="#"><i class="bi bi-phone"></i></a>
-      <a href="#"><i class="bi bi-envelope"></i></a>
-      <a href="#"><i class="bi bi-camera"></i></a>
-      <a href="#"><i class="bi bi-journal-text"></i></a>
+<!-- ─── PORTFOLIO / PROJECTS ─── -->
+<section id="portfolio">
+  <div class="container">
+    <div class="section-title" data-aos>
+      <span class="section-label" data-lang-fr="Initiatives" data-lang-en="Initiatives">Initiatives</span>
+      <h2 data-lang-fr="Projets de recherche" data-lang-en="Research projects">Projets de recherche</h2>
+      <p data-lang-fr="Découvrez nos initiatives structurantes et études à fort impact sur les communautés d'Afrique subsaharienne." data-lang-en="Discover our flagship initiatives and high-impact studies for communities across Sub-Saharan Africa.">Découvrez nos initiatives structurantes et études à fort impact sur les communautés d'Afrique subsaharienne.</p>
+      <div class="divider"></div>
     </div>
-      <p>© <span data-lang="fr">Droits d’auteur</span><span data-lang="en" class="d-none">Copyright</span> <strong class="px-1 sitename">KEMT Center</strong> <span data-lang="fr">Tous droits réservés</span><span data-lang="en" class="d-none">All Rights Reserved</span></p>
-      <div class="credits">
-        <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> -->
+    <ul class="portfolio-filters" data-aos>
+      <li class="active" data-filter="*" data-lang-fr="Tous les projets" data-lang-en="All projects">Tous les projets</li>
+      <li data-filter=".filter-education" data-lang-fr="Éducation" data-lang-en="Education">Éducation</li>
+      <li data-filter=".filter-policy" data-lang-fr="Politiques" data-lang-en="Policy">Politiques</li>
+      <li data-filter=".filter-health" data-lang-fr="Santé" data-lang-en="Health">Santé</li>
+    </ul>
+    <div class="portfolio-grid" id="portfolioGrid" data-aos>
+      <div class="portfolio-item filter-education">
+        <img src="assets/img/team/parental-involvement-in-education.jpg" alt="Implication parentale" data-lang-alt-fr="Implication parentale" data-lang-alt-en="Parental involvement">
+        <div class="portfolio-overlay">
+          <span class="portfolio-cat" data-lang-fr="Éducation" data-lang-en="Education">Éducation</span>
+          <h5 data-lang-fr="Implication des parents et apprentissage" data-lang-en="Parental involvement and learning">Implication des parents et apprentissage</h5>
+          <p data-lang-fr="Le rôle du suivi parental dans les résultats des élèves" data-lang-en="The role of parental engagement in student outcomes">Le rôle du suivi parental dans les résultats des élèves</p>
+          <div class="portfolio-actions">
+            <a href="assets/img/team/parental-involvement-in-education.jpg" aria-label="Agrandir"><i class="bi bi-zoom-in"></i></a>
+            <a href="portfolio-details.html" aria-label="Voir le projet"><i class="bi bi-link-45deg"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="portfolio-item filter-health">
+        <img src="assets/img/team/planning.png" alt="Fécondité et contraception" data-lang-alt-fr="Fécondité et contraception" data-lang-alt-en="Fertility and contraception">
+        <div class="portfolio-overlay">
+          <span class="portfolio-cat" data-lang-fr="Santé" data-lang-en="Health">Santé</span>
+          <h5 data-lang-fr="Fécondité et utilisation de contraceptifs" data-lang-en="Fertility and contraceptive use">Fécondité et utilisation de contraceptifs</h5>
+          <p data-lang-fr="Déterminants de la fécondité et de la contraception en Afrique" data-lang-en="Determinants of fertility and contraception in Africa">Déterminants de la fécondité et de la contraception en Afrique</p>
+          <div class="portfolio-actions">
+            <a href="assets/img/team/planning.png" aria-label="Agrandir"><i class="bi bi-zoom-in"></i></a>
+            <a href="portfolio-details.html" aria-label="Voir le projet"><i class="bi bi-link-45deg"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="portfolio-item filter-education">
+        <img src="assets/img/team/g-education.jpg" alt="Normes de genre" data-lang-alt-fr="Normes de genre" data-lang-alt-en="Gender norms">
+        <div class="portfolio-overlay">
+          <span class="portfolio-cat" data-lang-fr="Éducation · Genre" data-lang-en="Education · Gender">Éducation · Genre</span>
+          <h5 data-lang-fr="Normes de genre et éducation des filles" data-lang-en="Gender norms and girls' education">Normes de genre et éducation des filles</h5>
+          <p data-lang-fr="Comment les normes sociales freinent l'éducation féminine" data-lang-en="How social norms hinder girls' education">Comment les normes sociales freinent l'éducation féminine</p>
+          <div class="portfolio-actions">
+            <a href="assets/img/team/g-education.jpg" aria-label="Agrandir"><i class="bi bi-zoom-in"></i></a>
+            <a href="portfolio-details.html" aria-label="Voir le projet"><i class="bi bi-link-45deg"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="portfolio-item filter-education">
+        <img src="assets/img/team/report_card.png" alt="Bulletins scolaires" data-lang-alt-fr="Bulletins scolaires" data-lang-alt-en="Report cards">
+        <div class="portfolio-overlay">
+          <span class="portfolio-cat" data-lang-fr="Éducation" data-lang-en="Education">Éducation</span>
+          <h5 data-lang-fr="Bulletins scolaires & performance" data-lang-en="Report cards & performance">Bulletins scolaires & performance</h5>
+          <p data-lang-fr="Évaluer l'impact des rapports de performance sur les résultats" data-lang-en="Assessing the impact of performance reports on outcomes">Évaluer l'impact des rapports de performance sur les résultats</p>
+          <div class="portfolio-actions">
+            <a href="assets/img/team/report_card.png" aria-label="Agrandir"><i class="bi bi-zoom-in"></i></a>
+            <a href="portfolio-details.html" aria-label="Voir le projet"><i class="bi bi-link-45deg"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="portfolio-item filter-policy">
+        <img src="assets/img/team/spillove.png" alt="Effets de débordement" data-lang-alt-fr="Effets de débordement" data-lang-alt-en="Spillover effects">
+        <div class="portfolio-overlay">
+          <span class="portfolio-cat" data-lang-fr="Politiques publiques" data-lang-en="Public policy">Politiques publiques</span>
+          <h5 data-lang-fr="Effets de débordement" data-lang-en="Spillover effects">Effets de débordement</h5>
+          <p data-lang-fr="Preuves issues de réseaux d'amis et de fratries" data-lang-en="Evidence from friendship and sibling networks">Preuves issues de réseaux d'amis et de fratries</p>
+          <div class="portfolio-actions">
+            <a href="assets/img/team/spillove.png" aria-label="Agrandir"><i class="bi bi-zoom-in"></i></a>
+            <a href="portfolio-details.html" aria-label="Voir le projet"><i class="bi bi-link-45deg"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="portfolio-item filter-policy">
+        <img src="assets/img/team/cam_woman.png" alt="Autonomisation des femmes" data-lang-alt-fr="Autonomisation des femmes" data-lang-alt-en="Women empowerment">
+        <div class="portfolio-overlay">
+          <span class="portfolio-cat" data-lang-fr="Politiques · Genre" data-lang-en="Policy · Gender">Politiques · Genre</span>
+          <h5 data-lang-fr="Autonomisation des femmes au Cameroun" data-lang-en="Women empowerment in Cameroon">Autonomisation des femmes au Cameroun</h5>
+          <p data-lang-fr="Héritages coloniaux et rôles économiques des femmes" data-lang-en="Colonial legacies and women's economic roles">Héritages coloniaux et rôles économiques des femmes</p>
+          <div class="portfolio-actions">
+            <a href="assets/img/team/cam_woman.png" aria-label="Agrandir"><i class="bi bi-zoom-in"></i></a>
+            <a href="portfolio-details.html" aria-label="Voir le projet"><i class="bi bi-link-45deg"></i></a>
+          </div>
+        </div>
       </div>
     </div>
-    
-  </footer>
+  </div>
+</section>
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+<!-- ─── EVENTS ─── -->
+<section id="events">
+  <div class="container">
+    <div class="section-title" data-aos>
+      <span class="section-label" data-lang-fr="Agenda" data-lang-en="Agenda">Agenda</span>
+      <h2 data-lang-fr="Événements & conférences" data-lang-en="Events & conferences">Événements & conférences</h2>
+      <p data-lang-fr="Participez à nos forums, ateliers et rencontres internationales pour échanger autour de la recherche appliquée." data-lang-en="Join our forums, workshops and international meetings to discuss applied research.">Participez à nos forums, ateliers et rencontres internationales pour échanger autour de la recherche appliquée.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="events-carousel-wrapper" data-aos>
+      <div class="events-track" id="eventsTrack">
 
-  <!-- Preloader -->
-<div id="preloader">
-  <div class="ring-loader"><span></span></div>
-  <div class="preloader-text"><strong>KEMT Center</strong><small>Recherche & Impact</small></div>
-</div>
+        <div class="event-card">
+          <div class="event-img">
+            <img src="assets/img/hero-carousel/hero-carousel-1.jpeg" alt="Symposium éducation" data-lang-alt-fr="Symposium éducation" data-lang-alt-en="Education symposium" loading="lazy">
+          </div>
+          <div class="event-body">
+            <span class="event-date" data-lang-fr="<i class=\"bi bi-calendar3\"></i> Juillet 2025 · Cotonou" data-lang-en="<i class=\"bi bi-calendar3\"></i> July 2025 · Cotonou"><i class="bi bi-calendar3"></i> Juillet 2025 · Cotonou</span>
+            <h5 data-lang-fr="Symposium sur l'éducation inclusive" data-lang-en="Inclusive education symposium">Symposium sur l'éducation inclusive</h5>
+            <p data-lang-fr="Rencontre annuelle sur les enjeux d'accès et d'équité scolaire en Afrique francophone. Chercheurs, ONG et décideurs réunis." data-lang-en="Annual gathering on access and equity in schooling in Francophone Africa. Researchers, NGOs and policymakers brought together.">Rencontre annuelle sur les enjeux d'accès et d'équité scolaire en Afrique francophone. Chercheurs, ONG et décideurs réunis.</p>
+          </div>
+        </div>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+        <div class="event-card">
+          <div class="event-img">
+            <img src="assets/img/hero-carousel/hero-carousel-3.jpeg" alt="Atelier Data" data-lang-alt-fr="Atelier Data" data-lang-alt-en="Data workshop" loading="lazy">
+          </div>
+          <div class="event-body">
+            <span class="event-date" data-lang-fr="<i class=\"bi bi-calendar3\"></i> Septembre 2025 · Abomey-Calavi" data-lang-en="<i class=\"bi bi-calendar3\"></i> September 2025 · Abomey-Calavi"><i class="bi bi-calendar3"></i> Septembre 2025 · Abomey-Calavi</span>
+            <h5 data-lang-fr="Atelier Data & politique publique" data-lang-en="Data & public policy workshop">Atelier Data & politique publique</h5>
+            <p data-lang-fr="Formation intensive sur l'usage des données pour l'élaboration et l'évaluation des politiques publiques." data-lang-en="Intensive training on using data for designing and evaluating public policy.">Formation intensive sur l'usage des données pour l'élaboration et l'évaluation des politiques publiques.</p>
+          </div>
+        </div>
 
-  <!-- Main JS File -->
-  <script src="assets/js/include-html.js"></script>
-  <script src="assets/js/lang-switcher.js"></script>
-  <script src="assets/js/main.js"></script>
-  <!-- jQuery (required by Isotope) -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <div class="event-card">
+          <div class="event-img">
+            <img src="assets/img/hero-carousel/hero-carousel-4.jpeg" alt="Conférence internationale" data-lang-alt-fr="Conférence internationale" data-lang-alt-en="International conference" loading="lazy">
+          </div>
+          <div class="event-body">
+            <span class="event-date" data-lang-fr="<i class=\"bi bi-calendar3\"></i> Novembre 2025 · Dakar" data-lang-en="<i class=\"bi bi-calendar3\"></i> November 2025 · Dakar"><i class="bi bi-calendar3"></i> Novembre 2025 · Dakar</span>
+            <h5 data-lang-fr="Conférence internationale CKDEV" data-lang-en="CKDEV international conference">Conférence internationale CKDEV</h5>
+            <p data-lang-fr="Plateforme d'échanges entre chercheurs, ONG et institutions pour présenter les résultats de nos programmes." data-lang-en="A platform for researchers, NGOs and institutions to present our program results.">Plateforme d'échanges entre chercheurs, ONG et institutions pour présenter les résultats de nos programmes.</p>
+          </div>
+        </div>
 
-<!-- Isotope -->
-<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+        <div class="event-card">
+          <div class="event-img">
+            <img src="assets/img/hero-carousel/hero-carousel-2.jpeg" alt="Forum développement" data-lang-alt-fr="Forum développement" data-lang-alt-en="Development forum" loading="lazy">
+          </div>
+          <div class="event-body">
+            <span class="event-date" data-lang-fr="<i class=\"bi bi-calendar3\"></i> Décembre 2025 · Lomé" data-lang-en="<i class=\"bi bi-calendar3\"></i> December 2025 · Lomé"><i class="bi bi-calendar3"></i> Décembre 2025 · Lomé</span>
+            <h5 data-lang-fr="Forum régional développement durable" data-lang-en="Regional sustainable development forum">Forum régional développement durable</h5>
+            <p data-lang-fr="Rencontres interdisciplinaires sur les défis environnementaux, sociaux et économiques de la sous-région." data-lang-en="Interdisciplinary meetings on the environmental, social and economic challenges of the sub-region.">Rencontres interdisciplinaires sur les défis environnementaux, sociaux et économiques de la sous-région.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="events-nav">
+      <button id="eventsPrev" aria-label="Événement précédent"><i class="bi bi-chevron-left"></i></button>
+      <button id="eventsNext" aria-label="Événement suivant"><i class="bi bi-chevron-right"></i></button>
+    </div>
+  </div>
+</section>
+
+<!-- ─── RESOURCES ─── -->
+<section id="resources">
+  <div class="container">
+    <div class="section-title" data-aos>
+      <span class="section-label" data-lang-fr="Centre de ressources" data-lang-en="Resource center">Centre de ressources</span>
+      <h2 data-lang-fr="Nos ressources institutionnelles" data-lang-en="Our institutional resources">Nos ressources institutionnelles</h2>
+      <p data-lang-fr="Accédez à nos guides, rapports, bases de données et supports de formation en accès libre." data-lang-en="Access our guides, reports, databases and training materials in open access.">Accédez à nos guides, rapports, bases de données et supports de formation en accès libre.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="resources-grid" data-aos>
+      <div class="resource-card">
+        <div class="resource-icon"><i class="bi bi-file-earmark-text"></i></div>
+        <h5 data-lang-fr="Rapports annuels" data-lang-en="Annual reports">Rapports annuels</h5>
+        <p data-lang-fr="Analyse détaillée des activités annuelles et de l'impact institutionnel mesurable." data-lang-en="Detailed analysis of annual activities and measurable institutional impact.">Analyse détaillée des activités annuelles et de l'impact institutionnel mesurable.</p>
+      </div>
+      <div class="resource-card">
+        <div class="resource-icon"><i class="bi bi-journal-bookmark"></i></div>
+        <h5 data-lang-fr="Working papers" data-lang-en="Working papers">Working papers</h5>
+        <p data-lang-fr="Études en accès libre pour les chercheurs, décideurs et partenaires académiques." data-lang-en="Open access studies for researchers, decision-makers and academic partners.">Études en accès libre pour les chercheurs, décideurs et partenaires académiques.</p>
+      </div>
+      <div class="resource-card">
+        <div class="resource-icon"><i class="bi bi-database"></i></div>
+        <h5 data-lang-fr="Bases de données" data-lang-en="Databases">Bases de données</h5>
+        <p data-lang-fr="Portail de données ouvertes pour analyses quantitatives et visualisation cartographique." data-lang-en="Open data portal for quantitative analysis and mapping visualization.">Portail de données ouvertes pour analyses quantitatives et visualisation cartographique.</p>
+      </div>
+      <div class="resource-card">
+        <div class="resource-icon"><i class="bi bi-camera-reels"></i></div>
+        <h5 data-lang-fr="Galerie & médias" data-lang-en="Gallery & media">Galerie & médias</h5>
+        <p data-lang-fr="Visuels, vidéos documentaires et archives photographiques de nos activités terrain." data-lang-en="Images, documentary videos and photographic archives of our field activities.">Visuels, vidéos documentaires et archives photographiques de nos activités terrain.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── COLLABORATORS ─── -->
+<section id="collaborators">
+  <div class="container">
+    <div class="collab-title" data-aos>
+      <span class="section-label" style="display:block;text-align:center;margin-bottom:0.5rem">Partenaires académiques</span>
+      <h2>Nos collaborateurs</h2>
+      <p>Nous avons collaboré avec des chercheur·e·s des institutions suivantes</p>
+    </div>
+    <div class="collab-track-wrap" data-aos>
+      <div class="collab-track" id="collabTrack">
+        <img src="assets/img/clients/dartmouth.png" alt="Dartmouth College" class="collab-logo">
+        <img src="assets/img/clients/banque_mondiale.jpeg" alt="Banque Mondiale" class="collab-logo">
+        <img src="assets/img/clients/illinois.jpg" alt="University of Illinois" class="collab-logo">
+        <img src="assets/img/clients/william_college.png" alt="Williams College" class="collab-logo">
+        <img src="assets/img/clients/dartmouth.png" alt="Dartmouth College" class="collab-logo" aria-hidden="true">
+        <img src="assets/img/clients/banque_mondiale.jpeg" alt="Banque Mondiale" class="collab-logo" aria-hidden="true">
+        <img src="assets/img/clients/illinois.jpg" alt="University of Illinois" class="collab-logo" aria-hidden="true">
+        <img src="assets/img/clients/william_college.png" alt="Williams College" class="collab-logo" aria-hidden="true">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CTA ─── -->
+<section id="cta">
+  <div class="container">
+    <div class="cta-inner" data-aos>
+      <span class="section-label" style="color:var(--gold-light)">Rejoindre KEMT Center</span>
+      <h2>Collaborons pour<br>un avenir meilleur</h2>
+      <p>Chercheurs, institutions, ONG — rejoignez notre réseau et contribuez à des recherches qui transforment des vies.</p>
+      <div class="cta-btns">
+        <a href="contact.html" class="btn-primary-gold">Prendre contact <i class="bi bi-arrow-right"></i></a>
+        <a href="careers.html" class="btn-outline-white">Voir les opportunités <i class="bi bi-briefcase"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ─── FOOTER ─── -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <span class="sitename">KEMT Center</span><span class="dot">.</span>
+        </a>
+        <p>Centre international de recherche dédié à l'innovation sociale, aux politiques publiques fondées sur des preuves et au développement durable en Afrique.</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social-btn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          <a href="#" class="footer-social-btn" aria-label="ResearchGate"><i class="bi bi-journal"></i></a>
+          <a href="#" class="footer-social-btn" aria-label="Twitter/X"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="footer-social-btn" aria-label="Email"><i class="bi bi-envelope"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Éthique</h4>
+        <ul>
+          <li><a href="#">Protocoles IRB</a></li>
+          <li><a href="#">Confidentialité des données</a></li>
+          <li><a href="#">Normes de terrain</a></li>
+          <li><a href="#">Code de déontologie</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Publications</h4>
+        <ul>
+          <li><a href="#">Documents de travail</a></li>
+          <li><a href="#">Articles scientifiques</a></li>
+          <li><a href="#">Notes de politique</a></li>
+          <li><a href="#">Rapports annuels</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Actualités</h4>
+        <p style="font-size:14px;color:rgba(255,255,255,0.4);font-weight:300;margin-bottom:1rem;">Abonnez-vous pour recevoir nos dernières publications et mises à jour.</p>
+        <div class="newsletter-form-footer">
+          <input type="email" placeholder="Votre adresse email">
+          <button type="button">S'abonner</button>
+        </div>
+        <ul class="footer-contact-info" style="list-style:none;padding:0;">
+          <li><i class="bi bi-geo-alt"></i> Abomey-Calavi, TANKPE — Bénin</li>
+          <li><i class="bi bi-envelope"></i> research@kemtcenter.org</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2025 KEMT Center for Development. Tous droits réservés.</span>
+      <div style="display:flex;gap:1.5rem;">
+        <a href="#">Politique de confidentialité</a>
+        <a href="#">Conditions d'utilisation</a>
+        <a href="#">Accessibilité</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a href="#" id="scroll-top" aria-label="Retour en haut"><i class="bi bi-arrow-up-short"></i></a>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/lang-switcher.js"></script>
+
 <script>
-  $(document).ready(function () {
-    var $grid = $('.isotope-container').isotope({
-      itemSelector: '.portfolio-item',
-      layoutMode: 'fitRows'
-    });
-
-    $('.portfolio-filters li').on('click', function () {
-      $('.portfolio-filters li').removeClass('active');
-      $(this).addClass('active');
-
-      var filterValue = $(this).attr('data-filter');
-      $grid.isotope({ filter: filterValue });
-    });
-  });
-</script>
-  <script>
-    // Intersection Observer for animations
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animated');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, {threshold: 0.1});
-
-    // Observe all stat cards, project cards and testimonial cards
-    document.querySelectorAll('.stat-card, .project-card, .testimonial-card').forEach(el => {
-      observer.observe(el);
-    });
-
-    // Counter animation
-    const counters = document.querySelectorAll('.counter');
-    const speed = 200; // The lower the faster
-
-    counters.forEach(counter => {
-      const animate = () => {
-        const value = +counter.getAttribute('data-target');
-        const data = +counter.innerText;
-        
-        const time = value / speed;
-        if (data < value) {
-          counter.innerText = Math.ceil(data + time);
-          setTimeout(animate, 1);
-        } else {
-          counter.innerText = value;
-        }
-      }
-      
-      // Start counting when the element becomes visible
-      const observeCounter = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting) {
-          animate();
-          observeCounter.unobserve(entries[0].target);
-        }
-      }, {threshold: 0.5});
-      
-      observeCounter.observe(counter);
-    });
-  </script>
-<!-- Bootstrap Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Create carousel indicators dynamically based on the number of slides
-    const carousel = document.querySelector('#hero-carousel');
-    if (carousel) {
-      const carouselItems = carousel.querySelectorAll('.carousel-item');
-      const indicatorContainer = carousel.querySelector('.carousel-indicators');
-      if (indicatorContainer) {
-        indicatorContainer.innerHTML = '';
-        carouselItems.forEach((item, index) => {
-          const indicator = document.createElement('li');
-          indicator.setAttribute('data-bs-target', '#hero-carousel');
-          indicator.setAttribute('data-bs-slide-to', index.toString());
-          if (index === 0) {
-            indicator.classList.add('active');
-          }
-          indicatorContainer.appendChild(indicator);
-        });
-      }
-
-      // Optimize image loading
-    carouselItems.forEach(item => {
-      const img = item.querySelector('img');
-      if (img) {
-        // Add a loading attribute for better performance
-        img.setAttribute('loading', 'eager');
-        
-        // Add an onload event to handle when images are fully loaded
-        img.onload = function() {
-          item.classList.add('image-loaded');
-        };
-        
-        // Handle backup for image loading failures
-        img.onerror = function() {
-          console.warn('Failed to load carousel image');
-          // Apply a background color as fallback
-          item.style.backgroundColor = '#0d6efd';
-        };
-      }
-    });
-    
-    // Add a pause on hover feature
-    carousel.addEventListener('mouseenter', function() {
-      bootstrap.Carousel.getInstance(carousel).pause();
-    });
-    
-    carousel.addEventListener('mouseleave', function() {
-      bootstrap.Carousel.getInstance(carousel).cycle();
-    });
-  });
-</script>
-
-<script>
+// ─── PRELOADER ───
+window.addEventListener('load', () => {
   setTimeout(() => {
-    const preloader = document.getElementById('preloader');
-    if (preloader) preloader.remove();
-  }, 10000);
+    const el = document.getElementById('preloader');
+    if (el) el.classList.add('hidden');
+    setTimeout(() => el && el.remove(), 700);
+  }, 1800);
+});
+
+// ─── HEADER SCROLL ───
+window.addEventListener('scroll', () => {
+  const h = document.getElementById('header');
+  if (window.scrollY > 50) h.classList.add('scrolled');
+  else h.classList.remove('scrolled');
+  const btn = document.getElementById('scroll-top');
+  if (window.scrollY > 400) btn.classList.add('visible');
+  else btn.classList.remove('visible');
+});
+
+// ─── MOBILE NAV ───
+const mobileToggle = document.getElementById('mobileNavToggle');
+mobileToggle.addEventListener('click', () => {
+  document.body.classList.toggle('mobile-nav-active');
+  const icon = mobileToggle.querySelector('i');
+  icon.classList.toggle('bi-list');
+  icon.classList.toggle('bi-x');
+});
+document.querySelectorAll('#navmenu .dropdown > a').forEach(a => {
+  a.addEventListener('click', (e) => {
+    if (document.body.classList.contains('mobile-nav-active')) {
+      e.preventDefault();
+      a.parentElement.classList.toggle('open');
+    }
+  });
+});
+
+// ─── HERO CAROUSEL ───
+const heroSlides = document.querySelectorAll('.hero-slide');
+const dotsContainer = document.getElementById('heroDots');
+let heroIdx = 0, heroTimer;
+
+heroSlides.forEach((_, i) => {
+  const dot = document.createElement('button');
+  dot.className = 'hero-dot' + (i === 0 ? ' active' : '');
+  dot.setAttribute('aria-label', `Diapositive ${i + 1}`);
+  dot.addEventListener('click', () => gotoHero(i));
+  dotsContainer.appendChild(dot);
+});
+
+function gotoHero(n) {
+  heroSlides[heroIdx].classList.remove('active');
+  dotsContainer.children[heroIdx].classList.remove('active');
+  heroIdx = (n + heroSlides.length) % heroSlides.length;
+  heroSlides[heroIdx].classList.add('active');
+  dotsContainer.children[heroIdx].classList.add('active');
+  clearInterval(heroTimer);
+  heroTimer = setInterval(() => gotoHero(heroIdx + 1), 6000);
+}
+heroTimer = setInterval(() => gotoHero(heroIdx + 1), 6000);
+document.getElementById('heroPrev').addEventListener('click', () => gotoHero(heroIdx - 1));
+document.getElementById('heroNext').addEventListener('click', () => gotoHero(heroIdx + 1));
+
+// ─── AOS ANIMATIONS ───
+const aosObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('aos-in');
+      if (e.target.classList.contains('dash-panel')) e.target.classList.add('visible');
+      aosObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('[data-aos]').forEach(el => aosObserver.observe(el));
+
+// ─── STAT COUNTERS ───
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    const el = entry.target;
+    const target = parseInt(el.dataset.target);
+    let start = 0;
+    const duration = 1400;
+    const step = Math.ceil(target / (duration / 16));
+    const timer = setInterval(() => {
+      start += step;
+      if (start >= target) { el.textContent = target + (target >= 10 ? '+' : ''); clearInterval(timer); }
+      else el.textContent = start;
+    }, 16);
+    counterObserver.unobserve(el);
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('.stat-num[data-target]').forEach(el => counterObserver.observe(el));
+
+// ─── PORTFOLIO FILTER ───
+document.querySelectorAll('.portfolio-filters li').forEach(btn => {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.portfolio-filters li').forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
+    const filter = this.dataset.filter;
+    document.querySelectorAll('.portfolio-item').forEach(item => {
+      if (filter === '*' || item.classList.contains(filter.slice(1))) {
+        item.style.display = '';
+        item.style.opacity = '0';
+        item.style.transform = 'scale(0.95)';
+        setTimeout(() => { item.style.transition = 'opacity 0.4s, transform 0.4s'; item.style.opacity = '1'; item.style.transform = 'scale(1)'; }, 50);
+      } else {
+        item.style.opacity = '0';
+        item.style.transform = 'scale(0.9)';
+        setTimeout(() => item.style.display = 'none', 350);
+      }
+    });
+  });
+});
+
+// ─── EVENTS CAROUSEL ───
+const eventsTrack = document.getElementById('eventsTrack');
+const eventCards = eventsTrack.querySelectorAll('.event-card');
+let eventsIdx = 0;
+const visibleCount = () => window.innerWidth < 768 ? 1 : window.innerWidth < 900 ? 2 : 3;
+
+function moveEvents(dir) {
+  const max = eventCards.length - visibleCount();
+  eventsIdx = Math.min(Math.max(eventsIdx + dir, 0), max);
+  const cardW = eventCards[0].offsetWidth + 24;
+  eventsTrack.style.transform = `translateX(-${eventsIdx * cardW}px)`;
+}
+document.getElementById('eventsPrev').addEventListener('click', () => moveEvents(-1));
+document.getElementById('eventsNext').addEventListener('click', () => moveEvents(1));
+
+// ─── SMOOTH SCROLL ───
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+  });
+});
 </script>
-
 </body>
-
 </html>
-
-
