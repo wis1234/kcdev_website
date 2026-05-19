@@ -224,6 +224,15 @@
       var el = e.target.closest('[data-lang-switch]');
       if (el) setCurrentFlag(el.dataset.langSwitch);
     });
+
+    const langSelectButton = document.querySelector('.lang-select');
+    if (langSelectButton && typeof bootstrap !== 'undefined') {
+      langSelectButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        const dropdown = bootstrap.Dropdown.getOrCreateInstance(this);
+        dropdown.toggle();
+      });
+    }
   });
 
 })();

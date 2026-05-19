@@ -56,7 +56,7 @@
       <a href="member.html" class="btn btn-outline-primary btn-sm me-2"><span data-lang="fr">Espace chercheur</span><span data-lang="en" class="d-none">Researcher area</span></a>
       <div class="lang-switcher ms-3 d-none d-lg-inline-block">
         <div class="dropdown">
-          <button class="lang-select" type="button" id="langDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+          <button class="lang-select dropdown-toggle" type="button" id="langDropdown" data-bs-toggle="dropdown" aria-expanded="false">
             <img src="assets/img/flags/fr.svg" alt="Français" class="current-flag">
           </button>
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langDropdown">
