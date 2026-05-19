@@ -1,170 +1,690 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Programmes - KEMT Center</title>
-  <meta name="description" content="Programmes et départements du KEMT Center pour la recherche et l'engagement institutionnel.">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title data-lang-fr="Programmes - KEMT Center" data-lang-en="Programs - KEMT Center">Programmes - KEMT Center</title>
+  <meta name="description" content="Axes de recherche et programmes du KEMT Center : éducation, genre, développement et politique publique.">
+  <meta name="keywords" content="KEMT Center, programmes, recherche, genre, éducation, politique publique">
+
+  <!-- Favicons -->
+  <link href="assets/img/kemt_center.png" rel="icon">
+  <link href="assets/img/kemt_center.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+
+  <style type="text/css" media="all">
+    :root {
+      --gold-mid: #b8933b;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--gray-100);
+      color: var(--navy);
+    }
+
+    /* Page Title banner */
+    .page-title {
+      background: linear-gradient(rgba(10, 22, 40, 0.88), rgba(10, 22, 40, 0.88)), url('assets/img/hero-carousel/hero-carousel-2.jpeg') center/cover no-repeat !important;
+      padding: 80px 0 !important;
+      border-bottom: 2px solid rgba(201, 168, 76, 0.3) !important;
+      color: var(--white) !important;
+    }
+    .page-title h1 {
+      font-family: var(--font-display) !important;
+      font-size: 2.8rem !important;
+      font-weight: 700 !important;
+      color: var(--white) !important;
+      margin: 0 0 10px 0 !important;
+    }
+    .page-title .breadcrumbs ol {
+      font-family: var(--font-mono) !important;
+      font-size: 0.8rem !important;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .page-title .breadcrumbs ol li a { color: rgba(255,255,255,0.7) !important; }
+    .page-title .breadcrumbs ol li a:hover { color: var(--gold-light) !important; }
+    .page-title .breadcrumbs ol li.current { color: var(--gold) !important; }
+    .page-title .breadcrumbs ol li+li::before { color: rgba(255,255,255,0.3) !important; }
+
+    /* Section typography */
+    .section-title h2 {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+    .section-title p { color: var(--gray-600); max-width: 620px; margin: 0 auto; }
+    .gold-bar { width: 60px; height: 3px; background: var(--gold); margin: 1rem auto 0; }
+    .gold-bar-left { width: 50px; height: 3px; background: var(--gold); margin: 0.8rem 0 1.2rem; }
+
+    /* Research Program cards */
+    #programs {
+      background: var(--white);
+      padding: 5rem 0 6rem;
+      border-top: 1px solid var(--gray-200);
+    }
+    .program-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: 2.2rem 1.8rem;
+      height: 100%;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .program-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--gold);
+      transform: scaleY(0);
+      transform-origin: bottom;
+      transition: transform 0.35s ease;
+    }
+    .program-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(201,168,76,0.3);
+      box-shadow: var(--shadow-lg);
+    }
+    .program-card:hover::before { transform: scaleY(1); }
+    .program-card .program-icon {
+      width: 52px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius);
+      background: rgba(201,168,76,0.12);
+      color: var(--gold);
+      font-size: 1.5rem;
+      margin-bottom: 1.3rem;
+      flex-shrink: 0;
+    }
+    .program-card h4 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.6rem;
+    }
+    .program-card p {
+      font-size: 0.9rem;
+      color: var(--gray-600);
+      line-height: 1.7;
+      margin: 0;
+    }
+    .program-tag {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--gold-mid);
+      background: rgba(201,168,76,0.1);
+      border-radius: 3px;
+      padding: 2px 8px;
+      margin-bottom: 0.8rem;
+    }
+
+    /* Impact section */
+    #impact {
+      background: var(--navy);
+      padding: 5rem 0;
+    }
+    #impact h2 {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+    #impact p { color: rgba(255,255,255,0.75); }
+    .impact-stat-card {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    .impact-number {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .impact-label {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.6);
+    }
+
+    /* Testimonials */
+    #voices {
+      background: var(--gray-100);
+      padding: 5rem 0;
+    }
+    .testimonial-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      box-shadow: var(--shadow-sm);
+      border-left: 4px solid var(--gold);
+      height: 100%;
+      transition: all 0.3s ease;
+    }
+    .testimonial-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+    .testimonial-card blockquote {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--gray-700);
+      font-style: italic;
+      margin-bottom: 1.2rem;
+      padding: 0;
+      border: none;
+    }
+    .testimonial-author strong {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      color: var(--navy);
+    }
+    .testimonial-author span {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--gold-mid);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    /* CTA section */
+    #cta {
+      background: linear-gradient(rgba(10,22,40,0.93), rgba(10,22,40,0.93)), url('assets/img/hero-carousel/hero-carousel-3.jpeg') center/cover no-repeat;
+      padding: 5rem 0;
+      text-align: center;
+    }
+    #cta h2 {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+    #cta p { color: rgba(255,255,255,0.75); max-width: 540px; margin: 0 auto 2rem; }
+    .btn-gold {
+      background: var(--gold);
+      color: var(--navy);
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.75rem 2rem;
+      border-radius: 50px;
+      border: none;
+      transition: all 0.25s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-gold:hover {
+      background: var(--gold-light);
+      color: var(--navy);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(201,168,76,0.35);
+    }
+    .btn-outline-gold {
+      background: transparent;
+      color: var(--gold);
+      border: 1.5px solid var(--gold);
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.75rem 2rem;
+      border-radius: 50px;
+      transition: all 0.25s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-outline-gold:hover {
+      background: var(--gold);
+      color: var(--navy);
+      transform: translateY(-2px);
+    }
+  </style>
+
 </head>
-<body class="lang-fr">
+
+<body class="programs-page">
+
+  <!-- Header -->
   <div data-include="includes/header.html"></div>
+
   <main class="main">
-    <section class="hero py-5">
-      <div class="container">
-        <div class="swiper hero-carousel">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide" style="background-image:url('assets/img/hero-carousel/hero-carousel-1.jpg_old')">
-              <div class="hero-caption ms-3" data-aos="fade-up">
-                <h1><span data-lang="fr">Départements & Programmes</span><span data-lang="en" class="d-none">Departments & Programs</span></h1>
-                <p class="lead"><span data-lang="fr">Découvrez nos axes de recherche et programmes structurants pour un impact durable.</span><span data-lang="en" class="d-none">Explore our impactful research initiatives driving evidence-based solutions.</span></p>
-              </div>
+
+    <!-- Page Title -->
+    <div class="page-title accent-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">
+          <span data-lang="fr">Programmes &amp; Axes de Recherche</span>
+          <span data-lang="en" class="d-none">Programs &amp; Research Areas</span>
+        </h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html"><span data-lang="fr">Accueil</span><span data-lang="en" class="d-none">Home</span></a></li>
+            <li class="current">
+              <span data-lang="fr">Programmes</span>
+              <span data-lang="en" class="d-none">Programs</span>
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Research Programs Section -->
+    <section id="programs" class="section">
+
+      <div class="container section-title text-center" data-aos="fade-up">
+        <h2>
+          <span data-lang="fr">Nos Axes de Recherche</span>
+          <span data-lang="en" class="d-none">Our Research Areas</span>
+        </h2>
+        <p>
+          <span data-lang="fr">Des programmes rigoureux ancrés dans la réalité des ménages africains, avec un impact mesurable sur les politiques publiques.</span>
+          <span data-lang="en" class="d-none">Rigorous programs grounded in African household realities, delivering measurable impact on public policy.</span>
+        </p>
+        <div class="gold-bar"></div>
+      </div>
+
+      <div class="container mt-5">
+        <div class="row g-4">
+
+          <!-- Program 1: Implication Parentale -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="program-card">
+              <div class="program-icon"><i class="bi bi-people-fill"></i></div>
+              <span class="program-tag">
+                <span data-lang="fr">RCT · Éducation</span>
+                <span data-lang="en" class="d-none">RCT · Education</span>
+              </span>
+              <h4>
+                <span data-lang="fr">Implication Parentale &amp; Apprentissage</span>
+                <span data-lang="en" class="d-none">Parental Involvement &amp; Learning</span>
+              </h4>
+              <p>
+                <span data-lang="fr">Comment le suivi parental améliore les résultats scolaires des enfants. Étude par essai randomisé contrôlé dans les écoles primaires publiques du Bénin.</span>
+                <span data-lang="en" class="d-none">How parental monitoring improves children's academic outcomes. A randomized controlled trial in public primary schools of Benin.</span>
+              </p>
             </div>
-            <div class="swiper-slide" style="background-image:url('assets/img/hero-carousel/hero-carousel-2.jpg_old')"></div>
-            <div class="swiper-slide" style="background-image:url('assets/img/hero-carousel/hero-carousel-3.jpeg__')"></div>
           </div>
-          <div class="swiper-pagination"></div>
+
+          <!-- Program 2: Normes de Genre -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="program-card">
+              <div class="program-icon"><i class="bi bi-gender-ambiguous"></i></div>
+              <span class="program-tag">
+                <span data-lang="fr">Genre · STEM</span>
+                <span data-lang="en" class="d-none">Gender · STEM</span>
+              </span>
+              <h4>
+                <span data-lang="fr">Normes de Genre &amp; Éducation des Filles</span>
+                <span data-lang="en" class="d-none">Gender Norms &amp; Girls' Education</span>
+              </h4>
+              <p>
+                <span data-lang="fr">Analyse des normes sociales et culturelles freinant la participation des filles aux filières scientifiques et mathématiques dans les lycées publics.</span>
+                <span data-lang="en" class="d-none">Analysis of social and cultural norms limiting girls' participation in STEM tracks in public secondary schools.</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- Program 3: Bulletins Scolaires -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="program-card">
+              <div class="program-icon"><i class="bi bi-file-earmark-bar-graph-fill"></i></div>
+              <span class="program-tag">
+                <span data-lang="fr">Politique · Évaluation</span>
+                <span data-lang="en" class="d-none">Policy · Evaluation</span>
+              </span>
+              <h4>
+                <span data-lang="fr">Bulletins de Performance Scolaire</span>
+                <span data-lang="en" class="d-none">School Performance Report Cards</span>
+              </h4>
+              <p>
+                <span data-lang="fr">Évaluation de l'effet de la diffusion des bulletins de performance scolaire sur l'engagement des parents et l'imputabilité des enseignants.</span>
+                <span data-lang="en" class="d-none">Evaluation of the effect of school performance report card diffusion on parental engagement and teacher accountability.</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- Program 4: Digitalisation Paiements -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="program-card">
+              <div class="program-icon"><i class="bi bi-phone-fill"></i></div>
+              <span class="program-tag">
+                <span data-lang="fr">Fintech · Scolarité</span>
+                <span data-lang="en" class="d-none">Fintech · Tuition</span>
+              </span>
+              <h4>
+                <span data-lang="fr">Digitalisation des Paiements de Scolarité</span>
+                <span data-lang="en" class="d-none">Digitization of Tuition Payments</span>
+              </h4>
+              <p>
+                <span data-lang="fr">Impact de la digitalisation des frais de scolarité sur le taux d'assiduité, l'accès à l'éducation et la réduction des abandons scolaires en milieu rural.</span>
+                <span data-lang="en" class="d-none">Impact of school fee digitization on attendance rates, educational access, and reduction of school dropouts in rural settings.</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- Program 5: Effets de Diffusion -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="program-card">
+              <div class="program-icon"><i class="bi bi-diagram-3-fill"></i></div>
+              <span class="program-tag">
+                <span data-lang="fr">Spillover · Pairs</span>
+                <span data-lang="en" class="d-none">Spillover · Peers</span>
+              </span>
+              <h4>
+                <span data-lang="fr">Effets de Diffusion &amp; Pairs</span>
+                <span data-lang="en" class="d-none">Spillover Effects &amp; Peer Influence</span>
+              </h4>
+              <p>
+                <span data-lang="fr">Analyse des effets indirects de la supervision parentale sur les enfants non ciblés — frères et sœurs, amis, camarades de classe — dans un contexte rural.</span>
+                <span data-lang="en" class="d-none">Analysis of indirect effects of parental supervision on untreated children — siblings, friends, and classmates — in a rural context.</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- Program 6: Relance Post-COVID -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="program-card">
+              <div class="program-icon"><i class="bi bi-heart-pulse-fill"></i></div>
+              <span class="program-tag">
+                <span data-lang="fr">COVID-19 · Résilience</span>
+                <span data-lang="en" class="d-none">COVID-19 · Recovery</span>
+              </span>
+              <h4>
+                <span data-lang="fr">Relance Post-COVID</span>
+                <span data-lang="en" class="d-none">Post-COVID Recovery Study</span>
+              </h4>
+              <p>
+                <span data-lang="fr">Étude sur la résilience des ménages ruraux face aux chocs économiques et sanitaires liés à la pandémie de COVID-19 dans les communes rurales du Bénin.</span>
+                <span data-lang="en" class="d-none">Study on rural household resilience in response to economic and health shocks from the COVID-19 pandemic in Benin's rural municipalities.</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- Program 7: Initiative STEM Filles -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="program-card">
+              <div class="program-icon"><i class="bi bi-calculator-fill"></i></div>
+              <span class="program-tag">
+                <span data-lang="fr">STEM · Filles</span>
+                <span data-lang="en" class="d-none">STEM · Girls</span>
+              </span>
+              <h4>
+                <span data-lang="fr">Initiative STEM pour les Filles</span>
+                <span data-lang="en" class="d-none">Girls in STEM Initiative</span>
+              </h4>
+              <p>
+                <span data-lang="fr">Programme de promotion des sciences, technologie, ingénierie et mathématiques pour les lycéennes des zones défavorisées, avec des modèles féminins inspirants.</span>
+                <span data-lang="en" class="d-none">Initiative promoting science, technology, engineering, and math for secondary school girls in underserved areas, featuring inspiring female role models.</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- Program 8: Méthodes Terrain -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="program-card">
+              <div class="program-icon"><i class="bi bi-map-fill"></i></div>
+              <span class="program-tag">
+                <span data-lang="fr">Terrain · Méthodes</span>
+                <span data-lang="en" class="d-none">Fieldwork · Methods</span>
+              </span>
+              <h4>
+                <span data-lang="fr">Méthodes de Terrain &amp; Collecte</span>
+                <span data-lang="en" class="d-none">Fieldwork Methods &amp; Data Collection</span>
+              </h4>
+              <p>
+                <span data-lang="fr">Développement de protocoles d'enquête numérique via SurveyCTO, formation d'enquêteurs et garantie d'intégrité des données collectées en zones rurales.</span>
+                <span data-lang="en" class="d-none">Development of digital survey protocols via SurveyCTO, enumerator training, and ensuring data integrity in rural collection zones.</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- Program 9: Actions Sociales -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="program-card">
+              <div class="program-icon"><i class="bi bi-award-fill"></i></div>
+              <span class="program-tag">
+                <span data-lang="fr">Social · Impact</span>
+                <span data-lang="en" class="d-none">Social · Impact</span>
+              </span>
+              <h4>
+                <span data-lang="fr">Actions Sociales KEMT</span>
+                <span data-lang="en" class="d-none">KEMT Social Actions</span>
+              </h4>
+              <p>
+                <span data-lang="fr">Bourses scolaires pour étudiants défavorisés, aide médicale d'urgence, et engagement communautaire à travers des partenariats locaux pérennes.</span>
+                <span data-lang="en" class="d-none">School scholarships for disadvantaged students, emergency medical aid, and community engagement through sustainable local partnerships.</span>
+              </p>
+            </div>
+          </div>
+
         </div>
       </div>
-    </section>
+    </section><!-- /Research Programs Section -->
 
-    <section class="content-section" aria-labelledby="research-initiatives">
+    <!-- Impact Statistics -->
+    <section id="impact">
       <div class="container">
-        <div class="row align-items-center gy-4">
-          <div class="col-12 mb-3">
-            <h2 id="research-initiatives" data-aos="fade-up"> <span data-lang="fr">Axes de recherche</span><span data-lang="en" class="d-none">Research Initiatives</span></h2>
-            <p class="lead" data-aos="fade-up" data-aos-delay="80"><span data-lang="fr">Nos travaux couvrent l'éducation, la santé, les politiques publiques et l'environnement.</span><span data-lang="en" class="d-none">All Education Policy Health</span></p>
+        <div class="row align-items-center gy-5">
+          <div class="col-lg-5" data-aos="fade-right">
+            <h2>
+              <span data-lang="fr">Notre Impact Mesurable</span>
+              <span data-lang="en" class="d-none">Our Measurable Impact</span>
+            </h2>
+            <div class="gold-bar-left" style="background:var(--gold);"></div>
+            <p>
+              <span data-lang="fr">Depuis la création du KEMT Center, nos interventions ont touché des milliers de bénéficiaires dans les zones rurales du Bénin, avec des effets documentés sur l'éducation et le bien-être social.</span>
+              <span data-lang="en" class="d-none">Since KEMT Center's founding, our interventions have reached thousands of beneficiaries across rural Benin, with documented effects on education and social welfare.</span>
+            </p>
           </div>
-
-          <!-- Initiative cards -->
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="120">
-            <div class="card stat-card h-100">
-              <div class="card-body">
-                <h5 class="card-title">Parental Involvement & Learning</h5>
-                <p class="card-text">Examining the role of monitoring in student outcomes.</p>
+          <div class="col-lg-7">
+            <div class="row g-4" data-aos="fade-left">
+              <div class="col-6">
+                <div class="impact-stat-card">
+                  <div class="impact-number">50+</div>
+                  <div class="impact-label">
+                    <span data-lang="fr">Élèves boursiers ruraux</span>
+                    <span data-lang="en" class="d-none">Rural scholarship recipients</span>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="140">
-            <div class="card stat-card h-100">
-              <div class="card-body">
-                <h5 class="card-title">Fertility and Contraceptive Use</h5>
-                <p class="card-text">Understanding the determinants of fertility and contraception.</p>
+              <div class="col-6">
+                <div class="impact-stat-card">
+                  <div class="impact-number">5,000+</div>
+                  <div class="impact-label">
+                    <span data-lang="fr">Élèves suivis par nos RCT</span>
+                    <span data-lang="en" class="d-none">Students tracked in our RCTs</span>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="160">
-            <div class="card stat-card h-100">
-              <div class="card-body">
-                <h5 class="card-title">Gender Norms & Girls' Education</h5>
-                <p class="card-text">How gender norms hinder girls' education.</p>
+              <div class="col-6">
+                <div class="impact-stat-card">
+                  <div class="impact-number">200+</div>
+                  <div class="impact-label">
+                    <span data-lang="fr">Écoles partenaires</span>
+                    <span data-lang="en" class="d-none">Partner schools</span>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="180">
-            <div class="card stat-card h-100">
-              <div class="card-body">
-                <h5 class="card-title">School Report Cards</h5>
-                <p class="card-text">Evaluating the impact of performance reporting.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="card stat-card h-100">
-              <div class="card-body">
-                <h5 class="card-title">Spillover Effects</h5>
-                <p class="card-text">Evidence from friends and siblings.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="220">
-            <div class="card stat-card h-100">
-              <div class="card-body">
-                <h5 class="card-title">Women's Empowerment in Cameroon</h5>
-                <p class="card-text">Exploring colonial legacies and women’s roles.</p>
+              <div class="col-6">
+                <div class="impact-stat-card">
+                  <div class="impact-number">1M+</div>
+                  <div class="impact-label">
+                    <span data-lang="fr">FCFA d'aide médicale d'urgence</span>
+                    <span data-lang="en" class="d-none">FCFA in emergency medical aid</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </section><!-- /Impact Section -->
 
-    <section class="content-section bg-light" aria-labelledby="impact-stats">
+    <!-- Voices of Impact (Testimonials) -->
+    <section id="voices">
       <div class="container">
-        <div class="row align-items-center gy-4">
-          <div class="col-lg-6" data-aos="fade-right">
-            <h3 id="impact-stats"> <span data-lang="fr">Nos initiatives sociales</span><span data-lang="en" class="d-none">Our Social Initiatives</span></h3>
-            <p><span data-lang="fr">Découvrez comment nous agissons dans l'éducation, la santé et l'environnement.</span><span data-lang="en" class="d-none">Discover how we’re making a positive difference through education, health, and environmental actions.</span></p>
-            <div class="stat-grid mt-4">
-              <div class="stat-card">
-                <h3>50+</h3>
-                <p>Students received full tuition support in rural areas (2022–2023)</p>
-              </div>
-              <div class="stat-card">
-                <h3>3</h3>
-                <p>Urban students supported with tuition and allowances (2023–2024)</p>
-              </div>
-              <div class="stat-card">
-                <h3>1,000,000+</h3>
-                <p>Invested in emergency healthcare aid (CFA)</p>
+        <div class="section-title text-center mb-5" data-aos="fade-up">
+          <h2 style="font-family:var(--font-display); font-size:2rem; font-weight:700; color:var(--navy);">
+            <span data-lang="fr">Témoignages de Terrain</span>
+            <span data-lang="en" class="d-none">Voices from the Field</span>
+          </h2>
+          <div class="gold-bar"></div>
+        </div>
+        <div class="row g-4">
+
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="testimonial-card">
+              <blockquote>
+                <span data-lang="fr">« Grâce au programme de soutien à la scolarité, j'ai pu terminer mon année sans interrompre mes études malgré les difficultés financières de ma famille. »</span>
+                <span data-lang="en" class="d-none">"Thanks to the tuition support program, I was able to complete my academic year without interruption despite my family's financial difficulties."</span>
+              </blockquote>
+              <div class="testimonial-author">
+                <strong>Aline K.</strong><br>
+                <span>
+                  <span data-lang="fr">Bénéficiaire · Bourse KEMT 2022</span>
+                  <span data-lang="en" class="d-none">Scholarship Recipient · KEMT 2022</span>
+                </span>
               </div>
             </div>
           </div>
-          <div class="col-lg-6" data-aos="fade-left">
-            <img src="assets/img/hero-carousel/hero-carousel-2.jpg_old" alt="Empowering education" class="img-fluid rounded-4">
+
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="testimonial-card">
+              <blockquote>
+                <span data-lang="fr">« L'intervention du KEMT Center lors de l'urgence médicale de ma fille lui a sauvé la vie. Le fonds d'aide d'urgence a couvert l'intégralité de l'opération. »</span>
+                <span data-lang="en" class="d-none">"KEMT Center's intervention during my daughter's medical emergency saved her life. The emergency fund covered the entire operation."</span>
+              </blockquote>
+              <div class="testimonial-author">
+                <strong>Rodrigue M.</strong><br>
+                <span>
+                  <span data-lang="fr">Parent · Commune de Pahou</span>
+                  <span data-lang="en" class="d-none">Parent · Pahou Commune</span>
+                </span>
+              </div>
+            </div>
           </div>
+
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="testimonial-card">
+              <blockquote>
+                <span data-lang="fr">« Depuis l'introduction des bulletins scolaires, les parents s'impliquent beaucoup plus dans le suivi de leurs enfants. Les résultats aux examens ont nettement progressé. »</span>
+                <span data-lang="en" class="d-none">"Since the school report cards were introduced, parents are much more involved in their children's progress. Exam results have improved significantly."</span>
+              </blockquote>
+              <div class="testimonial-author">
+                <strong>M. Adégbola S.</strong><br>
+                <span>
+                  <span data-lang="fr">Directeur d'école · Zone rurale</span>
+                  <span data-lang="en" class="d-none">School Principal · Rural Zone</span>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="testimonial-card">
+              <blockquote>
+                <span data-lang="fr">« Le paiement numérique des frais scolaires a tout simplifié. Plus de longues files d'attente, plus de risque de perte de cash. Mes enfants sont maintenant inscrits à temps. »</span>
+                <span data-lang="en" class="d-none">"Digital school fee payment simplified everything. No more long queues, no risk of losing cash. My children are now enrolled on time every year."</span>
+              </blockquote>
+              <div class="testimonial-author">
+                <strong>Fatoumata B.</strong><br>
+                <span>
+                  <span data-lang="fr">Parent · Village de Bohé</span>
+                  <span data-lang="en" class="d-none">Parent · Bohé Village</span>
+                </span>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
-    </section>
+    </section><!-- /Voices Section -->
 
-    <section class="content-section" aria-labelledby="voices">
-      <div class="container">
-        <h3 id="voices" data-aos="fade-up"> <span data-lang="fr">Voices of Impact</span><span data-lang="en" class="d-none">Voices of Impact</span></h3>
-        <div class="row gy-4 mt-3">
-          <div class="col-md-6" data-aos="fade-up" data-aos-delay="60">
-            <div class="testimonial p-4 bg-white rounded-4">
-              <p>"Thanks to the tuition support program, I was able to continue my studies without interruption."</p>
-              <p class="mb-0"><strong>– Aline, Student</strong></p>
-            </div>
-          </div>
-          <div class="col-md-6" data-aos="fade-up" data-aos-delay="80">
-            <div class="testimonial p-4 bg-white rounded-4">
-              <p>"Your intervention during my daughter's health emergency saved her life."</p>
-              <p class="mb-0"><strong>– Rodrigue, Parent</strong></p>
-            </div>
-          </div>
+    <!-- CTA Section -->
+    <section id="cta">
+      <div class="container" data-aos="fade-up">
+        <h2>
+          <span data-lang="fr">Collaborez avec le KEMT Center</span>
+          <span data-lang="en" class="d-none">Partner with KEMT Center</span>
+        </h2>
+        <p>
+          <span data-lang="fr">Vous êtes chercheur, bailleur de fonds ou institution gouvernementale ? Rejoignez nos initiatives pour amplifier l'impact de la recherche sur les politiques éducatives.</span>
+          <span data-lang="en" class="d-none">Are you a researcher, funder, or government institution? Join our initiatives and amplify the impact of research on educational policy.</span>
+        </p>
+        <div class="d-flex gap-3 flex-wrap justify-content-center">
+          <a href="contact.html" class="btn-gold">
+            <span data-lang="fr">Nous Contacter</span>
+            <span data-lang="en" class="d-none">Contact Us</span>
+          </a>
+          <a href="publications.html" class="btn-outline-gold">
+            <span data-lang="fr">Voir nos Publications</span>
+            <span data-lang="en" class="d-none">View our Publications</span>
+          </a>
         </div>
       </div>
-    </section>
+    </section><!-- /CTA Section -->
 
   </main>
+
+  <!-- Footer -->
   <div data-include="includes/footer.html"></div>
 
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="ring-loader"><span></span></div>
+    <div class="preloader-text"><strong>KEMT Center</strong><small>Recherche &amp; Impact</small></div>
+  </div>
+
+  <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
   <script src="assets/js/include-html.js"></script>
-  <script src="assets/js/lang-switcher.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function(){
-      // init include-html (already runs) and AOS
-      if(window.AOS) AOS.init({once:true, duration:700});
-      // init Swiper
-      if(window.Swiper){
-        new Swiper('.hero-carousel',{
-          loop:true,
-          autoplay:{delay:4500,disableOnInteraction:false},
-          pagination:{el:'.swiper-pagination',clickable:true},
-        });
-      }
-    });
-  </script>
+  <script src='assets/js/lang-switcher.js'></script>
+  <script src="assets/js/main.js"></script>
+
 </body>
+
 </html>
-
-

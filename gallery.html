@@ -2,52 +2,288 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Galerie média - KEMT Center</title>
-  <meta name="description" content="Galerie média du KEMT Center : images, vidéos et documentation visuelle.">
-  <meta name="keywords" content="galerie, médias, images, vidéos, événements">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title data-lang-fr="Galerie - KEMT Center" data-lang-en="Gallery - KEMT Center">Galerie - KEMT Center</title>
+  <meta name="description" content="Galerie photo du KEMT Center : ateliers de terrain, programme Study Abroad, événements institutionnels.">
+  <meta name="keywords" content="KEMT Center, galerie, photos, ateliers, terrain, study abroad, événements">
+  <link href="assets/img/kemt_center.png" rel="icon">
+  <link href="assets/img/kemt_center.png" rel="apple-touch-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/css/main.css" rel="stylesheet">
+  <style>
+    :root { --gold-mid: #b8933b; }
+    body { font-family: var(--font-body); background: #0a1628; color: var(--navy); }
+
+    .page-title {
+      background: linear-gradient(rgba(10,22,40,0.88), rgba(10,22,40,0.88)), url('assets/img/work_shop/workshop_boh_222.png') center/cover no-repeat !important;
+      padding: 80px 0 !important; border-bottom: 2px solid rgba(201,168,76,0.3) !important;
+    }
+    .page-title h1 { font-family: var(--font-display) !important; font-size: 2.8rem !important; font-weight: 700 !important; color: var(--white) !important; margin: 0 0 10px 0 !important; }
+    .page-title .breadcrumbs ol { font-family: var(--font-mono) !important; font-size: 0.8rem !important; text-transform: uppercase; letter-spacing: 0.05em; }
+    .page-title .breadcrumbs ol li a { color: rgba(255,255,255,0.7) !important; }
+    .page-title .breadcrumbs ol li a:hover { color: var(--gold-light) !important; }
+    .page-title .breadcrumbs ol li.current { color: var(--gold) !important; }
+    .page-title .breadcrumbs ol li+li::before { color: rgba(255,255,255,0.3) !important; }
+
+    /* Filter tabs */
+    #gallery-tabs { background: rgba(255,255,255,0.04); border-bottom: 1px solid rgba(201,168,76,0.2); position: sticky; top: 0; z-index: 100; backdrop-filter: blur(8px); }
+    .gallery-tab-nav { display: flex; list-style: none; padding: 0; margin: 0; overflow-x: auto; gap: 0; }
+    .gallery-tab-nav li a { display: block; padding: 1.1rem 1.6rem; font-family: var(--font-mono); font-size: 0.76rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: rgba(255,255,255,0.55); text-decoration: none; border-bottom: 3px solid transparent; white-space: nowrap; transition: all 0.25s ease; }
+    .gallery-tab-nav li a:hover, .gallery-tab-nav li a.active { color: var(--gold); border-bottom-color: var(--gold); }
+
+    /* Section labels */
+    .gallery-section { padding: 4rem 0; }
+    .gallery-section-header { margin-bottom: 2.5rem; }
+    .gallery-section-header h2 { font-family: var(--font-display); font-size: 1.7rem; font-weight: 700; color: var(--white); margin-bottom: 0.4rem; }
+    .gallery-section-header p { font-size: 0.9rem; color: rgba(255,255,255,0.6); max-width: 540px; }
+    .gold-bar-left { width: 50px; height: 3px; background: var(--gold); margin: 0.7rem 0 1.2rem; }
+
+    /* Masonry grid */
+    .gallery-grid { columns: 3; column-gap: 0.8rem; }
+    @media (max-width: 991px) { .gallery-grid { columns: 2; } }
+    @media (max-width: 575px) { .gallery-grid { columns: 1; } }
+    .gallery-item {
+      break-inside: avoid;
+      margin-bottom: 0.8rem;
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+      display: block;
+      background: rgba(255,255,255,0.05);
+    }
+    .gallery-item img { width: 100%; display: block; transition: transform 0.4s ease; }
+    .gallery-item:hover img { transform: scale(1.04); }
+    .gallery-item-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(transparent 50%, rgba(10,22,40,0.85));
+      opacity: 0; transition: opacity 0.3s ease;
+      display: flex; flex-direction: column; justify-content: flex-end; padding: 1.2rem;
+    }
+    .gallery-item:hover .gallery-item-overlay { opacity: 1; }
+    .gallery-item-caption { font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--gold); margin-bottom: 0.2rem; }
+    .gallery-zoom-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.8); width: 44px; height: 44px; border-radius: 50%; background: rgba(201,168,76,0.25); border: 1.5px solid var(--gold); color: var(--gold); font-size: 1.2rem; display: flex; align-items: center; justify-content: center; opacity: 0; transition: all 0.3s ease; }
+    .gallery-item:hover .gallery-zoom-icon { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+
+    /* Divider between sections */
+    .section-divider { border: none; border-top: 1px solid rgba(201,168,76,0.15); margin: 0; }
+
+    /* Count badge */
+    .count-badge { display: inline-block; font-family: var(--font-mono); font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--gold); background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.3); border-radius: 3px; padding: 2px 10px; margin-bottom: 0; }
+  </style>
 </head>
-<body class="lang-fr">
-<div data-include="includes/header.html"></div>
-<main class="main">
-  <section class="section hero pt-5 pb-5 bg-light text-dark">
-    <div class="container">
-      <h1><span data-lang="fr">Galerie média</span><span data-lang="en" class="d-none">Media gallery</span></h1>
-      <p class="lead"><span data-lang="fr">Images, vidéos et fichiers médias des événements et projets.</span><span data-lang="en" class="d-none">Images, videos, and media files from events and projects.</span></p>
-    </div>
-  </section>
-  <section class="section py-5">
-    <div class="container">
-      <div class="row gy-4">
-        <div class="col-12" data-aos="fade-up">
-          <div class="swiper gallery-slider">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide"><img src="assets/img/hero-carousel/hero-carousel-1.jpg_old" alt="" class="img-fluid rounded-4"></div>
-              <div class="swiper-slide"><img src="assets/img/hero-carousel/hero-carousel-2.jpg_old" alt="" class="img-fluid rounded-4"></div>
-              <div class="swiper-slide"><img src="assets/img/hero-carousel/hero-carousel-3.jpeg__" alt="" class="img-fluid rounded-4"></div>
-            </div>
-            <div class="swiper-pagination"></div>
-          </div>
-        </div>
+<body class="gallery-page">
+  <div data-include="includes/header.html"></div>
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title accent-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">
+          <span data-lang="fr">Galerie Média</span>
+          <span data-lang="en" class="d-none">Media Gallery</span>
+        </h1>
+        <nav class="breadcrumbs"><ol>
+          <li><a href="index.html"><span data-lang="fr">Accueil</span><span data-lang="en" class="d-none">Home</span></a></li>
+          <li class="current"><span data-lang="fr">Galerie</span><span data-lang="en" class="d-none">Gallery</span></li>
+        </ol></nav>
       </div>
     </div>
-  </section>
-</main>
+
+    <!-- Sticky Tabs -->
+    <div id="gallery-tabs">
+      <div class="container">
+        <ul class="gallery-tab-nav">
+          <li><a href="#section-workshops" class="active"><span data-lang="fr">Ateliers de Terrain</span><span data-lang="en" class="d-none">Field Workshops</span></a></li>
+          <li><a href="#section-study-abroad"><span data-lang="fr">Study Abroad</span><span data-lang="en" class="d-none">Study Abroad</span></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ── WORKSHOPS ── -->
+    <section id="section-workshops" class="gallery-section" style="background:#0a1628;">
+      <div class="container">
+        <div class="gallery-section-header" data-aos="fade-up">
+          <div class="d-flex align-items-center gap-3 flex-wrap mb-2">
+            <h2 style="margin:0;"><span data-lang="fr">Ateliers &amp; Formation de Terrain</span><span data-lang="en" class="d-none">Field Workshops &amp; Training</span></h2>
+            <span class="count-badge">13 <span data-lang="fr">photos</span><span data-lang="en" class="d-none">photos</span></span>
+          </div>
+          <div class="gold-bar-left"></div>
+          <p><span data-lang="fr">Images de nos ateliers de formation des enquêteurs, sessions de collecte de données et travaux de terrain dans les communes de Bohé, Pahou et Ouidah.</span><span data-lang="en" class="d-none">Images from our enumerator training workshops, data collection sessions, and field work in the communes of Bohé, Pahou, and Ouidah.</span></p>
+        </div>
+        <div class="gallery-grid" data-aos="fade-up" data-aos-delay="100">
+
+          <a href="assets/img/work_shop/workshop_boh_222.png" class="gallery-item glightbox" data-gallery="workshops" data-title="Atelier de terrain — Bohé 2024">
+            <img src="assets/img/work_shop/workshop_boh_222.png" alt="Atelier Bohé 2024 — Vue générale">
+            <div class="gallery-item-overlay"><div class="gallery-item-caption"><span data-lang="fr">Atelier Bohé 2024</span><span data-lang="en" class="d-none">Bohé Workshop 2024</span></div></div>
+            <div class="gallery-zoom-icon"><i class="bi bi-zoom-in"></i></div>
+          </a>
+
+          <a href="assets/img/work_shop/workshop_boh_4.png" class="gallery-item glightbox" data-gallery="workshops" data-title="Session formation enquêteurs">
+            <img src="assets/img/work_shop/workshop_boh_4.png" alt="Formation enquêteurs">
+            <div class="gallery-item-overlay"><div class="gallery-item-caption"><span data-lang="fr">Formation enquêteurs</span><span data-lang="en" class="d-none">Enumerator training</span></div></div>
+            <div class="gallery-zoom-icon"><i class="bi bi-zoom-in"></i></div>
+          </a>
+
+          <a href="assets/img/work_shop/workshop_boh_2.png" class="gallery-item glightbox" data-gallery="workshops" data-title="Atelier collecte de données">
+            <img src="assets/img/work_shop/workshop_boh_2.png" alt="Atelier collecte données">
+            <div class="gallery-item-overlay"><div class="gallery-item-caption"><span data-lang="fr">Collecte de données</span><span data-lang="en" class="d-none">Data collection</span></div></div>
+            <div class="gallery-zoom-icon"><i class="bi bi-zoom-in"></i></div>
+          </a>
+
+          <a href="assets/img/work_shop/workshop_boh_1.jpeg" class="gallery-item glightbox" data-gallery="workshops" data-title="Formation terrain KEMT">
+            <img src="assets/img/work_shop/workshop_boh_1.jpeg" alt="Formation terrain KEMT">
+            <div class="gallery-item-overlay"><div class="gallery-item-caption"><span data-lang="fr">Formation terrain</span><span data-lang="en" class="d-none">Field training</span></div></div>
+            <div class="gallery-zoom-icon"><i class="bi bi-zoom-in"></i></div>
+          </a>
+
+          <a href="assets/img/work_shop/workshop_boh_3.jpeg" class="gallery-item glightbox" data-gallery="workshops" data-title="Séance de travail KEMT">
+            <img src="assets/img/work_shop/workshop_boh_3.jpeg" alt="Séance de travail">
+            <div class="gallery-item-overlay"><div class="gallery-item-caption"><span data-lang="fr">Séance de travail</span><span data-lang="en" class="d-none">Work session</span></div></div>
+            <div class="gallery-zoom-icon"><i class="bi bi-zoom-in"></i></div>
+          </a>
+
+          <a href="assets/img/work_shop/WhatsApp%20Image%202026-05-19%20at%2017.36.56.jpeg" class="gallery-item glightbox" data-gallery="workshops" data-title="Atelier KEMT 2024">
+            <img src="assets/img/work_shop/WhatsApp%20Image%202026-05-19%20at%2017.36.56.jpeg" alt="Atelier KEMT 2024">
+            <div class="gallery-item-overlay"><div class="gallery-item-caption"><span data-lang="fr">Atelier KEMT 2024</span><span data-lang="en" class="d-none">KEMT Workshop 2024</span></div></div>
+            <div class="gallery-zoom-icon"><i class="bi bi-zoom-in"></i></div>
+          </a>
+
+          <a href="assets/img/work_shop/WhatsApp%20Image%202026-05-19%20at%2017.36.57.jpeg" class="gallery-item glightbox" data-gallery="workshops" data-title="Session terrain KEMT">
+            <img src="assets/img/work_shop/WhatsApp%20Image%202026-05-19%20at%2017.36.57.jpeg" alt="Session terrain KEMT">
+            <div class="gallery-item-overlay"><div class="gallery-item-caption"><span data-lang="fr">Session terrain</span><span data-lang="en" class="d-none">Field session</span></div></div>
+            <div class="gallery-zoom-icon"><i class="bi bi-zoom-in"></i></div>
+          </a>
+
+          <a href="assets/img/work_shop/WhatsApp%20Image%202026-05-19%20at%2017.36.57%20%281%29.jpeg" class="gallery-item glightbox" data-gallery="workshops" data-title="Formation enquêteurs — Groupe 2">
+            <img src="assets/img/work_shop/WhatsApp%20Image%202026-05-19%20at%2017.36.57%20%281%29.jpeg" alt="Formation groupe 2">
+            <div class="gallery-item-overlay"><div class="gallery-item-caption"><span data-lang="fr">Formation — Groupe 2</span><span data-lang="en" class="d-none">Training — Group 2</span></div></div>
+            <div class="gallery-zoom-icon"><i class="bi bi-zoom-in"></i></div>
+          </a>
+
+          <a href="assets/img/work_shop/WhatsApp%20Image%202026-05-19%20at%2017.36.57%20%282%29.jpeg" class="gallery-item glightbox" data-gallery="workshops" data-title="Atelier terrain — Présentation">
+            <img src="assets/img/work_shop/WhatsApp%20Image%202026-05-19%20at%2017.36.57%20%282%29.jpeg" alt="Présentation terrain">
+            <div class="gallery-item-overlay"><div class="gallery-item-caption"><span data-lang="fr">Présentation terrain</span><span data-lang="en" class="d-none">Field presentation</span></div></div>
+            <div class="gallery-zoom-icon"><i class="bi bi-zoom-in"></i></div>
+          </a>
+
+          <a href="assets/img/work_shop/WhatsApp%20Image%202026-05-19%20at%2017.36.58.jpeg" class="gallery-item glightbox" data-gallery="workshops" data-title="Atelier KEMT — Session">
+            <img src="assets/img/work_shop/WhatsApp%20Image%202026-05-19%20at%2017.36.58.jpeg" alt="Session atelier KEMT">
+            <div class="gallery-item-overlay"><div class="gallery-item-caption"><span data-lang="fr">Session atelier</span><span data-lang="en" class="d-none">Workshop session</span></div></div>
+            <div class="gallery-zoom-icon"><i class="bi bi-zoom-in"></i></div>
+          </a>
+
+          <a href="assets/img/work_shop/WhatsApp%20Image%202026-05-19%20at%2017.36.58%20%281%29.jpeg" class="gallery-item glightbox" data-gallery="workshops" data-title="Enquêteurs KEMT sur le terrain">
+            <img src="assets/img/work_shop/WhatsApp%20Image%202026-05-19%20at%2017.36.58%20%281%29.jpeg" alt="Enquêteurs sur le terrain">
+            <div class="gallery-item-overlay"><div class="gallery-item-caption"><span data-lang="fr">Enquêteurs terrain</span><span data-lang="en" class="d-none">Field enumerators</span></div></div>
+            <div class="gallery-zoom-icon"><i class="bi bi-zoom-in"></i></div>
+          </a>
+
+          <a href="assets/img/work_shop/WhatsApp%20Image%202026-05-19%20at%2017.36.58%20%282%29.jpeg" class="gallery-item glightbox" data-gallery="workshops" data-title="Atelier rédaction KEMT">
+            <img src="assets/img/work_shop/WhatsApp%20Image%202026-05-19%20at%2017.36.58%20%282%29.jpeg" alt="Atelier rédaction">
+            <div class="gallery-item-overlay"><div class="gallery-item-caption"><span data-lang="fr">Atelier rédaction</span><span data-lang="en" class="d-none">Writing workshop</span></div></div>
+            <div class="gallery-zoom-icon"><i class="bi bi-zoom-in"></i></div>
+          </a>
+
+          <a href="assets/img/work_shop/WhatsApp%20Image%202026-05-19%20at%2017.36.58%20%284%29.jpeg" class="gallery-item glightbox" data-gallery="workshops" data-title="Session de clôture — Atelier KEMT">
+            <img src="assets/img/work_shop/WhatsApp%20Image%202026-05-19%20at%2017.36.58%20%284%29.jpeg" alt="Clôture atelier">
+            <div class="gallery-item-overlay"><div class="gallery-item-caption"><span data-lang="fr">Session de clôture</span><span data-lang="en" class="d-none">Closing session</span></div></div>
+            <div class="gallery-zoom-icon"><i class="bi bi-zoom-in"></i></div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ── STUDY ABROAD ── -->
+    <section id="section-study-abroad" class="gallery-section" style="background:#0d1e35;">
+      <div class="container">
+        <div class="gallery-section-header" data-aos="fade-up">
+          <div class="d-flex align-items-center gap-3 flex-wrap mb-2">
+            <h2 style="margin:0;"><span data-lang="fr">Programme Study Abroad — Illinois</span><span data-lang="en" class="d-none">Study Abroad Program — Illinois</span></h2>
+            <span class="count-badge">4 <span data-lang="fr">photos</span><span data-lang="en" class="d-none">photos</span></span>
+          </div>
+          <div class="gold-bar-left"></div>
+          <p><span data-lang="fr">Images du programme d'immersion académique aux États-Unis : visites universitaires et hospitalières en Illinois, rencontres avec des chercheurs et institutions partenaires.</span><span data-lang="en" class="d-none">Images from the US academic immersion program: university and hospital visits in Illinois, meetings with researchers and partner institutions.</span></p>
+        </div>
+        <div class="gallery-grid" data-aos="fade-up" data-aos-delay="100">
+
+          <a href="assets/img/study_abroad/illinois_hospital_11.png" class="gallery-item glightbox" data-gallery="study-abroad" data-title="Illinois — Institution hospitalière partenaire">
+            <img src="assets/img/study_abroad/illinois_hospital_11.png" alt="Illinois Hospital Partner">
+            <div class="gallery-item-overlay"><div class="gallery-item-caption"><span data-lang="fr">Illinois — Hôpital partenaire</span><span data-lang="en" class="d-none">Illinois — Partner hospital</span></div></div>
+            <div class="gallery-zoom-icon"><i class="bi bi-zoom-in"></i></div>
+          </a>
+
+          <a href="assets/img/study_abroad/illinois_1.jpeg" class="gallery-item glightbox" data-gallery="study-abroad" data-title="Illinois — Campus universitaire">
+            <img src="assets/img/study_abroad/illinois_1.jpeg" alt="Illinois University Campus">
+            <div class="gallery-item-overlay"><div class="gallery-item-caption"><span data-lang="fr">Illinois — Campus universitaire</span><span data-lang="en" class="d-none">Illinois — University campus</span></div></div>
+            <div class="gallery-zoom-icon"><i class="bi bi-zoom-in"></i></div>
+          </a>
+
+          <a href="assets/img/study_abroad/illinois_hospital1.jpeg" class="gallery-item glightbox" data-gallery="study-abroad" data-title="Illinois — Visite institutionnelle">
+            <img src="assets/img/study_abroad/illinois_hospital1.jpeg" alt="Illinois Institutional Visit">
+            <div class="gallery-item-overlay"><div class="gallery-item-caption"><span data-lang="fr">Illinois — Visite institutionnelle</span><span data-lang="en" class="d-none">Illinois — Institutional visit</span></div></div>
+            <div class="gallery-zoom-icon"><i class="bi bi-zoom-in"></i></div>
+          </a>
+
+          <a href="assets/img/study_abroad/WhatsApp%20Image%202026-05-19%20at%2016.48.14.jpeg" class="gallery-item glightbox" data-gallery="study-abroad" data-title="Séjour Study Abroad — Équipe KEMT">
+            <img src="assets/img/study_abroad/WhatsApp%20Image%202026-05-19%20at%2016.48.14.jpeg" alt="Study Abroad KEMT Team">
+            <div class="gallery-item-overlay"><div class="gallery-item-caption"><span data-lang="fr">Équipe KEMT — Study Abroad</span><span data-lang="en" class="d-none">KEMT Team — Study Abroad</span></div></div>
+            <div class="gallery-zoom-icon"><i class="bi bi-zoom-in"></i></div>
+          </a>
+
+        </div>
+        <div class="text-center mt-5" data-aos="fade-up">
+          <p style="color:rgba(255,255,255,0.6);font-size:0.9rem;margin-bottom:1.5rem;">
+            <span data-lang="fr">Intéressé(e) par le Programme Study Abroad du KEMT Center ?</span>
+            <span data-lang="en" class="d-none">Interested in the KEMT Center Study Abroad Program?</span>
+          </p>
+          <a href="training.html" style="display:inline-flex;align-items:center;gap:0.4rem;background:var(--gold);color:var(--navy);font-family:var(--font-mono);font-size:0.82rem;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;padding:0.75rem 2rem;border-radius:50px;text-decoration:none;transition:all 0.25s ease;">
+            <i class="bi bi-airplane-fill"></i>
+            <span data-lang="fr">En savoir plus</span>
+            <span data-lang="en" class="d-none">Learn more</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
   <div data-include="includes/footer.html"></div>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <div id="preloader"><div class="ring-loader"><span></span></div><div class="preloader-text"><strong>KEMT Center</strong><small>Recherche &amp; Impact</small></div></div>
+
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/js/include-html.js"></script>
-  <script src="assets/js/lang-switcher.js"></script>
+  <script src='assets/js/lang-switcher.js'></script>
+  <script src="assets/js/main.js"></script>
+
   <script>
-    document.addEventListener('DOMContentLoaded', function(){ if(window.AOS) AOS.init({once:true}); if(window.Swiper) new Swiper('.gallery-slider',{loop:true,autoplay:{delay:3500},pagination:{el:'.swiper-pagination',clickable:true}}); });
+    // Highlight active tab on scroll
+    (function () {
+      var sections = ['section-workshops', 'section-study-abroad'];
+      var links = document.querySelectorAll('.gallery-tab-nav a');
+      window.addEventListener('scroll', function () {
+        var y = window.pageYOffset;
+        sections.forEach(function (id, i) {
+          var el = document.getElementById(id);
+          if (!el) return;
+          if (el.offsetTop - 130 <= y) {
+            links.forEach(function (l) { l.classList.remove('active'); });
+            if (links[i]) links[i].classList.add('active');
+          }
+        });
+      });
+    })();
   </script>
 </body>
 </html>
-
-

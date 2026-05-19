@@ -1,53 +1,669 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Centre de documentation - KEMT Center</title>
-  <meta name="description" content="Centre de documentation et archives du KEMT Center.">
-  <meta name="keywords" content="documentation, archives, guides, notes">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title data-lang-fr="Documentation - KEMT Center" data-lang-en="Documentation - KEMT Center">Documentation - KEMT Center</title>
+  <meta name="description" content="Centre de documentation du KEMT Center : guides méthodologiques, protocoles d'enquête, archives de publication, notes de synthèse et boîte à outils chercheurs.">
+  <meta name="keywords" content="KEMT Center, documentation, guides, méthodologie, protocoles, archives, SurveyCTO, RCT">
+
+  <link href="assets/img/kemt_center.png" rel="icon">
+  <link href="assets/img/kemt_center.png" rel="apple-touch-icon">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    :root { --gold-mid: #b8933b; }
+    body { font-family: var(--font-body); background: var(--gray-100); color: var(--navy); }
+
+    /* ─── Page Title ─── */
+    .page-title {
+      background: linear-gradient(rgba(10,22,40,0.90), rgba(10,22,40,0.90)),
+                  url('assets/img/hero-carousel/hero-carousel-4.jpeg') center/cover no-repeat !important;
+      padding: 80px 0 !important;
+      border-bottom: 2px solid rgba(201,168,76,0.3) !important;
+    }
+    .page-title h1 { font-family: var(--font-display) !important; font-size: 2.8rem !important; font-weight: 700 !important; color: var(--white) !important; margin: 0 0 10px 0 !important; }
+    .page-title .breadcrumbs ol { font-family: var(--font-mono) !important; font-size: 0.8rem !important; text-transform: uppercase; letter-spacing: 0.05em; }
+    .page-title .breadcrumbs ol li a { color: rgba(255,255,255,0.7) !important; text-decoration: none; }
+    .page-title .breadcrumbs ol li a:hover { color: var(--gold-light) !important; }
+    .page-title .breadcrumbs ol li.current { color: var(--gold) !important; }
+    .page-title .breadcrumbs ol li+li::before { color: rgba(255,255,255,0.3) !important; }
+
+    /* ─── Sticky nav ─── */
+    #doc-tabs {
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-200);
+      position: sticky; top: 0; z-index: 100;
+    }
+    .doc-tab-nav { display: flex; list-style: none; padding: 0; margin: 0; overflow-x: auto; gap: 0; }
+    .doc-tab-nav li a {
+      display: block; padding: 1.1rem 1.6rem;
+      font-family: var(--font-mono); font-size: 0.76rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.06em;
+      color: var(--gray-600); text-decoration: none;
+      border-bottom: 3px solid transparent; white-space: nowrap;
+      transition: all 0.25s ease;
+    }
+    .doc-tab-nav li a:hover, .doc-tab-nav li a.active { color: var(--navy); border-bottom-color: var(--gold); }
+
+    /* ─── Shared ─── */
+    .doc-section { padding: 5rem 0 4rem; }
+    .doc-section:nth-child(odd)  { background: var(--white); }
+    .doc-section:nth-child(even) { background: var(--gray-100); }
+    .section-header h2 { font-family: var(--font-display); font-size: 1.9rem; font-weight: 700; color: var(--navy); }
+    .section-header p  { color: var(--gray-600); max-width: 640px; font-size: 0.93rem; }
+    .gold-bar-left  { width: 50px; height: 3px; background: var(--gold); margin: 0.7rem 0 1.5rem; }
+    .gold-bar-center { width: 60px; height: 3px; background: var(--gold); margin: 0.8rem auto 0; }
+
+    /* ─── Hero stats strip ─── */
+    #doc-hero { background: var(--white); padding: 4rem 0 3rem; border-bottom: 1px solid var(--gray-200); }
+    .doc-stat { text-align: center; padding: 1rem; }
+    .doc-stat-num { font-family: var(--font-display); font-size: 2.6rem; font-weight: 700; color: var(--gold); line-height: 1; }
+    .doc-stat-lbl { font-family: var(--font-mono); font-size: 0.73rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--gray-500); margin-top: 0.4rem; }
+
+    /* ─── Category hub cards (intro row) ─── */
+    .cat-card {
+      background: var(--white); border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg); padding: 2rem 1.6rem;
+      text-align: center; height: 100%; box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease; cursor: pointer; text-decoration: none; display: block;
+    }
+    .cat-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: rgba(201,168,76,0.35); }
+    .cat-icon { width: 60px; height: 60px; border-radius: 50%; background: rgba(201,168,76,0.12); color: var(--gold); font-size: 1.6rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.2rem; transition: all 0.3s; }
+    .cat-card:hover .cat-icon { background: var(--navy); color: var(--gold); }
+    .cat-card h4 { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.4rem; }
+    .cat-card p  { font-size: 0.85rem; color: var(--gray-600); margin: 0; line-height: 1.6; }
+    .cat-count   { font-family: var(--font-mono); font-size: 0.7rem; font-weight: 700; color: var(--gold-mid); letter-spacing: 0.04em; margin-top: 0.8rem; display: block; }
+
+    /* ─── Document list cards ─── */
+    .doc-card {
+      background: var(--white); border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg); padding: 1.6rem 2rem;
+      display: flex; align-items: flex-start; gap: 1.4rem;
+      box-shadow: var(--shadow-sm); transition: all 0.3s ease;
+    }
+    .doc-card:hover { transform: translateX(5px); border-left: 4px solid var(--gold); box-shadow: var(--shadow-md); }
+    .doc-file-icon {
+      width: 52px; height: 52px; border-radius: var(--radius);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; flex-shrink: 0;
+    }
+    .icon-pdf  { background: rgba(239,68,68,0.1);  color: #dc2626; }
+    .icon-xlsx { background: rgba(34,197,94,0.1);  color: #16a34a; }
+    .icon-docx { background: rgba(59,130,246,0.1); color: #2563eb; }
+    .icon-zip  { background: rgba(245,158,11,0.1); color: #d97706; }
+    .icon-data { background: rgba(139,92,246,0.1); color: #7c3aed; }
+    .doc-body  { flex: 1; }
+    .doc-badge {
+      display: inline-block; font-family: var(--font-mono); font-size: 0.68rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold-mid);
+      background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 3px; padding: 2px 8px; margin-bottom: 0.5rem;
+    }
+    .doc-body h5 { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.3rem; }
+    .doc-body p  { font-size: 0.87rem; color: var(--gray-600); line-height: 1.65; margin: 0 0 0.85rem; }
+    .doc-meta { display: flex; flex-wrap: wrap; gap: 0.9rem; font-family: var(--font-mono); font-size: 0.72rem; color: var(--gray-400); margin-bottom: 0.9rem; }
+    .doc-meta span { display: flex; align-items: center; gap: 0.3rem; }
+    .doc-actions { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+    .btn-doc-dl {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      font-family: var(--font-mono); font-size: 0.73rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.06em;
+      color: var(--navy); border: 1.5px solid var(--gold); border-radius: 50px;
+      padding: 0.36rem 0.95rem; text-decoration: none; background: transparent;
+      transition: all 0.25s ease;
+    }
+    .btn-doc-dl:hover { background: var(--navy); color: var(--gold); border-color: var(--navy); }
+    .btn-doc-preview {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      font-family: var(--font-mono); font-size: 0.73rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.06em;
+      color: var(--gray-500); text-decoration: none;
+      padding: 0.36rem 0; border-bottom: 1px solid transparent;
+      transition: all 0.2s ease;
+    }
+    .btn-doc-preview:hover { color: var(--gold-mid); border-bottom-color: var(--gold); }
+
+    /* ─── Toolkit feature cards ─── */
+    .toolkit-card {
+      background: var(--navy); border-radius: var(--radius-lg);
+      overflow: hidden; height: 100%; transition: all 0.3s ease;
+      display: flex; flex-direction: column;
+    }
+    .toolkit-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+    .toolkit-card-header { background: linear-gradient(135deg, rgba(201,168,76,0.2) 0%, rgba(201,168,76,0.05) 100%); padding: 1.8rem; border-bottom: 1px solid rgba(201,168,76,0.2); display: flex; align-items: center; gap: 1rem; }
+    .toolkit-card-header i { font-size: 1.8rem; color: var(--gold); }
+    .toolkit-card-header h5 { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--white); margin: 0; }
+    .toolkit-card-body { padding: 1.6rem; flex: 1; display: flex; flex-direction: column; }
+    .toolkit-card-body p { font-size: 0.87rem; color: rgba(255,255,255,0.68); line-height: 1.72; flex: 1; margin-bottom: 1.2rem; }
+    .toolkit-tag { display: inline-block; font-family: var(--font-mono); font-size: 0.66rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.08); border-radius: 3px; padding: 2px 7px; margin: 0 4px 4px 0; }
+    .btn-toolkit { display: inline-flex; align-items: center; gap: 0.35rem; font-family: var(--font-mono); font-size: 0.73rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold); border: 1.5px solid rgba(201,168,76,0.5); border-radius: 50px; padding: 0.4rem 1rem; text-decoration: none; background: transparent; transition: all 0.25s ease; margin-top: auto; }
+    .btn-toolkit:hover { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+
+    /* ─── Search bar ─── */
+    .doc-search-wrap { position: relative; max-width: 540px; margin: 0 auto 3rem; }
+    .doc-search-input { width: 100%; padding: 0.85rem 1.2rem 0.85rem 3rem; border: 1.5px solid var(--gray-200); border-radius: 50px; background: var(--white); font-family: var(--font-body); font-size: 0.92rem; color: var(--navy); outline: none; box-shadow: var(--shadow-sm); transition: border-color 0.2s, box-shadow 0.2s; }
+    .doc-search-input:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(201,168,76,0.12); }
+    .doc-search-icon { position: absolute; left: 1.1rem; top: 50%; transform: translateY(-50%); color: var(--gray-400); font-size: 1rem; pointer-events: none; }
+
+    /* ─── CTA ─── */
+    #doc-cta { background: linear-gradient(rgba(10,22,40,0.94), rgba(10,22,40,0.94)), url('assets/img/hero-carousel/hero-carousel-1.jpeg') center/cover no-repeat; padding: 5rem 0; text-align: center; }
+    #doc-cta h2 { font-family: var(--font-display); font-size: 2rem; font-weight: 700; color: var(--white); margin-bottom: 1rem; }
+    #doc-cta p  { color: rgba(255,255,255,0.7); max-width: 500px; margin: 0 auto 2rem; }
+    .btn-gold { display: inline-flex; align-items: center; gap: 0.4rem; background: var(--gold); color: var(--navy); font-family: var(--font-mono); font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; padding: 0.75rem 2rem; border-radius: 50px; text-decoration: none; transition: all 0.25s ease; }
+    .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,168,76,0.35); color: var(--navy); }
+    .btn-outline-gold { display: inline-flex; align-items: center; gap: 0.4rem; background: transparent; color: var(--gold); border: 1.5px solid var(--gold); font-family: var(--font-mono); font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; padding: 0.75rem 2rem; border-radius: 50px; text-decoration: none; transition: all 0.25s ease; }
+    .btn-outline-gold:hover { background: var(--gold); color: var(--navy); transform: translateY(-2px); }
+  </style>
+
 </head>
-<body class="lang-fr">
-<div data-include="includes/header.html"></div>
-<main class="main">
-  <section class="section hero pt-5 pb-5 bg-light text-dark">
-    <div class="container">
-      <h1><span data-lang="fr">Centre de documentation</span><span data-lang="en" class="d-none">Documentation center</span></h1>
-      <p class="lead"><span data-lang="fr">Guides, méthodologies et archives de recherche disponibles.</span><span data-lang="en" class="d-none">Guides, methodologies and research archives available.</span></p>
+
+<body class="docs-page">
+
+  <div data-include="includes/header.html"></div>
+
+  <main class="main">
+
+    <!-- ── Page Title ── -->
+    <div class="page-title accent-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">
+          <span data-lang="fr">Centre de Documentation</span>
+          <span data-lang="en" class="d-none">Documentation Centre</span>
+        </h1>
+        <nav class="breadcrumbs"><ol>
+          <li><a href="index.html"><span data-lang="fr">Accueil</span><span data-lang="en" class="d-none">Home</span></a></li>
+          <li class="current"><span data-lang="fr">Documentation</span><span data-lang="en" class="d-none">Documentation</span></li>
+        </ol></nav>
+      </div>
     </div>
-  </section>
-  <section class="section py-5">
-    <div class="container">
-      <div class="row gy-4">
-        <div class="col-md-6" data-aos="fade-up">
-          <div class="p-4 bg-white rounded-4 shadow-sm h-100">
-            <h3><span data-lang="fr">Guides méthodologiques</span><span data-lang="en" class="d-none">Methodology guides</span></h3>
-            <p><span data-lang="fr">Documents pratiques pour la recherche appliquée et la collecte de données.</span><span data-lang="en" class="d-none">Practical documents for applied research and data collection.</span></p>
-          </div>
+
+    <!-- ── Stats strip ── -->
+    <div id="doc-hero">
+      <div class="container">
+        <div class="row g-3 justify-content-center text-center mb-4" data-aos="fade-up">
+          <div class="col-12"><p style="font-family:var(--font-mono);font-size:0.8rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--gold-mid);margin:0 0 0.5rem;">KEMT Research Documentation</p>
+          <h2 style="font-family:var(--font-display);font-size:1.8rem;font-weight:700;color:var(--navy);margin:0 0 0.4rem;">
+            <span data-lang="fr">Toute la connaissance KEMT, en un seul endroit</span>
+            <span data-lang="en" class="d-none">All KEMT knowledge, in one place</span>
+          </h2>
+          <div class="gold-bar-center"></div>
+          <p style="color:var(--gray-600);max-width:580px;margin:0.8rem auto 0;font-size:0.93rem;">
+            <span data-lang="fr">Protocoles, guides terrain, archives de publications, boîtes à outils statistiques et supports de formation — tout en accès structuré.</span>
+            <span data-lang="en" class="d-none">Protocols, field guides, publication archives, statistical toolkits, and training materials — all in structured access.</span>
+          </p></div>
         </div>
-        <div class="col-md-6" data-aos="fade-up" data-aos-delay="40">
-          <div class="p-4 bg-white rounded-4 shadow-sm h-100">
-            <h3><span data-lang="fr">Archives de publication</span><span data-lang="en" class="d-none">Publication archives</span></h3>
-            <p><span data-lang="fr">Accès aux rapports historiques, notes de synthèse et études internes.</span><span data-lang="en" class="d-none">Access to historical reports, briefs, and internal studies.</span></p>
-          </div>
+        <div class="row g-3 justify-content-center" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-6 col-lg-3"><div class="doc-stat"><div class="doc-stat-num">40+</div><div class="doc-stat-lbl"><span data-lang="fr">Documents disponibles</span><span data-lang="en" class="d-none">Documents available</span></div></div></div>
+          <div class="col-6 col-lg-3"><div class="doc-stat"><div class="doc-stat-num">6</div><div class="doc-stat-lbl"><span data-lang="fr">Catégories documentaires</span><span data-lang="en" class="d-none">Document categories</span></div></div></div>
+          <div class="col-6 col-lg-3"><div class="doc-stat"><div class="doc-stat-num">3</div><div class="doc-stat-lbl"><span data-lang="fr">Langues disponibles</span><span data-lang="en" class="d-none">Languages available</span></div></div></div>
+          <div class="col-6 col-lg-3"><div class="doc-stat"><div class="doc-stat-num">100%</div><div class="doc-stat-lbl"><span data-lang="fr">Accès sur demande</span><span data-lang="en" class="d-none">Access on request</span></div></div></div>
         </div>
       </div>
     </div>
-  </section>
-</main>
+
+    <!-- ── Sticky Tabs ── -->
+    <div id="doc-tabs">
+      <div class="container">
+        <ul class="doc-tab-nav">
+          <li><a href="#cat-overview" class="active"><span data-lang="fr">Vue d'ensemble</span><span data-lang="en" class="d-none">Overview</span></a></li>
+          <li><a href="#methodology-guides"><span data-lang="fr">Guides Méthodologiques</span><span data-lang="en" class="d-none">Methodology Guides</span></a></li>
+          <li><a href="#field-protocols"><span data-lang="fr">Protocoles de Terrain</span><span data-lang="en" class="d-none">Field Protocols</span></a></li>
+          <li><a href="#pub-archives"><span data-lang="fr">Archives Publications</span><span data-lang="en" class="d-none">Publication Archives</span></a></li>
+          <li><a href="#toolkit"><span data-lang="fr">Boîte à Outils</span><span data-lang="en" class="d-none">Toolkit</span></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ── Overview Categories ── -->
+    <section id="cat-overview" class="doc-section" style="background:var(--gray-100);">
+      <div class="container">
+        <div class="section-header text-center mb-5" data-aos="fade-up">
+          <h2><span data-lang="fr">Parcourir par catégorie</span><span data-lang="en" class="d-none">Browse by Category</span></h2>
+          <div class="gold-bar-center"></div>
+          <p class="mt-3"><span data-lang="fr">Sélectionnez une catégorie pour accéder directement aux documents correspondants.</span><span data-lang="en" class="d-none">Select a category to go directly to the relevant documents.</span></p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <a href="#methodology-guides" class="cat-card">
+              <div class="cat-icon"><i class="bi bi-diagram-3-fill"></i></div>
+              <h4><span data-lang="fr">Guides Méthodologiques</span><span data-lang="en" class="d-none">Methodology Guides</span></h4>
+              <p><span data-lang="fr">Plans expérimentaux, randomisation, calcul de puissance, stratification et analyse économétrique.</span><span data-lang="en" class="d-none">Experimental designs, randomization, power calculations, stratification, and econometric analysis.</span></p>
+              <span class="cat-count">8 <span data-lang="fr">documents</span><span data-lang="en" class="d-none">documents</span></span>
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="150">
+            <a href="#field-protocols" class="cat-card">
+              <div class="cat-icon"><i class="bi bi-map-fill"></i></div>
+              <h4><span data-lang="fr">Protocoles de Terrain</span><span data-lang="en" class="d-none">Field Protocols</span></h4>
+              <p><span data-lang="fr">Manuels enquêteurs, questionnaires SurveyCTO, guides d'entretien et procédures de contrôle qualité.</span><span data-lang="en" class="d-none">Enumerator manuals, SurveyCTO questionnaires, interview guides, and quality control procedures.</span></p>
+              <span class="cat-count">10 <span data-lang="fr">documents</span><span data-lang="en" class="d-none">documents</span></span>
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <a href="#pub-archives" class="cat-card">
+              <div class="cat-icon"><i class="bi bi-archive-fill"></i></div>
+              <h4><span data-lang="fr">Archives de Publications</span><span data-lang="en" class="d-none">Publication Archives</span></h4>
+              <p><span data-lang="fr">Working papers, notes de politique, rapports annuels et présentations de conférences archivés par année.</span><span data-lang="en" class="d-none">Working papers, policy briefs, annual reports, and conference presentations archived by year.</span></p>
+              <span class="cat-count">15 <span data-lang="fr">documents</span><span data-lang="en" class="d-none">documents</span></span>
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <a href="#toolkit" class="cat-card">
+              <div class="cat-icon"><i class="bi bi-tools"></i></div>
+              <h4><span data-lang="fr">Boîte à Outils Statistiques</span><span data-lang="en" class="d-none">Statistical Toolkit</span></h4>
+              <p><span data-lang="fr">Scripts Stata &amp; R, templates de tableaux de résultats, codes de nettoyage et visualisation de données.</span><span data-lang="en" class="d-none">Stata &amp; R scripts, results table templates, cleaning codes, and data visualization tools.</span></p>
+              <span class="cat-count">7 <span data-lang="fr">ressources</span><span data-lang="en" class="d-none">resources</span></span>
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="150">
+            <a href="#toolkit" class="cat-card">
+              <div class="cat-icon"><i class="bi bi-shield-check"></i></div>
+              <h4><span data-lang="fr">Éthique &amp; Protection des Données</span><span data-lang="en" class="d-none">Ethics &amp; Data Protection</span></h4>
+              <p><span data-lang="fr">Formulaires de consentement, protocoles IRB, accords de traitement des données et procédures d'anonymisation.</span><span data-lang="en" class="d-none">Consent forms, IRB protocols, data processing agreements, and anonymization procedures.</span></p>
+              <span class="cat-count">5 <span data-lang="fr">documents</span><span data-lang="en" class="d-none">documents</span></span>
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <a href="training.html" class="cat-card">
+              <div class="cat-icon"><i class="bi bi-mortarboard-fill"></i></div>
+              <h4><span data-lang="fr">Supports de Formation</span><span data-lang="en" class="d-none">Training Materials</span></h4>
+              <p><span data-lang="fr">Slides de cours, exercices pratiques et supports des ateliers de formation organisés par le KEMT Center.</span><span data-lang="en" class="d-none">Course slides, practical exercises, and materials from training workshops organized by KEMT Center.</span></p>
+              <span class="cat-count">6 <span data-lang="fr">documents</span><span data-lang="en" class="d-none">documents</span></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Methodology Guides ── -->
+    <section id="methodology-guides" class="doc-section" style="background:var(--white);">
+      <div class="container">
+        <div class="section-header mb-4" data-aos="fade-up">
+          <h2><span data-lang="fr">Guides Méthodologiques</span><span data-lang="en" class="d-none">Methodology Guides</span></h2>
+          <div class="gold-bar-left"></div>
+          <p><span data-lang="fr">Documents de référence sur les méthodes d'évaluation d'impact, la conception d'essais randomisés et l'analyse statistique utilisés par l'équipe KEMT.</span><span data-lang="en" class="d-none">Reference documents on impact evaluation methods, randomized trial design, and statistical analysis used by the KEMT team.</span></p>
+        </div>
+
+        <!-- Search -->
+        <div class="doc-search-wrap" data-aos="fade-up">
+          <i class="bi bi-search doc-search-icon"></i>
+          <input type="text" class="doc-search-input" id="searchGuides" placeholder="Rechercher un document..." oninput="filterDocs('guidesList', this.value)">
+        </div>
+
+        <div class="d-flex flex-column gap-3" id="guidesList">
+
+          <div class="doc-card doc-item" data-aos="fade-up" data-aos-delay="100">
+            <div class="doc-file-icon icon-pdf"><i class="bi bi-file-earmark-pdf-fill"></i></div>
+            <div class="doc-body">
+              <span class="doc-badge">PDF · <span data-lang="fr">Guide</span><span data-lang="en" class="d-none">Guide</span> · 2024</span>
+              <h5><span data-lang="fr">Guide Complet de Conception de RCT — KEMT Research Protocol v3</span><span data-lang="en" class="d-none">Complete RCT Design Guide — KEMT Research Protocol v3</span></h5>
+              <p><span data-lang="fr">Guide de référence de 80 pages couvrant toutes les étapes de conception d'un essai randomisé contrôlé : randomisation par bloc, calcul de la taille d'échantillon, stratification, attrition et analyse en intention de traiter (ITT).</span><span data-lang="en" class="d-none">80-page reference guide covering all steps of randomized controlled trial design: block randomization, sample size calculation, stratification, attrition, and intent-to-treat (ITT) analysis.</span></p>
+              <div class="doc-meta">
+                <span><i class="bi bi-file-earmark"></i> PDF · 80p</span>
+                <span><i class="bi bi-person"></i> M. SEIDOU, H. Djima</span>
+                <span><i class="bi bi-calendar3"></i> Janv. 2024</span>
+                <span><i class="bi bi-eye"></i> <span data-lang="fr">Accès libre</span><span data-lang="en" class="d-none">Open access</span></span>
+              </div>
+              <div class="doc-actions">
+                <a href="resources.html" class="btn-doc-dl"><i class="bi bi-download"></i> PDF</a>
+                <a href="resources.html" class="btn-doc-preview"><i class="bi bi-eye"></i> <span data-lang="fr">Aperçu</span><span data-lang="en" class="d-none">Preview</span></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="doc-card doc-item" data-aos="fade-up" data-aos-delay="120">
+            <div class="doc-file-icon icon-pdf"><i class="bi bi-file-earmark-pdf-fill"></i></div>
+            <div class="doc-body">
+              <span class="doc-badge">PDF · <span data-lang="fr">Note méthodologique</span><span data-lang="en" class="d-none">Methodological note</span> · 2023</span>
+              <h5><span data-lang="fr">Note Méthodologique — Plans Expérimentaux &amp; Stratification</span><span data-lang="en" class="d-none">Methodological Note — Experimental Designs &amp; Stratification</span></h5>
+              <p><span data-lang="fr">Document technique décrivant les plans d'échantillonnage stratifié utilisés dans nos RCT, avec des formules de calcul de puissance statistique et des exemples appliqués à l'éducation en Afrique subsaharienne.</span><span data-lang="en" class="d-none">Technical document describing stratified sampling plans used in our RCTs, with statistical power calculation formulas and examples applied to education in sub-Saharan Africa.</span></p>
+              <div class="doc-meta">
+                <span><i class="bi bi-file-earmark"></i> PDF · 32p</span>
+                <span><i class="bi bi-person"></i> M. SEIDOU</span>
+                <span><i class="bi bi-calendar3"></i> Oct. 2023</span>
+                <span><i class="bi bi-eye"></i> <span data-lang="fr">Accès libre</span><span data-lang="en" class="d-none">Open access</span></span>
+              </div>
+              <div class="doc-actions">
+                <a href="resources.html" class="btn-doc-dl"><i class="bi bi-download"></i> PDF</a>
+                <a href="resources.html" class="btn-doc-preview"><i class="bi bi-eye"></i> <span data-lang="fr">Aperçu</span><span data-lang="en" class="d-none">Preview</span></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="doc-card doc-item" data-aos="fade-up" data-aos-delay="140">
+            <div class="doc-file-icon icon-pdf"><i class="bi bi-file-earmark-pdf-fill"></i></div>
+            <div class="doc-body">
+              <span class="doc-badge">PDF · <span data-lang="fr">Guide</span><span data-lang="en" class="d-none">Guide</span> · 2023</span>
+              <h5><span data-lang="fr">Guide d'Analyse Économétrique des Données Expérimentales</span><span data-lang="en" class="d-none">Econometric Analysis Guide for Experimental Data</span></h5>
+              <p><span data-lang="fr">Guide pratique de 55 pages pour l'analyse des données RCT avec Stata : nettoyage, estimation des effets de traitement (ITT, TOT, LATE), variables instrumentales, effets hétérogènes et tests de robustesse.</span><span data-lang="en" class="d-none">55-page practical guide for RCT data analysis in Stata: cleaning, treatment effect estimation (ITT, TOT, LATE), instrumental variables, heterogeneous effects, and robustness tests.</span></p>
+              <div class="doc-meta">
+                <span><i class="bi bi-file-earmark"></i> PDF · 55p</span>
+                <span><i class="bi bi-person"></i> R. AGBOHOU, M. SEIDOU</span>
+                <span><i class="bi bi-calendar3"></i> Juin 2023</span>
+                <span><i class="bi bi-lock"></i> <span data-lang="fr">Sur demande</span><span data-lang="en" class="d-none">On request</span></span>
+              </div>
+              <div class="doc-actions">
+                <a href="contact.html" class="btn-doc-dl"><i class="bi bi-key-fill"></i> <span data-lang="fr">Demander l'accès</span><span data-lang="en" class="d-none">Request access</span></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="doc-card doc-item" data-aos="fade-up" data-aos-delay="160">
+            <div class="doc-file-icon icon-docx"><i class="bi bi-file-earmark-word-fill"></i></div>
+            <div class="doc-body">
+              <span class="doc-badge">DOCX · <span data-lang="fr">Template</span><span data-lang="en" class="d-none">Template</span> · 2024</span>
+              <h5><span data-lang="fr">Template de Pré-enregistrement de RCT — AEA RCT Registry</span><span data-lang="en" class="d-none">RCT Pre-Registration Template — AEA RCT Registry</span></h5>
+              <p><span data-lang="fr">Modèle de document de pré-enregistrement utilisé par le KEMT Center pour enregistrer ses essais sur l'AEA RCT Registry. Comprend toutes les sections requises : hypothèses, design, intervention, résultats primaires et secondaires.</span><span data-lang="en" class="d-none">Pre-registration document template used by KEMT Center to register trials on the AEA RCT Registry. Includes all required sections: hypotheses, design, intervention, primary and secondary outcomes.</span></p>
+              <div class="doc-meta">
+                <span><i class="bi bi-file-earmark"></i> DOCX · 12p</span>
+                <span><i class="bi bi-eye"></i> <span data-lang="fr">Accès libre</span><span data-lang="en" class="d-none">Open access</span></span>
+              </div>
+              <div class="doc-actions">
+                <a href="resources.html" class="btn-doc-dl"><i class="bi bi-download"></i> DOCX</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Field Protocols ── -->
+    <section id="field-protocols" class="doc-section" style="background:var(--gray-100);">
+      <div class="container">
+        <div class="section-header mb-4" data-aos="fade-up">
+          <h2><span data-lang="fr">Protocoles &amp; Outils de Terrain</span><span data-lang="en" class="d-none">Field Protocols &amp; Tools</span></h2>
+          <div class="gold-bar-left"></div>
+          <p><span data-lang="fr">Manuels, questionnaires et procédures opérationnelles utilisés lors de nos collectes de données terrain dans les communes rurales du Bénin.</span><span data-lang="en" class="d-none">Manuals, questionnaires, and operating procedures used during our field data collection in rural communes of Benin.</span></p>
+        </div>
+        <div class="d-flex flex-column gap-3" id="protocolsList">
+
+          <div class="doc-card doc-item" data-aos="fade-up" data-aos-delay="100">
+            <div class="doc-file-icon icon-pdf"><i class="bi bi-file-earmark-pdf-fill"></i></div>
+            <div class="doc-body">
+              <span class="doc-badge">PDF · <span data-lang="fr">Manuel</span><span data-lang="en" class="d-none">Manual</span> · 2024</span>
+              <h5><span data-lang="fr">Manuel de Formation des Enquêteurs Terrain — Version 4.1</span><span data-lang="en" class="d-none">Field Enumerator Training Manual — Version 4.1</span></h5>
+              <p><span data-lang="fr">Manuel complet de 95 pages pour la formation des enquêteurs. Couvre : prise en main SurveyCTO, techniques d'entretien ménage, navigation dans les formulaires, gestion des refus, signalement des incidents et éthique de la collecte.</span><span data-lang="en" class="d-none">Comprehensive 95-page training manual for enumerators. Covers: SurveyCTO onboarding, household interview techniques, form navigation, refusal management, incident reporting, and collection ethics.</span></p>
+              <div class="doc-meta">
+                <span><i class="bi bi-file-earmark"></i> PDF · 95p</span>
+                <span><i class="bi bi-translate"></i> FR / EN / FON</span>
+                <span><i class="bi bi-calendar3"></i> Fév. 2024</span>
+                <span><i class="bi bi-eye"></i> <span data-lang="fr">Accès libre</span><span data-lang="en" class="d-none">Open access</span></span>
+              </div>
+              <div class="doc-actions">
+                <a href="resources.html" class="btn-doc-dl"><i class="bi bi-download"></i> PDF</a>
+                <a href="resources.html" class="btn-doc-preview"><i class="bi bi-eye"></i> <span data-lang="fr">Aperçu</span><span data-lang="en" class="d-none">Preview</span></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="doc-card doc-item" data-aos="fade-up" data-aos-delay="120">
+            <div class="doc-file-icon icon-xlsx"><i class="bi bi-file-earmark-spreadsheet-fill"></i></div>
+            <div class="doc-body">
+              <span class="doc-badge">XLS · <span data-lang="fr">Questionnaire</span><span data-lang="en" class="d-none">Questionnaire</span> · 2024</span>
+              <h5><span data-lang="fr">Formulaire XLSForm SurveyCTO — Enquête Ménages Implication Parentale v2</span><span data-lang="en" class="d-none">SurveyCTO XLSForm — Parental Involvement Household Survey v2</span></h5>
+              <p><span data-lang="fr">Formulaire XLSForm complet prêt à déployer sur SurveyCTO pour l'enquête ménages sur l'implication parentale. Inclut les modules élève, parent, enseignant et directeur d'école. Disponible en FR, EN et FON.</span><span data-lang="en" class="d-none">Complete XLSForm ready for deployment on SurveyCTO for the parental involvement household survey. Includes student, parent, teacher, and school director modules. Available in FR, EN, and FON.</span></p>
+              <div class="doc-meta">
+                <span><i class="bi bi-file-earmark"></i> XLSX</span>
+                <span><i class="bi bi-translate"></i> FR / EN / FON</span>
+                <span><i class="bi bi-calendar3"></i> Mars 2024</span>
+                <span><i class="bi bi-lock"></i> <span data-lang="fr">Sur demande</span><span data-lang="en" class="d-none">On request</span></span>
+              </div>
+              <div class="doc-actions">
+                <a href="contact.html" class="btn-doc-dl"><i class="bi bi-key-fill"></i> <span data-lang="fr">Demander l'accès</span><span data-lang="en" class="d-none">Request access</span></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="doc-card doc-item" data-aos="fade-up" data-aos-delay="140">
+            <div class="doc-file-icon icon-pdf"><i class="bi bi-file-earmark-pdf-fill"></i></div>
+            <div class="doc-body">
+              <span class="doc-badge">PDF · <span data-lang="fr">Protocole</span><span data-lang="en" class="d-none">Protocol</span> · 2023</span>
+              <h5><span data-lang="fr">Protocole de Contrôle Qualité des Données Terrain — KEMT QC v2</span><span data-lang="en" class="d-none">Field Data Quality Control Protocol — KEMT QC v2</span></h5>
+              <p><span data-lang="fr">Procédures opérationnelles standardisées (SOP) pour le contrôle qualité en temps réel des données collectées sur le terrain. Comprend les règles de validation SurveyCTO, les backchecks téléphoniques et les visites de supervision.</span><span data-lang="en" class="d-none">Standard operating procedures (SOP) for real-time quality control of field-collected data. Includes SurveyCTO validation rules, phone backchecks, and supervision visits.</span></p>
+              <div class="doc-meta">
+                <span><i class="bi bi-file-earmark"></i> PDF · 28p</span>
+                <span><i class="bi bi-calendar3"></i> Sept. 2023</span>
+                <span><i class="bi bi-eye"></i> <span data-lang="fr">Accès libre</span><span data-lang="en" class="d-none">Open access</span></span>
+              </div>
+              <div class="doc-actions">
+                <a href="resources.html" class="btn-doc-dl"><i class="bi bi-download"></i> PDF</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="doc-card doc-item" data-aos="fade-up" data-aos-delay="160">
+            <div class="doc-file-icon icon-pdf"><i class="bi bi-file-earmark-pdf-fill"></i></div>
+            <div class="doc-body">
+              <span class="doc-badge">PDF · <span data-lang="fr">Guide</span><span data-lang="en" class="d-none">Guide</span> · 2022</span>
+              <h5><span data-lang="fr">Guide de Collecte de Données — Procédures Opérationnelles KEMT</span><span data-lang="en" class="d-none">Data Collection Guide — KEMT Operational Procedures</span></h5>
+              <p><span data-lang="fr">Guide général de collecte de données du KEMT Center : recrutement et formation des enquêteurs, déploiement tablettes, gestion de la logistique terrain, suivi à distance et archivage final des données.</span><span data-lang="en" class="d-none">KEMT Center general data collection guide: enumerator recruitment and training, tablet deployment, field logistics management, remote monitoring, and final data archiving.</span></p>
+              <div class="doc-meta">
+                <span><i class="bi bi-file-earmark"></i> PDF · 45p</span>
+                <span><i class="bi bi-translate"></i> FR / EN</span>
+                <span><i class="bi bi-calendar3"></i> Avr. 2022</span>
+                <span><i class="bi bi-eye"></i> <span data-lang="fr">Accès libre</span><span data-lang="en" class="d-none">Open access</span></span>
+              </div>
+              <div class="doc-actions">
+                <a href="resources.html" class="btn-doc-dl"><i class="bi bi-download"></i> PDF</a>
+                <a href="resources.html" class="btn-doc-preview"><i class="bi bi-eye"></i> <span data-lang="fr">Aperçu</span><span data-lang="en" class="d-none">Preview</span></a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Publication Archives ── -->
+    <section id="pub-archives" class="doc-section" style="background:var(--white);">
+      <div class="container">
+        <div class="section-header mb-4" data-aos="fade-up">
+          <h2><span data-lang="fr">Archives de Publications</span><span data-lang="en" class="d-none">Publication Archives</span></h2>
+          <div class="gold-bar-left"></div>
+          <p><span data-lang="fr">Toutes nos publications archivées par année : working papers, notes de politique, présentations de conférences et rapports annuels.</span><span data-lang="en" class="d-none">All our publications archived by year: working papers, policy briefs, conference presentations, and annual reports.</span></p>
+        </div>
+        <div class="d-flex flex-column gap-3">
+
+          <div class="doc-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="doc-file-icon icon-pdf"><i class="bi bi-file-earmark-pdf-fill"></i></div>
+            <div class="doc-body">
+              <span class="doc-badge">Working Paper · KEMT-WP-2024-01</span>
+              <h5><span data-lang="fr">L'effet du suivi parental sur les résultats scolaires — RCT Bénin</span><span data-lang="en" class="d-none">The Effect of Parental Monitoring on Academic Outcomes — Benin RCT</span></h5>
+              <p><span data-lang="fr">M. SEIDOU, E. LAWIN &amp; H. Djima · 2024 · Données panel 5 000 élèves, 200 écoles, estimation ITT +0.18 SD.</span><span data-lang="en" class="d-none">M. SEIDOU, E. LAWIN &amp; H. Djima · 2024 · Panel data 5,000 students, 200 schools, ITT estimate +0.18 SD.</span></p>
+              <div class="doc-meta"><span><i class="bi bi-file-earmark"></i> PDF · 48p</span><span><i class="bi bi-calendar3"></i> 2024</span><span><i class="bi bi-eye"></i> <span data-lang="fr">Accès libre</span><span data-lang="en" class="d-none">Open access</span></span></div>
+              <div class="doc-actions">
+                <a href="publications.html" class="btn-doc-dl"><i class="bi bi-download"></i> PDF</a>
+                <a href="publications.html" class="btn-doc-preview"><i class="bi bi-box-arrow-up-right"></i> <span data-lang="fr">Voir la fiche</span><span data-lang="en" class="d-none">See entry</span></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="doc-card" data-aos="fade-up" data-aos-delay="120">
+            <div class="doc-file-icon icon-pdf"><i class="bi bi-file-earmark-pdf-fill"></i></div>
+            <div class="doc-body">
+              <span class="doc-badge">Working Paper · KEMT-WP-2024-02</span>
+              <h5><span data-lang="fr">Normes de Genre et Parcours STEM des Lycéennes</span><span data-lang="en" class="d-none">Gender Norms and STEM Trajectories of Secondary School Girls</span></h5>
+              <p><span data-lang="fr">E. LAWIN &amp; M. SEIDOU · 2024 · Enquête individuelle 1 500 lycéennes, 50 établissements ruraux et semi-urbains du Bénin.</span><span data-lang="en" class="d-none">E. LAWIN &amp; M. SEIDOU · 2024 · Individual survey of 1,500 secondary school girls across 50 rural and semi-urban institutions in Benin.</span></p>
+              <div class="doc-meta"><span><i class="bi bi-file-earmark"></i> PDF · 52p</span><span><i class="bi bi-calendar3"></i> 2024</span><span><i class="bi bi-eye"></i> <span data-lang="fr">Accès libre</span><span data-lang="en" class="d-none">Open access</span></span></div>
+              <div class="doc-actions">
+                <a href="publications.html" class="btn-doc-dl"><i class="bi bi-download"></i> PDF</a>
+                <a href="publications.html" class="btn-doc-preview"><i class="bi bi-box-arrow-up-right"></i> <span data-lang="fr">Voir la fiche</span><span data-lang="en" class="d-none">See entry</span></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="doc-card" data-aos="fade-up" data-aos-delay="140">
+            <div class="doc-file-icon icon-pdf"><i class="bi bi-file-earmark-pdf-fill"></i></div>
+            <div class="doc-body">
+              <span class="doc-badge"><span data-lang="fr">Note de Politique</span><span data-lang="en" class="d-none">Policy Brief</span> · 2023</span>
+              <h5><span data-lang="fr">Digitalisation des Frais Scolaires — Recommandations pour le Ministère</span><span data-lang="en" class="d-none">School Fee Digitization — Recommendations for the Ministry</span></h5>
+              <p><span data-lang="fr">M. SEIDOU, S. AKOHOU &amp; R. AGBOHOU · 2023 · Résultats de l'évaluation de 3 communes pilotes et recommandations pour la généralisation nationale.</span><span data-lang="en" class="d-none">M. SEIDOU, S. AKOHOU &amp; R. AGBOHOU · 2023 · Results from 3 pilot communes evaluation and recommendations for national scale-up.</span></p>
+              <div class="doc-meta"><span><i class="bi bi-file-earmark"></i> PDF · 12p</span><span><i class="bi bi-calendar3"></i> 2023</span><span><i class="bi bi-eye"></i> <span data-lang="fr">Accès libre</span><span data-lang="en" class="d-none">Open access</span></span></div>
+              <div class="doc-actions">
+                <a href="publications.html" class="btn-doc-dl"><i class="bi bi-download"></i> PDF</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center mt-2" data-aos="fade-up">
+            <a href="publications.html" class="btn-outline-gold" style="display:inline-flex;align-items:center;gap:0.4rem;">
+              <i class="bi bi-journals"></i>
+              <span data-lang="fr">Voir toutes les publications</span>
+              <span data-lang="en" class="d-none">View all publications</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Toolkit ── -->
+    <section id="toolkit" class="doc-section" style="background:var(--gray-100);">
+      <div class="container">
+        <div class="section-header mb-5" data-aos="fade-up">
+          <h2><span data-lang="fr">Boîte à Outils du Chercheur</span><span data-lang="en" class="d-none">Researcher's Toolkit</span></h2>
+          <div class="gold-bar-left"></div>
+          <p><span data-lang="fr">Scripts, templates et outils développés et utilisés en interne par l'équipe KEMT pour accélérer et standardiser le travail de recherche.</span><span data-lang="en" class="d-none">Scripts, templates, and tools developed and used internally by the KEMT team to accelerate and standardize research work.</span></p>
+        </div>
+        <div class="row g-4">
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="toolkit-card">
+              <div class="toolkit-card-header"><i class="bi bi-bar-chart-line-fill"></i><h5>Stata Do-Files</h5></div>
+              <div class="toolkit-card-body">
+                <p><span data-lang="fr">Collection de scripts Stata pour le nettoyage de données SurveyCTO, l'estimation d'effets de traitement (ITT, TOT), la création de tableaux de résultats estout/outreg2, et les tests de robustesse.</span><span data-lang="en" class="d-none">Collection of Stata scripts for SurveyCTO data cleaning, treatment effect estimation (ITT, TOT), results table creation (estout/outreg2), and robustness tests.</span></p>
+                <div class="mb-3"><span class="toolkit-tag">Stata 17</span><span class="toolkit-tag">ITT</span><span class="toolkit-tag">TOT</span><span class="toolkit-tag">estout</span><span class="toolkit-tag">outreg2</span></div>
+                <a href="contact.html" class="btn-toolkit"><i class="bi bi-key-fill"></i> <span data-lang="fr">Demander l'accès</span><span data-lang="en" class="d-none">Request access</span></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="toolkit-card">
+              <div class="toolkit-card-header"><i class="bi bi-code-slash"></i><h5>R Scripts</h5></div>
+              <div class="toolkit-card-body">
+                <p><span data-lang="fr">Scripts R pour la visualisation des résultats d'impact (ggplot2), l'analyse de puissance (pwr), la vérification de l'équilibre des covariables et la génération de figures de publication.</span><span data-lang="en" class="d-none">R scripts for visualizing impact results (ggplot2), power analysis (pwr), covariate balance checking, and generation of publication-ready figures.</span></p>
+                <div class="mb-3"><span class="toolkit-tag">R 4.3</span><span class="toolkit-tag">ggplot2</span><span class="toolkit-tag">pwr</span><span class="toolkit-tag">lmtest</span></div>
+                <a href="contact.html" class="btn-toolkit"><i class="bi bi-key-fill"></i> <span data-lang="fr">Demander l'accès</span><span data-lang="en" class="d-none">Request access</span></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="toolkit-card">
+              <div class="toolkit-card-header"><i class="bi bi-file-earmark-spreadsheet-fill"></i><h5><span data-lang="fr">Templates de Tableaux</span><span data-lang="en" class="d-none">Results Templates</span></h5></div>
+              <div class="toolkit-card-body">
+                <p><span data-lang="fr">Templates Excel &amp; LaTeX de tableaux de résultats prêts pour soumission dans les revues académiques. Formats AEA (AEJ), Oxford (EJ) et World Bank Policy Research Working Papers.</span><span data-lang="en" class="d-none">Excel &amp; LaTeX results table templates ready for submission to academic journals. AEA (AEJ), Oxford (EJ), and World Bank Policy Research Working Papers formats.</span></p>
+                <div class="mb-3"><span class="toolkit-tag">Excel</span><span class="toolkit-tag">LaTeX</span><span class="toolkit-tag">AEA</span><span class="toolkit-tag">World Bank</span></div>
+                <a href="resources.html" class="btn-toolkit"><i class="bi bi-download"></i> <span data-lang="fr">Télécharger</span><span data-lang="en" class="d-none">Download</span></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="toolkit-card">
+              <div class="toolkit-card-header"><i class="bi bi-phone-fill"></i><h5>SurveyCTO Forms</h5></div>
+              <div class="toolkit-card-body">
+                <p><span data-lang="fr">Bibliothèque de modules XLSForm réutilisables : consentement éclairé, modules ménage, modules élève, modules enseignant, tests de compétences en lecture et mathématiques, et calcul automatique des scores.</span><span data-lang="en" class="d-none">Library of reusable XLSForm modules: informed consent, household, student, teacher modules, literacy and numeracy skills tests, and automatic score calculation.</span></p>
+                <div class="mb-3"><span class="toolkit-tag">XLSForm</span><span class="toolkit-tag">SurveyCTO</span><span class="toolkit-tag">FR/EN/FON</span></div>
+                <a href="contact.html" class="btn-toolkit"><i class="bi bi-key-fill"></i> <span data-lang="fr">Demander l'accès</span><span data-lang="en" class="d-none">Request access</span></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="toolkit-card">
+              <div class="toolkit-card-header"><i class="bi bi-shield-lock-fill"></i><h5><span data-lang="fr">Formulaires Éthiques</span><span data-lang="en" class="d-none">Ethics Forms</span></h5></div>
+              <div class="toolkit-card-body">
+                <p><span data-lang="fr">Formulaires de consentement éclairé (adultes et mineurs), protocoles IRB adaptés au contexte béninois, accord de confidentialité des données de recherche et procédure d'anonymisation des bases de données.</span><span data-lang="en" class="d-none">Informed consent forms (adults and minors), IRB protocols adapted to the Beninese context, research data confidentiality agreement, and database anonymization procedure.</span></p>
+                <div class="mb-3"><span class="toolkit-tag">IRB</span><span class="toolkit-tag">RGPD</span><span class="toolkit-tag">FR/EN</span></div>
+                <a href="resources.html" class="btn-toolkit"><i class="bi bi-download"></i> <span data-lang="fr">Télécharger</span><span data-lang="en" class="d-none">Download</span></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="toolkit-card">
+              <div class="toolkit-card-header"><i class="bi bi-graph-up-arrow"></i><h5><span data-lang="fr">Power Calculator</span><span data-lang="en" class="d-none">Power Calculator</span></h5></div>
+              <div class="toolkit-card-body">
+                <p><span data-lang="fr">Outil interactif de calcul de la taille d'échantillon pour les RCT. Paramètres configurables : effet minimum détectable (MDE), ICC, taux d'attrition, nombre de clusters et bras de traitement multiples.</span><span data-lang="en" class="d-none">Interactive sample size calculator for RCTs. Configurable parameters: minimum detectable effect (MDE), ICC, attrition rate, number of clusters, and multiple treatment arms.</span></p>
+                <div class="mb-3"><span class="toolkit-tag">Excel</span><span class="toolkit-tag">MDE</span><span class="toolkit-tag">ICC</span><span class="toolkit-tag">Clusters</span></div>
+                <a href="resources.html" class="btn-toolkit"><i class="bi bi-download"></i> <span data-lang="fr">Télécharger</span><span data-lang="en" class="d-none">Download</span></a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA ── -->
+    <section id="doc-cta">
+      <div class="container" data-aos="fade-up">
+        <h2>
+          <span data-lang="fr">Vous ne trouvez pas le document recherché ?</span>
+          <span data-lang="en" class="d-none">Can't find the document you're looking for?</span>
+        </h2>
+        <p>
+          <span data-lang="fr">Contactez notre équipe de documentation. Certains documents sont disponibles sur demande motivée selon un protocole éthique et académique.</span>
+          <span data-lang="en" class="d-none">Contact our documentation team. Some documents are available on reasoned request following an ethical and academic protocol.</span>
+        </p>
+        <div class="d-flex gap-3 flex-wrap justify-content-center">
+          <a href="contact.html" class="btn-gold"><i class="bi bi-envelope-fill"></i> <span data-lang="fr">Nous contacter</span><span data-lang="en" class="d-none">Contact us</span></a>
+          <a href="resources.html" class="btn-outline-gold"><i class="bi bi-database-fill"></i> <span data-lang="fr">Voir les ressources</span><span data-lang="en" class="d-none">View resources</span></a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
   <div data-include="includes/footer.html"></div>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <div id="preloader"><div class="ring-loader"><span></span></div><div class="preloader-text"><strong>KEMT Center</strong><small>Recherche &amp; Impact</small></div></div>
+
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/js/include-html.js"></script>
-  <script src="assets/js/lang-switcher.js"></script>
+  <script src='assets/js/lang-switcher.js'></script>
+  <script src="assets/js/main.js"></script>
+
   <script>
-    document.addEventListener('DOMContentLoaded', function(){ if(window.AOS) AOS.init({once:true}); });
+    // Sticky tab highlight on scroll
+    (function () {
+      var sections = ['cat-overview', 'methodology-guides', 'field-protocols', 'pub-archives', 'toolkit'];
+      var links = document.querySelectorAll('.doc-tab-nav a');
+      window.addEventListener('scroll', function () {
+        var y = window.pageYOffset;
+        sections.forEach(function (id, i) {
+          var el = document.getElementById(id);
+          if (!el) return;
+          if (el.offsetTop - 130 <= y) {
+            links.forEach(function (l) { l.classList.remove('active'); });
+            if (links[i]) links[i].classList.add('active');
+          }
+        });
+      });
+    })();
+
+    // Live search filter
+    function filterDocs(listId, query) {
+      var q = query.toLowerCase().trim();
+      document.querySelectorAll('#' + listId + ' .doc-item').forEach(function(card) {
+        var text = card.innerText.toLowerCase();
+        card.style.display = (!q || text.includes(q)) ? '' : 'none';
+      });
+    }
   </script>
+
 </body>
 </html>
-
-

@@ -2,58 +2,454 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Événements - KEMT Center</title>
-  <meta name="description" content="Événements et conférences du KEMT Center.">
-  <meta name="keywords" content="événements, conférences, ateliers, recherche">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title data-lang-fr="Événements - KEMT Center" data-lang-en="Events - KEMT Center">Événements - KEMT Center</title>
+  <meta name="description" content="Événements, conférences et ateliers du KEMT Center : symposiums, sessions de formation et rencontres internationales.">
+  <meta name="keywords" content="KEMT Center, événements, conférences, ateliers, symposium, recherche">
+  <link href="assets/img/kemt_center.png" rel="icon">
+  <link href="assets/img/kemt_center.png" rel="apple-touch-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/css/main.css" rel="stylesheet">
+  <style>
+    :root { --gold-mid: #b8933b; }
+    body { font-family: var(--font-body); background: var(--gray-100); color: var(--navy); }
+
+    .page-title {
+      background: linear-gradient(rgba(10,22,40,0.88), rgba(10,22,40,0.88)), url('assets/img/work_shop/workshop_boh_222.png') center/cover no-repeat !important;
+      padding: 80px 0 !important;
+      border-bottom: 2px solid rgba(201,168,76,0.3) !important;
+    }
+    .page-title h1 { font-family: var(--font-display) !important; font-size: 2.8rem !important; font-weight: 700 !important; color: var(--white) !important; margin: 0 0 10px 0 !important; }
+    .page-title .breadcrumbs ol { font-family: var(--font-mono) !important; font-size: 0.8rem !important; text-transform: uppercase; letter-spacing: 0.05em; }
+    .page-title .breadcrumbs ol li a { color: rgba(255,255,255,0.7) !important; }
+    .page-title .breadcrumbs ol li a:hover { color: var(--gold-light) !important; }
+    .page-title .breadcrumbs ol li.current { color: var(--gold) !important; }
+    .page-title .breadcrumbs ol li+li::before { color: rgba(255,255,255,0.3) !important; }
+
+    .section-title h2 { font-family: var(--font-display); font-size: 1.9rem; font-weight: 700; color: var(--navy); }
+    .section-title p { color: var(--gray-600); max-width: 620px; margin: 0 auto; }
+    .gold-bar { width: 60px; height: 3px; background: var(--gold); margin: 0.8rem auto 0; }
+    .gold-bar-left { width: 50px; height: 3px; background: var(--gold); margin: 0.7rem 0 1.5rem; }
+
+    /* Upcoming Events */
+    #upcoming { background: var(--white); padding: 5rem 0; }
+    .event-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      height: 100%;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .event-card:hover { transform: translateY(-7px); box-shadow: var(--shadow-lg); border-color: rgba(201,168,76,0.4); }
+    .event-card-img { position: relative; overflow: hidden; height: 210px; }
+    .event-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+    .event-card:hover .event-card-img img { transform: scale(1.06); }
+    .event-status-badge {
+      position: absolute; top: 1rem; left: 1rem;
+      font-family: var(--font-mono); font-size: 0.7rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.07em;
+      padding: 4px 12px; border-radius: 50px;
+    }
+    .badge-upcoming { background: var(--gold); color: var(--navy); }
+    .badge-past { background: rgba(10,22,40,0.7); color: rgba(255,255,255,0.8); }
+    .event-date-block {
+      position: absolute; bottom: 1rem; right: 1rem;
+      background: var(--navy);
+      border: 1px solid var(--gold);
+      border-radius: var(--radius);
+      padding: 0.5rem 0.9rem;
+      text-align: center;
+      min-width: 58px;
+    }
+    .event-date-block .day { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--gold); line-height: 1; }
+    .event-date-block .month { font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.06em; color: rgba(255,255,255,0.7); }
+    .event-card-body { padding: 1.6rem; flex: 1; display: flex; flex-direction: column; }
+    .event-type-tag {
+      display: inline-block; font-family: var(--font-mono); font-size: 0.68rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold-mid);
+      background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 3px; padding: 2px 8px; margin-bottom: 0.8rem;
+    }
+    .event-card-body h4 { font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 0.6rem; line-height: 1.4; }
+    .event-card-body p { font-size: 0.88rem; color: var(--gray-600); line-height: 1.7; flex: 1; margin-bottom: 1.2rem; }
+    .event-meta { display: flex; flex-wrap: wrap; gap: 1rem; font-family: var(--font-mono); font-size: 0.75rem; color: var(--gray-500); margin-bottom: 1.2rem; }
+    .event-meta span { display: flex; align-items: center; gap: 0.3rem; }
+    .btn-event {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.06em;
+      color: var(--navy); border: 1.5px solid var(--gold);
+      border-radius: 50px; padding: 0.4rem 1.1rem;
+      text-decoration: none; background: transparent;
+      transition: all 0.25s ease; margin-top: auto; align-self: flex-start;
+    }
+    .btn-event:hover { background: var(--navy); color: var(--gold); border-color: var(--navy); }
+
+    /* Past events / Gallery strip */
+    #past-events { background: var(--gray-100); padding: 5rem 0; }
+    .gallery-masonry { columns: 3; column-gap: 1rem; }
+    @media (max-width: 991px) { .gallery-masonry { columns: 2; } }
+    @media (max-width: 575px) { .gallery-masonry { columns: 1; } }
+    .gallery-masonry-item {
+      break-inside: avoid;
+      margin-bottom: 1rem;
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+      display: block;
+    }
+    .gallery-masonry-item img { width: 100%; display: block; transition: transform 0.4s ease; }
+    .gallery-masonry-item:hover img { transform: scale(1.04); }
+    .gallery-masonry-overlay {
+      position: absolute; inset: 0;
+      background: rgba(10,22,40,0.5);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transition: opacity 0.3s ease;
+    }
+    .gallery-masonry-item:hover .gallery-masonry-overlay { opacity: 1; }
+    .gallery-masonry-overlay i { font-size: 1.6rem; color: var(--gold); }
+
+    /* Timeline strip */
+    #timeline { background: var(--navy); padding: 5rem 0; }
+    .timeline-item { display: flex; gap: 1.5rem; align-items: flex-start; position: relative; padding-bottom: 2.5rem; }
+    .timeline-item:last-child { padding-bottom: 0; }
+    .timeline-item:not(:last-child)::after {
+      content: ''; position: absolute; left: 19px; top: 40px;
+      width: 2px; height: calc(100% - 20px);
+      background: rgba(201,168,76,0.25);
+    }
+    .timeline-dot {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: rgba(201,168,76,0.15); border: 2px solid var(--gold);
+      color: var(--gold); font-size: 1rem;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; z-index: 1;
+    }
+    .timeline-content h5 { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 0.3rem; }
+    .timeline-content .timeline-date { font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--gold); margin-bottom: 0.4rem; }
+    .timeline-content p { font-size: 0.87rem; color: rgba(255,255,255,0.65); margin: 0; line-height: 1.65; }
+
+    /* CTA */
+    #events-cta { background: linear-gradient(rgba(10,22,40,0.94), rgba(10,22,40,0.94)), url('assets/img/hero-carousel/hero-carousel-1.jpeg') center/cover no-repeat; padding: 5rem 0; text-align: center; }
+    #events-cta h2 { font-family: var(--font-display); font-size: 2rem; font-weight: 700; color: var(--white); margin-bottom: 1rem; }
+    #events-cta p { color: rgba(255,255,255,0.72); max-width: 500px; margin: 0 auto 2rem; }
+    .btn-gold { display: inline-flex; align-items: center; gap: 0.4rem; background: var(--gold); color: var(--navy); font-family: var(--font-mono); font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; padding: 0.75rem 2rem; border-radius: 50px; text-decoration: none; transition: all 0.25s ease; }
+    .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,168,76,0.35); color: var(--navy); }
+    .btn-outline-gold { display: inline-flex; align-items: center; gap: 0.4rem; background: transparent; color: var(--gold); border: 1.5px solid var(--gold); font-family: var(--font-mono); font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; padding: 0.75rem 2rem; border-radius: 50px; text-decoration: none; transition: all 0.25s ease; }
+    .btn-outline-gold:hover { background: var(--gold); color: var(--navy); transform: translateY(-2px); }
+  </style>
 </head>
-<body class="lang-fr">
-<div data-include="includes/header.html"></div>
-<main class="main">
-  <section class="section hero pt-5 pb-5 bg-light text-dark">
-    <div class="container">
-      <h1><span data-lang="fr">Événements & conférences</span><span data-lang="en" class="d-none">Events & conferences</span></h1>
-      <p class="lead"><span data-lang="fr">Participez à nos forums, ateliers et rencontres internationales.</span><span data-lang="en" class="d-none">Join our forums, workshops, and international meetings.</span></p>
+<body class="events-page">
+
+  <div data-include="includes/header.html"></div>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title accent-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">
+          <span data-lang="fr">Événements &amp; Conférences</span>
+          <span data-lang="en" class="d-none">Events &amp; Conferences</span>
+        </h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html"><span data-lang="fr">Accueil</span><span data-lang="en" class="d-none">Home</span></a></li>
+            <li class="current"><span data-lang="fr">Événements</span><span data-lang="en" class="d-none">Events</span></li>
+          </ol>
+        </nav>
+      </div>
     </div>
-  </section>
-  <section class="section py-5">
-    <div class="container">
-      <div class="row gy-4">
-        <div class="col-lg-4" data-aos="fade-up">
-          <div class="p-4 bg-white rounded-4 shadow-sm h-100">
-            <h3><span data-lang="fr">Symposium annuel</span><span data-lang="en" class="d-none">Annual symposium</span></h3>
-            <p><span data-lang="fr">Rencontre sur les politiques éducatives et l’impact social.</span><span data-lang="en" class="d-none">Conference on education policies and social impact.</span></p>
-          </div>
+
+    <!-- Upcoming Events -->
+    <section id="upcoming">
+      <div class="container">
+        <div class="section-title text-center mb-5" data-aos="fade-up">
+          <h2><span data-lang="fr">Prochains Événements</span><span data-lang="en" class="d-none">Upcoming Events</span></h2>
+          <div class="gold-bar"></div>
+          <p class="mt-3"><span data-lang="fr">Rejoignez nos prochaines rencontres scientifiques, ateliers de terrain et forums de politique publique.</span><span data-lang="en" class="d-none">Join our upcoming scientific meetings, field workshops, and public policy forums.</span></p>
         </div>
-        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="40">
-          <div class="p-4 bg-white rounded-4 shadow-sm h-100">
-            <h3><span data-lang="fr">Atelier Data & politique</span><span data-lang="en" class="d-none">Data & policy workshop</span></h3>
-            <p><span data-lang="fr">Session pratique sur l’usage des données pour la décision publique.</span><span data-lang="en" class="d-none">Hands-on session on data-driven public decision-making.</span></p>
+        <div class="row g-4">
+
+          <!-- Event 1 -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="event-card">
+              <div class="event-card-img">
+                <img src="assets/img/work_shop/workshop_boh_4.png" alt="Symposium annuel KEMT 2025">
+                <span class="event-status-badge badge-upcoming"><span data-lang="fr">À venir</span><span data-lang="en" class="d-none">Upcoming</span></span>
+                <div class="event-date-block"><div class="day">14</div><div class="month">Juin 2025</div></div>
+              </div>
+              <div class="event-card-body">
+                <span class="event-type-tag"><i class="bi bi-mic-fill"></i> <span data-lang="fr">Symposium</span><span data-lang="en" class="d-none">Symposium</span></span>
+                <h4><span data-lang="fr">Symposium Annuel KEMT 2025 — Politiques Éducatives en Afrique de l'Ouest</span><span data-lang="en" class="d-none">KEMT Annual Symposium 2025 — Education Policy in West Africa</span></h4>
+                <p><span data-lang="fr">Rencontre annuelle réunissant chercheurs, décideurs et partenaires autour des résultats de nos essais randomisés sur l'éducation rurale et l'implication parentale.</span><span data-lang="en" class="d-none">Annual gathering of researchers, policymakers, and partners around our RCT results on rural education and parental involvement.</span></p>
+                <div class="event-meta">
+                  <span><i class="bi bi-geo-alt"></i> Cotonou, Bénin</span>
+                  <span><i class="bi bi-clock"></i> 09h00 – 17h00</span>
+                </div>
+                <a href="contact.html" class="btn-event"><span data-lang="fr">S'inscrire</span><span data-lang="en" class="d-none">Register</span> <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
           </div>
+
+          <!-- Event 2 -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="event-card">
+              <div class="event-card-img">
+                <img src="assets/img/work_shop/workshop_boh_2.png" alt="Atelier Data & Politique">
+                <span class="event-status-badge badge-upcoming"><span data-lang="fr">À venir</span><span data-lang="en" class="d-none">Upcoming</span></span>
+                <div class="event-date-block"><div class="day">28</div><div class="month">Juil 2025</div></div>
+              </div>
+              <div class="event-card-body">
+                <span class="event-type-tag"><i class="bi bi-bar-chart-fill"></i> <span data-lang="fr">Atelier</span><span data-lang="en" class="d-none">Workshop</span></span>
+                <h4><span data-lang="fr">Atelier Data &amp; Politique — Utiliser les données pour décider</span><span data-lang="en" class="d-none">Data &amp; Policy Workshop — Using Evidence for Decision Making</span></h4>
+                <p><span data-lang="fr">Session pratique intensive sur l'analyse de données avec Stata et R, l'interprétation des résultats d'impact et la communication vers les décideurs politiques.</span><span data-lang="en" class="d-none">Intensive hands-on session on data analysis with Stata and R, interpreting impact results, and communicating findings to policymakers.</span></p>
+                <div class="event-meta">
+                  <span><i class="bi bi-geo-alt"></i> <span data-lang="fr">Porto-Novo, Bénin</span><span data-lang="en" class="d-none">Porto-Novo, Benin</span></span>
+                  <span><i class="bi bi-clock"></i> 08h30 – 16h30</span>
+                </div>
+                <a href="contact.html" class="btn-event"><span data-lang="fr">S'inscrire</span><span data-lang="en" class="d-none">Register</span> <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 3 -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="event-card">
+              <div class="event-card-img">
+                <img src="assets/img/hero-carousel/hero-carousel-2.jpeg" alt="Conférence internationale">
+                <span class="event-status-badge badge-upcoming"><span data-lang="fr">À venir</span><span data-lang="en" class="d-none">Upcoming</span></span>
+                <div class="event-date-block"><div class="day">15</div><div class="month">Sept 2025</div></div>
+              </div>
+              <div class="event-card-body">
+                <span class="event-type-tag"><i class="bi bi-globe"></i> <span data-lang="fr">Conférence</span><span data-lang="en" class="d-none">Conference</span></span>
+                <h4><span data-lang="fr">Conférence Internationale — Genre, Éducation &amp; Développement</span><span data-lang="en" class="d-none">International Conference — Gender, Education &amp; Development</span></h4>
+                <p><span data-lang="fr">Forum de partage entre chercheurs, ONG et institutions autour des avancées sur les normes de genre et l'éducation des filles en Afrique subsaharienne.</span><span data-lang="en" class="d-none">Knowledge-sharing forum for researchers, NGOs, and institutions on advances in gender norms and girls' education in sub-Saharan Africa.</span></p>
+                <div class="event-meta">
+                  <span><i class="bi bi-geo-alt"></i> Abidjan / <span data-lang="fr">En ligne</span><span data-lang="en" class="d-none">Online</span></span>
+                  <span><i class="bi bi-clock"></i> 09h00 – 18h00</span>
+                </div>
+                <a href="contact.html" class="btn-event"><span data-lang="fr">S'inscrire</span><span data-lang="en" class="d-none">Register</span> <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 4 -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="event-card">
+              <div class="event-card-img">
+                <img src="assets/img/work_shop/workshop_boh_3.jpeg" alt="Formation enquêteurs">
+                <span class="event-status-badge badge-upcoming"><span data-lang="fr">À venir</span><span data-lang="en" class="d-none">Upcoming</span></span>
+                <div class="event-date-block"><div class="day">03</div><div class="month">Oct 2025</div></div>
+              </div>
+              <div class="event-card-body">
+                <span class="event-type-tag"><i class="bi bi-mortarboard-fill"></i> <span data-lang="fr">Formation</span><span data-lang="en" class="d-none">Training</span></span>
+                <h4><span data-lang="fr">Formation Terrain — Enquêteurs &amp; Collecte de Données Numériques</span><span data-lang="en" class="d-none">Field Training — Enumerators &amp; Digital Data Collection</span></h4>
+                <p><span data-lang="fr">Session de formation intensive de 3 jours pour les enquêteurs de terrain. SurveyCTO, éthique de la collecte, gestion des refus et contrôle qualité en temps réel.</span><span data-lang="en" class="d-none">Intensive 3-day training session for field enumerators. SurveyCTO, collection ethics, managing refusals, and real-time quality control.</span></p>
+                <div class="event-meta">
+                  <span><i class="bi bi-geo-alt"></i> <span data-lang="fr">Pahou, Bénin</span><span data-lang="en" class="d-none">Pahou, Benin</span></span>
+                  <span><i class="bi bi-calendar3"></i> 3 <span data-lang="fr">jours</span><span data-lang="en" class="d-none">days</span></span>
+                </div>
+                <a href="contact.html" class="btn-event"><span data-lang="fr">S'inscrire</span><span data-lang="en" class="d-none">Register</span> <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 5 -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="event-card">
+              <div class="event-card-img">
+                <img src="assets/img/hero-carousel/hero-carousel-4.jpeg" alt="Séminaire STEM">
+                <span class="event-status-badge badge-upcoming"><span data-lang="fr">À venir</span><span data-lang="en" class="d-none">Upcoming</span></span>
+                <div class="event-date-block"><div class="day">22</div><div class="month">Nov 2025</div></div>
+              </div>
+              <div class="event-card-body">
+                <span class="event-type-tag"><i class="bi bi-calculator-fill"></i> <span data-lang="fr">Séminaire</span><span data-lang="en" class="d-none">Seminar</span></span>
+                <h4><span data-lang="fr">Séminaire STEM — Filles, Sciences &amp; Avenir</span><span data-lang="en" class="d-none">STEM Seminar — Girls, Science &amp; the Future</span></h4>
+                <p><span data-lang="fr">Séminaire dédié aux lycéennes avec des modèles féminins inspirants, des ateliers pratiques de mathématiques et des sessions d'orientation vers les filières scientifiques.</span><span data-lang="en" class="d-none">Seminar for secondary school girls with inspiring female role models, hands-on mathematics workshops, and guidance into scientific tracks.</span></p>
+                <div class="event-meta">
+                  <span><i class="bi bi-geo-alt"></i> Cotonou, Bénin</span>
+                  <span><i class="bi bi-clock"></i> 09h00 – 15h00</span>
+                </div>
+                <a href="contact.html" class="btn-event"><span data-lang="fr">S'inscrire</span><span data-lang="en" class="d-none">Register</span> <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 6 -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="event-card">
+              <div class="event-card-img">
+                <img src="assets/img/work_shop/workshop_boh_1.jpeg" alt="Forum partenaires">
+                <span class="event-status-badge badge-upcoming"><span data-lang="fr">À venir</span><span data-lang="en" class="d-none">Upcoming</span></span>
+                <div class="event-date-block"><div class="day">10</div><div class="month">Déc 2025</div></div>
+              </div>
+              <div class="event-card-body">
+                <span class="event-type-tag"><i class="bi bi-people-fill"></i> <span data-lang="fr">Forum</span><span data-lang="en" class="d-none">Forum</span></span>
+                <h4><span data-lang="fr">Forum Partenaires KEMT — Bilan 2025 &amp; Perspectives 2026</span><span data-lang="en" class="d-none">KEMT Partners Forum — 2025 Review &amp; 2026 Outlook</span></h4>
+                <p><span data-lang="fr">Rencontre annuelle avec nos partenaires institutionnels, bailleurs de fonds et écoles partenaires pour partager les résultats de l'année et planifier les activités 2026.</span><span data-lang="en" class="d-none">Annual meeting with our institutional partners, funders, and partner schools to share yearly results and plan 2026 activities.</span></p>
+                <div class="event-meta">
+                  <span><i class="bi bi-geo-alt"></i> Cotonou, Bénin</span>
+                  <span><i class="bi bi-clock"></i> 10h00 – 16h00</span>
+                </div>
+                <a href="contact.html" class="btn-event"><span data-lang="fr">S'inscrire</span><span data-lang="en" class="d-none">Register</span> <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+
         </div>
-        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="80">
-          <div class="p-4 bg-white rounded-4 shadow-sm h-100">
-            <h3><span data-lang="fr">Conférence internationale</span><span data-lang="en" class="d-none">International conference</span></h3>
-            <p><span data-lang="fr">Forum de partage entre chercheurs, ONG et institutions.</span><span data-lang="en" class="d-none">Knowledge-sharing platform for researchers, NGOs, and institutions.</span></p>
+      </div>
+    </section>
+
+    <!-- Past Events Photo Gallery -->
+    <section id="past-events">
+      <div class="container">
+        <div class="section-title text-center mb-5" data-aos="fade-up">
+          <h2><span data-lang="fr">Événements Passés en Images</span><span data-lang="en" class="d-none">Past Events in Pictures</span></h2>
+          <div class="gold-bar"></div>
+          <p class="mt-3"><span data-lang="fr">Revivez nos ateliers, sessions de terrain et conférences à travers notre galerie photo.</span><span data-lang="en" class="d-none">Relive our workshops, field sessions, and conferences through our photo gallery.</span></p>
+        </div>
+        <div class="gallery-masonry" data-aos="fade-up" data-aos-delay="100">
+          <a href="assets/img/work_shop/workshop_boh_222.png" class="gallery-masonry-item glightbox" data-gallery="events-gallery" data-title="Atelier de terrain — Bohé 2024">
+            <img src="assets/img/work_shop/workshop_boh_222.png" alt="Atelier de terrain Bohé 2024">
+            <div class="gallery-masonry-overlay"><i class="bi bi-zoom-in"></i></div>
+          </a>
+          <a href="assets/img/work_shop/workshop_boh_4.png" class="gallery-masonry-item glightbox" data-gallery="events-gallery" data-title="Session formation enquêteurs">
+            <img src="assets/img/work_shop/workshop_boh_4.png" alt="Session formation enquêteurs">
+            <div class="gallery-masonry-overlay"><i class="bi bi-zoom-in"></i></div>
+          </a>
+          <a href="assets/img/work_shop/workshop_boh_2.png" class="gallery-masonry-item glightbox" data-gallery="events-gallery" data-title="Atelier collecte données">
+            <img src="assets/img/work_shop/workshop_boh_2.png" alt="Atelier collecte données">
+            <div class="gallery-masonry-overlay"><i class="bi bi-zoom-in"></i></div>
+          </a>
+          <a href="assets/img/work_shop/workshop_boh_1.jpeg" class="gallery-masonry-item glightbox" data-gallery="events-gallery" data-title="Atelier de formation terrain">
+            <img src="assets/img/work_shop/workshop_boh_1.jpeg" alt="Atelier terrain Bohé">
+            <div class="gallery-masonry-overlay"><i class="bi bi-zoom-in"></i></div>
+          </a>
+          <a href="assets/img/work_shop/workshop_boh_3.jpeg" class="gallery-masonry-item glightbox" data-gallery="events-gallery" data-title="Séance de travail">
+            <img src="assets/img/work_shop/workshop_boh_3.jpeg" alt="Séance de travail">
+            <div class="gallery-masonry-overlay"><i class="bi bi-zoom-in"></i></div>
+          </a>
+          <a href="assets/img/work_shop/WhatsApp%20Image%202026-05-19%20at%2017.36.56.jpeg" class="gallery-masonry-item glightbox" data-gallery="events-gallery" data-title="Atelier KEMT 2024">
+            <img src="assets/img/work_shop/WhatsApp%20Image%202026-05-19%20at%2017.36.56.jpeg" alt="Atelier KEMT 2024">
+            <div class="gallery-masonry-overlay"><i class="bi bi-zoom-in"></i></div>
+          </a>
+          <a href="assets/img/work_shop/WhatsApp%20Image%202026-05-19%20at%2017.36.57%20%281%29.jpeg" class="gallery-masonry-item glightbox" data-gallery="events-gallery" data-title="Formation terrain 2024">
+            <img src="assets/img/work_shop/WhatsApp%20Image%202026-05-19%20at%2017.36.57%20%281%29.jpeg" alt="Formation terrain 2024">
+            <div class="gallery-masonry-overlay"><i class="bi bi-zoom-in"></i></div>
+          </a>
+          <a href="assets/img/work_shop/WhatsApp%20Image%202026-05-19%20at%2017.36.57%20%282%29.jpeg" class="gallery-masonry-item glightbox" data-gallery="events-gallery" data-title="Session KEMT">
+            <img src="assets/img/work_shop/WhatsApp%20Image%202026-05-19%20at%2017.36.57%20%282%29.jpeg" alt="Session KEMT">
+            <div class="gallery-masonry-overlay"><i class="bi bi-zoom-in"></i></div>
+          </a>
+          <a href="assets/img/work_shop/WhatsApp%20Image%202026-05-19%20at%2017.36.58%20%281%29.jpeg" class="gallery-masonry-item glightbox" data-gallery="events-gallery" data-title="Atelier enquêteurs">
+            <img src="assets/img/work_shop/WhatsApp%20Image%202026-05-19%20at%2017.36.58%20%281%29.jpeg" alt="Atelier enquêteurs">
+            <div class="gallery-masonry-overlay"><i class="bi bi-zoom-in"></i></div>
+          </a>
+        </div>
+        <div class="text-center mt-4" data-aos="fade-up">
+          <a href="gallery.html" class="btn-outline-gold" style="display:inline-flex; align-items:center; gap:0.4rem;">
+            <i class="bi bi-images"></i>
+            <span data-lang="fr">Voir toute la galerie</span><span data-lang="en" class="d-none">View full gallery</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline -->
+    <section id="timeline">
+      <div class="container">
+        <div class="row g-5 align-items-start">
+          <div class="col-lg-4" data-aos="fade-right">
+            <h2 style="font-family:var(--font-display);font-size:1.9rem;font-weight:700;color:var(--white);margin-bottom:0.4rem;">
+              <span data-lang="fr">Nos Événements Marquants</span>
+              <span data-lang="en" class="d-none">Our Key Milestones</span>
+            </h2>
+            <div style="width:50px;height:3px;background:var(--gold);margin:0.7rem 0 1.2rem;"></div>
+            <p style="color:rgba(255,255,255,0.65);font-size:0.92rem;line-height:1.75;">
+              <span data-lang="fr">Depuis sa création, le KEMT Center a organisé et participé à de nombreux événements scientifiques ayant renforcé sa visibilité internationale.</span>
+              <span data-lang="en" class="d-none">Since its founding, KEMT Center has organized and participated in numerous scientific events that have strengthened its international visibility.</span>
+            </p>
+          </div>
+          <div class="col-lg-8" data-aos="fade-left">
+            <div class="timeline-item">
+              <div class="timeline-dot"><i class="bi bi-star-fill"></i></div>
+              <div class="timeline-content">
+                <div class="timeline-date">2024</div>
+                <h5><span data-lang="fr">Symposium National — Résultats RCT Implication Parentale</span><span data-lang="en" class="d-none">National Symposium — Parental Involvement RCT Results</span></h5>
+                <p><span data-lang="fr">Présentation des résultats de la vague 2 de notre RCT devant le Ministère de l'Éducation et nos partenaires universitaires.</span><span data-lang="en" class="d-none">Presentation of Wave 2 RCT results before the Ministry of Education and our university partners.</span></p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"><i class="bi bi-mortarboard-fill"></i></div>
+              <div class="timeline-content">
+                <div class="timeline-date">2024</div>
+                <h5><span data-lang="fr">Atelier Terrain — Formation Enquêteurs Bohé</span><span data-lang="en" class="d-none">Field Workshop — Bohé Enumerator Training</span></h5>
+                <p><span data-lang="fr">Formation intensive de 40 enquêteurs pour la collecte de données terrain dans les communes de Pahou, Ouidah et Bohé.</span><span data-lang="en" class="d-none">Intensive training of 40 enumerators for field data collection in the communes of Pahou, Ouidah, and Bohé.</span></p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"><i class="bi bi-globe"></i></div>
+              <div class="timeline-content">
+                <div class="timeline-date">2023</div>
+                <h5><span data-lang="fr">Conférence Internationale — Genre &amp; Éducation, Dakar</span><span data-lang="en" class="d-none">International Conference — Gender &amp; Education, Dakar</span></h5>
+                <p><span data-lang="fr">Présentation de nos travaux sur les normes de genre à la conférence CSAE Africa à Dakar, avec des intervenants de 18 pays.</span><span data-lang="en" class="d-none">Presentation of our gender norms research at the CSAE Africa conference in Dakar, with speakers from 18 countries.</span></p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"><i class="bi bi-people-fill"></i></div>
+              <div class="timeline-content">
+                <div class="timeline-date">2023</div>
+                <h5><span data-lang="fr">Forum Partenaires — Lancement Initiative STEM Filles</span><span data-lang="en" class="d-none">Partners Forum — Girls STEM Initiative Launch</span></h5>
+                <p><span data-lang="fr">Lancement officiel de l'initiative STEM Filles avec 12 lycées partenaires, en présence de la Directrice Nationale des Lycées du Bénin.</span><span data-lang="en" class="d-none">Official launch of the Girls STEM Initiative with 12 partner high schools, in the presence of Benin's National Secondary School Director.</span></p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"><i class="bi bi-award-fill"></i></div>
+              <div class="timeline-content">
+                <div class="timeline-date">2022</div>
+                <h5><span data-lang="fr">Cérémonie de Remise des Bourses KEMT 2022</span><span data-lang="en" class="d-none">KEMT 2022 Scholarship Award Ceremony</span></h5>
+                <p><span data-lang="fr">Remise de 50+ bourses scolaires à des étudiants défavorisés dans 4 communes rurales du Bénin, en partenariat avec les mairies locales.</span><span data-lang="en" class="d-none">Award of 50+ school scholarships to disadvantaged students across 4 rural communes in Benin, in partnership with local municipalities.</span></p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-</main>
+    </section>
+
+    <!-- CTA -->
+    <section id="events-cta">
+      <div class="container" data-aos="fade-up">
+        <h2><span data-lang="fr">Participez à nos prochains événements</span><span data-lang="en" class="d-none">Join our upcoming events</span></h2>
+        <p><span data-lang="fr">Inscrivez-vous à nos newsletters pour recevoir les annonces d'événements et les invitations aux conférences du KEMT Center.</span><span data-lang="en" class="d-none">Subscribe to our newsletter to receive event announcements and conference invitations from KEMT Center.</span></p>
+        <div class="d-flex gap-3 flex-wrap justify-content-center">
+          <a href="contact.html" class="btn-gold"><i class="bi bi-envelope-fill"></i> <span data-lang="fr">Nous contacter</span><span data-lang="en" class="d-none">Contact us</span></a>
+          <a href="gallery.html" class="btn-outline-gold"><i class="bi bi-images"></i> <span data-lang="fr">Voir la galerie</span><span data-lang="en" class="d-none">View gallery</span></a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
   <div data-include="includes/footer.html"></div>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <div id="preloader"><div class="ring-loader"><span></span></div><div class="preloader-text"><strong>KEMT Center</strong><small>Recherche &amp; Impact</small></div></div>
+
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/js/include-html.js"></script>
-  <script src="assets/js/lang-switcher.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function(){ if(window.AOS) AOS.init({once:true}); });
-  </script>
+  <script src='assets/js/lang-switcher.js'></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
-
-

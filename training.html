@@ -2,58 +2,332 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Formations - KEMT Center</title>
-  <meta name="description" content="Formations et ateliers professionnels du KEMT Center.">
-  <meta name="keywords" content="formations, ateliers, développement, recherche">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title data-lang-fr="Formations - KEMT Center" data-lang-en="Training - KEMT Center">Formations - KEMT Center</title>
+  <meta name="description" content="Formations professionnelles, ateliers méthodologiques et programme Study Abroad du KEMT Center.">
+  <meta name="keywords" content="KEMT Center, formation, atelier, study abroad, méthodologie, Illinois">
+  <link href="assets/img/kemt_center.png" rel="icon">
+  <link href="assets/img/kemt_center.png" rel="apple-touch-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/css/main.css" rel="stylesheet">
+  <style>
+    :root { --gold-mid: #b8933b; }
+    body { font-family: var(--font-body); background: var(--gray-100); color: var(--navy); }
+
+    .page-title {
+      background: linear-gradient(rgba(10,22,40,0.88), rgba(10,22,40,0.88)), url('assets/img/study_abroad/illinois_hospital_11.png') center/cover no-repeat !important;
+      padding: 80px 0 !important; border-bottom: 2px solid rgba(201,168,76,0.3) !important;
+    }
+    .page-title h1 { font-family: var(--font-display) !important; font-size: 2.8rem !important; font-weight: 700 !important; color: var(--white) !important; margin: 0 0 10px 0 !important; }
+    .page-title .breadcrumbs ol { font-family: var(--font-mono) !important; font-size: 0.8rem !important; text-transform: uppercase; letter-spacing: 0.05em; }
+    .page-title .breadcrumbs ol li a { color: rgba(255,255,255,0.7) !important; }
+    .page-title .breadcrumbs ol li a:hover { color: var(--gold-light) !important; }
+    .page-title .breadcrumbs ol li.current { color: var(--gold) !important; }
+    .page-title .breadcrumbs ol li+li::before { color: rgba(255,255,255,0.3) !important; }
+
+    .section-title h2 { font-family: var(--font-display); font-size: 1.9rem; font-weight: 700; color: var(--navy); }
+    .gold-bar { width: 60px; height: 3px; background: var(--gold); margin: 0.8rem auto 0; }
+    .gold-bar-left { width: 50px; height: 3px; background: var(--gold); margin: 0.7rem 0 1.5rem; }
+
+    /* Training cards */
+    #workshops { background: var(--white); padding: 5rem 0; }
+    .training-card {
+      background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-lg);
+      overflow: hidden; box-shadow: var(--shadow-sm); height: 100%; transition: all 0.3s ease; display: flex; flex-direction: column;
+    }
+    .training-card:hover { transform: translateY(-7px); box-shadow: var(--shadow-lg); }
+    .training-card-img { height: 200px; overflow: hidden; position: relative; }
+    .training-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+    .training-card:hover .training-card-img img { transform: scale(1.06); }
+    .training-card-img-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(transparent 40%, rgba(10,22,40,0.75));
+    }
+    .training-card-body { padding: 1.8rem; flex: 1; display: flex; flex-direction: column; }
+    .training-type-badge { display: inline-block; font-family: var(--font-mono); font-size: 0.68rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold-mid); background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.3); border-radius: 3px; padding: 2px 8px; margin-bottom: 0.8rem; }
+    .training-card-body h4 { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.6rem; line-height: 1.4; }
+    .training-card-body p { font-size: 0.88rem; color: var(--gray-600); line-height: 1.7; flex: 1; margin-bottom: 1.2rem; }
+    .training-meta { display: flex; flex-wrap: wrap; gap: 0.8rem; font-family: var(--font-mono); font-size: 0.74rem; color: var(--gray-500); margin-bottom: 1.2rem; }
+    .training-meta span { display: flex; align-items: center; gap: 0.3rem; }
+    .btn-training { display: inline-flex; align-items: center; gap: 0.4rem; font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--navy); border: 1.5px solid var(--gold); border-radius: 50px; padding: 0.42rem 1.1rem; text-decoration: none; background: transparent; transition: all 0.25s ease; align-self: flex-start; }
+    .btn-training:hover { background: var(--navy); color: var(--gold); border-color: var(--navy); }
+
+    /* Study Abroad Section */
+    #study-abroad { background: var(--navy); padding: 5rem 0; overflow: hidden; }
+    .study-abroad-photos { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
+    .study-photo-item { border-radius: var(--radius); overflow: hidden; position: relative; aspect-ratio: 4/3; }
+    .study-photo-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; display: block; }
+    .study-photo-item:hover img { transform: scale(1.06); }
+    .study-photo-item:first-child { grid-row: span 2; aspect-ratio: auto; }
+    .study-photo-overlay { position: absolute; inset: 0; background: rgba(10,22,40,0.45); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; }
+    .study-photo-item:hover .study-photo-overlay { opacity: 1; }
+    .study-photo-overlay i { font-size: 1.5rem; color: var(--gold); }
+
+    /* Stats strip */
+    #training-stats { background: var(--gray-100); padding: 4rem 0; border-top: 1px solid var(--gray-200); }
+    .stat-box { text-align: center; padding: 1.5rem; }
+    .stat-num { font-family: var(--font-display); font-size: 2.8rem; font-weight: 700; color: var(--gold); line-height: 1; }
+    .stat-lbl { font-family: var(--font-mono); font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--gray-600); margin-top: 0.4rem; }
+
+    /* CTA */
+    #training-cta { background: linear-gradient(rgba(10,22,40,0.94), rgba(10,22,40,0.94)), url('assets/img/hero-carousel/hero-carousel-2.jpeg') center/cover no-repeat; padding: 5rem 0; text-align: center; }
+    #training-cta h2 { font-family: var(--font-display); font-size: 2rem; font-weight: 700; color: var(--white); margin-bottom: 1rem; }
+    #training-cta p { color: rgba(255,255,255,0.72); max-width: 500px; margin: 0 auto 2rem; }
+    .btn-gold { display: inline-flex; align-items: center; gap: 0.4rem; background: var(--gold); color: var(--navy); font-family: var(--font-mono); font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; padding: 0.75rem 2rem; border-radius: 50px; text-decoration: none; transition: all 0.25s ease; }
+    .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); color: var(--navy); }
+    .btn-outline-gold { display: inline-flex; align-items: center; gap: 0.4rem; background: transparent; color: var(--gold); border: 1.5px solid var(--gold); font-family: var(--font-mono); font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; padding: 0.75rem 2rem; border-radius: 50px; text-decoration: none; transition: all 0.25s ease; }
+    .btn-outline-gold:hover { background: var(--gold); color: var(--navy); transform: translateY(-2px); }
+  </style>
 </head>
-<body class="lang-fr">
-<div data-include="includes/header.html"></div>
-<main class="main">
-  <section class="section hero pt-5 pb-5 bg-light text-dark">
-    <div class="container">
-      <h1><span data-lang="fr">Formations professionnelles</span><span data-lang="en" class="d-none">Professional training</span></h1>
-      <p class="lead"><span data-lang="fr">Programmes ciblés pour les chercheurs, praticiens et décideurs.</span><span data-lang="en" class="d-none">Targeted programs for researchers, practitioners, and policymakers.</span></p>
+<body class="training-page">
+  <div data-include="includes/header.html"></div>
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title accent-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">
+          <span data-lang="fr">Formations &amp; Ateliers</span>
+          <span data-lang="en" class="d-none">Training &amp; Workshops</span>
+        </h1>
+        <nav class="breadcrumbs"><ol>
+          <li><a href="index.html"><span data-lang="fr">Accueil</span><span data-lang="en" class="d-none">Home</span></a></li>
+          <li class="current"><span data-lang="fr">Formations</span><span data-lang="en" class="d-none">Training</span></li>
+        </ol></nav>
+      </div>
     </div>
-  </section>
-  <section class="section py-5">
-    <div class="container">
-      <div class="row gy-4">
-        <div class="col-lg-6" data-aos="fade-up">
-          <div class="p-4 bg-white rounded-4 shadow-sm h-100">
-            <h3><span data-lang="fr">Ateliers méthodologiques</span><span data-lang="en" class="d-none">Methodology workshops</span></h3>
-            <p><span data-lang="fr">Techniques de collecte de données, évaluation et communication de la recherche.</span><span data-lang="en" class="d-none">Data collection, evaluation, and research communication techniques.</span></p>
-          </div>
+
+    <!-- Training Workshops -->
+    <section id="workshops">
+      <div class="container">
+        <div class="section-title text-center mb-5" data-aos="fade-up">
+          <h2><span data-lang="fr">Nos Programmes de Formation</span><span data-lang="en" class="d-none">Our Training Programs</span></h2>
+          <div class="gold-bar"></div>
+          <p class="mt-3" style="color:var(--gray-600);max-width:600px;margin:0.8rem auto 0;"><span data-lang="fr">Des formations ciblées pour les chercheurs, praticiens, enquêteurs et décideurs souhaitant renforcer leurs compétences en méthodes de recherche et évaluation d'impact.</span><span data-lang="en" class="d-none">Targeted training for researchers, practitioners, enumerators, and policymakers looking to strengthen their skills in research methods and impact evaluation.</span></p>
         </div>
-        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="40">
-          <div class="p-4 bg-white rounded-4 shadow-sm h-100">
-            <h3><span data-lang="fr">Séminaires stratégiques</span><span data-lang="en" class="d-none">Strategic seminars</span></h3>
-            <p><span data-lang="fr">Approches pour renforcer l’impact des politiques publiques.</span><span data-lang="en" class="d-none">Approaches to strengthen public policy impact.</span></p>
+        <div class="row g-4">
+
+          <!-- Training 1 -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="training-card">
+              <div class="training-card-img">
+                <img src="assets/img/work_shop/workshop_boh_222.png" alt="Atelier méthodologique RCT">
+                <div class="training-card-img-overlay"></div>
+              </div>
+              <div class="training-card-body">
+                <span class="training-type-badge"><i class="bi bi-diagram-3-fill"></i> <span data-lang="fr">Méthodes</span><span data-lang="en" class="d-none">Methods</span></span>
+                <h4><span data-lang="fr">Atelier Méthodes — Conception de RCT &amp; Évaluation d'Impact</span><span data-lang="en" class="d-none">Methods Workshop — RCT Design &amp; Impact Evaluation</span></h4>
+                <p><span data-lang="fr">Formation intensive de 5 jours couvrant la randomisation par bloc, le calcul de puissance statistique, la stratification, l'analyse des données expérimentales et la rédaction des résultats pour les décideurs.</span><span data-lang="en" class="d-none">Intensive 5-day training covering block randomization, statistical power calculations, stratification, experimental data analysis, and writing results for policymakers.</span></p>
+                <div class="training-meta">
+                  <span><i class="bi bi-clock"></i> 5 <span data-lang="fr">jours</span><span data-lang="en" class="d-none">days</span></span>
+                  <span><i class="bi bi-people"></i> Max. 25 <span data-lang="fr">participants</span><span data-lang="en" class="d-none">participants</span></span>
+                  <span><i class="bi bi-award"></i> <span data-lang="fr">Certificat</span><span data-lang="en" class="d-none">Certificate</span></span>
+                </div>
+                <a href="contact.html" class="btn-training"><span data-lang="fr">S'inscrire</span><span data-lang="en" class="d-none">Register</span> <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
           </div>
+
+          <!-- Training 2 -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="training-card">
+              <div class="training-card-img">
+                <img src="assets/img/work_shop/workshop_boh_4.png" alt="Formation SurveyCTO">
+                <div class="training-card-img-overlay"></div>
+              </div>
+              <div class="training-card-body">
+                <span class="training-type-badge"><i class="bi bi-phone-fill"></i> <span data-lang="fr">Terrain</span><span data-lang="en" class="d-none">Fieldwork</span></span>
+                <h4><span data-lang="fr">Formation Terrain — Collecte Numérique &amp; SurveyCTO</span><span data-lang="en" class="d-none">Field Training — Digital Collection &amp; SurveyCTO</span></h4>
+                <p><span data-lang="fr">Formation pratique pour enquêteurs sur la prise en main de SurveyCTO, la conception de formulaires XLSForm, les techniques d'entretien ménages, la gestion des incidents de données et l'éthique de la collecte terrain.</span><span data-lang="en" class="d-none">Hands-on training for enumerators on SurveyCTO, XLSForm design, household interview techniques, data incident management, and field collection ethics.</span></p>
+                <div class="training-meta">
+                  <span><i class="bi bi-clock"></i> 3 <span data-lang="fr">jours</span><span data-lang="en" class="d-none">days</span></span>
+                  <span><i class="bi bi-people"></i> Max. 40 <span data-lang="fr">enquêteurs</span><span data-lang="en" class="d-none">enumerators</span></span>
+                  <span><i class="bi bi-geo-alt"></i> Terrain</span>
+                </div>
+                <a href="contact.html" class="btn-training"><span data-lang="fr">S'inscrire</span><span data-lang="en" class="d-none">Register</span> <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Training 3 -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="training-card">
+              <div class="training-card-img">
+                <img src="assets/img/work_shop/workshop_boh_2.png" alt="Atelier Stata & R">
+                <div class="training-card-img-overlay"></div>
+              </div>
+              <div class="training-card-body">
+                <span class="training-type-badge"><i class="bi bi-bar-chart-fill"></i> <span data-lang="fr">Analyse de données</span><span data-lang="en" class="d-none">Data Analysis</span></span>
+                <h4><span data-lang="fr">Atelier Stata &amp; R — Analyse de Données Expérimentales</span><span data-lang="en" class="d-none">Stata &amp; R Workshop — Experimental Data Analysis</span></h4>
+                <p><span data-lang="fr">Formation avancée en analyse économétrique avec Stata et R. Nettoyage des données, régression par MCO et IV, estimation des effets de traitement (ITT, TOT, LATE), et création de tableaux de résultats pour publication.</span><span data-lang="en" class="d-none">Advanced econometric analysis training in Stata and R. Data cleaning, OLS and IV regression, treatment effect estimation (ITT, TOT, LATE), and creation of publication-ready results tables.</span></p>
+                <div class="training-meta">
+                  <span><i class="bi bi-clock"></i> 4 <span data-lang="fr">jours</span><span data-lang="en" class="d-none">days</span></span>
+                  <span><i class="bi bi-people"></i> Max. 20 <span data-lang="fr">participants</span><span data-lang="en" class="d-none">participants</span></span>
+                  <span><i class="bi bi-award"></i> <span data-lang="fr">Certificat</span><span data-lang="en" class="d-none">Certificate</span></span>
+                </div>
+                <a href="contact.html" class="btn-training"><span data-lang="fr">S'inscrire</span><span data-lang="en" class="d-none">Register</span> <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Training 4 -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="training-card">
+              <div class="training-card-img">
+                <img src="assets/img/work_shop/workshop_boh_3.jpeg" alt="Séminaire politique publique">
+                <div class="training-card-img-overlay"></div>
+              </div>
+              <div class="training-card-body">
+                <span class="training-type-badge"><i class="bi bi-building-fill"></i> <span data-lang="fr">Politique publique</span><span data-lang="en" class="d-none">Public Policy</span></span>
+                <h4><span data-lang="fr">Séminaire — Recherche &amp; Politique Publique : Du Résultat à la Décision</span><span data-lang="en" class="d-none">Seminar — Research &amp; Public Policy: From Results to Decision</span></h4>
+                <p><span data-lang="fr">Séminaire pour chercheurs et fonctionnaires sur la valorisation des résultats de recherche dans les processus décisionnels. Rédaction de notes de politique, communication vers les ministères et stratégies de plaidoyer.</span><span data-lang="en" class="d-none">Seminar for researchers and civil servants on leveraging research findings in decision-making processes. Writing policy briefs, communicating with ministries, and advocacy strategies.</span></p>
+                <div class="training-meta">
+                  <span><i class="bi bi-clock"></i> 2 <span data-lang="fr">jours</span><span data-lang="en" class="d-none">days</span></span>
+                  <span><i class="bi bi-people"></i> Max. 30 <span data-lang="fr">participants</span><span data-lang="en" class="d-none">participants</span></span>
+                </div>
+                <a href="contact.html" class="btn-training"><span data-lang="fr">S'inscrire</span><span data-lang="en" class="d-none">Register</span> <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Training 5 -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="training-card">
+              <div class="training-card-img">
+                <img src="assets/img/portfolio/portfolio-gender-stem.png" alt="Programme STEM Filles">
+                <div class="training-card-img-overlay"></div>
+              </div>
+              <div class="training-card-body">
+                <span class="training-type-badge"><i class="bi bi-calculator-fill"></i> <span data-lang="fr">STEM · Lycée</span><span data-lang="en" class="d-none">STEM · Secondary</span></span>
+                <h4><span data-lang="fr">Programme STEM pour Lycéennes — Orientation &amp; Mentorat</span><span data-lang="en" class="d-none">Girls STEM Program — Orientation &amp; Mentoring</span></h4>
+                <p><span data-lang="fr">Programme d'orientation et de mentorat pour les lycéennes souhaitant intégrer des filières scientifiques. Ateliers pratiques de mathématiques, chimie et informatique avec des mentors féminins.</span><span data-lang="en" class="d-none">Orientation and mentoring program for secondary school girls seeking to enter scientific tracks. Hands-on math, chemistry, and computer science workshops with female mentors.</span></p>
+                <div class="training-meta">
+                  <span><i class="bi bi-clock"></i> <span data-lang="fr">Hebdomadaire</span><span data-lang="en" class="d-none">Weekly</span></span>
+                  <span><i class="bi bi-people"></i> <span data-lang="fr">Lycéennes</span><span data-lang="en" class="d-none">Secondary girls</span></span>
+                </div>
+                <a href="contact.html" class="btn-training"><span data-lang="fr">S'inscrire</span><span data-lang="en" class="d-none">Register</span> <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Training 6 -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="training-card">
+              <div class="training-card-img">
+                <img src="assets/img/work_shop/WhatsApp%20Image%202026-05-19%20at%2017.36.58%20%282%29.jpeg" alt="Formation rédaction académique">
+                <div class="training-card-img-overlay"></div>
+              </div>
+              <div class="training-card-body">
+                <span class="training-type-badge"><i class="bi bi-pen-fill"></i> <span data-lang="fr">Rédaction</span><span data-lang="en" class="d-none">Writing</span></span>
+                <h4><span data-lang="fr">Atelier Rédaction Académique — Working Papers &amp; Notes de Politique</span><span data-lang="en" class="d-none">Academic Writing Workshop — Working Papers &amp; Policy Briefs</span></h4>
+                <p><span data-lang="fr">Formation à la rédaction scientifique pour jeunes chercheurs africains : structure d'un working paper, présentation des résultats, rédaction d'abstracts, et adaptation des messages pour différents publics.</span><span data-lang="en" class="d-none">Scientific writing training for young African researchers: working paper structure, results presentation, abstract writing, and adapting messages for different audiences.</span></p>
+                <div class="training-meta">
+                  <span><i class="bi bi-clock"></i> 3 <span data-lang="fr">jours</span><span data-lang="en" class="d-none">days</span></span>
+                  <span><i class="bi bi-people"></i> Max. 20</span>
+                  <span><i class="bi bi-award"></i> <span data-lang="fr">Certificat</span><span data-lang="en" class="d-none">Certificate</span></span>
+                </div>
+                <a href="contact.html" class="btn-training"><span data-lang="fr">S'inscrire</span><span data-lang="en" class="d-none">Register</span> <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+
         </div>
-        <div class="col-12 mt-3" data-aos="fade-up" data-aos-delay="80">
-          <div class="p-4 bg-white rounded-4 shadow-sm">
-            <h4>Study abroad & tourism programs</h4>
-            <p>Tourisme — STUDY ABROAD PROGRAM available for selected partners and students.</p>
+      </div>
+    </section>
+
+    <!-- Study Abroad Program -->
+    <section id="study-abroad">
+      <div class="container">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-5" data-aos="fade-right">
+            <div style="margin-bottom:1.5rem;">
+              <span style="font-family:var(--font-mono);font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--gold);">★ <span data-lang="fr">Programme phare</span><span data-lang="en" class="d-none">Flagship Program</span></span>
+            </div>
+            <h2 style="font-family:var(--font-display);font-size:2.2rem;font-weight:700;color:var(--white);margin-bottom:0.5rem;">
+              <span data-lang="fr">Programme Study Abroad</span>
+              <span data-lang="en" class="d-none">Study Abroad Program</span>
+            </h2>
+            <div style="width:50px;height:3px;background:var(--gold);margin:0.8rem 0 1.5rem;"></div>
+            <p style="color:rgba(255,255,255,0.75);font-size:0.95rem;line-height:1.8;margin-bottom:1.5rem;">
+              <span data-lang="fr">Le KEMT Center offre à ses membres et partenaires sélectionnés une opportunité rare de formation et d'immersion académique aux États-Unis. Notre partenariat avec des institutions de l'Illinois offre des stages hospitaliers, des sessions universitaires et des rencontres avec des chercheurs de premier plan.</span>
+              <span data-lang="en" class="d-none">KEMT Center offers its selected members and partners a rare opportunity for training and academic immersion in the United States. Our partnership with Illinois institutions offers hospital placements, university sessions, and meetings with leading researchers.</span>
+            </p>
+            <ul style="list-style:none;padding:0;margin-bottom:2rem;">
+              <li style="display:flex;align-items:flex-start;gap:0.8rem;margin-bottom:0.9rem;color:rgba(255,255,255,0.8);font-size:0.9rem;"><i class="bi bi-check-circle-fill" style="color:var(--gold);flex-shrink:0;margin-top:2px;"></i><span data-lang="fr">Visites d'institutions académiques et hospitalières en Illinois</span><span data-lang="en" class="d-none">Visits to academic and hospital institutions in Illinois</span></li>
+              <li style="display:flex;align-items:flex-start;gap:0.8rem;margin-bottom:0.9rem;color:rgba(255,255,255,0.8);font-size:0.9rem;"><i class="bi bi-check-circle-fill" style="color:var(--gold);flex-shrink:0;margin-top:2px;"></i><span data-lang="fr">Sessions de formation aux méthodes de recherche avancées</span><span data-lang="en" class="d-none">Training sessions in advanced research methods</span></li>
+              <li style="display:flex;align-items:flex-start;gap:0.8rem;margin-bottom:0.9rem;color:rgba(255,255,255,0.8);font-size:0.9rem;"><i class="bi bi-check-circle-fill" style="color:var(--gold);flex-shrink:0;margin-top:2px;"></i><span data-lang="fr">Rencontres avec des chercheurs africains-américains en diaspora</span><span data-lang="en" class="d-none">Meetings with African-American diaspora researchers</span></li>
+              <li style="display:flex;align-items:flex-start;gap:0.8rem;margin-bottom:0.9rem;color:rgba(255,255,255,0.8);font-size:0.9rem;"><i class="bi bi-check-circle-fill" style="color:var(--gold);flex-shrink:0;margin-top:2px;"></i><span data-lang="fr">Immersion culturelle et réseau international de haut niveau</span><span data-lang="en" class="d-none">Cultural immersion and high-level international networking</span></li>
+              <li style="display:flex;align-items:flex-start;gap:0.8rem;color:rgba(255,255,255,0.8);font-size:0.9rem;"><i class="bi bi-check-circle-fill" style="color:var(--gold);flex-shrink:0;margin-top:2px;"></i><span data-lang="fr">Programme de 2 à 4 semaines selon les sélections</span><span data-lang="en" class="d-none">2 to 4 week program depending on selections</span></li>
+            </ul>
+            <a href="contact.html" style="display:inline-flex;align-items:center;gap:0.4rem;background:var(--gold);color:var(--navy);font-family:var(--font-mono);font-size:0.82rem;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;padding:0.75rem 2rem;border-radius:50px;text-decoration:none;transition:all 0.25s ease;">
+              <i class="bi bi-airplane-fill"></i>
+              <span data-lang="fr">Candidater au programme</span>
+              <span data-lang="en" class="d-none">Apply to the program</span>
+            </a>
+          </div>
+          <div class="col-lg-7" data-aos="fade-left">
+            <div class="study-abroad-photos">
+              <a href="assets/img/study_abroad/illinois_hospital_11.png" class="study-photo-item glightbox" data-gallery="study-abroad" data-title="Illinois — Visite institutionnelle">
+                <img src="assets/img/study_abroad/illinois_hospital_11.png" alt="Illinois Hospital Visit">
+                <div class="study-photo-overlay"><i class="bi bi-zoom-in"></i></div>
+              </a>
+              <a href="assets/img/study_abroad/illinois_1.jpeg" class="study-photo-item glightbox" data-gallery="study-abroad" data-title="Illinois — Campus universitaire">
+                <img src="assets/img/study_abroad/illinois_1.jpeg" alt="Illinois Campus">
+                <div class="study-photo-overlay"><i class="bi bi-zoom-in"></i></div>
+              </a>
+              <a href="assets/img/study_abroad/illinois_hospital1.jpeg" class="study-photo-item glightbox" data-gallery="study-abroad" data-title="Illinois — Hôpital partenaire">
+                <img src="assets/img/study_abroad/illinois_hospital1.jpeg" alt="Illinois Hospital">
+                <div class="study-photo-overlay"><i class="bi bi-zoom-in"></i></div>
+              </a>
+              <a href="assets/img/study_abroad/WhatsApp%20Image%202026-05-19%20at%2016.48.14.jpeg" class="study-photo-item glightbox" data-gallery="study-abroad" data-title="Séjour Study Abroad KEMT">
+                <img src="assets/img/study_abroad/WhatsApp%20Image%202026-05-19%20at%2016.48.14.jpeg" alt="Study Abroad KEMT">
+                <div class="study-photo-overlay"><i class="bi bi-zoom-in"></i></div>
+              </a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-</main>
+    </section>
+
+    <!-- Stats -->
+    <section id="training-stats">
+      <div class="container">
+        <div class="row g-4 text-center">
+          <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="100"><div class="stat-box"><div class="stat-num">6+</div><div class="stat-lbl"><span data-lang="fr">Programmes de formation</span><span data-lang="en" class="d-none">Training programs</span></div></div></div>
+          <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="200"><div class="stat-box"><div class="stat-num">200+</div><div class="stat-lbl"><span data-lang="fr">Apprenants formés</span><span data-lang="en" class="d-none">Learners trained</span></div></div></div>
+          <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="300"><div class="stat-box"><div class="stat-num">3</div><div class="stat-lbl"><span data-lang="fr">Programmes Study Abroad</span><span data-lang="en" class="d-none">Study abroad programs</span></div></div></div>
+          <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="400"><div class="stat-box"><div class="stat-num">100%</div><div class="stat-lbl"><span data-lang="fr">Participants satisfaits</span><span data-lang="en" class="d-none">Participant satisfaction</span></div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="training-cta">
+      <div class="container" data-aos="fade-up">
+        <h2><span data-lang="fr">Intéressé(e) par nos formations ?</span><span data-lang="en" class="d-none">Interested in our training programs?</span></h2>
+        <p><span data-lang="fr">Contactez-nous pour en savoir plus sur nos programmes, les dates disponibles, ou pour inscrire votre organisation à une session sur mesure.</span><span data-lang="en" class="d-none">Contact us to learn more about our programs, available dates, or to register your organization for a tailored session.</span></p>
+        <div class="d-flex gap-3 flex-wrap justify-content-center">
+          <a href="contact.html" class="btn-gold"><i class="bi bi-envelope-fill"></i> <span data-lang="fr">Nous contacter</span><span data-lang="en" class="d-none">Contact us</span></a>
+          <a href="events.html" class="btn-outline-gold"><i class="bi bi-calendar-event"></i> <span data-lang="fr">Voir les événements</span><span data-lang="en" class="d-none">View events</span></a>
+        </div>
+      </div>
+    </section>
+
+  </main>
   <div data-include="includes/footer.html"></div>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <div id="preloader"><div class="ring-loader"><span></span></div><div class="preloader-text"><strong>KEMT Center</strong><small>Recherche &amp; Impact</small></div></div>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/js/include-html.js"></script>
-  <script src="assets/js/lang-switcher.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function(){ if(window.AOS) AOS.init({once:true}); });
-  </script>
+  <script src='assets/js/lang-switcher.js'></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
-
-

@@ -1,59 +1,982 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ressources - KEMT Center</title>
-  <meta name="description" content="Bases de données, documentation et supports de formation du KEMT Center.">
-  <meta name="keywords" content="ressources, documentation, bases de données, galerie">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title data-lang-fr="Ressources - KEMT Center" data-lang-en="Resources - KEMT Center">Ressources - KEMT Center</title>
+  <meta name="description" content="Ressources institutionnelles du KEMT Center : bases de données, documentation, outils de terrain, formation et galerie média.">
+  <meta name="keywords" content="KEMT Center, ressources, bases de données, documentation, outils, formation, galerie, SurveyCTO">
+
+  <!-- Favicons -->
+  <link href="assets/img/kemt_center.png" rel="icon">
+  <link href="assets/img/kemt_center.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS -->
   <link href="assets/css/main.css" rel="stylesheet">
+
+  <style type="text/css" media="all">
+    :root { --gold-mid: #b8933b; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--gray-100);
+      color: var(--navy);
+    }
+
+    /* ─── Page Title Banner ─── */
+    .page-title {
+      background: linear-gradient(rgba(10,22,40,0.90), rgba(10,22,40,0.90)),
+                  url('assets/img/hero-carousel/hero-carousel-3.jpeg') center/cover no-repeat !important;
+      padding: 80px 0 !important;
+      border-bottom: 2px solid rgba(201,168,76,0.3) !important;
+    }
+    .page-title h1 {
+      font-family: var(--font-display) !important;
+      font-size: 2.8rem !important;
+      font-weight: 700 !important;
+      color: var(--white) !important;
+      margin: 0 0 10px 0 !important;
+    }
+    .page-title .breadcrumbs ol {
+      font-family: var(--font-mono) !important;
+      font-size: 0.8rem !important;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .page-title .breadcrumbs ol li a        { color: rgba(255,255,255,0.7) !important; }
+    .page-title .breadcrumbs ol li a:hover  { color: var(--gold-light) !important; }
+    .page-title .breadcrumbs ol li.current  { color: var(--gold) !important; }
+    .page-title .breadcrumbs ol li+li::before { color: rgba(255,255,255,0.3) !important; }
+
+    /* ─── Shared helpers ─── */
+    .section-header h2 {
+      font-family: var(--font-display);
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+    .section-header p { color: var(--gray-600); max-width: 620px; }
+    .gold-bar-left  { width: 50px; height: 3px; background: var(--gold); margin: 0.7rem 0 1.5rem; }
+    .gold-bar-center { width: 60px; height: 3px; background: var(--gold); margin: 0.8rem auto 0; }
+    .res-section { padding: 5rem 0 4rem; }
+    .res-section:nth-child(odd)  { background: var(--white); }
+    .res-section:nth-child(even) { background: var(--gray-100); }
+
+    /* ─── Category pill tabs ─── */
+    #res-tabs {
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-200);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .res-tab-nav {
+      display: flex;
+      list-style: none;
+      padding: 0; margin: 0;
+      overflow-x: auto; gap: 0;
+    }
+    .res-tab-nav li a {
+      display: block;
+      padding: 1.1rem 1.6rem;
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--gray-600);
+      text-decoration: none;
+      border-bottom: 3px solid transparent;
+      white-space: nowrap;
+      transition: all 0.25s ease;
+    }
+    .res-tab-nav li a:hover,
+    .res-tab-nav li a.active {
+      color: var(--navy);
+      border-bottom-color: var(--gold);
+    }
+
+    /* ─── Featured cards (top 3 hub cards) ─── */
+    .hub-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem 2rem;
+      height: 100%;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hub-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 100%; height: 4px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.35s ease;
+    }
+    .hub-card:hover { transform: translateY(-7px); box-shadow: var(--shadow-lg); border-color: rgba(201,168,76,0.3); }
+    .hub-card:hover::before { transform: scaleX(1); }
+    .hub-icon {
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      background: rgba(201,168,76,0.12);
+      color: var(--gold);
+      font-size: 1.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      transition: all 0.3s ease;
+    }
+    .hub-card:hover .hub-icon { background: var(--navy); color: var(--gold); }
+    .hub-card h4 {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.7rem;
+    }
+    .hub-card p { font-size: 0.9rem; color: var(--gray-600); line-height: 1.7; }
+    .hub-stat {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin-top: 1.2rem;
+    }
+    .hub-stat-label {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--gray-500);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* ─── Data & Documents list cards ─── */
+    .resource-item {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: 1.6rem 2rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1.4rem;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+    }
+    .resource-item:hover { transform: translateX(5px); border-left: 4px solid var(--gold); box-shadow: var(--shadow-md); }
+    .resource-item-icon {
+      width: 46px; height: 46px;
+      border-radius: var(--radius);
+      background: rgba(201,168,76,0.1);
+      color: var(--gold);
+      font-size: 1.35rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .resource-item-body { flex: 1; }
+    .resource-item-body h5 {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.3rem;
+    }
+    .resource-item-body p { font-size: 0.87rem; color: var(--gray-600); margin: 0 0 0.8rem; line-height: 1.6; }
+    .res-badge {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--gold-mid);
+      background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 3px;
+      padding: 2px 8px;
+      margin-bottom: 0.6rem;
+    }
+    .btn-res {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--navy);
+      border: 1.5px solid var(--gold);
+      border-radius: 50px;
+      padding: 0.38rem 1rem;
+      text-decoration: none;
+      background: transparent;
+      transition: all 0.25s ease;
+    }
+    .btn-res:hover { background: var(--navy); color: var(--gold); border-color: var(--navy); }
+
+    /* ─── Training / Tool cards ─── */
+    .tool-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      height: 100%;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .tool-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+    .tool-card-header {
+      background: var(--navy);
+      padding: 1.6rem 1.8rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .tool-card-header i {
+      font-size: 1.8rem;
+      color: var(--gold);
+    }
+    .tool-card-header h5 {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
+      margin: 0;
+    }
+    .tool-card-body {
+      padding: 1.5rem 1.8rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .tool-card-body p { font-size: 0.88rem; color: var(--gray-600); line-height: 1.7; flex: 1; margin-bottom: 1.2rem; }
+    .tool-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+    .tool-tag {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--navy);
+      background: var(--gray-100);
+      border-radius: 3px;
+      padding: 2px 8px;
+    }
+
+    /* ─── Gallery strip ─── */
+    #gallery {
+      background: var(--navy);
+      padding: 4rem 0;
+    }
+    #gallery h2 {
+      font-family: var(--font-display);
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.4rem;
+    }
+    #gallery p { color: rgba(255,255,255,0.65); }
+    .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; }
+    @media (max-width: 767px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
+    .gallery-item {
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+      aspect-ratio: 4/3;
+    }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; display: block; }
+    .gallery-item:hover img { transform: scale(1.07); }
+    .gallery-overlay {
+      position: absolute; inset: 0;
+      background: rgba(10,22,40,0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+    .gallery-overlay i { font-size: 1.8rem; color: var(--gold); }
+
+    /* ─── CTA banner ─── */
+    #res-cta {
+      background: linear-gradient(rgba(10,22,40,0.93), rgba(10,22,40,0.93)),
+                  url('assets/img/hero-carousel/hero-carousel-1.jpeg') center/cover no-repeat;
+      padding: 5rem 0;
+      text-align: center;
+    }
+    #res-cta h2 {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+    #res-cta p { color: rgba(255,255,255,0.72); max-width: 500px; margin: 0 auto 2rem; }
+    .btn-gold {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: var(--gold); color: var(--navy);
+      font-family: var(--font-mono); font-size: 0.82rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.07em;
+      padding: 0.75rem 2rem; border-radius: 50px; text-decoration: none;
+      transition: all 0.25s ease;
+    }
+    .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,168,76,0.35); color: var(--navy); }
+    .btn-outline-gold {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: transparent; color: var(--gold);
+      border: 1.5px solid var(--gold);
+      font-family: var(--font-mono); font-size: 0.82rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.07em;
+      padding: 0.75rem 2rem; border-radius: 50px; text-decoration: none;
+      transition: all 0.25s ease;
+    }
+    .btn-outline-gold:hover { background: var(--gold); color: var(--navy); transform: translateY(-2px); }
+  </style>
+
 </head>
-<body class="lang-fr">
-<div data-include="includes/header.html"></div>
-<main class="main">
-  <section class="section hero pt-5 pb-5 bg-light text-dark">
-    <div class="container">
-      <h1><span data-lang="fr">Ressources institutionnelles</span><span data-lang="en" class="d-none">Institutional resources</span></h1>
-      <p class="lead"><span data-lang="fr">Accédez à nos bases documentaires, données ouvertes et supports médias.</span><span data-lang="en" class="d-none">Access our document hubs, open data, and media assets.</span></p>
+
+<body class="resources-page">
+
+  <!-- Header -->
+  <div data-include="includes/header.html"></div>
+
+  <main class="main">
+
+    <!-- ── Page Title ── -->
+    <div class="page-title accent-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">
+          <span data-lang="fr">Ressources Institutionnelles</span>
+          <span data-lang="en" class="d-none">Institutional Resources</span>
+        </h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">
+              <span data-lang="fr">Accueil</span>
+              <span data-lang="en" class="d-none">Home</span>
+            </a></li>
+            <li class="current">
+              <span data-lang="fr">Ressources</span>
+              <span data-lang="en" class="d-none">Resources</span>
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- ── Sticky Tab Nav ── -->
+    <div id="res-tabs">
+      <div class="container">
+        <ul class="res-tab-nav">
+          <li><a href="#data-hub" class="active">
+            <span data-lang="fr">Données &amp; Bases</span>
+            <span data-lang="en" class="d-none">Data &amp; Databases</span>
+          </a></li>
+          <li><a href="#doc-center">
+            <span data-lang="fr">Documentation</span>
+            <span data-lang="en" class="d-none">Documentation</span>
+          </a></li>
+          <li><a href="#tools-training">
+            <span data-lang="fr">Outils &amp; Formation</span>
+            <span data-lang="en" class="d-none">Tools &amp; Training</span>
+          </a></li>
+          <li><a href="#media-gallery">
+            <span data-lang="fr">Galerie Média</span>
+            <span data-lang="en" class="d-none">Media Gallery</span>
+          </a></li>
+        </ul>
+      </div>
     </div>
-  </section>
-  <section class="section py-5">
-    <div class="container">
-      <div class="row gy-4">
-        <div class="col-lg-4" data-aos="fade-up">
-          <div class="p-4 bg-white rounded-4 shadow-sm h-100">
-            <h3><span data-lang="fr">Bases de données</span><span data-lang="en" class="d-none">Databases</span></h3>
-            <p><span data-lang="fr">Collectes de données, indicateurs et visualisations interactives.</span><span data-lang="en" class="d-none">Data sets, indicators, and interactive visualizations.</span></p>
-          </div>
+
+    <!-- ── Overview Hubs ── -->
+    <section class="res-section" style="background:var(--white); padding-top:5rem; padding-bottom:4rem;">
+      <div class="container">
+        <div class="section-header text-center mb-5" data-aos="fade-up">
+          <h2>
+            <span data-lang="fr">Notre Centre de Ressources</span>
+            <span data-lang="en" class="d-none">Our Resource Centre</span>
+          </h2>
+          <div class="gold-bar-center"></div>
+          <p class="mt-3">
+            <span data-lang="fr">Tous les outils, données et documents issus de nos projets de recherche, librement accessibles aux chercheurs, partenaires et décideurs.</span>
+            <span data-lang="en" class="d-none">All tools, data, and documents from our research projects — freely accessible to researchers, partners and policymakers.</span>
+          </p>
         </div>
-        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="40">
-          <div class="p-4 bg-white rounded-4 shadow-sm h-100">
-            <h3><span data-lang="fr">Centre de documentation</span><span data-lang="en" class="d-none">Documentation hub</span></h3>
-            <p><span data-lang="fr">Guides, notes méthodologiques et archives de recherche.</span><span data-lang="en" class="d-none">Guides, methodological notes, and research archives.</span></p>
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="hub-card">
+              <div class="hub-icon"><i class="bi bi-database-fill"></i></div>
+              <h4>
+                <span data-lang="fr">Bases de Données</span>
+                <span data-lang="en" class="d-none">Databases</span>
+              </h4>
+              <p>
+                <span data-lang="fr">Jeux de données anonymisés issus de nos RCT, collectes ménages et enquêtes école disponibles en format Stata, CSV et R.</span>
+                <span data-lang="en" class="d-none">Anonymized datasets from our RCTs, household surveys, and school surveys, available in Stata, CSV, and R format.</span>
+              </p>
+              <div class="hub-stat">12+</div>
+              <div class="hub-stat-label">
+                <span data-lang="fr">Jeux de données disponibles</span>
+                <span data-lang="en" class="d-none">Datasets available</span>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="80">
-          <div class="p-4 bg-white rounded-4 shadow-sm h-100">
-            <h3><span data-lang="fr">Galerie média</span><span data-lang="en" class="d-none">Media gallery</span></h3>
-            <p><span data-lang="fr">Visuels, vidéos et documents de nos événements institutionnels.</span><span data-lang="en" class="d-none">Visuals, videos, and documents from our institutional events.</span></p>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="hub-card">
+              <div class="hub-icon"><i class="bi bi-folder2-open"></i></div>
+              <h4>
+                <span data-lang="fr">Centre de Documentation</span>
+                <span data-lang="en" class="d-none">Documentation Hub</span>
+              </h4>
+              <p>
+                <span data-lang="fr">Guides méthodologiques, protocoles d'enquête, questionnaires SurveyCTO et archives de nos ateliers de formation terrain.</span>
+                <span data-lang="en" class="d-none">Methodological guides, survey protocols, SurveyCTO questionnaires and archives from our field training workshops.</span>
+              </p>
+              <div class="hub-stat">40+</div>
+              <div class="hub-stat-label">
+                <span data-lang="fr">Documents disponibles</span>
+                <span data-lang="en" class="d-none">Documents available</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="hub-card">
+              <div class="hub-icon"><i class="bi bi-images"></i></div>
+              <h4>
+                <span data-lang="fr">Galerie Média</span>
+                <span data-lang="en" class="d-none">Media Gallery</span>
+              </h4>
+              <p>
+                <span data-lang="fr">Photos de terrain, conférences, ateliers et événements institutionnels. Bibliothèque visuelle du KEMT Center.</span>
+                <span data-lang="en" class="d-none">Fieldwork photos, conferences, workshops, and institutional events. The visual library of KEMT Center.</span>
+              </p>
+              <div class="hub-stat">200+</div>
+              <div class="hub-stat-label">
+                <span data-lang="fr">Photos &amp; vidéos archivées</span>
+                <span data-lang="en" class="d-none">Photos &amp; videos archived</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-</main>
+    </section>
+
+    <!-- ── Data Hub ── -->
+    <section id="data-hub" class="res-section">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2>
+            <span data-lang="fr">Données &amp; Bases de Recherche</span>
+            <span data-lang="en" class="d-none">Research Data &amp; Databases</span>
+          </h2>
+          <div class="gold-bar-left"></div>
+          <p>
+            <span data-lang="fr">Nos jeux de données anonymisés sont mis à disposition des chercheurs dans le respect des protocoles éthiques. Les demandes d'accès sont traitées sur dossier.</span>
+            <span data-lang="en" class="d-none">Our anonymized datasets are made available to researchers in accordance with ethical protocols. Access requests are processed on application.</span>
+          </p>
+        </div>
+        <div class="d-flex flex-column gap-3 mt-4">
+
+          <div class="resource-item" data-aos="fade-up" data-aos-delay="100">
+            <div class="resource-item-icon"><i class="bi bi-file-earmark-spreadsheet-fill"></i></div>
+            <div class="resource-item-body">
+              <span class="res-badge">Stata / CSV · 2024</span>
+              <h5>
+                <span data-lang="fr">Données RCT – Suivi Parental, Vague 2 (2023-2024)</span>
+                <span data-lang="en" class="d-none">RCT Data – Parental Monitoring, Wave 2 (2023–2024)</span>
+              </h5>
+              <p>
+                <span data-lang="fr">Données d'enquête ménages et scores test des élèves collectées dans le cadre de la seconde vague RCT sur l'implication parentale. Comprend les variables de traitement, de contrôle et les scores de lecture/maths.</span>
+                <span data-lang="en" class="d-none">Household survey data and student test scores from the second wave of the parental involvement RCT. Includes treatment, control variables and reading/math scores.</span>
+              </p>
+              <a href="fieldwork-methods.html" class="btn-res"><i class="bi bi-key-fill"></i>
+                <span data-lang="fr">Demander l'accès</span>
+                <span data-lang="en" class="d-none">Request access</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="resource-item" data-aos="fade-up" data-aos-delay="150">
+            <div class="resource-item-icon"><i class="bi bi-file-earmark-spreadsheet-fill"></i></div>
+            <div class="resource-item-body">
+              <span class="res-badge">Stata / CSV · 2023</span>
+              <h5>
+                <span data-lang="fr">Données Panel – Bulletins Scolaires &amp; Engagement Parental</span>
+                <span data-lang="en" class="d-none">Panel Data – School Report Cards &amp; Parental Engagement</span>
+              </h5>
+              <p>
+                <span data-lang="fr">Base de données panel de 200 écoles sur 3 années scolaires, mesurant l'effet des bulletins de performance sur la présence aux réunions parents-enseignants et les résultats aux examens nationaux.</span>
+                <span data-lang="en" class="d-none">Panel database of 200 schools over 3 academic years, measuring the effect of performance report cards on parent-teacher meeting attendance and national exam results.</span>
+              </p>
+              <a href="policy-brief-reportcards.html" class="btn-res"><i class="bi bi-key-fill"></i>
+                <span data-lang="fr">Demander l'accès</span>
+                <span data-lang="en" class="d-none">Request access</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="resource-item" data-aos="fade-up" data-aos-delay="200">
+            <div class="resource-item-icon"><i class="bi bi-file-earmark-spreadsheet-fill"></i></div>
+            <div class="resource-item-body">
+              <span class="res-badge">R / CSV · 2022</span>
+              <h5>
+                <span data-lang="fr">Données Ménages – Résilience Post-COVID, Bénin Rural</span>
+                <span data-lang="en" class="d-none">Household Data – Post-COVID Resilience, Rural Benin</span>
+              </h5>
+              <p>
+                <span data-lang="fr">Enquête ménages conduite dans 6 communes rurales du Bénin post-pandémie. Comprend des indicateurs de revenu, de scolarisation, d'accès aux soins et de transferts sociaux.</span>
+                <span data-lang="en" class="d-none">Household survey conducted in 6 rural Beninese communes post-pandemic. Includes income, schooling, healthcare access, and social transfer indicators.</span>
+              </p>
+              <a href="covid-recovery-study.html" class="btn-res"><i class="bi bi-key-fill"></i>
+                <span data-lang="fr">Demander l'accès</span>
+                <span data-lang="en" class="d-none">Request access</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="resource-item" data-aos="fade-up" data-aos-delay="250">
+            <div class="resource-item-icon"><i class="bi bi-file-earmark-spreadsheet-fill"></i></div>
+            <div class="resource-item-body">
+              <span class="res-badge">Stata · 2024</span>
+              <h5>
+                <span data-lang="fr">Données Enquête – Normes de Genre &amp; Choix STEM des Lycéennes</span>
+                <span data-lang="en" class="d-none">Survey Data – Gender Norms &amp; STEM Choices among Secondary Girls</span>
+              </h5>
+              <p>
+                <span data-lang="fr">Données d'enquête individuelle auprès de 1 500 lycéennes dans 50 établissements, documentant les facteurs de choix d'orientation scientifique, les croyances genrées et les aspirations professionnelles.</span>
+                <span data-lang="en" class="d-none">Individual survey data from 1,500 secondary school girls across 50 institutions, documenting STEM orientation choice factors, gender beliefs, and professional aspirations.</span>
+              </p>
+              <a href="stem-initiative.html" class="btn-res"><i class="bi bi-key-fill"></i>
+                <span data-lang="fr">Demander l'accès</span>
+                <span data-lang="en" class="d-none">Request access</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section><!-- /Data Hub -->
+
+    <!-- ── Documentation Centre ── -->
+    <section id="doc-center" class="res-section">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2>
+            <span data-lang="fr">Centre de Documentation</span>
+            <span data-lang="en" class="d-none">Documentation Centre</span>
+          </h2>
+          <div class="gold-bar-left"></div>
+          <p>
+            <span data-lang="fr">Nos protocoles, guides et questionnaires utilisés lors de nos collectes de données. Documents en libre accès pour la communauté de chercheurs.</span>
+            <span data-lang="en" class="d-none">Our protocols, guides, and questionnaires used during data collection. Open-access documents for the research community.</span>
+          </p>
+        </div>
+        <div class="d-flex flex-column gap-3 mt-4">
+
+          <div class="resource-item" data-aos="fade-up" data-aos-delay="100">
+            <div class="resource-item-icon"><i class="bi bi-file-earmark-text-fill"></i></div>
+            <div class="resource-item-body">
+              <span class="res-badge">Guide · Accès libre</span>
+              <h5>
+                <span data-lang="fr">Guide de Collecte de Données au KEMT Center</span>
+                <span data-lang="en" class="d-none">KEMT Center Data Collection Guide</span>
+              </h5>
+              <p>
+                <span data-lang="fr">Protocole complet de collecte de données utilisé par notre équipe terrain : recrutement des enquêteurs, formation SurveyCTO, gestion des formulaires et contrôle qualité temps réel.</span>
+                <span data-lang="en" class="d-none">Complete data collection protocol used by our field team: enumerator recruitment, SurveyCTO training, form management, and real-time quality control.</span>
+              </p>
+              <a href="fieldwork-methods.html" class="btn-res"><i class="bi bi-download"></i>
+                <span data-lang="fr">Télécharger PDF</span>
+                <span data-lang="en" class="d-none">Download PDF</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="resource-item" data-aos="fade-up" data-aos-delay="150">
+            <div class="resource-item-icon"><i class="bi bi-clipboard2-data-fill"></i></div>
+            <div class="resource-item-body">
+              <span class="res-badge">Questionnaire · Accès libre</span>
+              <h5>
+                <span data-lang="fr">Questionnaire Ménages – Enquête Implication Parentale</span>
+                <span data-lang="en" class="d-none">Household Questionnaire – Parental Involvement Survey</span>
+              </h5>
+              <p>
+                <span data-lang="fr">Instrument d'enquête ménages utilisé lors de nos collectes sur l'implication parentale. Disponible en version française, anglaise et fon. Adapté pour déploiement sur SurveyCTO.</span>
+                <span data-lang="en" class="d-none">Household survey instrument used during our parental involvement data collections. Available in French, English, and Fon. Adapted for SurveyCTO deployment.</span>
+              </p>
+              <a href="parental-involvement-study.html" class="btn-res"><i class="bi bi-download"></i>
+                <span data-lang="fr">Télécharger PDF</span>
+                <span data-lang="en" class="d-none">Download PDF</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="resource-item" data-aos="fade-up" data-aos-delay="200">
+            <div class="resource-item-icon"><i class="bi bi-mortarboard-fill"></i></div>
+            <div class="resource-item-body">
+              <span class="res-badge">Manuel · Formation</span>
+              <h5>
+                <span data-lang="fr">Manuel de Formation des Enquêteurs Terrain</span>
+                <span data-lang="en" class="d-none">Field Enumerator Training Manual</span>
+              </h5>
+              <p>
+                <span data-lang="fr">Manuel pédagogique complet utilisé lors des sessions de formation de nos enquêteurs. Couvre les techniques d'entretien, la navigation SurveyCTO, la résolution des conflits de données et l'éthique de terrain.</span>
+                <span data-lang="en" class="d-none">Complete pedagogical manual used during our enumerator training sessions. Covers interview techniques, SurveyCTO navigation, data conflict resolution, and fieldwork ethics.</span>
+              </p>
+              <a href="fieldwork-methods.html" class="btn-res"><i class="bi bi-download"></i>
+                <span data-lang="fr">Télécharger PDF</span>
+                <span data-lang="en" class="d-none">Download PDF</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="resource-item" data-aos="fade-up" data-aos-delay="250">
+            <div class="resource-item-icon"><i class="bi bi-graph-up-arrow"></i></div>
+            <div class="resource-item-body">
+              <span class="res-badge">Note méthodologique · 2023</span>
+              <h5>
+                <span data-lang="fr">Note Méthodologique : Plans Expérimentaux et Stratification</span>
+                <span data-lang="en" class="d-none">Methodological Note: Experimental Designs and Stratification</span>
+              </h5>
+              <p>
+                <span data-lang="fr">Document interne décrivant les plans d'échantillonnage stratifié utilisés dans nos RCT. Couvre la randomisation par bloc, le calcul de la taille d'échantillon et les corrections de puissance statistique.</span>
+                <span data-lang="en" class="d-none">Internal document describing the stratified sampling designs used in our RCTs. Covers block randomization, sample size calculation, and statistical power corrections.</span>
+              </p>
+              <a href="publications.html" class="btn-res"><i class="bi bi-download"></i>
+                <span data-lang="fr">Télécharger PDF</span>
+                <span data-lang="en" class="d-none">Download PDF</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section><!-- /Doc Centre -->
+
+    <!-- ── Tools & Training ── -->
+    <section id="tools-training" class="res-section">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2>
+            <span data-lang="fr">Outils &amp; Formation</span>
+            <span data-lang="en" class="d-none">Tools &amp; Training</span>
+          </h2>
+          <div class="gold-bar-left"></div>
+          <p>
+            <span data-lang="fr">Les logiciels, plateformes et supports de formation utilisés au quotidien par l'équipe du KEMT Center pour la recherche et la collecte de données.</span>
+            <span data-lang="en" class="d-none">The software, platforms, and training materials used daily by the KEMT Center team for research and data collection.</span>
+          </p>
+        </div>
+        <div class="row g-4 mt-3">
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="tool-card">
+              <div class="tool-card-header">
+                <i class="bi bi-phone-fill"></i>
+                <h5>SurveyCTO</h5>
+              </div>
+              <div class="tool-card-body">
+                <p>
+                  <span data-lang="fr">Plateforme de collecte de données mobiles utilisée pour toutes nos enquêtes terrain. Nos formulaires XLSForm sont optimisés pour les zones à faible connectivité et déployés sur tablettes Android.</span>
+                  <span data-lang="en" class="d-none">Mobile data collection platform used for all our field surveys. Our XLSForm templates are optimized for low-connectivity areas and deployed on Android tablets.</span>
+                </p>
+                <div class="tool-tags">
+                  <span class="tool-tag">XLSForm</span>
+                  <span class="tool-tag">Android</span>
+                  <span class="tool-tag">Offline</span>
+                </div>
+                <a href="fieldwork-methods.html" class="btn-res"><i class="bi bi-box-arrow-up-right"></i>
+                  <span data-lang="fr">En savoir plus</span>
+                  <span data-lang="en" class="d-none">Learn more</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="tool-card">
+              <div class="tool-card-header">
+                <i class="bi bi-bar-chart-line-fill"></i>
+                <h5>Stata / R</h5>
+              </div>
+              <div class="tool-card-body">
+                <p>
+                  <span data-lang="fr">Environnements statistiques principaux utilisés pour le nettoyage, l'analyse et la modélisation économétrique de nos données. Nos scripts do-files Stata et scripts R sont disponibles sur demande.</span>
+                  <span data-lang="en" class="d-none">Primary statistical environments used for cleaning, analysis and econometric modelling of our data. Our Stata do-files and R scripts are available on request.</span>
+                </p>
+                <div class="tool-tags">
+                  <span class="tool-tag">Econométrie</span>
+                  <span class="tool-tag">Visualisation</span>
+                  <span class="tool-tag">RCT</span>
+                </div>
+                <a href="contact.html" class="btn-res"><i class="bi bi-envelope"></i>
+                  <span data-lang="fr">Demander les scripts</span>
+                  <span data-lang="en" class="d-none">Request scripts</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="tool-card">
+              <div class="tool-card-header">
+                <i class="bi bi-shield-lock-fill"></i>
+                <h5>
+                  <span data-lang="fr">Protection des Données</span>
+                  <span data-lang="en" class="d-none">Data Protection</span>
+                </h5>
+              </div>
+              <div class="tool-card-body">
+                <p>
+                  <span data-lang="fr">Nos procédures d'anonymisation et de stockage sécurisé des données respectent les standards éthiques internationaux (IRB, RGPD). Chaque projet fait l'objet d'un accord de traitement confidentiel.</span>
+                  <span data-lang="en" class="d-none">Our anonymization and secure storage procedures meet international ethical standards (IRB, GDPR). Each project is covered by a confidential data processing agreement.</span>
+                </p>
+                <div class="tool-tags">
+                  <span class="tool-tag">IRB</span>
+                  <span class="tool-tag">RGPD</span>
+                  <span class="tool-tag">Anonymisation</span>
+                </div>
+                <a href="contact.html" class="btn-res"><i class="bi bi-file-earmark-check"></i>
+                  <span data-lang="fr">Protocole éthique</span>
+                  <span data-lang="en" class="d-none">Ethics protocol</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="tool-card">
+              <div class="tool-card-header">
+                <i class="bi bi-camera-video-fill"></i>
+                <h5>
+                  <span data-lang="fr">Formation Vidéo Terrain</span>
+                  <span data-lang="en" class="d-none">Field Video Training</span>
+                </h5>
+              </div>
+              <div class="tool-card-body">
+                <p>
+                  <span data-lang="fr">Bibliothèque de vidéos de formation pour les enquêteurs terrain. Couvre la prise en main des tablettes, les techniques d'entretien ménages et la navigation dans les formulaires d'enquête SurveyCTO.</span>
+                  <span data-lang="en" class="d-none">Training video library for field enumerators. Covers tablet handling, household interview techniques, and navigating SurveyCTO survey forms.</span>
+                </p>
+                <div class="tool-tags">
+                  <span class="tool-tag">Vidéo</span>
+                  <span class="tool-tag">Enquêteurs</span>
+                  <span class="tool-tag">Terrain</span>
+                </div>
+                <a href="training.html" class="btn-res"><i class="bi bi-play-circle-fill"></i>
+                  <span data-lang="fr">Voir les vidéos</span>
+                  <span data-lang="en" class="d-none">Watch videos</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="tool-card">
+              <div class="tool-card-header">
+                <i class="bi bi-translate"></i>
+                <h5>
+                  <span data-lang="fr">Outils Bilingues</span>
+                  <span data-lang="en" class="d-none">Bilingual Tools</span>
+                </h5>
+              </div>
+              <div class="tool-card-body">
+                <p>
+                  <span data-lang="fr">Tous nos instruments de collecte sont disponibles en français, anglais et en langues locales (fon, yoruba). Nos formulaires sont conçus pour être adaptés aux populations non-alphabétisées.</span>
+                  <span data-lang="en" class="d-none">All our data collection instruments are available in French, English, and local languages (Fon, Yoruba). Our forms are designed for use with non-literate populations.</span>
+                </p>
+                <div class="tool-tags">
+                  <span class="tool-tag">Français</span>
+                  <span class="tool-tag">English</span>
+                  <span class="tool-tag">Fon</span>
+                </div>
+                <a href="contact.html" class="btn-res"><i class="bi bi-download"></i>
+                  <span data-lang="fr">Télécharger</span>
+                  <span data-lang="en" class="d-none">Download</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="tool-card">
+              <div class="tool-card-header">
+                <i class="bi bi-people-fill"></i>
+                <h5>
+                  <span data-lang="fr">Ateliers de Recherche</span>
+                  <span data-lang="en" class="d-none">Research Workshops</span>
+                </h5>
+              </div>
+              <div class="tool-card-body">
+                <p>
+                  <span data-lang="fr">Le KEMT Center organise régulièrement des ateliers de renforcement de capacités sur l'évaluation d'impact, les méthodes expérimentales et la rédaction de working papers pour les jeunes chercheurs africains.</span>
+                  <span data-lang="en" class="d-none">KEMT Center regularly organizes capacity-building workshops on impact evaluation, experimental methods, and working paper writing for young African researchers.</span>
+                </p>
+                <div class="tool-tags">
+                  <span class="tool-tag">RCT</span>
+                  <span class="tool-tag">Impact</span>
+                  <span class="tool-tag">Jeunes chercheurs</span>
+                </div>
+                <a href="events.html" class="btn-res"><i class="bi bi-calendar-event"></i>
+                  <span data-lang="fr">Voir les événements</span>
+                  <span data-lang="en" class="d-none">View events</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section><!-- /Tools & Training -->
+
+    <!-- ── Media Gallery ── -->
+    <section id="media-gallery" style="background: var(--navy); padding: 5rem 0;">
+      <div class="container">
+        <div class="row align-items-end mb-4 g-3" data-aos="fade-up">
+          <div class="col-lg-8">
+            <h2 style="font-family:var(--font-display); font-size:1.9rem; font-weight:700; color:var(--white); margin-bottom:0.4rem;">
+              <span data-lang="fr">Galerie Média</span>
+              <span data-lang="en" class="d-none">Media Gallery</span>
+            </h2>
+            <div style="width:50px;height:3px;background:var(--gold);margin:0.7rem 0 1rem;"></div>
+            <p style="color:rgba(255,255,255,0.65); margin:0; font-size:0.92rem;">
+              <span data-lang="fr">Images de terrain, conférences et événements institutionnels du KEMT Center.</span>
+              <span data-lang="en" class="d-none">Field images, conferences and institutional events of KEMT Center.</span>
+            </p>
+          </div>
+          <div class="col-lg-4 text-lg-end">
+            <a href="gallery.html" class="btn-outline-gold" style="border-color:var(--gold); color:var(--gold);">
+              <span data-lang="fr">Voir toute la galerie</span>
+              <span data-lang="en" class="d-none">View full gallery</span>
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+        <div class="gallery-grid" data-aos="fade-up" data-aos-delay="100">
+          <div class="gallery-item">
+            <img src="assets/img/masonry-portfolio/masonry-portfolio-2.jpg" alt="Terrain KEMT">
+            <div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div>
+          </div>
+          <div class="gallery-item">
+            <img src="assets/img/masonry-portfolio/masonry-portfolio-7.jpg" alt="Atelier KEMT">
+            <div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div>
+          </div>
+          <div class="gallery-item">
+            <img src="assets/img/masonry-portfolio/masonry-portfolio-1.jpg" alt="Conférence KEMT">
+            <div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div>
+          </div>
+          <div class="gallery-item">
+            <img src="assets/img/masonry-portfolio/masonry-portfolio-4.jpg" alt="École partenaire">
+            <div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div>
+          </div>
+          <div class="gallery-item">
+            <img src="assets/img/masonry-portfolio/masonry-portfolio-5.jpg" alt="STEM Filles">
+            <div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div>
+          </div>
+          <div class="gallery-item">
+            <img src="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" alt="Ménage rural">
+            <div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Gallery -->
+
+    <!-- ── CTA ── -->
+    <section id="res-cta">
+      <div class="container" data-aos="fade-up">
+        <h2>
+          <span data-lang="fr">Vous avez besoin d'une ressource spécifique ?</span>
+          <span data-lang="en" class="d-none">Looking for a specific resource?</span>
+        </h2>
+        <p>
+          <span data-lang="fr">Notre équipe peut vous orienter vers les données, documents ou outils adaptés à vos besoins de recherche ou d'évaluation.</span>
+          <span data-lang="en" class="d-none">Our team can direct you to the data, documents, or tools best suited to your research or evaluation needs.</span>
+        </p>
+        <div class="d-flex gap-3 flex-wrap justify-content-center">
+          <a href="contact.html" class="btn-gold">
+            <i class="bi bi-envelope-fill"></i>
+            <span data-lang="fr">Nous contacter</span>
+            <span data-lang="en" class="d-none">Contact us</span>
+          </a>
+          <a href="publications.html" class="btn-outline-gold">
+            <i class="bi bi-journal-bookmark-fill"></i>
+            <span data-lang="fr">Voir nos publications</span>
+            <span data-lang="en" class="d-none">View our publications</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
   <div data-include="includes/footer.html"></div>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="ring-loader"><span></span></div>
+    <div class="preloader-text"><strong>KEMT Center</strong><small>Recherche &amp; Impact</small></div>
+  </div>
+
+  <!-- Vendor JS -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+
+  <!-- Main JS -->
   <script src="assets/js/include-html.js"></script>
-  <script src="assets/js/lang-switcher.js"></script>
+  <script src='assets/js/lang-switcher.js'></script>
+  <script src="assets/js/main.js"></script>
+
   <script>
-    document.addEventListener('DOMContentLoaded', function(){ if(window.AOS) AOS.init({once:true}); });
+    // Tab highlight on scroll
+    (function () {
+      var sections = ['data-hub', 'doc-center', 'tools-training', 'media-gallery'];
+      var links = document.querySelectorAll('.res-tab-nav a');
+      window.addEventListener('scroll', function () {
+        var scrollY = window.pageYOffset;
+        sections.forEach(function (id, i) {
+          var el = document.getElementById(id);
+          if (!el) return;
+          if (el.offsetTop - 130 <= scrollY) {
+            links.forEach(function (l) { l.classList.remove('active'); });
+            if (links[i]) links[i].classList.add('active');
+          }
+        });
+      });
+    })();
   </script>
+
 </body>
+
 </html>
-
-

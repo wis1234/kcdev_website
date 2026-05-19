@@ -1,99 +1,268 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projets - KEMT Center</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title data-lang-fr="Projets - KEMT Center" data-lang-en="Projects - KEMT Center">Projets - KEMT Center</title>
+  <meta name="description" content="Découvrez les projets de recherche et interventions terrain du KEMT Center.">
+  <meta name="keywords" content="KEMT Center, projets, recherche, éducation, genre, implication parentale">
+
+  <!-- Favicons -->
+  <link href="assets/img/kemt_center.png" rel="icon">
+  <link href="assets/img/kemt_center.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+
+  <style type="text/css" media="all">
+    :root {
+      --gold-mid: #b8933b;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--gray-100);
+      color: var(--navy);
+    }
+
+    /* Premium page-title banner */
+    .page-title {
+      background: linear-gradient(rgba(10, 22, 40, 0.88), rgba(10, 22, 40, 0.88)), url('assets/img/hero-carousel/hero-carousel-1.jpeg') center/cover no-repeat !important;
+      padding: 80px 0 !important;
+      border-bottom: 2px solid rgba(201, 168, 76, 0.3) !important;
+      color: var(--white) !important;
+    }
+    .page-title h1 {
+      font-family: var(--font-display) !important;
+      font-size: 2.8rem !important;
+      font-weight: 700 !important;
+      color: var(--white) !important;
+      margin: 0 0 10px 0 !important;
+    }
+    .page-title .breadcrumbs ol {
+      font-family: var(--font-mono) !important;
+      font-size: 0.8rem !important;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .page-title .breadcrumbs ol li a {
+      color: rgba(255, 255, 255, 0.7) !important;
+      transition: color var(--transition);
+    }
+    .page-title .breadcrumbs ol li a:hover {
+      color: var(--gold-light) !important;
+    }
+    .page-title .breadcrumbs ol li.current {
+      color: var(--gold) !important;
+    }
+    .page-title .breadcrumbs ol li+li::before {
+      color: rgba(255, 255, 255, 0.3) !important;
+    }
+
+    /* Portfolio Section */
+    #portfolio {
+      background: var(--white);
+      padding: 5rem 0 6rem;
+    }
+
+    /* Filter tabs */
+    .portfolio-filters {
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      gap: 0.5rem;
+      justify-content: center;
+      padding: 0;
+      margin-bottom: 3rem;
+    }
+    .portfolio-filters li {
+      cursor: pointer;
+      padding: 0.5rem 1.4rem;
+      border-radius: 50px;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      border: 1.5px solid var(--gray-200);
+      color: var(--navy);
+      background: transparent;
+      transition: all 0.25s ease;
+    }
+    .portfolio-filters li:hover,
+    .portfolio-filters li.filter-active {
+      background: var(--navy);
+      color: var(--gold);
+      border-color: var(--navy);
+    }
+
+    /* Project cards */
+    .portfolio-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+    }
+    .portfolio-item:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+    }
+    .portfolio-item img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .portfolio-item:hover img {
+      transform: scale(1.05);
+    }
+    .portfolio-info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1.5rem;
+      background: linear-gradient(transparent, rgba(10, 22, 40, 0.92));
+      color: var(--white);
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+    .portfolio-info h4 {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--white);
+      margin: 0;
+    }
+    .portfolio-info p {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.7);
+      margin: 0;
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .portfolio-info .portfolio-links {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 0.8rem;
+    }
+    .portfolio-info .portfolio-links a {
+      width: 34px;
+      height: 34px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(201, 168, 76, 0.2);
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 1rem;
+      transition: all 0.25s ease;
+      text-decoration: none;
+    }
+    .portfolio-info .portfolio-links a:hover {
+      background: var(--gold);
+      color: var(--navy);
+    }
+
+    /* Tag badge for each card */
+    .project-tag {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--gold);
+      background: rgba(201,168,76,0.15);
+      border: 1px solid rgba(201,168,76,0.4);
+      border-radius: 3px;
+      padding: 2px 8px;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Section intro */
+    .section-title h2 {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+    .section-title p {
+      color: var(--gray-600);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .gold-bar {
+      width: 60px;
+      height: 3px;
+      background: var(--gold);
+      margin: 1rem auto 0;
+    }
+
+    /* Stats strip */
+    .stats-strip {
+      background: var(--navy);
+      padding: 4rem 0;
+      border-top: 2px solid rgba(201,168,76,0.3);
+    }
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .stat-label {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.7);
+      margin-top: 0.4rem;
+    }
+  </style>
+
 </head>
-<body class="lang-fr">
+
+<body class="portfolio-page">
+
+  <!-- Header -->
   <div data-include="includes/header.html"></div>
+
   <main class="main">
-    <section class="hero py-5">
-      <div class="container">
-        <div class="swiper hero-carousel">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide" style="background-image:url('assets/img/hero-carousel/hero-carousel-2.jpg_old')">
-              <div class="hero-caption" data-aos="fade-up">
-                <h1><span data-lang="fr">Projets & Portfolio</span><span data-lang="en" class="d-none">Projects & Portfolio</span></h1>
-                <p class="lead"><span data-lang="fr">Des interventions concrètes pour transformer les politiques et pratiques.</span><span data-lang="en" class="d-none">Impactful projects that inform policy and practice.</span></p>
-              </div>
-            </div>
-            <div class="swiper-slide" style="background-image:url('assets/img/hero-carousel/hero-carousel-1.jpg_old')"></div>
-            <div class="swiper-slide" style="background-image:url('assets/img/hero-carousel/hero-carousel-3.jpeg__')"></div>
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="content-section">
-      <div class="container">
-        <h2 data-aos="fade-up"><span data-lang="fr">Projets récents</span><span data-lang="en" class="d-none">Recent Projects</span></h2>
-        <div class="row gy-4 mt-3">
-          <div class="col-md-6 col-lg-4" data-aos="fade-up">
-            <div class="card">
-              <img src="assets/img/hero-carousel/hero-carousel-1.jpg_old" class="card-img-top" alt="Project A">
-              <div class="card-body">
-                <h5 class="card-title">Parental Monitoring Study</h5>
-                <p class="card-text">Examining the role of monitoring in student outcomes.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="60">
-            <div class="card">
-              <img src="assets/img/hero-carousel/hero-carousel-2.jpg_old" class="card-img-top" alt="Project B">
-              <div class="card-body">
-                <h5 class="card-title">School Report Cards</h5>
-                <p class="card-text">Evaluating the impact of performance reporting.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="120">
-            <div class="card">
-              <img src="assets/img/hero-carousel/hero-carousel-3.jpeg__" class="card-img-top" alt="Project C">
-              <div class="card-body">
-                <h5 class="card-title">Women's Empowerment in Cameroon</h5>
-                <p class="card-text">Exploring historical legacies and empowerment.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-  <div data-include="includes/footer.html"></div>
-
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/js/include-html.js"></script>
-  <script src="assets/js/lang-switcher.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function(){ if(window.AOS) AOS.init({once:true}); if(window.Swiper) new Swiper('.hero-carousel',{loop:true,autoplay:{delay:4200},pagination:{el:'.swiper-pagination',clickable:true}}); });
-  </script>
-</body>
-</html>
-
-  <div data-include="includes/header.html"></div>
-<main class="main">
 
     <!-- Page Title -->
     <div class="page-title accent-background">
       <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0">Portfolio</h1>
+        <h1 class="mb-2 mb-lg-0">
+          <span data-lang="fr">Projets &amp; Portfolio</span>
+          <span data-lang="en" class="d-none">Projects &amp; Portfolio</span>
+        </h1>
         <nav class="breadcrumbs">
           <ol>
-            <li><a href="index.html">Home</a></li>
-            <li class="current">Portfolio</li>
+            <li><a href="index.html"><span data-lang="fr">Accueil</span><span data-lang="en" class="d-none">Home</span></a></li>
+            <li class="current">
+              <span data-lang="fr">Projets</span>
+              <span data-lang="en" class="d-none">Projects</span>
+            </li>
           </ol>
         </nav>
       </div>
@@ -102,106 +271,248 @@
     <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio section">
 
+      <!-- Section Title -->
+      <div class="container section-title text-center" data-aos="fade-up">
+        <h2>
+          <span data-lang="fr">Nos Projets de Recherche</span>
+          <span data-lang="en" class="d-none">Our Research Projects</span>
+        </h2>
+        <p>
+          <span data-lang="fr">Des interventions rigoureuses sur le terrain pour transformer les politiques éducatives et sociales en Afrique de l'Ouest.</span>
+          <span data-lang="en" class="d-none">Rigorous field interventions designed to transform educational and social policy across West Africa.</span>
+        </p>
+        <div class="gold-bar"></div>
+      </div>
+
       <div class="container">
 
         <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
 
+          <!-- Filter Tabs -->
           <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-            <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-app">App</li>
-            <li data-filter=".filter-product">Card</li>
-            <li data-filter=".filter-branding">Web</li>
+            <li data-filter="*" class="filter-active">
+              <span data-lang="fr">Tous</span><span data-lang="en" class="d-none">All</span>
+            </li>
+            <li data-filter=".filter-research">
+              <span data-lang="fr">Recherche</span><span data-lang="en" class="d-none">Research</span>
+            </li>
+            <li data-filter=".filter-education">
+              <span data-lang="fr">Éducation</span><span data-lang="en" class="d-none">Education</span>
+            </li>
+            <li data-filter=".filter-gender">
+              <span data-lang="fr">Genre</span><span data-lang="en" class="d-none">Gender</span>
+            </li>
+            <li data-filter=".filter-operations">
+              <span data-lang="fr">Opérations</span><span data-lang="en" class="d-none">Operations</span>
+            </li>
           </ul><!-- End Portfolio Filters -->
 
           <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-1.jpg" class="img-fluid" alt="">
+            <!-- Project 1: Suivi Parental -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-research filter-education">
+              <img src="assets/img/portfolio/portfolio-parental.png" class="img-fluid" alt="Suivi Parental – parents suivant les devoirs de leur enfant au Bénin">
               <div class="portfolio-info">
-                <h4>App 1</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-1.jpg" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <span class="project-tag">
+                  <span data-lang="fr">RCT · Éducation</span>
+                  <span data-lang="en" class="d-none">RCT · Education</span>
+                </span>
+                <h4>
+                  <span data-lang="fr">Suivi Parental</span>
+                  <span data-lang="en" class="d-none">Parental Involvement</span>
+                </h4>
+                <p>
+                  <span data-lang="fr">Impact de l'implication parentale sur la réussite scolaire</span>
+                  <span data-lang="en" class="d-none">Impact of parental monitoring on student academic outcomes</span>
+                </p>
+                <div class="portfolio-links">
+                  <a href="assets/img/masonry-portfolio/masonry-portfolio-2.jpg" data-gallery="portfolio-gallery-research" class="glightbox" title="Suivi Parental"><i class="bi bi-zoom-in"></i></a>
+                  <a href="parental-involvement-study.html" title="Voir le projet"><i class="bi bi-link-45deg"></i></a>
+                </div>
               </div>
             </div><!-- End Portfolio Item -->
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-2.jpg" class="img-fluid" alt="">
+            <!-- Project 2: Bulletins de Performance -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-research filter-education">
+              <img src="assets/img/portfolio/portfolio-reportcards.png" class="img-fluid" alt="Bulletins de Performance – remise de bulletins scolaires dans une école rurale">
               <div class="portfolio-info">
-                <h4>Product 1</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-2.jpg" title="Product 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <span class="project-tag">
+                  <span data-lang="fr">Politique · Évaluation</span>
+                  <span data-lang="en" class="d-none">Policy · Evaluation</span>
+                </span>
+                <h4>
+                  <span data-lang="fr">Bulletins de Performance</span>
+                  <span data-lang="en" class="d-none">School Report Cards</span>
+                </h4>
+                <p>
+                  <span data-lang="fr">Effets des bulletins scolaires sur les pratiques parentales</span>
+                  <span data-lang="en" class="d-none">School report card effects on parental engagement</span>
+                </p>
+                <div class="portfolio-links">
+                  <a href="assets/img/masonry-portfolio/masonry-portfolio-7.jpg" data-gallery="portfolio-gallery-research" class="glightbox" title="Bulletins de Performance"><i class="bi bi-zoom-in"></i></a>
+                  <a href="policy-brief-reportcards.html" title="Voir le projet"><i class="bi bi-link-45deg"></i></a>
+                </div>
               </div>
             </div><!-- End Portfolio Item -->
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-3.jpg" class="img-fluid" alt="">
+            <!-- Project 3: Normes de Genre -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-gender filter-education">
+              <img src="assets/img/portfolio/portfolio-gender-stem.png" class="img-fluid" alt="Normes de Genre – élèves africaines en cours de sciences">
               <div class="portfolio-info">
-                <h4>Branding 1</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-3.jpg" title="Branding 1" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <span class="project-tag">
+                  <span data-lang="fr">Genre · Sciences</span>
+                  <span data-lang="en" class="d-none">Gender · STEM</span>
+                </span>
+                <h4>
+                  <span data-lang="fr">Normes de Genre &amp; STEM</span>
+                  <span data-lang="en" class="d-none">Gender Norms &amp; STEM</span>
+                </h4>
+                <p>
+                  <span data-lang="fr">Comment les normes de genre freinent l'éducation des filles</span>
+                  <span data-lang="en" class="d-none">How gender norms limit girls' trajectories in STEM education</span>
+                </p>
+                <div class="portfolio-links">
+                  <a href="assets/img/team/african_kids_sch_happy.jpg" data-gallery="portfolio-gallery-gender" class="glightbox" title="Normes de Genre"><i class="bi bi-zoom-in"></i></a>
+                  <a href="stem-initiative.html" title="Voir le projet"><i class="bi bi-link-45deg"></i></a>
+                </div>
               </div>
             </div><!-- End Portfolio Item -->
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-4.jpg" class="img-fluid" alt="">
+            <!-- Project 4: Relance Post-COVID -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-research">
+              <img src="assets/img/portfolio/portfolio-covid.png" class="img-fluid" alt="Relance Post-COVID – famille rurale béninoise résiliente">
               <div class="portfolio-info">
-                <h4>App 2</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-4.jpg" title="App 2" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <span class="project-tag">
+                  <span data-lang="fr">COVID-19 · Résilience</span>
+                  <span data-lang="en" class="d-none">COVID-19 · Recovery</span>
+                </span>
+                <h4>
+                  <span data-lang="fr">Relance Post-COVID</span>
+                  <span data-lang="en" class="d-none">Post-COVID Recovery</span>
+                </h4>
+                <p>
+                  <span data-lang="fr">Résilience des ménages ruraux après la pandémie</span>
+                  <span data-lang="en" class="d-none">Rural household resilience in the post-pandemic period</span>
+                </p>
+                <div class="portfolio-links">
+                  <a href="assets/img/team/parental-involvement-in-education.jpg" data-gallery="portfolio-gallery-research" class="glightbox" title="Relance Post-COVID"><i class="bi bi-zoom-in"></i></a>
+                  <a href="covid-recovery-study.html" title="Voir le projet"><i class="bi bi-link-45deg"></i></a>
+                </div>
               </div>
             </div><!-- End Portfolio Item -->
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-5.jpg" class="img-fluid" alt="">
+            <!-- Project 5: Initiative STEM -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-gender filter-education">
+              <img src="assets/img/portfolio/portfolio-stem.png" class="img-fluid" alt="Initiative STEM – jeune fille africaine au tableau de mathématiques">
               <div class="portfolio-info">
-                <h4>Product 2</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-5.jpg" title="Product 2" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <span class="project-tag">
+                  <span data-lang="fr">STEM · Filles</span>
+                  <span data-lang="en" class="d-none">STEM · Girls</span>
+                </span>
+                <h4>
+                  <span data-lang="fr">Initiative STEM Filles</span>
+                  <span data-lang="en" class="d-none">Girls STEM Initiative</span>
+                </h4>
+                <p>
+                  <span data-lang="fr">Promouvoir les sciences et mathématiques chez les lycéennes</span>
+                  <span data-lang="en" class="d-none">Promoting science and mathematics among secondary school girls</span>
+                </p>
+                <div class="portfolio-links">
+                  <a href="assets/img/team/tree_room.png" data-gallery="portfolio-gallery-gender" class="glightbox" title="Initiative STEM"><i class="bi bi-zoom-in"></i></a>
+                  <a href="stem-initiative.html" title="Voir le projet"><i class="bi bi-link-45deg"></i></a>
+                </div>
               </div>
             </div><!-- End Portfolio Item -->
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-6.jpg" class="img-fluid" alt="">
+            <!-- Project 6: Méthodes de Terrain -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-operations filter-research">
+              <img src="assets/img/portfolio/portfolio-fieldwork.png" class="img-fluid" alt="Méthodes de Terrain – enquêteur KEMT avec tablette dans un village béninois">
               <div class="portfolio-info">
-                <h4>Branding 2</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-6.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <span class="project-tag">
+                  <span data-lang="fr">Terrain · Méthodes</span>
+                  <span data-lang="en" class="d-none">Fieldwork · Methods</span>
+                </span>
+                <h4>
+                  <span data-lang="fr">Méthodes de Terrain</span>
+                  <span data-lang="en" class="d-none">Fieldwork Methods</span>
+                </h4>
+                <p>
+                  <span data-lang="fr">Protocoles d'enquête numérique et collecte de données rurales</span>
+                  <span data-lang="en" class="d-none">Digital survey protocols and rural data collection methods</span>
+                </p>
+                <div class="portfolio-links">
+                  <a href="assets/img/team/social_action.png" data-gallery="portfolio-gallery-operations" class="glightbox" title="Méthodes de Terrain"><i class="bi bi-zoom-in"></i></a>
+                  <a href="fieldwork-methods.html" title="Voir le projet"><i class="bi bi-link-45deg"></i></a>
+                </div>
               </div>
             </div><!-- End Portfolio Item -->
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-7.jpg" class="img-fluid" alt="">
+            <!-- Project 7: Digitalisation Paiements -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-operations filter-research">
+              <img src="assets/img/hero-carousel/hero-carousel-4.jpeg" class="img-fluid" alt="Digitalisation des Paiements – paiement mobile de frais scolaires en Afrique">
               <div class="portfolio-info">
-                <h4>App 3</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-7.jpg" title="App 3" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <span class="project-tag">
+                  <span data-lang="fr">Fintech · Scolarité</span>
+                  <span data-lang="en" class="d-none">Fintech · Tuition</span>
+                </span>
+                <h4>
+                  <span data-lang="fr">Digitalisation des Paiements</span>
+                  <span data-lang="en" class="d-none">Digitization of Tuition Payments</span>
+                </h4>
+                <p>
+                  <span data-lang="fr">Impact du paiement numérique des frais scolaires sur l'assiduité</span>
+                  <span data-lang="en" class="d-none">Impact of digital school fee payment on student attendance</span>
+                </p>
+                <div class="portfolio-links">
+                  <a href="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" data-gallery="portfolio-gallery-operations" class="glightbox" title="Digitalisation Paiements"><i class="bi bi-zoom-in"></i></a>
+                  <a href="parental-involvement-study.html" title="Voir le projet"><i class="bi bi-link-45deg"></i></a>
+                </div>
               </div>
             </div><!-- End Portfolio Item -->
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" class="img-fluid" alt="">
+            <!-- Project 8: Actions Sociales -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-operations">
+              <img src="assets/img/hero-carousel/hero-carousel-2.jpeg" class="img-fluid" alt="Actions Sociales KEMT – cérémonie de remise de bourses en milieu communautaire">
               <div class="portfolio-info">
-                <h4>Product 3</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" title="Product 3" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <span class="project-tag">
+                  <span data-lang="fr">Impact · Social</span>
+                  <span data-lang="en" class="d-none">Impact · Social</span>
+                </span>
+                <h4>
+                  <span data-lang="fr">Actions Sociales KEMT</span>
+                  <span data-lang="en" class="d-none">KEMT Social Actions</span>
+                </h4>
+                <p>
+                  <span data-lang="fr">Bourses, aide médicale et engagement communautaire</span>
+                  <span data-lang="en" class="d-none">Scholarships, medical aid and community engagement</span>
+                </p>
+                <div class="portfolio-links">
+                  <a href="assets/img/masonry-portfolio/masonry-portfolio-6.jpg" data-gallery="portfolio-gallery-operations" class="glightbox" title="Actions Sociales"><i class="bi bi-zoom-in"></i></a>
+                  <a href="social_actions.html" title="Voir le projet"><i class="bi bi-link-45deg"></i></a>
+                </div>
               </div>
             </div><!-- End Portfolio Item -->
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-9.jpg" class="img-fluid" alt="">
+            <!-- Project 9: Spillover Effects -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-research filter-education">
+              <img src="assets/img/hero-carousel/hero-carousel-3.jpeg" class="img-fluid" alt="Effets de Diffusion – enfants africains apprenant ensemble sous un arbre">
               <div class="portfolio-info">
-                <h4>Branding 3</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-9.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <span class="project-tag">
+                  <span data-lang="fr">Spillover · Pairs</span>
+                  <span data-lang="en" class="d-none">Spillover · Peers</span>
+                </span>
+                <h4>
+                  <span data-lang="fr">Effets de Diffusion</span>
+                  <span data-lang="en" class="d-none">Spillover Effects</span>
+                </h4>
+                <p>
+                  <span data-lang="fr">Influence des amis et frères et sœurs sur la réussite scolaire</span>
+                  <span data-lang="en" class="d-none">Peer and sibling influence on academic performance</span>
+                </p>
+                <div class="portfolio-links">
+                  <a href="assets/img/masonry-portfolio/masonry-portfolio-9.jpg" data-gallery="portfolio-gallery-research" class="glightbox" title="Spillover Effects"><i class="bi bi-zoom-in"></i></a>
+                  <a href="parental-involvement-study.html" title="Voir le projet"><i class="bi bi-link-45deg"></i></a>
+                </div>
               </div>
             </div><!-- End Portfolio Item -->
 
@@ -213,22 +524,58 @@
 
     </section><!-- /Portfolio Section -->
 
+    <!-- Stats Strip -->
+    <section class="stats-strip">
+      <div class="container">
+        <div class="row g-4 text-center">
+          <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="stat-number">9+</div>
+            <div class="stat-label">
+              <span data-lang="fr">Projets actifs</span>
+              <span data-lang="en" class="d-none">Active projects</span>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+            <div class="stat-number">5,000+</div>
+            <div class="stat-label">
+              <span data-lang="fr">Élèves suivis</span>
+              <span data-lang="en" class="d-none">Students tracked</span>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+            <div class="stat-number">200+</div>
+            <div class="stat-label">
+              <span data-lang="fr">Écoles partenaires</span>
+              <span data-lang="en" class="d-none">Partner schools</span>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+            <div class="stat-number">4</div>
+            <div class="stat-label">
+              <span data-lang="fr">Pays d'intervention</span>
+              <span data-lang="en" class="d-none">Countries of operation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
+  <!-- Footer -->
   <div data-include="includes/footer.html"></div>
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
-<div id="preloader">
-  <div class="ring-loader"><span></span></div>
-  <div class="preloader-text"><strong>KEMT Center</strong><small>Recherche & Impact</small></div>
-</div>
+  <div id="preloader">
+    <div class="ring-loader"><span></span></div>
+    <div class="preloader-text"><strong>KEMT Center</strong><small>Recherche &amp; Impact</small></div>
+  </div>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
@@ -238,16 +585,9 @@
 
   <!-- Main JS File -->
   <script src="assets/js/include-html.js"></script>
-<script src='assets/js/lang-switcher.js'></script>
-<script src="assets/js/main.js"></script>
+  <script src='assets/js/lang-switcher.js'></script>
+  <script src="assets/js/main.js"></script>
 
 </body>
 
 </html>
-
-
-
-
-
-
-

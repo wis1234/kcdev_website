@@ -2,51 +2,274 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Opportunités - KEMT Center</title>
-  <meta name="description" content="Opportunités de recrutement et postes ouverts au KEMT Center.">
-  <meta name="keywords" content="recrutement, opportunités, emploi, recherche">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title data-lang-fr="Opportunités - KEMT Center" data-lang-en="Careers - KEMT Center">Opportunités - KEMT Center</title>
+  <meta name="description" content="Rejoignez l'équipe KEMT Center : postes ouverts, stages et opportunités pour chercheurs, analystes et coordinateurs de terrain.">
+  <meta name="keywords" content="KEMT Center, recrutement, carrières, emploi, chercheur, analyste, stage">
+  <link href="assets/img/kemt_center.png" rel="icon">
+  <link href="assets/img/kemt_center.png" rel="apple-touch-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/css/main.css" rel="stylesheet">
+  <style>
+    :root { --gold-mid: #b8933b; }
+    body { font-family: var(--font-body); background: var(--gray-100); color: var(--navy); }
+
+    .page-title {
+      background: linear-gradient(rgba(10,22,40,0.90), rgba(10,22,40,0.90)), url('assets/img/hero-carousel/hero-carousel-1.jpeg') center/cover no-repeat !important;
+      padding: 80px 0 !important; border-bottom: 2px solid rgba(201,168,76,0.3) !important;
+    }
+    .page-title h1 { font-family: var(--font-display) !important; font-size: 2.8rem !important; font-weight: 700 !important; color: var(--white) !important; margin: 0 0 10px 0 !important; }
+    .page-title .breadcrumbs ol { font-family: var(--font-mono) !important; font-size: 0.8rem !important; text-transform: uppercase; letter-spacing: 0.05em; }
+    .page-title .breadcrumbs ol li a { color: rgba(255,255,255,0.7) !important; }
+    .page-title .breadcrumbs ol li a:hover { color: var(--gold-light) !important; }
+    .page-title .breadcrumbs ol li.current { color: var(--gold) !important; }
+    .page-title .breadcrumbs ol li+li::before { color: rgba(255,255,255,0.3) !important; }
+
+    .section-title h2 { font-family: var(--font-display); font-size: 1.9rem; font-weight: 700; color: var(--navy); }
+    .gold-bar { width: 60px; height: 3px; background: var(--gold); margin: 0.8rem auto 0; }
+    .gold-bar-left { width: 50px; height: 3px; background: var(--gold); margin: 0.7rem 0 1.5rem; }
+
+    /* Culture values */
+    #culture { background: var(--white); padding: 5rem 0; }
+    .value-card { text-align: center; padding: 2rem 1.5rem; }
+    .value-icon { width: 64px; height: 64px; border-radius: 50%; background: rgba(201,168,76,0.1); color: var(--gold); font-size: 1.8rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.2rem; transition: all 0.3s ease; }
+    .value-card:hover .value-icon { background: var(--navy); color: var(--gold); }
+    .value-card h5 { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.5rem; }
+    .value-card p { font-size: 0.87rem; color: var(--gray-600); line-height: 1.7; }
+
+    /* Job listings */
+    #open-positions { background: var(--gray-100); padding: 5rem 0; }
+    .job-card {
+      background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-lg);
+      padding: 2rem; box-shadow: var(--shadow-sm); transition: all 0.3s ease;
+      display: flex; gap: 1.5rem; align-items: flex-start;
+    }
+    .job-card:hover { transform: translateX(5px); border-left: 4px solid var(--gold); box-shadow: var(--shadow-md); }
+    .job-icon { width: 52px; height: 52px; border-radius: var(--radius); background: rgba(201,168,76,0.1); color: var(--gold); font-size: 1.4rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .job-body { flex: 1; }
+    .job-type-badge { display: inline-block; font-family: var(--font-mono); font-size: 0.68rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold-mid); background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.3); border-radius: 3px; padding: 2px 8px; margin-bottom: 0.6rem; }
+    .job-body h4 { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.4rem; }
+    .job-body p { font-size: 0.88rem; color: var(--gray-600); margin: 0 0 0.9rem; line-height: 1.65; }
+    .job-meta { display: flex; flex-wrap: wrap; gap: 1rem; font-family: var(--font-mono); font-size: 0.75rem; color: var(--gray-500); margin-bottom: 1rem; }
+    .job-meta span { display: flex; align-items: center; gap: 0.3rem; }
+    .job-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem; }
+    .job-tag { font-family: var(--font-mono); font-size: 0.68rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: var(--navy); background: var(--gray-100); border-radius: 3px; padding: 2px 8px; }
+    .btn-apply { display: inline-flex; align-items: center; gap: 0.4rem; font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--navy); border: 1.5px solid var(--gold); border-radius: 50px; padding: 0.42rem 1.1rem; text-decoration: none; background: transparent; transition: all 0.25s ease; }
+    .btn-apply:hover { background: var(--navy); color: var(--gold); border-color: var(--navy); }
+
+    /* Process steps */
+    #process { background: var(--navy); padding: 5rem 0; }
+    .process-step { text-align: center; padding: 1.5rem 1rem; position: relative; }
+    .step-number { width: 56px; height: 56px; border-radius: 50%; background: rgba(201,168,76,0.15); border: 2px solid var(--gold); color: var(--gold); font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.2rem; }
+    .process-step h5 { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 0.5rem; }
+    .process-step p { font-size: 0.85rem; color: rgba(255,255,255,0.65); line-height: 1.65; }
+
+    /* Perks */
+    #perks { background: var(--gray-100); padding: 5rem 0; }
+    .perk-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: 2rem; text-align: center; box-shadow: var(--shadow-sm); transition: all 0.3s ease; height: 100%; }
+    .perk-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: rgba(201,168,76,0.3); }
+    .perk-icon { font-size: 2rem; color: var(--gold); margin-bottom: 1rem; }
+    .perk-card h5 { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.5rem; }
+    .perk-card p { font-size: 0.87rem; color: var(--gray-600); line-height: 1.7; margin: 0; }
+
+    /* CTA */
+    #careers-cta { background: linear-gradient(rgba(10,22,40,0.94), rgba(10,22,40,0.94)), url('assets/img/hero-carousel/hero-carousel-3.jpeg') center/cover no-repeat; padding: 5rem 0; text-align: center; }
+    #careers-cta h2 { font-family: var(--font-display); font-size: 2rem; font-weight: 700; color: var(--white); margin-bottom: 1rem; }
+    #careers-cta p { color: rgba(255,255,255,0.72); max-width: 500px; margin: 0 auto 2rem; }
+    .btn-gold { display: inline-flex; align-items: center; gap: 0.4rem; background: var(--gold); color: var(--navy); font-family: var(--font-mono); font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; padding: 0.75rem 2rem; border-radius: 50px; text-decoration: none; transition: all 0.25s ease; }
+    .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); color: var(--navy); }
+  </style>
 </head>
-<body class="lang-fr">
-<div data-include="includes/header.html"></div>
-<main class="main">
-  <section class="section hero pt-5 pb-5 bg-light text-dark">
-    <div class="container">
-      <h1><span data-lang="fr">Opportunités & recrutement</span><span data-lang="en" class="d-none">Opportunities & recruitment</span></h1>
-      <p class="lead"><span data-lang="fr">Rejoignez notre réseau de chercheurs et experts.</span><span data-lang="en" class="d-none">Join our network of researchers and experts.</span></p>
-    </div>
-  </section>
-  <section class="section py-5">
-    <div class="container">
-      <div class="row gy-4">
-        <div class="col-lg-12" data-aos="fade-up">
-          <div class="p-4 bg-white rounded-4 shadow-sm h-100">
-            <h3><span data-lang="fr">Postes ouverts</span><span data-lang="en" class="d-none">Open positions</span></h3>
-            <ul>
-              <li><span data-lang="fr">Chercheur en sciences sociales</span><span data-lang="en" class="d-none">Social science researcher</span></li>
-              <li><span data-lang="fr">Analyste de données</span><span data-lang="en" class="d-none">Data analyst</span></li>
-              <li><span data-lang="fr">Chargé de projets de recherche</span><span data-lang="en" class="d-none">Research project manager</span></li>
-            </ul>
-            <a href="contact.html" class="btn btn-primary mt-3">Postuler</a>
-          </div>
-        </div>
+<body class="careers-page">
+
+  <div data-include="includes/header.html"></div>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title accent-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">
+          <span data-lang="fr">Opportunités &amp; Recrutement</span>
+          <span data-lang="en" class="d-none">Careers &amp; Opportunities</span>
+        </h1>
+        <nav class="breadcrumbs"><ol>
+          <li><a href="index.html"><span data-lang="fr">Accueil</span><span data-lang="en" class="d-none">Home</span></a></li>
+          <li class="current"><span data-lang="fr">Carrières</span><span data-lang="en" class="d-none">Careers</span></li>
+        </ol></nav>
       </div>
     </div>
-  </section>
-</main>
+
+    <!-- Culture & Values -->
+    <section id="culture">
+      <div class="container">
+        <div class="section-title text-center mb-5" data-aos="fade-up">
+          <h2><span data-lang="fr">Travailler au KEMT Center</span><span data-lang="en" class="d-none">Working at KEMT Center</span></h2>
+          <div class="gold-bar"></div>
+          <p class="mt-3" style="color:var(--gray-600);max-width:600px;margin:0.8rem auto 0;"><span data-lang="fr">Rejoindre KEMT, c'est intégrer une équipe passionnée par la recherche d'impact, animée par la rigueur académique et l'engagement social au service du développement africain.</span><span data-lang="en" class="d-none">Joining KEMT means becoming part of a team passionate about impact research, driven by academic rigor and social commitment in service of African development.</span></p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100"><div class="value-card"><div class="value-icon"><i class="bi bi-lightbulb-fill"></i></div><h5><span data-lang="fr">Rigueur scientifique</span><span data-lang="en" class="d-none">Scientific Rigor</span></h5><p><span data-lang="fr">Chaque décision est fondée sur des données solides et des méthodes d'inférence causale éprouvées.</span><span data-lang="en" class="d-none">Every decision is grounded in solid data and proven causal inference methods.</span></p></div></div>
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200"><div class="value-card"><div class="value-icon"><i class="bi bi-heart-fill"></i></div><h5><span data-lang="fr">Impact social</span><span data-lang="en" class="d-none">Social Impact</span></h5><p><span data-lang="fr">Nos travaux ont un effet direct et mesurable sur la vie des familles et des enfants en milieu rural.</span><span data-lang="en" class="d-none">Our work has a direct and measurable effect on the lives of rural families and children.</span></p></div></div>
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300"><div class="value-card"><div class="value-icon"><i class="bi bi-people-fill"></i></div><h5><span data-lang="fr">Collaboration</span><span data-lang="en" class="d-none">Collaboration</span></h5><p><span data-lang="fr">Une culture de travail ouverte, horizontale et collaborative entre chercheurs junior et senior.</span><span data-lang="en" class="d-none">An open, flat, collaborative work culture between junior and senior researchers.</span></p></div></div>
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400"><div class="value-card"><div class="value-icon"><i class="bi bi-globe"></i></div><h5><span data-lang="fr">Rayonnement mondial</span><span data-lang="en" class="d-none">Global Reach</span></h5><p><span data-lang="fr">Des partenariats avec des institutions académiques en Europe, aux USA et en Afrique pour un réseau unique.</span><span data-lang="en" class="d-none">Partnerships with academic institutions in Europe, the USA, and Africa for a unique global network.</span></p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Open Positions -->
+    <section id="open-positions">
+      <div class="container">
+        <div style="margin-bottom:3rem;" data-aos="fade-up">
+          <h2 style="font-family:var(--font-display);font-size:1.9rem;font-weight:700;color:var(--navy);">
+            <span data-lang="fr">Postes Ouverts</span><span data-lang="en" class="d-none">Open Positions</span>
+          </h2>
+          <div class="gold-bar-left"></div>
+          <p style="color:var(--gray-600);max-width:600px;">
+            <span data-lang="fr">Nous recherchons des profils talentueux et motivés pour renforcer notre équipe de recherche et nos opérations terrain.</span>
+            <span data-lang="en" class="d-none">We are looking for talented and motivated profiles to strengthen our research team and field operations.</span>
+          </p>
+        </div>
+        <div class="d-flex flex-column gap-4">
+
+          <div class="job-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="job-icon"><i class="bi bi-graph-up-arrow"></i></div>
+            <div class="job-body">
+              <span class="job-type-badge"><i class="bi bi-briefcase-fill"></i> <span data-lang="fr">CDI · Temps plein</span><span data-lang="en" class="d-none">Full-time</span></span>
+              <h4><span data-lang="fr">Chercheur(se) en Économie du Développement</span><span data-lang="en" class="d-none">Development Economics Researcher</span></h4>
+              <p><span data-lang="fr">Conception et mise en œuvre d'essais randomisés contrôlés (RCT) sur l'éducation et le genre. Analyse économétrique, rédaction de working papers et représentation du center dans des conférences internationales.</span><span data-lang="en" class="d-none">Design and implementation of randomized controlled trials (RCTs) on education and gender. Econometric analysis, writing working papers, and representing the center at international conferences.</span></p>
+              <div class="job-meta">
+                <span><i class="bi bi-geo-alt"></i> Cotonou, Bénin</span>
+                <span><i class="bi bi-clock"></i> <span data-lang="fr">Temps plein</span><span data-lang="en" class="d-none">Full time</span></span>
+                <span><i class="bi bi-mortarboard"></i> PhD / Master 2 Économie</span>
+              </div>
+              <div class="job-tags"><span class="job-tag">RCT</span><span class="job-tag">Stata</span><span class="job-tag">R</span><span class="job-tag"><span data-lang="fr">Économétrie</span><span data-lang="en" class="d-none">Econometrics</span></span><span class="job-tag"><span data-lang="fr">Rédaction</span><span data-lang="en" class="d-none">Writing</span></span></div>
+              <a href="contact.html" class="btn-apply"><i class="bi bi-send-fill"></i> <span data-lang="fr">Postuler</span><span data-lang="en" class="d-none">Apply</span></a>
+            </div>
+          </div>
+
+          <div class="job-card" data-aos="fade-up" data-aos-delay="150">
+            <div class="job-icon"><i class="bi bi-bar-chart-fill"></i></div>
+            <div class="job-body">
+              <span class="job-type-badge"><i class="bi bi-briefcase-fill"></i> <span data-lang="fr">CDD · 12 mois</span><span data-lang="en" class="d-none">12-month contract</span></span>
+              <h4><span data-lang="fr">Analyste de Données Senior</span><span data-lang="en" class="d-none">Senior Data Analyst</span></h4>
+              <p><span data-lang="fr">Nettoyage, analyse et visualisation des bases de données d'enquêtes. Développement de pipelines de traitement des données SurveyCTO, contrôle qualité des données terrain, et production de tableaux statistiques pour les publications.</span><span data-lang="en" class="d-none">Cleaning, analysis, and visualization of survey databases. Development of SurveyCTO data processing pipelines, field data quality control, and production of statistical tables for publications.</span></p>
+              <div class="job-meta">
+                <span><i class="bi bi-geo-alt"></i> Cotonou / <span data-lang="fr">Télétravail</span><span data-lang="en" class="d-none">Remote</span></span>
+                <span><i class="bi bi-mortarboard"></i> Master <span data-lang="fr">Statistiques / Économie</span><span data-lang="en" class="d-none">Statistics / Economics</span></span>
+              </div>
+              <div class="job-tags"><span class="job-tag">Stata</span><span class="job-tag">R</span><span class="job-tag">Python</span><span class="job-tag">SurveyCTO</span><span class="job-tag">SQL</span></div>
+              <a href="contact.html" class="btn-apply"><i class="bi bi-send-fill"></i> <span data-lang="fr">Postuler</span><span data-lang="en" class="d-none">Apply</span></a>
+            </div>
+          </div>
+
+          <div class="job-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="job-icon"><i class="bi bi-map-fill"></i></div>
+            <div class="job-body">
+              <span class="job-type-badge"><i class="bi bi-briefcase-fill"></i> <span data-lang="fr">CDD · 6 mois renouvelable</span><span data-lang="en" class="d-none">6-month renewable</span></span>
+              <h4><span data-lang="fr">Coordinateur(trice) de Terrain</span><span data-lang="en" class="d-none">Field Coordinator</span></h4>
+              <p><span data-lang="fr">Supervision et coordination logistique des enquêtes terrain dans les communes rurales du Bénin. Recrutement et formation des enquêteurs, liaison avec les écoles et mairies partenaires, remontée des incidents terrain.</span><span data-lang="en" class="d-none">Logistical supervision and coordination of field surveys in rural Beninese communes. Enumerator recruitment and training, liaison with partner schools and municipalities, field incident reporting.</span></p>
+              <div class="job-meta">
+                <span><i class="bi bi-geo-alt"></i> Pahou / Ouidah / Bohé</span>
+                <span><i class="bi bi-mortarboard"></i> Licence+</span>
+              </div>
+              <div class="job-tags"><span class="job-tag">SurveyCTO</span><span class="job-tag"><span data-lang="fr">Terrain</span><span data-lang="en" class="d-none">Fieldwork</span></span><span class="job-tag"><span data-lang="fr">Logistique</span><span data-lang="en" class="d-none">Logistics</span></span></div>
+              <a href="contact.html" class="btn-apply"><i class="bi bi-send-fill"></i> <span data-lang="fr">Postuler</span><span data-lang="en" class="d-none">Apply</span></a>
+            </div>
+          </div>
+
+          <div class="job-card" data-aos="fade-up" data-aos-delay="250">
+            <div class="job-icon"><i class="bi bi-mortarboard-fill"></i></div>
+            <div class="job-body">
+              <span class="job-type-badge"><i class="bi bi-person-fill"></i> <span data-lang="fr">Stage · 3-6 mois</span><span data-lang="en" class="d-none">Internship · 3-6 months</span></span>
+              <h4><span data-lang="fr">Stage de Recherche — Économie / Statistiques</span><span data-lang="en" class="d-none">Research Internship — Economics / Statistics</span></h4>
+              <p><span data-lang="fr">Stage pour étudiants en Master (économie, statistiques ou sciences sociales). Participation aux analyses de données, contribution aux working papers et formation aux méthodes d'évaluation d'impact.</span><span data-lang="en" class="d-none">Internship for Master's students (economics, statistics, or social sciences). Participation in data analyses, contribution to working papers, and training in impact evaluation methods.</span></p>
+              <div class="job-meta">
+                <span><i class="bi bi-geo-alt"></i> Cotonou, Bénin</span>
+                <span><i class="bi bi-mortarboard"></i> Bac+4 / Bac+5</span>
+              </div>
+              <div class="job-tags"><span class="job-tag">Stata</span><span class="job-tag">R</span><span class="job-tag"><span data-lang="fr">Recherche</span><span data-lang="en" class="d-none">Research</span></span></div>
+              <a href="contact.html" class="btn-apply"><i class="bi bi-send-fill"></i> <span data-lang="fr">Postuler</span><span data-lang="en" class="d-none">Apply</span></a>
+            </div>
+          </div>
+
+          <div class="job-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="job-icon"><i class="bi bi-laptop-fill"></i></div>
+            <div class="job-body">
+              <span class="job-type-badge"><i class="bi bi-briefcase-fill"></i> <span data-lang="fr">CDI · Temps plein</span><span data-lang="en" class="d-none">Full-time</span></span>
+              <h4><span data-lang="fr">Chargé(e) de Communication &amp; Valorisation de la Recherche</span><span data-lang="en" class="d-none">Communications &amp; Research Dissemination Officer</span></h4>
+              <p><span data-lang="fr">Production de contenus (rapports, notes de politique, articles de vulgarisation) pour valoriser les recherches du KEMT Center. Gestion du site web, des réseaux sociaux institutionnels et des relations presse.</span><span data-lang="en" class="d-none">Production of content (reports, policy briefs, popularization articles) to disseminate KEMT Center research. Website management, institutional social media, and press relations.</span></p>
+              <div class="job-meta">
+                <span><i class="bi bi-geo-alt"></i> Cotonou, Bénin</span>
+                <span><i class="bi bi-mortarboard"></i> Master <span data-lang="fr">Communication / Journalisme</span><span data-lang="en" class="d-none">Communication / Journalism</span></span>
+              </div>
+              <div class="job-tags"><span class="job-tag"><span data-lang="fr">Rédaction</span><span data-lang="en" class="d-none">Writing</span></span><span class="job-tag">Web</span><span class="job-tag"><span data-lang="fr">Réseaux sociaux</span><span data-lang="en" class="d-none">Social media</span></span></div>
+              <a href="contact.html" class="btn-apply"><i class="bi bi-send-fill"></i> <span data-lang="fr">Postuler</span><span data-lang="en" class="d-none">Apply</span></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Application Process -->
+    <section id="process">
+      <div class="container">
+        <div class="section-title text-center mb-5" data-aos="fade-up">
+          <h2 style="color:var(--white);"><span data-lang="fr">Processus de Candidature</span><span data-lang="en" class="d-none">Application Process</span></h2>
+          <div class="gold-bar"></div>
+          <p class="mt-3" style="color:rgba(255,255,255,0.65);max-width:560px;margin:0.8rem auto 0;"><span data-lang="fr">Notre processus est simple, transparent et centré sur vos compétences réelles.</span><span data-lang="en" class="d-none">Our process is simple, transparent, and focused on your real skills.</span></p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-3" data-aos="fade-up" data-aos-delay="100"><div class="process-step"><div class="step-number">01</div><h5><span data-lang="fr">Candidature en ligne</span><span data-lang="en" class="d-none">Online Application</span></h5><p><span data-lang="fr">Envoyez votre CV et lettre de motivation via notre formulaire de contact.</span><span data-lang="en" class="d-none">Send your CV and cover letter via our contact form.</span></p></div></div>
+          <div class="col-md-3" data-aos="fade-up" data-aos-delay="200"><div class="process-step"><div class="step-number">02</div><h5><span data-lang="fr">Présélection</span><span data-lang="en" class="d-none">Pre-selection</span></h5><p><span data-lang="fr">Examen de votre dossier et contact dans les 10 jours ouvrables.</span><span data-lang="en" class="d-none">Review of your application and contact within 10 business days.</span></p></div></div>
+          <div class="col-md-3" data-aos="fade-up" data-aos-delay="300"><div class="process-step"><div class="step-number">03</div><h5><span data-lang="fr">Entretien technique</span><span data-lang="en" class="d-none">Technical Interview</span></h5><p><span data-lang="fr">Entretien axé sur vos compétences techniques et votre motivation pour la mission.</span><span data-lang="en" class="d-none">Interview focused on your technical skills and motivation for the role.</span></p></div></div>
+          <div class="col-md-3" data-aos="fade-up" data-aos-delay="400"><div class="process-step"><div class="step-number">04</div><h5><span data-lang="fr">Intégration</span><span data-lang="en" class="d-none">Onboarding</span></h5><p><span data-lang="fr">Accueil dans l'équipe avec un programme d'intégration personnalisé de 2 semaines.</span><span data-lang="en" class="d-none">Welcome to the team with a personalized 2-week onboarding program.</span></p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Perks & Benefits -->
+    <section id="perks">
+      <div class="container">
+        <div class="section-title text-center mb-5" data-aos="fade-up">
+          <h2><span data-lang="fr">Avantages &amp; Bénéfices</span><span data-lang="en" class="d-none">Perks &amp; Benefits</span></h2>
+          <div class="gold-bar"></div>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100"><div class="perk-card"><div class="perk-icon"><i class="bi bi-airplane-fill"></i></div><h5><span data-lang="fr">Programme Study Abroad</span><span data-lang="en" class="d-none">Study Abroad Program</span></h5><p><span data-lang="fr">Opportunités de formation et d'échange académique aux États-Unis, en Europe et en Afrique pour les membres de l'équipe.</span><span data-lang="en" class="d-none">Training and academic exchange opportunities in the US, Europe, and Africa for team members.</span></p></div></div>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200"><div class="perk-card"><div class="perk-icon"><i class="bi bi-journal-bookmark-fill"></i></div><h5><span data-lang="fr">Co-auteur de publications</span><span data-lang="en" class="d-none">Publication Co-authorship</span></h5><p><span data-lang="fr">Participation aux publications scientifiques du center, avec co-signature des working papers et notes de politique selon les contributions.</span><span data-lang="en" class="d-none">Participation in the center's scientific publications, with co-authorship of working papers and policy briefs based on contributions.</span></p></div></div>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300"><div class="perk-card"><div class="perk-icon"><i class="bi bi-mortarboard-fill"></i></div><h5><span data-lang="fr">Formation continue</span><span data-lang="en" class="d-none">Continuous Learning</span></h5><p><span data-lang="fr">Accès à des formations internes et externes en méthodes d'évaluation d'impact, analyses de données et communication scientifique.</span><span data-lang="en" class="d-none">Access to internal and external training in impact evaluation methods, data analysis, and scientific communication.</span></p></div></div>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100"><div class="perk-card"><div class="perk-icon"><i class="bi bi-people-fill"></i></div><h5><span data-lang="fr">Réseau international</span><span data-lang="en" class="d-none">International Network</span></h5><p><span data-lang="fr">Intégration dans un réseau de chercheurs africains, européens et américains spécialisés en évaluation d'impact et économie du développement.</span><span data-lang="en" class="d-none">Integration into a network of African, European, and American researchers specializing in impact evaluation and development economics.</span></p></div></div>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200"><div class="perk-card"><div class="perk-icon"><i class="bi bi-map-fill"></i></div><h5><span data-lang="fr">Terrain &amp; Mobilité</span><span data-lang="en" class="d-none">Field &amp; Mobility</span></h5><p><span data-lang="fr">Participation aux missions terrain avec prise en charge des déplacements, hébergement et per diem selon les protocoles KEMT.</span><span data-lang="en" class="d-none">Participation in field missions with transport, accommodation, and per diem covered under KEMT protocols.</span></p></div></div>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300"><div class="perk-card"><div class="perk-icon"><i class="bi bi-heart-fill"></i></div><h5><span data-lang="fr">Impact Réel</span><span data-lang="en" class="d-none">Real Impact</span></h5><p><span data-lang="fr">Travailler sur des projets qui changent concrètement la vie de milliers d'enfants et de familles en milieu rural africain.</span><span data-lang="en" class="d-none">Work on projects that concretely change the lives of thousands of children and families in rural African settings.</span></p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="careers-cta">
+      <div class="container" data-aos="fade-up">
+        <h2><span data-lang="fr">Prêt(e) à rejoindre notre équipe ?</span><span data-lang="en" class="d-none">Ready to join our team?</span></h2>
+        <p><span data-lang="fr">Envoyez-nous votre CV et dites-nous comment vous pouvez contribuer à notre mission. Nous répondons à toutes les candidatures dans un délai de 10 jours.</span><span data-lang="en" class="d-none">Send us your CV and tell us how you can contribute to our mission. We respond to all applications within 10 days.</span></p>
+        <a href="contact.html" class="btn-gold"><i class="bi bi-send-fill"></i> <span data-lang="fr">Envoyer ma candidature</span><span data-lang="en" class="d-none">Submit my application</span></a>
+      </div>
+    </section>
+
+  </main>
+
   <div data-include="includes/footer.html"></div>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <div id="preloader"><div class="ring-loader"><span></span></div><div class="preloader-text"><strong>KEMT Center</strong><small>Recherche &amp; Impact</small></div></div>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/js/include-html.js"></script>
-  <script src="assets/js/lang-switcher.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function(){ if(window.AOS) AOS.init({once:true}); });
-  </script>
+  <script src='assets/js/lang-switcher.js'></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
-
-

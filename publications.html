@@ -1,67 +1,968 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Publications - KEMT Center</title>
-  <meta name="description" content="Publications, working papers et rapports annuels du KEMT Center.">
-  <meta name="keywords" content="publications, rapports, working papers, recherche">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title data-lang-fr="Publications - KEMT Center" data-lang-en="Publications - KEMT Center">Publications - KEMT Center</title>
+  <meta name="description" content="Working papers, notes de politique et rapports annuels du KEMT Research Center.">
+  <meta name="keywords" content="KEMT Center, publications, working papers, rapports, politique éducative, recherche">
+
+  <!-- Favicons -->
+  <link href="assets/img/kemt_center.png" rel="icon">
+  <link href="assets/img/kemt_center.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+
+  <style type="text/css" media="all">
+    :root {
+      --gold-mid: #b8933b;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--gray-100);
+      color: var(--navy);
+    }
+
+    /* Page Title banner */
+    .page-title {
+      background: linear-gradient(rgba(10, 22, 40, 0.90), rgba(10, 22, 40, 0.90)),
+                  url('assets/img/hero-carousel/hero-carousel-4.jpeg') center/cover no-repeat !important;
+      padding: 80px 0 !important;
+      border-bottom: 2px solid rgba(201, 168, 76, 0.3) !important;
+      color: var(--white) !important;
+    }
+    .page-title h1 {
+      font-family: var(--font-display) !important;
+      font-size: 2.8rem !important;
+      font-weight: 700 !important;
+      color: var(--white) !important;
+      margin: 0 0 10px 0 !important;
+    }
+    .page-title .breadcrumbs ol {
+      font-family: var(--font-mono) !important;
+      font-size: 0.8rem !important;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .page-title .breadcrumbs ol li a { color: rgba(255,255,255,0.7) !important; transition: color 0.2s; }
+    .page-title .breadcrumbs ol li a:hover { color: var(--gold-light) !important; }
+    .page-title .breadcrumbs ol li.current { color: var(--gold) !important; }
+    .page-title .breadcrumbs ol li+li::before { color: rgba(255,255,255,0.3) !important; }
+
+    /* Category nav tabs */
+    #pub-tabs {
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-200);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .pub-tab-nav {
+      display: flex;
+      gap: 0;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      overflow-x: auto;
+    }
+    .pub-tab-nav li a {
+      display: block;
+      padding: 1.1rem 1.8rem;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--gray-600);
+      text-decoration: none;
+      border-bottom: 3px solid transparent;
+      transition: all 0.25s ease;
+      white-space: nowrap;
+    }
+    .pub-tab-nav li a:hover,
+    .pub-tab-nav li a.active {
+      color: var(--navy);
+      border-bottom-color: var(--gold);
+    }
+
+    /* Section wrapper */
+    .pub-section {
+      padding: 5rem 0 4rem;
+    }
+    .pub-section:nth-child(even) {
+      background: var(--white);
+    }
+    .pub-section:nth-child(odd) {
+      background: var(--gray-100);
+    }
+
+    .section-header h2 {
+      font-family: var(--font-display);
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.4rem;
+    }
+    .section-header p {
+      color: var(--gray-600);
+      font-size: 0.95rem;
+      max-width: 620px;
+    }
+    .gold-bar-left {
+      width: 50px;
+      height: 3px;
+      background: var(--gold);
+      margin: 0.7rem 0 1.5rem;
+    }
+
+    /* Working paper card */
+    .paper-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+    .paper-card::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.35s ease;
+    }
+    .paper-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+    .paper-card:hover::after { transform: scaleX(1); }
+
+    .paper-type-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--gold-mid);
+      background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 3px;
+      padding: 3px 10px;
+      margin-bottom: 1rem;
+    }
+    .paper-card h4 {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.45;
+      margin-bottom: 0.5rem;
+    }
+    .paper-authors {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--gray-600);
+      margin-bottom: 0.9rem;
+    }
+    .paper-authors span { color: var(--gold-mid); font-weight: 600; }
+    .paper-abstract {
+      font-size: 0.88rem;
+      color: var(--gray-600);
+      line-height: 1.75;
+      flex-grow: 1;
+      margin-bottom: 1.3rem;
+    }
+    .paper-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: auto;
+    }
+    .paper-year {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--gray-500);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .btn-download {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--navy);
+      background: transparent;
+      border: 1.5px solid var(--gold);
+      border-radius: 50px;
+      padding: 0.4rem 1.1rem;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      margin-left: auto;
+    }
+    .btn-download:hover {
+      background: var(--navy);
+      color: var(--gold);
+      border-color: var(--navy);
+    }
+    .btn-read-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--gold-mid);
+      text-decoration: none;
+      transition: all 0.2s ease;
+      padding: 0.4rem 0;
+      border-bottom: 1px solid transparent;
+    }
+    .btn-read-more:hover {
+      color: var(--navy);
+      border-bottom-color: var(--gold);
+    }
+
+    /* Policy Brief card (horizontal layout) */
+    .brief-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: 1.6rem 2rem;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
+    }
+    .brief-card:hover { transform: translateX(4px); box-shadow: var(--shadow-md); border-left: 4px solid var(--gold); }
+    .brief-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius);
+      background: rgba(201,168,76,0.12);
+      color: var(--gold);
+      font-size: 1.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .brief-body { flex: 1; }
+    .brief-body h4 {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.3rem;
+    }
+    .brief-body p { font-size: 0.88rem; color: var(--gray-600); margin: 0 0 0.8rem; line-height: 1.6; }
+
+    /* Annual Report card */
+    .report-card {
+      background: var(--navy);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      transition: all 0.3s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .report-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+    .report-card-header {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      padding: 2rem;
+      text-align: center;
+    }
+    .report-year-badge {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1;
+    }
+    .report-card-body {
+      padding: 1.8rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .report-card-body h4 {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.7rem;
+    }
+    .report-card-body p { font-size: 0.85rem; color: rgba(255,255,255,0.65); line-height: 1.65; flex: 1; }
+    .report-card-footer {
+      padding: 0 1.8rem 1.8rem;
+    }
+    .btn-report {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--navy);
+      background: var(--gold);
+      border-radius: 50px;
+      padding: 0.5rem 1.3rem;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      border: none;
+    }
+    .btn-report:hover { background: var(--gold-light); color: var(--navy); transform: translateY(-2px); }
+
+    /* Newsletter CTA */
+    #newsletter {
+      background: linear-gradient(rgba(10,22,40,0.94), rgba(10,22,40,0.94)),
+                  url('assets/img/hero-carousel/hero-carousel-1.jpeg') center/cover no-repeat;
+      padding: 5rem 0;
+      text-align: center;
+    }
+    #newsletter h2 {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.8rem;
+    }
+    #newsletter p { color: rgba(255,255,255,0.7); max-width: 500px; margin: 0 auto 2rem; }
+    .newsletter-form {
+      display: flex;
+      gap: 0.5rem;
+      max-width: 440px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+    .newsletter-form input[type="email"] {
+      flex: 1;
+      min-width: 200px;
+      padding: 0.7rem 1.2rem;
+      border-radius: 50px;
+      border: 1.5px solid rgba(201,168,76,0.5);
+      background: rgba(255,255,255,0.07);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .newsletter-form input[type="email"]::placeholder { color: rgba(255,255,255,0.4); }
+    .newsletter-form input[type="email"]:focus { border-color: var(--gold); }
+    .newsletter-form button {
+      padding: 0.7rem 1.6rem;
+      background: var(--gold);
+      color: var(--navy);
+      border: none;
+      border-radius: 50px;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .newsletter-form button:hover { background: var(--gold-light); transform: translateY(-2px); }
+  </style>
+
 </head>
-<body class="lang-fr">
-<div data-include="includes/header.html"></div>
-<main class="main">
-  <section class="section hero pt-5 pb-5 bg-light text-dark">
-    <div class="container">
-      <h1 data-aos="fade-up"><span data-lang="fr">Publications & Working Papers</span><span data-lang="en" class="d-none">Publications & Working Papers</span></h1>
-      <p class="lead" data-aos="fade-up" data-aos-delay="60"><span data-lang="fr">Accédez à nos études, rapports et notes de recherche.</span><span data-lang="en" class="d-none">Access our studies, reports, and research briefs.</span></p>
+
+<body class="publications-page">
+
+  <!-- Header -->
+  <div data-include="includes/header.html"></div>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title accent-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">
+          <span data-lang="fr">Publications &amp; Recherches</span>
+          <span data-lang="en" class="d-none">Publications &amp; Research</span>
+        </h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html"><span data-lang="fr">Accueil</span><span data-lang="en" class="d-none">Home</span></a></li>
+            <li class="current">
+              <span data-lang="fr">Publications</span>
+              <span data-lang="en" class="d-none">Publications</span>
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Sticky Tab Nav -->
+    <div id="pub-tabs">
+      <div class="container">
+        <ul class="pub-tab-nav">
+          <li><a href="#working-papers" class="active">
+            <span data-lang="fr">Working Papers</span>
+            <span data-lang="en" class="d-none">Working Papers</span>
+          </a></li>
+          <li><a href="#policy-briefs">
+            <span data-lang="fr">Notes de Politique</span>
+            <span data-lang="en" class="d-none">Policy Briefs</span>
+          </a></li>
+          <li><a href="#annual-reports">
+            <span data-lang="fr">Rapports Annuels</span>
+            <span data-lang="en" class="d-none">Annual Reports</span>
+          </a></li>
+        </ul>
+      </div>
     </div>
-  </section>
-  <section class="section py-5">
-    <div class="container">
-      <div class="row gy-4">
-        <div class="col-lg-4" data-aos="fade-up">
-          <div class="p-4 bg-white rounded-4 shadow-sm h-100">
-            <h2><span data-lang="fr">Rapports annuels</span><span data-lang="en" class="d-none">Annual reports</span></h2>
-            <p><span data-lang="fr">Bilans complets de nos activités, résultats et recommandations.</span><span data-lang="en" class="d-none">Comprehensive reviews of our activities, outcomes, and recommendations.</span></p>
-          </div>
+
+    <!-- ==================== WORKING PAPERS ==================== -->
+    <section id="working-papers" class="pub-section">
+      <div class="container">
+
+        <div class="section-header" data-aos="fade-up">
+          <h2>
+            <span data-lang="fr">Working Papers</span>
+            <span data-lang="en" class="d-none">Working Papers</span>
+          </h2>
+          <div class="gold-bar-left"></div>
+          <p>
+            <span data-lang="fr">Nos études de recherche approfondies, conçues pour informer les politiques éducatives et susciter le débat scientifique en Afrique de l'Ouest.</span>
+            <span data-lang="en" class="d-none">Our in-depth research studies, designed to inform educational policy and stimulate scholarly debate across West Africa.</span>
+          </p>
         </div>
-        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="40">
-          <div class="p-4 bg-white rounded-4 shadow-sm h-100">
-            <h2><span data-lang="fr">Working Papers</span><span data-lang="en" class="d-none">Working papers</span></h2>
-            <p><span data-lang="fr">Études approfondies sur les enjeux sociaux, éducatifs et politiques.</span><span data-lang="en" class="d-none">In-depth studies on social, educational, and policy issues.</span></p>
+
+        <div class="row g-4 mt-3">
+
+          <!-- WP 1 -->
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="paper-card">
+              <span class="paper-type-badge"><i class="bi bi-journal-text"></i>
+                <span data-lang="fr">Working Paper · 2024</span>
+                <span data-lang="en" class="d-none">Working Paper · 2024</span>
+              </span>
+              <h4>
+                <span data-lang="fr">L'effet du suivi parental sur les résultats scolaires : Données expérimentales du Bénin</span>
+                <span data-lang="en" class="d-none">The Effect of Parental Monitoring on Academic Outcomes: Experimental Evidence from Benin</span>
+              </h4>
+              <div class="paper-authors">
+                <span>Moustapha SEIDOU</span>, Elodie LAWIN &amp; Hugues I. Djima
+              </div>
+              <p class="paper-abstract">
+                <span data-lang="fr">Cet article examine l'impact causal d'une intervention de suivi parental structuré sur les résultats scolaires des élèves des écoles primaires publiques du Bénin. À l'aide d'un essai randomisé contrôlé (RCT), nous estimons un effet positif et significatif de +0,18 écart-type sur les scores de lecture et mathématiques.</span>
+                <span data-lang="en" class="d-none">This paper examines the causal impact of a structured parental monitoring intervention on academic outcomes in Benin's public primary schools. Using a randomized controlled trial (RCT), we estimate a positive and significant effect of +0.18 standard deviations on reading and mathematics scores.</span>
+              </p>
+              <div class="paper-meta">
+                <span class="paper-year">KEMT-WP-2024-01</span>
+                <a href="#" class="btn-read-more">
+                  <span data-lang="fr">Lire</span>
+                  <span data-lang="en" class="d-none">Read</span>
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+                <a href="parental-involvement-study.html" class="btn-download">
+                  <i class="bi bi-file-earmark-pdf"></i> PDF
+                </a>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="80">
-          <div class="p-4 bg-white rounded-4 shadow-sm h-100">
-            <h2><span data-lang="fr">Articles scientifiques</span><span data-lang="en" class="d-none">Journal articles</span></h2>
-            <p><span data-lang="fr">Publications évaluées par des pairs pour une diffusion académique.</span><span data-lang="en" class="d-none">Peer-reviewed publications for academic dissemination.</span></p>
+
+          <!-- WP 2 -->
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="paper-card">
+              <span class="paper-type-badge"><i class="bi bi-journal-text"></i>
+                <span data-lang="fr">Working Paper · 2024</span>
+                <span data-lang="en" class="d-none">Working Paper · 2024</span>
+              </span>
+              <h4>
+                <span data-lang="fr">Normes de genre et parcours STEM des lycéennes en Afrique subsaharienne</span>
+                <span data-lang="en" class="d-none">Gender Norms and STEM Trajectories of Secondary School Girls in Sub-Saharan Africa</span>
+              </h4>
+              <div class="paper-authors">
+                <span>Elodie LAWIN</span> &amp; Moustapha SEIDOU
+              </div>
+              <p class="paper-abstract">
+                <span data-lang="fr">Cette étude analyse comment les normes de genre sociales et culturelles influencent les choix d'orientation scientifique des lycéennes dans les zones rurales du Bénin. Nos résultats suggèrent que les modèles féminins positifs en classe réduisent significativement l'écart de performance entre garçons et filles.</span>
+                <span data-lang="en" class="d-none">This study analyzes how social and cultural gender norms influence scientific orientation choices among secondary school girls in rural Benin. Our findings suggest that positive female role models in class significantly reduce the gender performance gap.</span>
+              </p>
+              <div class="paper-meta">
+                <span class="paper-year">KEMT-WP-2024-02</span>
+                <a href="#" class="btn-read-more">
+                  <span data-lang="fr">Lire</span>
+                  <span data-lang="en" class="d-none">Read</span>
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+                <a href="stem-initiative.html" class="btn-download">
+                  <i class="bi bi-file-earmark-pdf"></i> PDF
+                </a>
+              </div>
+            </div>
           </div>
+
+          <!-- WP 3 -->
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="paper-card">
+              <span class="paper-type-badge"><i class="bi bi-journal-text"></i>
+                <span data-lang="fr">Working Paper · 2023</span>
+                <span data-lang="en" class="d-none">Working Paper · 2023</span>
+              </span>
+              <h4>
+                <span data-lang="fr">Effets de diffusion de la supervision parentale : Données sur les frères, sœurs et camarades</span>
+                <span data-lang="en" class="d-none">Spillover Effects of Parental Supervision: Evidence from Siblings and Peers</span>
+              </h4>
+              <div class="paper-authors">
+                <span>Moustapha SEIDOU</span>, Ronaldo AGBOHOU &amp; Hugues I. Djima
+              </div>
+              <p class="paper-abstract">
+                <span data-lang="fr">Cet article exploite la variation exogène d'une intervention parentale randomisée pour identifier les effets de débordement sur des enfants non traités. Nous trouvons des effets positifs sur les frères et sœurs résidants dans le même ménage, suggérant des externalités positives au sein des familles.</span>
+                <span data-lang="en" class="d-none">This paper exploits exogenous variation from a randomized parental intervention to identify spillover effects on untreated children. We find positive effects on siblings residing in the same household, suggesting positive intra-family externalities.</span>
+              </p>
+              <div class="paper-meta">
+                <span class="paper-year">KEMT-WP-2023-01</span>
+                <a href="#" class="btn-read-more">
+                  <span data-lang="fr">Lire</span>
+                  <span data-lang="en" class="d-none">Read</span>
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+                <a href="parental-involvement-study.html" class="btn-download">
+                  <i class="bi bi-file-earmark-pdf"></i> PDF
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- WP 4 -->
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="paper-card">
+              <span class="paper-type-badge"><i class="bi bi-journal-text"></i>
+                <span data-lang="fr">Working Paper · 2023</span>
+                <span data-lang="en" class="d-none">Working Paper · 2023</span>
+              </span>
+              <h4>
+                <span data-lang="fr">Digitalisation des frais de scolarité : Impact sur la présence scolaire et les abandons</span>
+                <span data-lang="en" class="d-none">Digitization of School Fees: Impact on Attendance and School Dropout Rates</span>
+              </h4>
+              <div class="paper-authors">
+                <span>Moustapha SEIDOU</span>, Sègnon AKOHOU &amp; Ronaldo AGBOHOU
+              </div>
+              <p class="paper-abstract">
+                <span data-lang="fr">Nous évaluons l'impact du passage des paiements de frais scolaires en espèces vers des solutions mobiles sur l'assiduité des élèves et les taux d'inscription. Les résultats indiquent une réduction significative du taux d'abandon scolaire de 12% dans les zones rurales traitées.</span>
+                <span data-lang="en" class="d-none">We assess the impact of transitioning school fee payments from cash to mobile solutions on student attendance and enrollment rates. Results indicate a significant 12% reduction in school dropout rates in treated rural areas.</span>
+              </p>
+              <div class="paper-meta">
+                <span class="paper-year">KEMT-WP-2023-02</span>
+                <a href="#" class="btn-read-more">
+                  <span data-lang="fr">Lire</span>
+                  <span data-lang="en" class="d-none">Read</span>
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+                <a href="fieldwork-methods.html" class="btn-download">
+                  <i class="bi bi-file-earmark-pdf"></i> PDF
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- WP 5 -->
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="paper-card">
+              <span class="paper-type-badge"><i class="bi bi-journal-text"></i>
+                <span data-lang="fr">Working Paper · 2022</span>
+                <span data-lang="en" class="d-none">Working Paper · 2022</span>
+              </span>
+              <h4>
+                <span data-lang="fr">Résilience des ménages ruraux béninois face aux chocs COVID-19</span>
+                <span data-lang="en" class="d-none">Resilience of Rural Beninese Households against COVID-19 Shocks</span>
+              </h4>
+              <div class="paper-authors">
+                <span>Hugues I. Djima</span>, Moustapha SEIDOU &amp; Elodie LAWIN
+              </div>
+              <p class="paper-abstract">
+                <span data-lang="fr">Ce papier analyse comment les ménages ruraux ont absorbé et adapté leurs stratégies de survie durant la pandémie de COVID-19 au Bénin. Nous documentons des effets différenciés selon le niveau d'éducation des chefs de ménage et l'accès aux transferts sociaux.</span>
+                <span data-lang="en" class="d-none">This paper analyzes how rural households absorbed and adapted their survival strategies during the COVID-19 pandemic in Benin. We document differentiated effects based on household head education level and access to social transfers.</span>
+              </p>
+              <div class="paper-meta">
+                <span class="paper-year">KEMT-WP-2022-01</span>
+                <a href="#" class="btn-read-more">
+                  <span data-lang="fr">Lire</span>
+                  <span data-lang="en" class="d-none">Read</span>
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+                <a href="covid-recovery-study.html" class="btn-download">
+                  <i class="bi bi-file-earmark-pdf"></i> PDF
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- WP 6 -->
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="paper-card">
+              <span class="paper-type-badge"><i class="bi bi-journal-text"></i>
+                <span data-lang="fr">Working Paper · 2022</span>
+                <span data-lang="en" class="d-none">Working Paper · 2022</span>
+              </span>
+              <h4>
+                <span data-lang="fr">Bulletins de performance scolaire : Imputabilité enseignante et engagement parental</span>
+                <span data-lang="en" class="d-none">School Report Cards: Teacher Accountability and Parental Engagement</span>
+              </h4>
+              <div class="paper-authors">
+                <span>Moustapha SEIDOU</span> &amp; Hugues I. Djima
+              </div>
+              <p class="paper-abstract">
+                <span data-lang="fr">Ce papier évalue si la diffusion d'informations sur la performance scolaire via des bulletins amène les parents à exercer une pression plus forte sur les enseignants et améliore les pratiques pédagogiques observées dans les classes rurales du Bénin.</span>
+                <span data-lang="en" class="d-none">This paper evaluates whether disseminating school performance information via report cards leads parents to exert greater pressure on teachers and improves pedagogical practices observed in rural Beninese classrooms.</span>
+              </p>
+              <div class="paper-meta">
+                <span class="paper-year">KEMT-WP-2022-02</span>
+                <a href="#" class="btn-read-more">
+                  <span data-lang="fr">Lire</span>
+                  <span data-lang="en" class="d-none">Read</span>
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+                <a href="policy-brief-reportcards.html" class="btn-download">
+                  <i class="bi bi-file-earmark-pdf"></i> PDF
+                </a>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
-      <div class="row gy-4 mt-4" id="working-papers">
-        <div class="col-lg-12">
-          <div class="p-4 bg-white rounded-4 shadow-sm" data-aos="fade-up" data-aos-delay="120">
-            <h3><span data-lang="fr">Travaux en cours</span><span data-lang="en" class="d-none">Ongoing research</span></h3>
-            <p><span data-lang="fr">Nos working papers sont conçus pour informer les politiques publiques et soutenir les débats scientifiques.</span><span data-lang="en" class="d-none">Our working papers are designed to inform public policy and support scientific debate.</span></p>
+    </section><!-- /Working Papers -->
+
+    <!-- ==================== POLICY BRIEFS ==================== -->
+    <section id="policy-briefs" class="pub-section">
+      <div class="container">
+
+        <div class="section-header" data-aos="fade-up">
+          <h2>
+            <span data-lang="fr">Notes de Politique</span>
+            <span data-lang="en" class="d-none">Policy Briefs</span>
+          </h2>
+          <div class="gold-bar-left"></div>
+          <p>
+            <span data-lang="fr">Nos recommandations synthétiques à l'attention des décideurs, ministères et bailleurs de fonds, issues directement de nos recherches empiriques.</span>
+            <span data-lang="en" class="d-none">Our concise recommendations for policymakers, ministries, and funders, drawn directly from our empirical research findings.</span>
+          </p>
+        </div>
+
+        <div class="d-flex flex-column gap-3 mt-4">
+
+          <!-- Brief 1 -->
+          <div class="brief-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="brief-icon"><i class="bi bi-people-fill"></i></div>
+            <div class="brief-body">
+              <span class="paper-type-badge"><i class="bi bi-file-earmark-check"></i>
+                <span data-lang="fr">Note de politique · 2024</span>
+                <span data-lang="en" class="d-none">Policy Brief · 2024</span>
+              </span>
+              <h4>
+                <span data-lang="fr">Renforcer l'implication parentale dans les écoles primaires publiques : Recommandations au MEMP</span>
+                <span data-lang="en" class="d-none">Strengthening Parental Involvement in Public Primary Schools: Recommendations to MEMP</span>
+              </h4>
+              <p>
+                <span data-lang="fr">Cette note synthétise nos résultats RCT pour proposer des mécanismes concrets aux autorités éducatives béninoises visant à institutionnaliser le suivi parental dans les curricula nationaux.</span>
+                <span data-lang="en" class="d-none">This brief synthesizes our RCT findings to propose concrete mechanisms for Beninese educational authorities aiming to institutionalize parental monitoring within national curricula.</span>
+              </p>
+              <div class="d-flex gap-2 flex-wrap">
+                <a href="parental-involvement-study.html" class="btn-download">
+                  <i class="bi bi-file-earmark-pdf"></i> PDF
+                </a>
+                <a href="parental-involvement-study.html" class="btn-read-more">
+                  <span data-lang="fr">Voir le détail</span>
+                  <span data-lang="en" class="d-none">View details</span>
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
           </div>
+
+          <!-- Brief 2 -->
+          <div class="brief-card" data-aos="fade-up" data-aos-delay="150">
+            <div class="brief-icon"><i class="bi bi-gender-ambiguous"></i></div>
+            <div class="brief-body">
+              <span class="paper-type-badge"><i class="bi bi-file-earmark-check"></i>
+                <span data-lang="fr">Note de politique · 2024</span>
+                <span data-lang="en" class="d-none">Policy Brief · 2024</span>
+              </span>
+              <h4>
+                <span data-lang="fr">Lever les barrières de genre dans les filières STEM : Pistes d'action pour les lycées publics</span>
+                <span data-lang="en" class="d-none">Breaking Gender Barriers in STEM Tracks: Action Pathways for Public Secondary Schools</span>
+              </h4>
+              <p>
+                <span data-lang="fr">Recommandations pratiques pour les directions pédagogiques, fondées sur nos études de terrain, pour réduire l'abandon des filières scientifiques chez les lycéennes.</span>
+                <span data-lang="en" class="d-none">Practical recommendations for pedagogical directorates, grounded in our field studies, to reduce STEM dropout rates among secondary school girls.</span>
+              </p>
+              <div class="d-flex gap-2 flex-wrap">
+                <a href="stem-initiative.html" class="btn-download">
+                  <i class="bi bi-file-earmark-pdf"></i> PDF
+                </a>
+                <a href="stem-initiative.html" class="btn-read-more">
+                  <span data-lang="fr">Voir le détail</span>
+                  <span data-lang="en" class="d-none">View details</span>
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Brief 3 -->
+          <div class="brief-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="brief-icon"><i class="bi bi-phone-fill"></i></div>
+            <div class="brief-body">
+              <span class="paper-type-badge"><i class="bi bi-file-earmark-check"></i>
+                <span data-lang="fr">Note de politique · 2023</span>
+                <span data-lang="en" class="d-none">Policy Brief · 2023</span>
+              </span>
+              <h4>
+                <span data-lang="fr">Digitalisation des paiements scolaires : Un levier pour la rétention scolaire en zones rurales</span>
+                <span data-lang="en" class="d-none">School Fee Digitization: A Lever for School Retention in Rural Areas</span>
+              </h4>
+              <p>
+                <span data-lang="fr">Cette note documente les gains de rétention scolaire observés dans les communes pilotes ayant adopté le paiement mobile, et formule des recommandations pour une généralisation à l'échelle nationale.</span>
+                <span data-lang="en" class="d-none">This brief documents school retention gains observed in pilot communes that adopted mobile payment, and makes recommendations for scaling nationally.</span>
+              </p>
+              <div class="d-flex gap-2 flex-wrap">
+                <a href="fieldwork-methods.html" class="btn-download">
+                  <i class="bi bi-file-earmark-pdf"></i> PDF
+                </a>
+                <a href="fieldwork-methods.html" class="btn-read-more">
+                  <span data-lang="fr">Voir le détail</span>
+                  <span data-lang="en" class="d-none">View details</span>
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Brief 4 -->
+          <div class="brief-card" data-aos="fade-up" data-aos-delay="250">
+            <div class="brief-icon"><i class="bi bi-file-earmark-bar-graph-fill"></i></div>
+            <div class="brief-body">
+              <span class="paper-type-badge"><i class="bi bi-file-earmark-check"></i>
+                <span data-lang="fr">Note de politique · 2022</span>
+                <span data-lang="en" class="d-none">Policy Brief · 2022</span>
+              </span>
+              <h4>
+                <span data-lang="fr">Bulletins de performance scolaire : Transparence et imputabilité pour des écoles plus efficaces</span>
+                <span data-lang="en" class="d-none">School Performance Report Cards: Transparency and Accountability for More Effective Schools</span>
+              </h4>
+              <p>
+                <span data-lang="fr">Synthèse de nos données d'évaluation sur les bulletins scolaires, avec des recommandations pour leur adoption systématique dans le cadre du dialogue école-famille au Bénin.</span>
+                <span data-lang="en" class="d-none">Summary of our evaluation data on school report cards, with recommendations for their systematic adoption within the school-family dialogue framework in Benin.</span>
+              </p>
+              <div class="d-flex gap-2 flex-wrap">
+                <a href="policy-brief-reportcards.html" class="btn-download">
+                  <i class="bi bi-file-earmark-pdf"></i> PDF
+                </a>
+                <a href="policy-brief-reportcards.html" class="btn-read-more">
+                  <span data-lang="fr">Voir le détail</span>
+                  <span data-lang="en" class="d-none">View details</span>
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
-    </div>
-  </section>
-</main>
-<div data-include="includes/footer.html"></div>
-<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="assets/vendor/aos/aos.js"></script>
-<script src="assets/js/include-html.js"></script>
-<script src="assets/js/lang-switcher.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', function(){ if(window.AOS) AOS.init({once:true}); });
-</script>
+    </section><!-- /Policy Briefs -->
+
+    <!-- ==================== ANNUAL REPORTS ==================== -->
+    <section id="annual-reports" class="pub-section">
+      <div class="container">
+
+        <div class="section-header" data-aos="fade-up">
+          <h2>
+            <span data-lang="fr">Rapports Annuels</span>
+            <span data-lang="en" class="d-none">Annual Reports</span>
+          </h2>
+          <div class="gold-bar-left"></div>
+          <p>
+            <span data-lang="fr">Nos bilans complets d'activités, résultats de recherche, actions sociales et perspectives stratégiques, publiés chaque année.</span>
+            <span data-lang="en" class="d-none">Our comprehensive yearly reviews of activities, research outcomes, social actions and strategic perspectives.</span>
+          </p>
+        </div>
+
+        <div class="row g-4 mt-3">
+
+          <!-- Report 2024 -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="report-card">
+              <div class="report-card-header">
+                <div class="report-year-badge">2024</div>
+              </div>
+              <div class="report-card-body">
+                <h4>
+                  <span data-lang="fr">Rapport Annuel KEMT 2024</span>
+                  <span data-lang="en" class="d-none">KEMT Annual Report 2024</span>
+                </h4>
+                <p>
+                  <span data-lang="fr">Résultats de nos essais randomisés sur l'implication parentale et les normes de genre. Lancement de l'initiative STEM filles. Bilan de 5 000+ élèves suivis.</span>
+                  <span data-lang="en" class="d-none">Results from our RCTs on parental involvement and gender norms. Launch of the Girls STEM initiative. Summary of 5,000+ students tracked.</span>
+                </p>
+              </div>
+              <div class="report-card-footer">
+                <a href="annual-report.html" class="btn-report">
+                  <i class="bi bi-file-earmark-pdf"></i>
+                  <span data-lang="fr">Télécharger</span>
+                  <span data-lang="en" class="d-none">Download</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Report 2023 -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="report-card">
+              <div class="report-card-header">
+                <div class="report-year-badge">2023</div>
+              </div>
+              <div class="report-card-body">
+                <h4>
+                  <span data-lang="fr">Rapport Annuel KEMT 2023</span>
+                  <span data-lang="en" class="d-none">KEMT Annual Report 2023</span>
+                </h4>
+                <p>
+                  <span data-lang="fr">Déploiement du programme de digitalisation des paiements scolaires dans 3 communes. Résultats des effets de diffusion. Nouvelles bourses octroyées aux étudiants défavorisés.</span>
+                  <span data-lang="en" class="d-none">Deployment of the school payment digitization program in 3 communes. Spillover effect results. New scholarships granted to disadvantaged students.</span>
+                </p>
+              </div>
+              <div class="report-card-footer">
+                <a href="annual-report.html" class="btn-report">
+                  <i class="bi bi-file-earmark-pdf"></i>
+                  <span data-lang="fr">Télécharger</span>
+                  <span data-lang="en" class="d-none">Download</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Report 2022 -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="report-card">
+              <div class="report-card-header">
+                <div class="report-year-badge">2022</div>
+              </div>
+              <div class="report-card-body">
+                <h4>
+                  <span data-lang="fr">Rapport Annuel KEMT 2022</span>
+                  <span data-lang="en" class="d-none">KEMT Annual Report 2022</span>
+                </h4>
+                <p>
+                  <span data-lang="fr">Étude Post-COVID sur la résilience des ménages ruraux. Évaluation des bulletins scolaires dans 200+ écoles. Fonds d'aide médicale d'urgence dépassant 1M FCFA.</span>
+                  <span data-lang="en" class="d-none">Post-COVID study on rural household resilience. School report card evaluation in 200+ schools. Emergency medical aid fund exceeding 1M FCFA.</span>
+                </p>
+              </div>
+              <div class="report-card-footer">
+                <a href="annual-report.html" class="btn-report">
+                  <i class="bi bi-file-earmark-pdf"></i>
+                  <span data-lang="fr">Télécharger</span>
+                  <span data-lang="en" class="d-none">Download</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section><!-- /Annual Reports -->
+
+    <!-- Newsletter CTA -->
+    <section id="newsletter">
+      <div class="container" data-aos="fade-up">
+        <h2>
+          <span data-lang="fr">Restez informé de nos recherches</span>
+          <span data-lang="en" class="d-none">Stay informed about our research</span>
+        </h2>
+        <p>
+          <span data-lang="fr">Recevez nos nouveaux working papers, notes de politique et rapports directement dans votre boîte mail.</span>
+          <span data-lang="en" class="d-none">Receive our new working papers, policy briefs, and reports directly in your inbox.</span>
+        </p>
+        <form class="newsletter-form" onsubmit="return false;">
+          <input type="email" placeholder="votre@email.com" id="newsletter-email">
+          <button type="submit">
+            <span data-lang="fr">S'abonner</span>
+            <span data-lang="en" class="d-none">Subscribe</span>
+          </button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <div data-include="includes/footer.html"></div>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="ring-loader"><span></span></div>
+    <div class="preloader-text"><strong>KEMT Center</strong><small>Recherche &amp; Impact</small></div>
+  </div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/include-html.js"></script>
+  <script src='assets/js/lang-switcher.js'></script>
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    // Highlight active tab based on scroll position
+    (function() {
+      var sections = ['working-papers', 'policy-briefs', 'annual-reports'];
+      var links = document.querySelectorAll('.pub-tab-nav a');
+      window.addEventListener('scroll', function() {
+        var scrollY = window.pageYOffset;
+        sections.forEach(function(id, i) {
+          var el = document.getElementById(id);
+          if (!el) return;
+          if (el.offsetTop - 120 <= scrollY) {
+            links.forEach(function(l) { l.classList.remove('active'); });
+            if (links[i]) links[i].classList.add('active');
+          }
+        });
+      });
+    })();
+  </script>
+
 </body>
+
 </html>
-
-

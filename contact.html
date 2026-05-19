@@ -1,239 +1,777 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="fr">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title data-lang-fr="Contact - KEMT Center" data-lang-en="Contact - KEMT Center">Contact - KEMT Center</title>
-  <meta name="description" content="Contact KEMT Center for inquiries, collaborations, or visits. Located in Cotonou, Abomey-Calavi, TankpÃ¨, near the mosque.">
-  <meta name="keywords" content="KEMT Center, contact, Cotonou, Abomey-Calavi, TankpÃ¨, research, education">
+  <meta name="description" content="Contactez le KEMT Center pour des demandes de recherche, collaborations, candidatures ou visites. Situé à Abomey-Calavi, Bénin.">
+  <meta name="keywords" content="KEMT Center, contact, Cotonou, Abomey-Calavi, recherche, éducation, collaboration">
 
-<!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-
-  <!-- Google Fonts -->
+  <!-- Favicons -->
   <link href="assets/img/kemt_center.png" rel="icon">
   <link href="assets/img/kemt_center.png" rel="apple-touch-icon">
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
+  <!-- Vendor CSS -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="assets/css/main.css" rel="stylesheet">
 
-  <!-- Custom Styles -->
   <style>
-    .contact-page .info {
-      background: #f8f9fa;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    :root { --gold-mid: #b8933b; }
+    body { font-family: var(--font-body); background: var(--gray-100); color: var(--navy); }
+
+    /* ─── Page Title ─── */
+    .page-title {
+      background: linear-gradient(rgba(10,22,40,0.90), rgba(10,22,40,0.90)),
+                  url('assets/img/hero-carousel/hero-carousel-2.jpeg') center/cover no-repeat !important;
+      padding: 80px 0 !important;
+      border-bottom: 2px solid rgba(201,168,76,0.3) !important;
     }
-    .contact-page .info-item {
-      margin-bottom: 20px;
+    .page-title h1 { font-family: var(--font-display) !important; font-size: 2.8rem !important; font-weight: 700 !important; color: var(--white) !important; margin: 0 0 10px 0 !important; }
+    .page-title .breadcrumbs ol { font-family: var(--font-mono) !important; font-size: 0.8rem !important; text-transform: uppercase; letter-spacing: 0.05em; }
+    .page-title .breadcrumbs ol li a { color: rgba(255,255,255,0.7) !important; text-decoration: none; transition: color 0.2s; }
+    .page-title .breadcrumbs ol li a:hover { color: var(--gold-light) !important; }
+    .page-title .breadcrumbs ol li.current { color: var(--gold) !important; }
+    .page-title .breadcrumbs ol li+li::before { color: rgba(255,255,255,0.3) !important; }
+
+    /* ─── Layout ─── */
+    #contact-main { background: var(--gray-100); padding: 5rem 0; }
+
+    /* ─── Info Panel (left) ─── */
+    .contact-info-panel {
+      background: var(--navy);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem 2rem;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
     }
-    .contact-page .info-item i {
+    .contact-info-panel::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: rgba(201,168,76,0.07);
+    }
+    .contact-info-panel::after {
+      content: '';
+      position: absolute;
+      bottom: -40px; left: -40px;
+      width: 140px; height: 140px;
+      border-radius: 50%;
+      background: rgba(201,168,76,0.05);
+    }
+    .contact-info-panel h3 {
+      font-family: var(--font-display);
       font-size: 1.5rem;
-      color: #0d6efd;
-      margin-right: 15px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.5rem;
     }
-    .contact-page .php-email-form {
-      background: #f8f9fa;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    .info-gold-bar { width: 40px; height: 3px; background: var(--gold); margin: 0.6rem 0 1.2rem; }
+    .contact-info-panel > p {
+      color: rgba(255,255,255,0.65);
+      font-size: 0.9rem;
+      line-height: 1.75;
+      margin-bottom: 2rem;
     }
-    .contact-page .php-email-form .form-control {
-      border-radius: 5px;
+
+    /* Info items */
+    .ci-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1.6rem;
+      position: relative;
+      z-index: 1;
     }
-    .contact-page .php-email-form button {
-      background: #0d6efd;
+    .ci-icon {
+      width: 42px; height: 42px;
+      border-radius: var(--radius);
+      background: rgba(201,168,76,0.15);
+      border: 1px solid rgba(201,168,76,0.3);
+      color: var(--gold);
+      font-size: 1.1rem;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .ci-body h5 {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--gold);
+      margin: 0 0 0.25rem;
+    }
+    .ci-body p, .ci-body a {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.8);
+      margin: 0;
+      text-decoration: none;
+      line-height: 1.55;
+    }
+    .ci-body a:hover { color: var(--gold); }
+
+    /* Social links */
+    .contact-socials {
+      display: flex;
+      gap: 0.7rem;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .contact-social-btn {
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      background: rgba(201,168,76,0.12);
+      border: 1px solid rgba(201,168,76,0.3);
+      color: var(--gold);
+      font-size: 1rem;
+      display: flex; align-items: center; justify-content: center;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+    .contact-social-btn:hover { background: var(--gold); color: var(--navy); transform: translateY(-2px); }
+
+    /* Contact quick cards (top) */
+    .quick-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: 1.6rem 1.5rem;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+    .quick-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); border-color: rgba(201,168,76,0.3); }
+    .quick-card-icon { font-size: 1.8rem; color: var(--gold); margin-bottom: 0.8rem; }
+    .quick-card h5 { font-family: var(--font-display); font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 0.4rem; }
+    .quick-card p { font-size: 0.84rem; color: var(--gray-600); margin: 0; line-height: 1.6; }
+    .quick-card a { color: var(--gold-mid); text-decoration: none; font-weight: 600; font-size: 0.85rem; }
+    .quick-card a:hover { color: var(--navy); }
+
+    /* ─── Contact Form ─── */
+    .contact-form-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .contact-form-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.4rem;
+    }
+    .form-gold-bar { width: 40px; height: 3px; background: var(--gold); margin: 0.6rem 0 1.5rem; }
+
+    /* Subject selector */
+    .subject-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .subject-pill {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 6px 14px;
+      border-radius: 50px;
+      border: 1.5px solid var(--gray-300);
+      background: transparent;
+      color: var(--gray-600);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .subject-pill:hover, .subject-pill.active {
+      border-color: var(--gold);
+      color: var(--navy);
+      background: rgba(201,168,76,0.08);
+    }
+
+    /* Form inputs */
+    .kemt-form-group { margin-bottom: 1.3rem; }
+    .kemt-form-group label {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--gray-600);
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+    .kemt-input {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1.5px solid var(--gray-200);
+      border-radius: var(--radius);
+      background: var(--gray-100);
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: var(--navy);
+      outline: none;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+    .kemt-input:focus { border-color: var(--gold); background: var(--white); box-shadow: 0 0 0 3px rgba(201,168,76,0.1); }
+    .kemt-input::placeholder { color: var(--gray-400); }
+    textarea.kemt-input { resize: vertical; min-height: 140px; }
+
+    /* Submit button */
+    .btn-send {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--navy);
+      color: var(--gold);
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.85rem 2.2rem;
       border: none;
-      padding: 10px 30px;
-      border-radius: 5px;
-      color: #fff;
-      font-weight: 500;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
     }
-    .contact-page .php-email-form button:hover {
-      background: #0b5ed7;
+    .btn-send:hover { background: var(--gold); color: var(--navy); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,168,76,0.3); }
+    .btn-send i { font-size: 1rem; }
+
+    /* Form feedback */
+    .form-feedback { display: none; padding: 0.75rem 1rem; border-radius: var(--radius); margin-bottom: 1rem; font-size: 0.88rem; font-family: var(--font-mono); }
+    .form-loading { background: rgba(201,168,76,0.1); color: var(--gold-mid); border: 1px solid rgba(201,168,76,0.3); }
+    .form-success { background: rgba(34,197,94,0.1); color: #166534; border: 1px solid rgba(34,197,94,0.3); }
+    .form-error { background: rgba(239,68,68,0.1); color: #991b1b; border: 1px solid rgba(239,68,68,0.3); }
+
+    /* ─── Map ─── */
+    #map-section { background: var(--navy); padding: 0; }
+    #map-section iframe { width: 100%; height: 420px; border: none; display: block; filter: brightness(0.85) contrast(1.1); }
+    .map-overlay-bar {
+      background: rgba(10,22,40,0.95);
+      border-top: 2px solid rgba(201,168,76,0.3);
+      padding: 1.5rem 0;
     }
+    .map-address-info { display: flex; flex-wrap: wrap; gap: 2rem; align-items: center; justify-content: center; }
+    .map-address-item { display: flex; align-items: center; gap: 0.7rem; color: rgba(255,255,255,0.75); font-size: 0.88rem; }
+    .map-address-item i { color: var(--gold); font-size: 1rem; }
+    .map-address-item a { color: var(--gold); text-decoration: none; font-family: var(--font-mono); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s; }
+    .map-address-item a:hover { color: var(--gold-light); }
+
+    /* ─── FAQ ─── */
+    #faq { background: var(--gray-100); padding: 5rem 0; }
+    .section-title-left h2 { font-family: var(--font-display); font-size: 1.9rem; font-weight: 700; color: var(--navy); }
+    .gold-bar-left { width: 50px; height: 3px; background: var(--gold); margin: 0.7rem 0 1.5rem; }
+    .faq-item {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      margin-bottom: 0.8rem;
+      overflow: hidden;
+      transition: box-shadow 0.2s ease;
+    }
+    .faq-item:hover { box-shadow: var(--shadow-md); }
+    .faq-question {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 1.5rem;
+      cursor: pointer;
+      gap: 1rem;
+    }
+    .faq-question h5 { font-family: var(--font-display); font-size: 0.97rem; font-weight: 700; color: var(--navy); margin: 0; }
+    .faq-icon { color: var(--gold); font-size: 1.2rem; flex-shrink: 0; transition: transform 0.3s ease; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-answer { display: none; padding: 0 1.5rem 1.3rem; font-size: 0.88rem; color: var(--gray-600); line-height: 1.75; border-top: 1px solid var(--gray-200); }
+    .faq-item.open .faq-answer { display: block; }
+    .faq-item.open { border-color: rgba(201,168,76,0.4); }
   </style>
+
 </head>
 
 <body class="contact-page">
 
-<div data-include="includes/header.html"></div>
-<main class="main">
+  <div data-include="includes/header.html"></div>
 
-    <!-- Page Title -->
+  <main class="main">
+
+    <!-- ── Page Title ── -->
     <div class="page-title accent-background">
       <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0" data-lang-fr="Contact" data-lang-en="Contact">Contact</h1>
+        <h1 class="mb-2 mb-lg-0">
+          <span data-lang="fr">Contactez-nous</span>
+          <span data-lang="en" class="d-none">Contact Us</span>
+        </h1>
         <nav class="breadcrumbs">
           <ol>
-            <li><a href="index" data-lang-fr="Accueil" data-lang-en="Home">Home</a></li>
-            <li class="current" data-lang-fr="Contact" data-lang-en="Contact">Contact</li>
+            <li><a href="index.html"><span data-lang="fr">Accueil</span><span data-lang="en" class="d-none">Home</span></a></li>
+            <li class="current">Contact</li>
           </ol>
         </nav>
       </div>
-    </div><!-- End Page Title -->
+    </div>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact section">
+    <!-- ── Quick Contact Cards ── -->
+    <section style="background:var(--white); padding: 3rem 0; border-bottom: 1px solid var(--gray-200);">
+      <div class="container">
+        <div class="row g-3">
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="quick-card">
+              <div class="quick-card-icon"><i class="bi bi-envelope-fill"></i></div>
+              <h5><span data-lang="fr">E-mail</span><span data-lang="en" class="d-none">Email</span></h5>
+              <p><a href="mailto:inquiries@kemtcenter.com">inquiries@kemtcenter.com</a></p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="quick-card">
+              <div class="quick-card-icon"><i class="bi bi-telephone-fill"></i></div>
+              <h5><span data-lang="fr">Téléphone</span><span data-lang="en" class="d-none">Phone</span></h5>
+              <p><a href="tel:+2290151207640">+229 0151 207 640</a></p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="quick-card">
+              <div class="quick-card-icon"><i class="bi bi-geo-alt-fill"></i></div>
+              <h5><span data-lang="fr">Adresse</span><span data-lang="en" class="d-none">Address</span></h5>
+              <p><span data-lang="fr">Abomey-Calavi, Bakhita — Bénin</span><span data-lang="en" class="d-none">Abomey-Calavi, Bakhita — Benin</span></p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="quick-card">
+              <div class="quick-card-icon"><i class="bi bi-clock-fill"></i></div>
+              <h5><span data-lang="fr">Heures d'ouverture</span><span data-lang="en" class="d-none">Office Hours</span></h5>
+              <p>
+                <span data-lang="fr">Lun – Ven : 08h00 – 17h00</span>
+                <span data-lang="en" class="d-none">Mon – Fri: 08:00 – 17:00</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- ── Contact Form + Info ── -->
+    <section id="contact-main">
+      <div class="container">
+        <div class="row g-5 align-items-start">
 
-      <div class="container" data-aos="fade">
+          <!-- Left: Info Panel -->
+          <div class="col-lg-4" data-aos="fade-right">
+            <div class="contact-info-panel">
+              <h3>
+                <span data-lang="fr">Restons en contact</span>
+                <span data-lang="en" class="d-none">Let's stay in touch</span>
+              </h3>
+              <div class="info-gold-bar"></div>
+              <p>
+                <span data-lang="fr">Que vous souhaitiez collaborer, postuler, visiter notre center ou simplement en apprendre plus sur nos recherches, nous sommes là pour vous.</span>
+                <span data-lang="en" class="d-none">Whether you want to collaborate, apply, visit our center, or simply learn more about our research, we are here for you.</span>
+              </p>
 
-        <div class="row gy-5 gx-lg-5">
-
-          <!-- Contact Info -->
-          <div class="col-lg-4">
-            <div class="info">
-              <h3 data-lang-fr="Contactez-nous" data-lang-en="Get in touch">Get in touch</h3>
-              <p data-lang-fr="Nous serions ravis d'avoir de vos nouvelles ! Contactez-nous pour des demandes, des collaborations ou des visites." data-lang-en="We'd love to hear from you! Reach out to us for inquiries, collaborations, or visits.">We'd love to hear from you! Reach out to us for inquiries, collaborations, or visits.</p>
-
-              <div class="info-item d-flex">
-                <i class="bi bi-geo-alt flex-shrink-0"></i>
-                <div>
-                  <h4 data-lang-fr="Emplacement :" data-lang-en="Location:">Location:</h4>
-                  <p data-lang-fr="Abomey-Calavi, Bakhita" data-lang-en="Abomey-Calavi, Bakhita">Abomey-Calavi, Bakhita</p>
-                    <p>
-                        <a href="https://maps.app.goo.gl/yvVgQADMEooEVdb7A" target="_blank" data-lang-fr="Obtenir l'itinÃ©raire sur Google Map" data-lang-en="Get Directions with Google Map">Get Directions with Google Map</a>
-                    </p>
-                    </div>
-              </div><!-- End Info Item -->
-
-              <div class="info-item d-flex">
-                <i class="bi bi-envelope flex-shrink-0"></i>
-                <div>
-                  <h4 data-lang-fr="Email :" data-lang-en="Email:">Email:</h4>
-                  <p>inquiries@kemtcenter.com</p>
+              <div class="ci-item">
+                <div class="ci-icon"><i class="bi bi-geo-alt-fill"></i></div>
+                <div class="ci-body">
+                  <h5><span data-lang="fr">Adresse</span><span data-lang="en" class="d-none">Address</span></h5>
+                  <p>Abomey-Calavi, Bakhita<br>
+                  <span data-lang="fr">Bénin, Afrique de l'Ouest</span><span data-lang="en" class="d-none">Benin, West Africa</span></p>
+                  <a href="https://maps.app.goo.gl/yvVgQADMEooEVdb7A" target="_blank" rel="noopener" style="font-family:var(--font-mono);font-size:0.72rem;text-transform:uppercase;letter-spacing:0.05em;color:var(--gold);display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.4rem;">
+                    <i class="bi bi-map-fill"></i>
+                    <span data-lang="fr">Voir sur Google Maps</span>
+                    <span data-lang="en" class="d-none">View on Google Maps</span>
+                  </a>
                 </div>
-              </div><!-- End Info Item -->
+              </div>
 
-              <div class="info-item d-flex">
-                <i class="bi bi-phone flex-shrink-0"></i>
-                <div>
-                  <h4 data-lang-fr="Appel :" data-lang-en="Call:">Call:</h4>
-                  <p>+229 0151207640</p>
+              <div class="ci-item">
+                <div class="ci-icon"><i class="bi bi-envelope-fill"></i></div>
+                <div class="ci-body">
+                  <h5>Email</h5>
+                  <a href="mailto:inquiries@kemtcenter.com">inquiries@kemtcenter.com</a>
                 </div>
-              </div><!-- End Info Item -->
+              </div>
 
+              <div class="ci-item">
+                <div class="ci-icon"><i class="bi bi-telephone-fill"></i></div>
+                <div class="ci-body">
+                  <h5><span data-lang="fr">Téléphone</span><span data-lang="en" class="d-none">Phone</span></h5>
+                  <a href="tel:+2290151207640">+229 0151 207 640</a>
+                </div>
+              </div>
+
+              <div class="ci-item">
+                <div class="ci-icon"><i class="bi bi-clock-fill"></i></div>
+                <div class="ci-body">
+                  <h5><span data-lang="fr">Heures d'ouverture</span><span data-lang="en" class="d-none">Office Hours</span></h5>
+                  <p>
+                    <span data-lang="fr">Lundi – Vendredi<br>08h00 – 17h00 WAT</span>
+                    <span data-lang="en" class="d-none">Monday – Friday<br>08:00 – 17:00 WAT</span>
+                  </p>
+                </div>
+              </div>
+
+              <div class="ci-item">
+                <div class="ci-icon"><i class="bi bi-send-fill"></i></div>
+                <div class="ci-body">
+                  <h5><span data-lang="fr">Réponse sous</span><span data-lang="en" class="d-none">Response within</span></h5>
+                  <p>
+                    <span data-lang="fr">48 heures ouvrables maximum</span>
+                    <span data-lang="en" class="d-none">48 business hours maximum</span>
+                  </p>
+                </div>
+              </div>
+
+              <!-- Social links -->
+              <div class="contact-socials">
+                <a href="#" class="contact-social-btn" title="Twitter / X"><i class="bi bi-twitter-x"></i></a>
+                <a href="#" class="contact-social-btn" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <a href="#" class="contact-social-btn" title="Facebook"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="contact-social-btn" title="YouTube"><i class="bi bi-youtube"></i></a>
+                <a href="mailto:inquiries@kemtcenter.com" class="contact-social-btn" title="Email"><i class="bi bi-envelope-fill"></i></a>
+              </div>
             </div>
           </div>
 
-          <!-- Contact Form -->
-<div class="col-lg-8">
-    <form id="contactForm" method="post" class="php-email-form">
-        <div class="row">
-      <div class="col-md-6 form-group">
-        <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-lang-placeholder-fr="Votre nom" data-lang-placeholder-en="Your Name" required>
-      </div>
-      <div class="col-md-6 form-group mt-3 mt-md-0">
-        <input type="email" name="email" class="form-control" id="email" placeholder="Your Email" data-lang-placeholder-fr="Votre e-mail" data-lang-placeholder-en="Your Email" required>
-      </div>
-    </div>
-    <div class="form-group mt-3">
-      <input type="text" name="subject" class="form-control" id="subject" placeholder="Subject" data-lang-placeholder-fr="Objet" data-lang-placeholder-en="Subject" required>
-    </div>
-    <div class="form-group mt-3">
-      <textarea name="message" class="form-control" rows="5" placeholder="Message" data-lang-placeholder-fr="Message" data-lang-placeholder-en="Message" required></textarea>
-    </div>
-    <div class="my-3">
-      <div class="loading" style="display:none;" data-lang-fr="Chargement..." data-lang-en="Loading...">Loading...</div>
-      <div class="error-message text-danger" style="display:none;"></div>
-      <div class="sent-message text-success" style="display:none;" data-lang-fr="Votre message a Ã©tÃ© envoyÃ©. Merci !" data-lang-en="Your message has been sent. Thank you!">Your message has been sent. Thank you!</div>
-    </div>
-    <div class="text-center"><button type="submit" data-lang-fr="Envoyer le message" data-lang-en="Send Message">Send Message</button></div>
-  </form>
-</div>          <!-- End Contact Form -->
+          <!-- Right: Form -->
+          <div class="col-lg-8" data-aos="fade-left">
+            <div class="contact-form-card">
+              <h3>
+                <span data-lang="fr">Envoyer un message</span>
+                <span data-lang="en" class="d-none">Send a message</span>
+              </h3>
+              <div class="form-gold-bar"></div>
+
+              <!-- Subject pills -->
+              <p style="font-family:var(--font-mono);font-size:0.72rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--gray-500);margin-bottom:0.7rem;">
+                <span data-lang="fr">Sujet de votre demande :</span>
+                <span data-lang="en" class="d-none">Topic of your enquiry:</span>
+              </p>
+              <div class="subject-pills" id="subjectPills">
+                <button class="subject-pill active" data-value="Collaboration">
+                  <span data-lang="fr">Collaboration</span><span data-lang="en" class="d-none">Collaboration</span>
+                </button>
+                <button class="subject-pill" data-value="Candidature">
+                  <span data-lang="fr">Candidature</span><span data-lang="en" class="d-none">Application</span>
+                </button>
+                <button class="subject-pill" data-value="Publication">
+                  <span data-lang="fr">Publication</span><span data-lang="en" class="d-none">Publication</span>
+                </button>
+                <button class="subject-pill" data-value="Formation">
+                  <span data-lang="fr">Formation</span><span data-lang="en" class="d-none">Training</span>
+                </button>
+                <button class="subject-pill" data-value="Partenariat">
+                  <span data-lang="fr">Partenariat</span><span data-lang="en" class="d-none">Partnership</span>
+                </button>
+                <button class="subject-pill" data-value="Autre">
+                  <span data-lang="fr">Autre</span><span data-lang="en" class="d-none">Other</span>
+                </button>
+              </div>
+
+              <form id="contactForm" method="post" novalidate>
+                <input type="hidden" name="subject_type" id="subjectType" value="Collaboration">
+
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <div class="kemt-form-group">
+                      <label for="contact-name">
+                        <span data-lang="fr">Prénom &amp; Nom</span>
+                        <span data-lang="en" class="d-none">Full Name</span>
+                      </label>
+                      <input type="text" id="contact-name" name="name" class="kemt-input" placeholder="Jean Dupont" required>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="kemt-form-group">
+                      <label for="contact-email">
+                        <span data-lang="fr">Adresse e-mail</span>
+                        <span data-lang="en" class="d-none">Email address</span>
+                      </label>
+                      <input type="email" id="contact-email" name="email" class="kemt-input" placeholder="vous@email.com" required>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="kemt-form-group">
+                      <label for="contact-org">
+                        <span data-lang="fr">Organisation / Institution</span>
+                        <span data-lang="en" class="d-none">Organization / Institution</span>
+                      </label>
+                      <input type="text" id="contact-org" name="organization" class="kemt-input" placeholder="Université, ONG, Ministère...">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="kemt-form-group">
+                      <label for="contact-phone">
+                        <span data-lang="fr">Téléphone (optionnel)</span>
+                        <span data-lang="en" class="d-none">Phone (optional)</span>
+                      </label>
+                      <input type="tel" id="contact-phone" name="phone" class="kemt-input" placeholder="+229 ...">
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="kemt-form-group">
+                      <label for="contact-subject">
+                        <span data-lang="fr">Objet du message</span>
+                        <span data-lang="en" class="d-none">Message subject</span>
+                      </label>
+                      <input type="text" id="contact-subject" name="subject" class="kemt-input"
+                             placeholder="Demande de collaboration sur l'évaluation d'impact" required>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="kemt-form-group">
+                      <label for="contact-message">
+                        <span data-lang="fr">Votre message</span>
+                        <span data-lang="en" class="d-none">Your message</span>
+                      </label>
+                      <textarea id="contact-message" name="message" class="kemt-input"
+                        placeholder="Décrivez votre demande en détail..." required></textarea>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Feedback -->
+                <div class="form-feedback form-loading" id="formLoading">
+                  <i class="bi bi-hourglass-split"></i>
+                  <span data-lang="fr"> Envoi en cours...</span><span data-lang="en" class="d-none"> Sending...</span>
+                </div>
+                <div class="form-feedback form-success" id="formSuccess">
+                  <i class="bi bi-check-circle-fill"></i>
+                  <span data-lang="fr"> Message envoyé avec succès. Nous vous répondrons dans les 48h.</span>
+                  <span data-lang="en" class="d-none"> Message sent successfully. We'll reply within 48 hours.</span>
+                </div>
+                <div class="form-feedback form-error" id="formError">
+                  <i class="bi bi-exclamation-triangle-fill"></i>
+                  <span data-lang="fr"> Une erreur s'est produite. Réessayez ou écrivez-nous directement.</span>
+                  <span data-lang="en" class="d-none"> An error occurred. Please retry or write to us directly.</span>
+                </div>
+
+                <div class="d-flex align-items-center gap-3 flex-wrap mt-2">
+                  <button type="submit" class="btn-send" id="submitBtn">
+                    <i class="bi bi-send-fill"></i>
+                    <span data-lang="fr">Envoyer le message</span>
+                    <span data-lang="en" class="d-none">Send message</span>
+                  </button>
+                  <p style="font-size:0.78rem;color:var(--gray-500);margin:0;">
+                    <span data-lang="fr">Vos données ne sont pas partagées avec des tiers.</span>
+                    <span data-lang="en" class="d-none">Your data is not shared with third parties.</span>
+                  </p>
+                </div>
+
+              </form>
+            </div>
+          </div>
 
         </div>
-
       </div>
+    </section>
 
-    </section><!-- /Contact Section -->
+    <!-- ── Google Map ── -->
+    <section id="map-section">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.221038348742!2d2.3339199!3d6.4275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10235404d16ba015%3A0xb5db4e26b8cca52a!2sAbomey-Calavi%2C%20Benin!5e0!3m2!1sfr!2sbj!4v1716166817!5m2!1sfr!2sbj"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="KEMT Center — Abomey-Calavi, Bénin">
+      </iframe>
+      <div class="map-overlay-bar">
+        <div class="container">
+          <div class="map-address-info">
+            <div class="map-address-item"><i class="bi bi-geo-alt-fill"></i><span>Abomey-Calavi, Bakhita — Bénin</span></div>
+            <div class="map-address-item"><i class="bi bi-telephone-fill"></i><span>+229 0151 207 640</span></div>
+            <div class="map-address-item"><i class="bi bi-envelope-fill"></i><span>inquiries@kemtcenter.com</span></div>
+            <div class="map-address-item">
+              <i class="bi bi-map-fill"></i>
+              <a href="https://maps.app.goo.gl/yvVgQADMEooEVdb7A" target="_blank" rel="noopener">
+                <span data-lang="fr">Itinéraire Google Maps</span>
+                <span data-lang="en" class="d-none">Google Maps Directions</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FAQ ── -->
+    <section id="faq">
+      <div class="container">
+        <div class="row g-5 align-items-start">
+          <div class="col-lg-4" data-aos="fade-right">
+            <div class="section-title-left">
+              <h2>
+                <span data-lang="fr">Questions fréquentes</span>
+                <span data-lang="en" class="d-none">Frequently Asked Questions</span>
+              </h2>
+              <div class="gold-bar-left"></div>
+              <p style="color:var(--gray-600);font-size:0.9rem;line-height:1.75;">
+                <span data-lang="fr">Vous ne trouvez pas votre réponse ci-dessous ? Écrivez-nous directement via le formulaire ou par email.</span>
+                <span data-lang="en" class="d-none">Can't find your answer below? Write to us directly via the form or by email.</span>
+              </p>
+              <a href="mailto:inquiries@kemtcenter.com" style="display:inline-flex;align-items:center;gap:0.4rem;font-family:var(--font-mono);font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--gold-mid);text-decoration:none;margin-top:0.5rem;border-bottom:1px solid transparent;transition:all 0.2s;">
+                <i class="bi bi-envelope"></i> inquiries@kemtcenter.com
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-8" data-aos="fade-left">
+
+            <div class="faq-item open">
+              <div class="faq-question" onclick="toggleFaq(this)">
+                <h5><span data-lang="fr">Comment puis-je collaborer avec le KEMT Center sur un projet de recherche ?</span><span data-lang="en" class="d-none">How can I collaborate with KEMT Center on a research project?</span></h5>
+                <i class="bi bi-plus-lg faq-icon"></i>
+              </div>
+              <div class="faq-answer">
+                <span data-lang="fr">Envoyez-nous un email à <strong>inquiries@kemtcenter.com</strong> avec une description de votre projet, votre institution, et la nature de la collaboration envisagée (co-recherche, financement, accès aux données, expertise). Notre équipe vous répondra dans les 48 heures ouvrables.</span>
+                <span data-lang="en" class="d-none">Send us an email at <strong>inquiries@kemtcenter.com</strong> with a description of your project, your institution, and the nature of the envisaged collaboration (co-research, funding, data access, expertise). Our team will reply within 48 business hours.</span>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question" onclick="toggleFaq(this)">
+                <h5><span data-lang="fr">Comment postuler à un poste ou un stage au KEMT Center ?</span><span data-lang="en" class="d-none">How do I apply for a position or internship at KEMT Center?</span></h5>
+                <i class="bi bi-plus-lg faq-icon"></i>
+              </div>
+              <div class="faq-answer">
+                <span data-lang="fr">Consultez notre <a href="careers.html" style="color:var(--gold-mid);">page Carrières</a> pour voir les postes ouverts. Envoyez votre CV et lettre de motivation via notre formulaire de contact en sélectionnant le sujet « Candidature ».</span>
+                <span data-lang="en" class="d-none">Check our <a href="careers.html" style="color:var(--gold-mid);">Careers page</a> to see open positions. Send your CV and cover letter via our contact form by selecting the topic "Application".</span>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question" onclick="toggleFaq(this)">
+                <h5><span data-lang="fr">Puis-je accéder aux données de recherche du KEMT Center ?</span><span data-lang="en" class="d-none">Can I access KEMT Center research data?</span></h5>
+                <i class="bi bi-plus-lg faq-icon"></i>
+              </div>
+              <div class="faq-answer">
+                <span data-lang="fr">Certains de nos jeux de données anonymisés sont disponibles pour les chercheurs académiques. Un formulaire de demande d'accès est requis. Consultez notre <a href="resources.html" style="color:var(--gold-mid);">page Ressources</a> ou contactez-nous en précisant le projet et l'usage prévu des données.</span>
+                <span data-lang="en" class="d-none">Some of our anonymized datasets are available to academic researchers. An access request form is required. Check our <a href="resources.html" style="color:var(--gold-mid);">Resources page</a> or contact us specifying the project and intended use of the data.</span>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question" onclick="toggleFaq(this)">
+                <h5><span data-lang="fr">Comment s'inscrire à une formation ou un atelier du KEMT Center ?</span><span data-lang="en" class="d-none">How do I register for a KEMT Center training or workshop?</span></h5>
+                <i class="bi bi-plus-lg faq-icon"></i>
+              </div>
+              <div class="faq-answer">
+                <span data-lang="fr">Consultez notre <a href="training.html" style="color:var(--gold-mid);">page Formations</a> pour voir les programmes disponibles, puis soumettez votre inscription via le formulaire ci-dessus ou par email. Les places sont limitées, il est conseillé de s'inscrire en avance.</span>
+                <span data-lang="en" class="d-none">Check our <a href="training.html" style="color:var(--gold-mid);">Training page</a> to see available programs, then submit your registration via the form above or by email. Places are limited — early registration is advised.</span>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question" onclick="toggleFaq(this)">
+                <h5><span data-lang="fr">Le KEMT Center propose-t-il des partenariats institutionnels ?</span><span data-lang="en" class="d-none">Does KEMT Center offer institutional partnerships?</span></h5>
+                <i class="bi bi-plus-lg faq-icon"></i>
+              </div>
+              <div class="faq-answer">
+                <span data-lang="fr">Oui. Nous collaborons avec des universités, des ministères, des ONG et des bailleurs de fonds internationaux. Contactez-nous via le formulaire en sélectionnant « Partenariat » et décrivez votre institution ainsi que les modalités de collaboration souhaitées.</span>
+                <span data-lang="en" class="d-none">Yes. We collaborate with universities, ministries, NGOs, and international funders. Contact us via the form by selecting "Partnership" and describe your institution along with the desired collaboration modalities.</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
 
   </main>
 
-    <div data-include="includes/footer.html"></div>
-  <!-- Scroll Top -->
+  <div data-include="includes/footer.html"></div>
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <div id="preloader"><div class="ring-loader"><span></span></div><div class="preloader-text"><strong>KEMT Center</strong><small>Recherche &amp; Impact</small></div></div>
 
-  <!-- Preloader -->
-<div id="preloader">
-  <div class="ring-loader"><span></span></div>
-  <div class="preloader-text"><strong>KEMT Center</strong><small>Recherche & Impact</small></div>
-</div>
-
-  <!-- Vendor JS Files -->
+  <!-- Vendor JS -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-
-  <!-- Main JS File -->
   <script src="assets/js/include-html.js"></script>
   <script src='assets/js/lang-switcher.js'></script>
-<script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js"></script>
 
-  
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-$(document).ready(function() {
-    $('#contactForm').submit(function(e) {
-        e.preventDefault();
+  <script>
+    // ── Subject pill selector ──
+    document.querySelectorAll('.subject-pill').forEach(function(pill) {
+      pill.addEventListener('click', function() {
+        document.querySelectorAll('.subject-pill').forEach(function(p) { p.classList.remove('active'); });
+        this.classList.add('active');
+        var val = this.getAttribute('data-value');
+        document.getElementById('subjectType').value = val;
+        var subjectInput = document.getElementById('contact-subject');
+        if (subjectInput.value === '' || subjectInput.dataset.auto === 'true') {
+          var labels = {
+            'Collaboration': { fr: 'Demande de collaboration de recherche', en: 'Research collaboration request' },
+            'Candidature':   { fr: 'Candidature au poste de…', en: 'Application for the position of…' },
+            'Publication':   { fr: 'Question sur une publication KEMT', en: 'Question about a KEMT publication' },
+            'Formation':     { fr: 'Inscription à une formation', en: 'Registration for a training program' },
+            'Partenariat':   { fr: 'Proposition de partenariat institutionnel', en: 'Institutional partnership proposal' },
+            'Autre':         { fr: 'Autre demande', en: 'Other enquiry' }
+          };
+          var lang = document.documentElement.lang || 'fr';
+          var map = labels[val];
+          if (map) { subjectInput.value = map[lang === 'en' ? 'en' : 'fr']; subjectInput.dataset.auto = 'true'; }
+        }
+      });
+    });
+    document.getElementById('contact-subject').addEventListener('input', function() { this.dataset.auto = 'false'; });
 
-        let form = $(this);
-        let loading = form.find('.loading');
-        let errorMsg = form.find('.error-message');
-        let sentMsg = form.find('.sent-message');
+    // ── FAQ accordion ──
+    function toggleFaq(questionEl) {
+      var item = questionEl.parentElement;
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(el) { el.classList.remove('open'); });
+      if (!isOpen) { item.classList.add('open'); }
+    }
 
-        loading.show();
-        errorMsg.hide();
-        sentMsg.hide();
+    // ── Form submission (AJAX) ──
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var loading = document.getElementById('formLoading');
+      var success = document.getElementById('formSuccess');
+      var error   = document.getElementById('formError');
+      var btn     = document.getElementById('submitBtn');
 
-        $.ajax({
-            url: './forms/contact.php',
-            type: 'POST',
-            data: form.serialize(),
-            dataType: 'json',
-            success: function(response) {
-                loading.hide();
-                if(response.success) {
-                    sentMsg.show();
-                    form[0].reset(); // reset form
-                } else {
-                    errorMsg.text(response.message).show();
-                }
-            },
-            error: function(xhr) {
-                loading.hide();
-                errorMsg.text('An error occurred. Please try again later.').show();
-            }
+      loading.style.display = 'block';
+      success.style.display = 'none';
+      error.style.display   = 'none';
+      btn.disabled = true;
+
+      var formData = new FormData(this);
+
+      fetch('./forms/contact.php', { method: 'POST', body: formData })
+        .then(function(res) { return res.json(); })
+        .then(function(data) {
+          loading.style.display = 'none';
+          if (data && data.success) {
+            success.style.display = 'block';
+            document.getElementById('contactForm').reset();
+          } else {
+            error.style.display = 'block';
+          }
+          btn.disabled = false;
+        })
+        .catch(function() {
+          loading.style.display = 'none';
+          error.style.display = 'block';
+          btn.disabled = false;
         });
     });
-});
-</script>
+  </script>
 
 </body>
-
 </html>
-
-
-
-
-
-
-
