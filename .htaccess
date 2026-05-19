@@ -1,0 +1,11 @@
+# Activer le module de réécriture d'URL
+RewriteEngine On
+
+# Rediriger les URLs avec .html vers des URLs sans .html
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html [L]
+
+# Rediriger les URLs sans .html vers les fichiers .html correspondants
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^/]+)/?$ $1.html [L]
