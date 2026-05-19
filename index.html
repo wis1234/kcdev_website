@@ -467,14 +467,14 @@
 
       <div class="header-actions d-flex align-items-center">
       <a href="member.html" class="btn btn-outline-primary btn-sm me-2"><span data-lang="fr">Espace chercheur</span><span data-lang="en" class="d-none">Researcher area</span></a>
-      <div class="lang-switcher ms-3 d-none d-lg-inline-block" role="navigation" aria-label="Language switcher">
-        <div class="dropdown">
-          <button class="lang-select dropdown-toggle" type="button" id="langDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+      <div class="lang-switcher ms-3" role="navigation" aria-label="Language switcher">
+        <div class="lang-select-wrapper">
+          <button class="lang-select" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Switch language">
             <img src="assets/img/flags/fr.svg" alt="Français" class="current-flag">
           </button>
-          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langDropdown">
-            <li><a class="dropdown-item d-flex align-items-center lang-option active" href="#" data-lang-switch="fr" title="Français"><img src="assets/img/flags/fr.svg" class="flag-icon me-2" alt="Français">Français</a></li>
-            <li><a class="dropdown-item d-flex align-items-center lang-option" href="#" data-lang-switch="en" title="English"><img src="assets/img/flags/us.svg" class="flag-icon me-2" alt="English">English</a></li>
+          <ul class="lang-select-menu" role="listbox" aria-label="Language selection">
+            <li><button type="button" class="lang-option active d-flex align-items-center" data-lang-switch="fr" title="Français"><img src="assets/img/flags/fr.svg" class="flag-icon me-2" alt="Français">Français</button></li>
+            <li><button type="button" class="lang-option d-flex align-items-center" data-lang-switch="en" title="English"><img src="assets/img/flags/us.svg" class="flag-icon me-2" alt="English">English</button></li>
           </ul>
         </div>
       </div>
@@ -1189,7 +1189,8 @@
 
   <!-- Preloader -->
 <div id="preloader">
-  <div class="ring-loader"></div>
+  <div class="ring-loader"><span></span></div>
+  <div class="preloader-text"><strong>KEMT Center</strong><small>Recherche & Impact</small></div>
 </div>
 
   <!-- Vendor JS Files -->
@@ -1339,3 +1340,5 @@
 </body>
 
 </html>
+
+
