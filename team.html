@@ -1,24 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title data-lang-fr="Équipe - KEMT Center" data-lang-en="Team - KEMT Center">Team - KEMT Center</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <title data-lang-fr="Équipe - KEMT Center" data-lang-en="Team - KEMT Center">Équipe - KEMT Center</title>
+  <meta name="description" content="Découvrez les chercheurs et professionnels dévoués du KEMT Research Center.">
+  <meta name="keywords" content="KEMT Center, équipe, chercheurs, experts, économie, éducation">
 
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-
-  <!-- Google Fonts -->
+  <!-- Favicons -->
   <link href="assets/img/kemt_center.png" rel="icon">
   <link href="assets/img/kemt_center.png" rel="apple-touch-icon">
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -30,222 +27,735 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
+  <style type="text/css" media="all">
+    /* Harmonized Theme Colors and Custom Typography */
+    :root {
+      --gold-mid: #b8933b;
+    }
+    
+    body {
+      font-family: var(--font-body);
+      background: var(--gray-100);
+      color: var(--navy);
+    }
+    
+    .inner-title {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    /* Page Title styled similar to partners hero for absolute harmony */
+    .page-title {
+      background: linear-gradient(rgba(10, 22, 40, 0.88), rgba(10, 22, 40, 0.88)), url('assets/img/hero-carousel/hero-carousel-1.jpg') center/cover no-repeat !important;
+      padding: 80px 0 !important;
+      border-bottom: 2px solid rgba(201, 168, 76, 0.3) !important;
+      color: var(--white) !important;
+    }
+    .page-title h1 {
+      font-family: var(--font-display) !important;
+      font-size: 2.8rem !important;
+      font-weight: 700 !important;
+      color: var(--white) !important;
+      margin: 0 0 10px 0 !important;
+    }
+    .page-title .breadcrumbs ol {
+      font-family: var(--font-mono) !important;
+      font-size: 0.8rem !important;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .page-title .breadcrumbs ol li a {
+      color: rgba(255, 255, 255, 0.7) !important;
+      transition: color var(--transition);
+    }
+    .page-title .breadcrumbs ol li a:hover {
+      color: var(--gold-light) !important;
+    }
+    .page-title .breadcrumbs ol li.current {
+      color: var(--gold) !important;
+    }
+    .page-title .breadcrumbs ol li+li::before {
+      color: rgba(255, 255, 255, 0.3) !important;
+    }
+
+    .text-gold-mid {
+      color: var(--gold-mid) !important;
+    }
+    .bg-gold-pale {
+      background-color: var(--gold-pale) !important;
+    }
+    .bg-gold {
+      background-color: var(--gold) !important;
+    }
+
+    /* Premium Custom Modal Social Buttons */
+    .modal-social-btn {
+      width: 36px;
+      height: 36px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      border: 1px solid var(--gold);
+      color: var(--navy);
+      background: transparent;
+      transition: all var(--transition);
+      text-decoration: none;
+    }
+    .modal-social-btn:hover {
+      background: var(--navy);
+      color: var(--gold);
+      border-color: var(--navy);
+      transform: translateY(-2px);
+    }
+
+    /* Team Cards styled similar to partners card/index cards */
+    #team {
+      background: var(--white);
+      padding: 6rem 0;
+      border-top: 1px solid var(--gray-200);
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .team-member-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--gray-200);
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      transition: all var(--transition);
+      cursor: pointer;
+      box-shadow: var(--shadow-sm);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .team-member-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--gold);
+      box-shadow: var(--shadow-lg);
+    }
+    .member-avatar-wrapper {
+      position: relative;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+      border: 3px solid var(--white);
+      box-shadow: 0 4px 15px rgba(10, 22, 40, 0.15);
+      transition: all var(--transition);
+    }
+    .team-member-card:hover .member-avatar-wrapper {
+      border-color: var(--gold);
+      transform: scale(1.03);
+    }
+    .member-avatar-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    .member-name {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.35rem;
+    }
+    .member-role {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gold-mid);
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+    }
+    .view-profile-btn {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--navy);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 2px;
+      transition: all var(--transition);
+      margin-top: auto;
+    }
+    .team-member-card:hover .view-profile-btn {
+      color: var(--gold-mid);
+      border-bottom-color: var(--navy);
+    }
+
+    /* Premium Custom Modal Styling */
+    .modal-content {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--gold);
+      box-shadow: var(--shadow-lg);
+    }
+    .modal-header {
+      background: var(--navy);
+      color: var(--white);
+      border-bottom: 2px solid var(--gold);
+    }
+    .modal-header .btn-close {
+      filter: invert(1) grayscale(1) brightness(2);
+    }
+    .modal-body {
+      padding: 3rem 2rem;
+    }
+    .modal-avatar {
+      width: 100%;
+      max-width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--gold);
+      box-shadow: var(--shadow-md);
+      margin: 0 auto;
+      display: block;
+    }
+  </style>
+
 </head>
 
 <body class="team-page">
 
-<div data-include="includes/header.html"></div>
-<main class="main">
+  <!-- Header -->
+  <div data-include="includes/header.html"></div>
+
+  <main class="main">
 
     <!-- Page Title -->
     <div class="page-title accent-background">
       <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0" data-lang-fr="Équipe" data-lang-en="Team">Team</h1>
+        <h1 class="mb-2 mb-lg-0">
+          <span data-lang="fr">Notre Équipe</span>
+          <span data-lang="en" class="d-none">Our Team</span>
+        </h1>
         <nav class="breadcrumbs">
           <ol>
-            <li><a href="index" data-lang-fr="Accueil" data-lang-en="Home">Home</a></li>
-            <li class="current" data-lang-fr="Équipe" data-lang-en="Team">Team</li>
+            <li><a href="index.html"><span data-lang="fr">Accueil</span><span data-lang="en" class="d-none">Home</span></a></li>
+            <li class="current">
+              <span data-lang="fr">Notre Équipe</span>
+              <span data-lang="en" class="d-none">Our Team</span>
+            </li>
           </ol>
         </nav>
       </div>
     </div><!-- End Page Title -->
 
-<!-- Team Section -->
-<section id="team" class="team section light-background">
+    <!-- Team Section -->
+    <section id="team" class="team section">
 
-  <!-- Section Title -->
-  <div class="container section-title" data-aos="fade-up">
-    <h2 data-lang-fr="Notre équipe" data-lang-en="Our Team">Our Team</h2>
-    <p data-lang-fr="Rencontrez les chercheurs et professionnels dévoués qui stimulent l'innovation au KEMT Center" data-lang-en="Meet the dedicated researchers and professionals driving innovation at KEMT Center">Meet the dedicated researchers and professionals driving innovation at KEMT Center</p>
-  </div><!-- End Section Title -->
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2 data-lang-fr="Notre Équipe" data-lang-en="Our Research Team">Notre Équipe</h2>
+        <p data-lang-fr="Découvrez les chercheurs et professionnels dévoués qui stimulent l'innovation au KEMT Center" data-lang-en="Meet the dedicated researchers and field experts driving innovation at KEMT Center">Découvrez les chercheurs et professionnels dévoués qui stimulent l'innovation au KEMT Center</p>
+        <div class="bg-gold mx-auto my-3" style="width: 60px; height: 3px;"></div>
+      </div><!-- End Section Title -->
 
-  <div class="container">
+      <div class="container">
+        <div class="row g-4">
 
-    <div class="row gy-4">
-
-      <!-- CEO - Mahounan Yedomiffi -->
-      <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-        <div class="team-member">
-          <div class="member-img">
-            <img src="assets/img/team/moustapha.jpeg" class="img-fluid" alt="Mahounan Yedomiffi">
-            <div class="social">
-              <a href="#"><i class="bi bi-twitter-x"></i></a>
-              <a href="#"><i class="bi bi-linkedin"></i></a>
-              <a href="#"><i class="bi bi-google"></i></a>
+          <!-- Member 1: Moustapha SEIDOU -->
+          <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="team-member-card" data-bs-toggle="modal" data-bs-target="#modal-moustapha">
+              <div class="member-avatar-wrapper">
+                <img src="assets/img/team/moustapha.jpeg" alt="Moustapha SEIDOU">
+              </div>
+              <h4 class="member-name">Moustapha SEIDOU</h4>
+              <p class="member-role">
+                <span data-lang="fr">Directeur de Recherche</span>
+                <span data-lang="en" class="d-none">Research Director</span>
+              </p>
+              <span class="view-profile-btn">
+                <span data-lang="fr">Voir Profil</span>
+                <span data-lang="en" class="d-none">View Profile</span>
+              </span>
             </div>
           </div>
-          <div class="member-info">
-            <h4>Moustapha SEIDOU</h4>
-            <span data-lang-fr="Directeur de recherche" data-lang-en="Research Director">Research Director</span>
-            <!--<p>Expert in development economics and education policy</p>-->
-          </div>
-        </div>
-      </div><!-- End Team Member -->
 
-          <!-- Policy Analyst -->
-      <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
-        <div class="team-member">
-          <div class="member-img">
-            <img src="assets/img/team/ELODIE_NEW.jpg" class="img-fluid" alt="Policy Analyst">
-            <div class="social">
-              <a href="#"><i class="bi bi-twitter-x"></i></a>
-              <a href="#"><i class="bi bi-linkedin"></i></a>
-              <a href="#"><i class="bi bi-google"></i></a>
+          <!-- Member 2: Elodie LAWIN -->
+          <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="team-member-card" data-bs-toggle="modal" data-bs-target="#modal-elodie">
+              <div class="member-avatar-wrapper">
+                <img src="assets/img/team/ELODIE_NEW.jpg" alt="Elodie LAWIN">
+              </div>
+              <h4 class="member-name">Elodie LAWIN</h4>
+              <p class="member-role">
+                <span data-lang="fr">Chargée de Recherche</span>
+                <span data-lang="en" class="d-none">Research Associate</span>
+              </p>
+              <span class="view-profile-btn">
+                <span data-lang="fr">Voir Profil</span>
+                <span data-lang="en" class="d-none">View Profile</span>
+              </span>
             </div>
           </div>
-          <div class="member-info">
-            <h4>Elodie LAWIN </h4>
-            <span data-lang-fr="Associée de recherche" data-lang-en="Research Associate">Research Associate</span>
-            <!--<p>Translating research into actionable policy recommendations</p>-->
+
+          <!-- Member 3: Ronaldo AGBOHOU -->
+          <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="team-member-card" data-bs-toggle="modal" data-bs-target="#modal-ronaldo">
+              <div class="member-avatar-wrapper">
+                <img src="assets/img/team/RONALDO-NO-BACKGROUNG1.png" alt="Ronaldo AGBOHOU">
+              </div>
+              <h4 class="member-name">Ronaldo AGBOHOU</h4>
+              <p class="member-role">
+                <span data-lang="fr">Assistant de Recherche</span>
+                <span data-lang="en" class="d-none">Research Assistant</span>
+              </p>
+              <span class="view-profile-btn">
+                <span data-lang="fr">Voir Profil</span>
+                <span data-lang="en" class="d-none">View Profile</span>
+              </span>
+            </div>
           </div>
+
+          <!-- Member 4: Sègnon AKOHOU GBACADJA -->
+          <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="team-member-card" data-bs-toggle="modal" data-bs-target="#modal-segnon">
+              <div class="member-avatar-wrapper">
+                <img src="assets/img/team/segnon.jpg" alt="Sègnon AKOHOU GBACADJA">
+              </div>
+              <h4 class="member-name">Sègnon AKOHOU</h4>
+              <p class="member-role">
+                <span data-lang="fr">Responsable Opérations</span>
+                <span data-lang="en" class="d-none">Head of Operations</span>
+              </p>
+              <span class="view-profile-btn">
+                <span data-lang="fr">Voir Profil</span>
+                <span data-lang="en" class="d-none">View Profile</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Member 5: Hugues Irénée Djima -->
+          <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="team-member-card" data-bs-toggle="modal" data-bs-target="#modal-hugues">
+              <div class="member-avatar-wrapper">
+                <img src="assets/img/team/hugue.jpg" alt="Hugues Irénée Djima">
+              </div>
+              <h4 class="member-name">Hugues I. Djima</h4>
+              <p class="member-role">
+                <span data-lang="fr">Consultant Économétrie</span>
+                <span data-lang="en" class="d-none">Econometric Consultant</span>
+              </p>
+              <span class="view-profile-btn">
+                <span data-lang="fr">Voir Profil</span>
+                <span data-lang="en" class="d-none">View Profile</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Member 6: Danfi David -->
+          <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="team-member-card" data-bs-toggle="modal" data-bs-target="#modal-david">
+              <div class="member-avatar-wrapper">
+                <img src="assets/img/team/team-1.jpg" alt="Danfi David">
+              </div>
+              <h4 class="member-name">Danfi David</h4>
+              <p class="member-role">
+                <span data-lang="fr">Coordinateur Terrain</span>
+                <span data-lang="en" class="d-none">Field Coordinator</span>
+              </p>
+              <span class="view-profile-btn">
+                <span data-lang="fr">Voir Profil</span>
+                <span data-lang="en" class="d-none">View Profile</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Member 7: Charles KOUCHOKEHO -->
+          <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="700">
+            <div class="team-member-card" data-bs-toggle="modal" data-bs-target="#modal-charles">
+              <div class="member-avatar-wrapper">
+                <img src="assets/img/team/team-2.jpg" alt="Charles KOUCHOKEHO">
+              </div>
+              <h4 class="member-name">Charles KOUCHOKEHO</h4>
+              <p class="member-role">
+                <span data-lang="fr">Enquêteur Principal</span>
+                <span data-lang="en" class="d-none">Lead Enumerator</span>
+              </p>
+              <span class="view-profile-btn">
+                <span data-lang="fr">Voir Profil</span>
+                <span data-lang="en" class="d-none">View Profile</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Member 8: Lucien Allosse -->
+          <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="800">
+            <div class="team-member-card" data-bs-toggle="modal" data-bs-target="#modal-lucien">
+              <div class="member-avatar-wrapper">
+                <img src="assets/img/team/team-3.jpg" alt="Lucien Allosse">
+              </div>
+              <h4 class="member-name">Lucien Allosse</h4>
+              <p class="member-role">
+                <span data-lang="fr">Admin Base de Données</span>
+                <span data-lang="en" class="d-none">Database Administrator</span>
+              </p>
+              <span class="view-profile-btn">
+                <span data-lang="fr">Voir Profil</span>
+                <span data-lang="en" class="d-none">View Profile</span>
+              </span>
+            </div>
+          </div>
+
         </div>
       </div>
-
-      <!-- Data Scientist -->
-      <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
-        <div class="team-member">
-          <div class="member-img">
-            <img src="assets/img/team/RONALDO-NO-BACKGROUNG1.png" class="img-fluid" alt="Data Scientist">
-            <div class="social">
-              <a href="#"><i class="bi bi-twitter-x"></i></a>
-              <a href="#"><i class="bi bi-linkedin"></i></a>
-              <a href="#"><i class="bi bi-google"></i></a>
-            </div>
-          </div>
-          <div class="member-info">
-            <h4>Ronaldo AGBOHOU</h4>
-            <span data-lang-fr="Assistant de recherche" data-lang-en="Research Assistant">Research Assistant</span>
-            <!--<p>Expert in machine learning and impact evaluation</p>-->
-          </div>
-        </div>
-      </div><!-- End Team Member -->
-      
-      
-        <!-- Senior Researcher -->
-      <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-        <div class="team-member">
-          <div class="member-img">
-            <img src="assets/img/team/segnony.jpg" class="img-fluid" alt="Senior Researcher">
-            <div class="social">
-              <a href="#"><i class="bi bi-twitter-x"></i></a>
-              <a href="#"><i class="bi bi-linkedin"></i></a>
-              <a href="#"><i class="bi bi-google"></i></a>
-            </div>
-          </div>
-          <div class="member-info">
-            <h4>Sègnon K. AKOHOU GBACADJA</h4>
-            <span data-lang-fr="Responsable des opérations" data-lang-en="Head of Operations">Head of Operations</span>
-            <!--<p>Specializing in gender studies and STEM education</p>-->
-          </div>
-        </div>
-      </div><!-- End Team Member -->
-      
-                        <!-- External Consultant -->
-      <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
-        <div class="team-member">
-          <div class="member-img">
-            <img src="assets/img/team/hugue.jpg" class="img-fluid" alt="Policy Analyst">
-            <div class="social">
-              <a href="#"><i class="bi bi-twitter-x"></i></a>
-              <a href="#"><i class="bi bi-linkedin"></i></a>
-              <a href="#"><i class="bi bi-google"></i></a>
-            </div>
-          </div>
-          <div class="member-info">
-            <h4>Hugues Irénée Djima </h4>
-            <span data-lang-fr="Consultant externe" data-lang-en="External Consultant">External Consultant</span>
-            <!--<p>Translating research into actionable policy recommendations</p>-->
-          </div>
-        </div>
-      </div>
-      
-      <!-- End Team Member -->
-
-    </div>
-
-  </div>
-
-</section>
-<!-- /Team Section -->
-
+    </section><!-- /Team Section -->
 
   </main>
 
-  <footer id="footer" class="footer dark-background">
-    <div class="container footer-top">
-      <div class="row gy-4">
-        <div class="col-lg-4 col-md-6 footer-about">
-          <a href="index" class="logo d-flex align-items-center">
-            <span class="sitename">KEMT Center</span>
-          </a>
-          <div class="footer-contact pt-3">
-            <p data-lang-fr="République du Bénin" data-lang-en="Benin Republic">Benin Republic</p>
-            <p data-lang-fr="Abomey-calavi, TANKPE" data-lang-en="Abomey-Calavi, TANKPE">Abomey-calavi, TANKPE</p>
-            <p class="mt-3"><strong data-lang-fr="Email:" data-lang-en="Email:">Email:</strong> <span>research@kemt.com</span></p>
+  <!-- Team Profile Modals (Bilingual & High Fidelity) -->
+
+  <!-- Modal 1: Moustapha SEIDOU -->
+  <div class="modal fade" id="modal-moustapha" tabindex="-1" aria-labelledby="modalMoustaphaLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0">
+        <div class="modal-header border-0 py-3">
+          <h5 class="modal-title fw-bold text-white font-display" id="modalMoustaphaLabel">
+            <span data-lang="fr">Profil KEMT - Direction</span>
+            <span data-lang="en" class="d-none">KEMT Profile - Leadership</span>
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body bg-white text-navy">
+          <div class="row align-items-center g-4">
+            <div class="col-md-4 text-center">
+              <img src="assets/img/team/moustapha.jpeg" class="modal-avatar" alt="Moustapha SEIDOU">
+            </div>
+            <div class="col-md-8">
+              <h3 class="fw-bold font-display text-navy mb-1">Moustapha SEIDOU</h3>
+              <p class="text-gold-mid fw-bold font-mono mb-4 text-uppercase" style="font-size: 0.85rem; letter-spacing:0.08em;">
+                <span data-lang="fr">Directeur de Recherche</span>
+                <span data-lang="en" class="d-none">Research Director</span>
+              </p>
+              <div class="mb-4">
+                <h5 class="fw-bold text-navy mb-2" style="font-size: 1rem; border-left: 3px solid var(--gold); padding-left: 8px;">Biography</h5>
+                <p class="text-muted lh-lg" style="font-size: 0.95rem; font-weight: 300;">
+                  <span data-lang="fr">Moustapha SEIDOU dirige les initiatives de recherche quantitative au KEMT Center. Expert chevronné en économie du développement, il supervise l'orientation scientifique, les relations universitaires mondiales et pilote la mise en œuvre d'essais contrôlés randomisés (RCT) à fort impact en Afrique de l'Ouest.</span>
+                  <span data-lang="en" class="d-none">Moustapha SEIDOU leads quantitative research frameworks at KEMT Center. A seasoned development economics expert, he oversees global scientific alliances and designs causal-inference randomized controlled trials (RCTs) across schools in West Africa.</span>
+                </p>
+              </div>
+              <div class="d-flex gap-3">
+                <a href="#" class="modal-social-btn"><i class="bi bi-linkedin"></i></a>
+                <a href="#" class="modal-social-btn"><i class="bi bi-google"></i></a>
+                <a href="#" class="modal-social-btn"><i class="bi bi-envelope"></i></a>
+              </div>
+            </div>
           </div>
-          <div class="social-links d-flex mt-4">
-            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-            <a href="#" class="researchgate"><i class="bi bi-journal"></i></a>
-            <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-          </div>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4 data-lang-fr="Éthique de la recherche" data-lang-en="Research Ethics">Research Ethics</h4>
-          <ul>
-            <li><a href="#" data-lang-fr="Protocoles CEI" data-lang-en="IRB Protocols">IRB Protocols</a></li>
-            <li><a href="#" data-lang-fr="Confidentialité des données" data-lang-en="Data Privacy">Data Privacy</a></li>
-            <li><a href="#" data-lang-fr="Normes de terrain" data-lang-en="Fieldwork Standards">Fieldwork Standards</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4 data-lang-fr="Publications" data-lang-en="Publications">Publications</h4>
-          <ul>
-            <li><a href="#" data-lang-fr="Articles de travail" data-lang-en="Working Papers">Working Papers</a></li>
-            <li><a href="#" data-lang-fr="Articles de revues" data-lang-en="Journal Articles">Journal Articles</a></li>
-            <li><a href="#" data-lang-fr="Notes politiques" data-lang-en="Policy Briefs">Policy Briefs</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-4 col-md-12 footer-newsletter">
-          <h4 data-lang-fr="Actualités de recherche" data-lang-en="Research Updates">Research Updates</h4>
-          <p data-lang-fr="Abonnez-vous pour recevoir nos dernières publications et mises à jour de projets" data-lang-en="Subscribe to receive our latest publications and project updates">Subscribe to receive our latest publications and project updates</p>
-          <form action="forms/newsletter.php" method="post" class="php-email-form">
-            <div class="newsletter-form"><input type="email" name="email" placeholder="..." data-lang-placeholder-fr="Votre e-mail" data-lang-placeholder-en="Your email">
-            <button type="submit" data-lang-fr="S'abonner" data-lang-en="Subscribe">Subscribe</button></div>
-          </form>
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="container copyright text-center mt-4">
-      <div class="social-icons">
-      <a href="#">📱</a>
-      <a href="#">📬</a>
-      <a href="#">📸</a>
-      <a href="#">📝</a>
-    </div>
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">KEMT Center</strong> <span data-lang-fr="Tous droits réservés" data-lang-en="All Rights Reserved">All Rights Reserved</span></p>
-      <div class="credits">
-        <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> -->
+  <!-- Modal 2: Elodie LAWIN -->
+  <div class="modal fade" id="modal-elodie" tabindex="-1" aria-labelledby="modalElodieLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0">
+        <div class="modal-header border-0 py-3">
+          <h5 class="modal-title fw-bold text-white font-display" id="modalElodieLabel">
+            <span data-lang="fr">Profil KEMT - Académique</span>
+            <span data-lang="en" class="d-none">KEMT Profile - Academic</span>
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body bg-white text-navy">
+          <div class="row align-items-center g-4">
+            <div class="col-md-4 text-center">
+              <img src="assets/img/team/ELODIE_NEW.jpg" class="modal-avatar" alt="Elodie LAWIN">
+            </div>
+            <div class="col-md-8">
+              <h3 class="fw-bold font-display text-navy mb-1">Elodie LAWIN</h3>
+              <p class="text-gold-mid fw-bold font-mono mb-4 text-uppercase" style="font-size: 0.85rem; letter-spacing:0.08em;">
+                <span data-lang="fr">Chargée de Recherche</span>
+                <span data-lang="en" class="d-none">Research Associate</span>
+              </p>
+              <div class="mb-4">
+                <h5 class="fw-bold text-navy mb-2" style="font-size: 1rem; border-left: 3px solid var(--gold); padding-left: 8px;">Biography</h5>
+                <p class="text-muted lh-lg" style="font-size: 0.95rem; font-weight: 300;">
+                  <span data-lang="fr">Elodie LAWIN est spécialiste des sciences de l'éducation et de la parité. Ses recherches se concentrent sur la sociologie de l'éducation en milieu rural et la levée des normes de genre freinant le parcours scientifique des jeunes filles.</span>
+                  <span data-lang="en" class="d-none">Elodie LAWIN is a specialist in education systems and gender balance. Her research centers on rural sociology and eliminating patriarchal norms limiting girls' trajectories in scientific and mathematics paths.</span>
+                </p>
+              </div>
+              <div class="d-flex gap-3">
+                <a href="#" class="modal-social-btn"><i class="bi bi-linkedin"></i></a>
+                <a href="#" class="modal-social-btn"><i class="bi bi-google"></i></a>
+                <a href="#" class="modal-social-btn"><i class="bi bi-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    
-  </footer>
+  </div>
 
+  <!-- Modal 3: Ronaldo AGBOHOU -->
+  <div class="modal fade" id="modal-ronaldo" tabindex="-1" aria-labelledby="modalRonaldoLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0">
+        <div class="modal-header border-0 py-3">
+          <h5 class="modal-title fw-bold text-white font-display" id="modalRonaldoLabel">
+            <span data-lang="fr">Profil KEMT - Analyse de Données</span>
+            <span data-lang="en" class="d-none">KEMT Profile - Data Analysis</span>
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body bg-white text-navy">
+          <div class="row align-items-center g-4">
+            <div class="col-md-4 text-center">
+              <img src="assets/img/team/RONALDO-NO-BACKGROUNG1.png" class="modal-avatar" alt="Ronaldo AGBOHOU">
+            </div>
+            <div class="col-md-8">
+              <h3 class="fw-bold font-display text-navy mb-1">Ronaldo AGBOHOU</h3>
+              <p class="text-gold-mid fw-bold font-mono mb-4 text-uppercase" style="font-size: 0.85rem; letter-spacing:0.08em;">
+                <span data-lang="fr">Assistant de Recherche</span>
+                <span data-lang="en" class="d-none">Research Assistant</span>
+              </p>
+              <div class="mb-4">
+                <h5 class="fw-bold text-navy mb-2" style="font-size: 1rem; border-left: 3px solid var(--gold); padding-left: 8px;">Biography</h5>
+                <p class="text-muted lh-lg" style="font-size: 0.95rem; font-weight: 300;">
+                  <span data-lang="fr">Ronaldo AGBOHOU gère le traitement des données et les flux statistiques. Il est responsable de la programmation des formulaires d'enquête numériques et de l'intégrité des bases de données collectées par l'équipe.</span>
+                  <span data-lang="en" class="d-none">Ronaldo AGBOHOU administers institutional statistical workflows and database designs. He programs electronic data capture templates and manages real-time fieldwork consistency audits.</span>
+                </p>
+              </div>
+              <div class="d-flex gap-3">
+                <a href="#" class="modal-social-btn"><i class="bi bi-linkedin"></i></a>
+                <a href="#" class="modal-social-btn"><i class="bi bi-google"></i></a>
+                <a href="#" class="modal-social-btn"><i class="bi bi-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 4: Sègnon AKOHOU GBACADJA -->
+  <div class="modal fade" id="modal-segnon" tabindex="-1" aria-labelledby="modalSegnonLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0">
+        <div class="modal-header border-0 py-3">
+          <h5 class="modal-title fw-bold text-white font-display" id="modalSegnonLabel">
+            <span data-lang="fr">Profil KEMT - Opérations</span>
+            <span data-lang="en" class="d-none">KEMT Profile - Operations</span>
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body bg-white text-navy">
+          <div class="row align-items-center g-4">
+            <div class="col-md-4 text-center">
+              <img src="assets/img/team/segnon.jpg" class="modal-avatar" alt="Sègnon AKOHOU GBACADJA">
+            </div>
+            <div class="col-md-8">
+              <h3 class="fw-bold font-display text-navy mb-1">Sègnon AKOHOU</h3>
+              <p class="text-gold-mid fw-bold font-mono mb-4 text-uppercase" style="font-size: 0.85rem; letter-spacing:0.08em;">
+                <span data-lang="fr">Responsable des Opérations</span>
+                <span data-lang="en" class="d-none">Head of Operations</span>
+              </p>
+              <div class="mb-4">
+                <h5 class="fw-bold text-navy mb-2" style="font-size: 1rem; border-left: 3px solid var(--gold); padding-left: 8px;">Biography</h5>
+                <p class="text-muted lh-lg" style="font-size: 0.95rem; font-weight: 300;">
+                  <span data-lang="fr">Sègnon AKOHOU coordonne toute la logistique terrain. Il gère le déploiement des équipes d'enquêteurs dans les réseaux scolaires ruraux et assure la liaison opérationnelle avec les directions d'écoles publiques.</span>
+                  <span data-lang="en" class="d-none">Sègnon AKOHOU coordinates complex logistical aspects of field operations. He handles enumerator distributions in rural networks and drives administrative dialogues with local partner schools.</span>
+                </p>
+              </div>
+              <div class="d-flex gap-3">
+                <a href="#" class="modal-social-btn"><i class="bi bi-linkedin"></i></a>
+                <a href="#" class="modal-social-btn"><i class="bi bi-google"></i></a>
+                <a href="#" class="modal-social-btn"><i class="bi bi-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 5: Hugues Irénée Djima -->
+  <div class="modal fade" id="modal-hugues" tabindex="-1" aria-labelledby="modalHuguesLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0">
+        <div class="modal-header border-0 py-3">
+          <h5 class="modal-title fw-bold text-white font-display" id="modalHuguesLabel">
+            <span data-lang="fr">Profil KEMT - Consultation</span>
+            <span data-lang="en" class="d-none">KEMT Profile - Consulting</span>
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body bg-white text-navy">
+          <div class="row align-items-center g-4">
+            <div class="col-md-4 text-center">
+              <img src="assets/img/team/hugue.jpg" class="modal-avatar" alt="Hugues Irénée Djima">
+            </div>
+            <div class="col-md-8">
+              <h3 class="fw-bold font-display text-navy mb-1">Hugues I. Djima</h3>
+              <p class="text-gold-mid fw-bold font-mono mb-4 text-uppercase" style="font-size: 0.85rem; letter-spacing:0.08em;">
+                <span data-lang="fr">Consultant Économétrie</span>
+                <span data-lang="en" class="d-none">External Consultant</span>
+              </p>
+              <div class="mb-4">
+                <h5 class="fw-bold text-navy mb-2" style="font-size: 1rem; border-left: 3px solid var(--gold); padding-left: 8px;">Biography</h5>
+                <p class="text-muted lh-lg" style="font-size: 0.95rem; font-weight: 300;">
+                  <span data-lang="fr">Hugues Djima apporte une expertise avancée en économétrie quantitative. Il conseille le KEMT Center sur les plans d'échantillonnage de nos RCT, les tests statistiques robustes et l'analyse microéconomique fine.</span>
+                  <span data-lang="en" class="d-none">Hugues Djima provides senior advisory on advanced econometrics. He designs experimental sampling grids, advises on statistical robustness checks, and conducts quantitative microeconomic studies.</span>
+                </p>
+              </div>
+              <div class="d-flex gap-3">
+                <a href="#" class="modal-social-btn"><i class="bi bi-linkedin"></i></a>
+                <a href="#" class="modal-social-btn"><i class="bi bi-google"></i></a>
+                <a href="#" class="modal-social-btn"><i class="bi bi-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 6: Danfi David -->
+  <div class="modal fade" id="modal-david" tabindex="-1" aria-labelledby="modalDavidLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0">
+        <div class="modal-header border-0 py-3">
+          <h5 class="modal-title fw-bold text-white font-display" id="modalDavidLabel">
+            <span data-lang="fr">Profil KEMT - Coordination</span>
+            <span data-lang="en" class="d-none">KEMT Profile - Coordination</span>
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body bg-white text-navy">
+          <div class="row align-items-center g-4">
+            <div class="col-md-4 text-center">
+              <img src="assets/img/team/team-1.jpg" class="modal-avatar" alt="Danfi David">
+            </div>
+            <div class="col-md-8">
+              <h3 class="fw-bold font-display text-navy mb-1">Danfi David</h3>
+              <p class="text-gold-mid fw-bold font-mono mb-4 text-uppercase" style="font-size: 0.85rem; letter-spacing:0.08em;">
+                <span data-lang="fr">Coordinateur Terrain</span>
+                <span data-lang="en" class="d-none">Field Coordinator</span>
+              </p>
+              <div class="mb-4">
+                <h5 class="fw-bold text-navy mb-2" style="font-size: 1rem; border-left: 3px solid var(--gold); padding-left: 8px;">Biography</h5>
+                <p class="text-muted lh-lg" style="font-size: 0.95rem; font-weight: 300;">
+                  <span data-lang="fr">Danfi David assure la liaison locale au niveau des mairies et des circonscriptions scolaires. Il gère le recrutement, le matériel de terrain, et assure le bon déroulement des entretiens ménages dans les villages de Pahou et Bohé.</span>
+                  <span data-lang="en" class="d-none">Danfi David acts as local liaison officer in partner towns and educational offices. He manages local recruitment, ensures fieldwork security, and guides student surveys across remote zones.</span>
+                </p>
+              </div>
+              <div class="d-flex gap-3">
+                <a href="#" class="modal-social-btn"><i class="bi bi-linkedin"></i></a>
+                <a href="#" class="modal-social-btn"><i class="bi bi-google"></i></a>
+                <a href="#" class="modal-social-btn"><i class="bi bi-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 7: Charles KOUCHOKEHO -->
+  <div class="modal fade" id="modal-charles" tabindex="-1" aria-labelledby="modalCharlesLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0">
+        <div class="modal-header border-0 py-3">
+          <h5 class="modal-title fw-bold text-white font-display" id="modalCharlesLabel">
+            <span data-lang="fr">Profil KEMT - Enquête Terrain</span>
+            <span data-lang="en" class="d-none">KEMT Profile - Survey Ops</span>
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body bg-white text-navy">
+          <div class="row align-items-center g-4">
+            <div class="col-md-4 text-center">
+              <img src="assets/img/team/team-2.jpg" class="modal-avatar" alt="Charles KOUCHOKEHO">
+            </div>
+            <div class="col-md-8">
+              <h3 class="fw-bold font-display text-navy mb-1">Charles KOUCHOKEHO</h3>
+              <p class="text-gold-mid fw-bold font-mono mb-4 text-uppercase" style="font-size: 0.85rem; letter-spacing:0.08em;">
+                <span data-lang="fr">Enquêteur Principal</span>
+                <span data-lang="en" class="d-none">Lead Enumerator</span>
+              </p>
+              <div class="mb-4">
+                <h5 class="fw-bold text-navy mb-2" style="font-size: 1rem; border-left: 3px solid var(--gold); padding-left: 8px;">Biography</h5>
+                <p class="text-muted lh-lg" style="font-size: 0.95rem; font-weight: 300;">
+                  <span data-lang="fr">Charles KOUCHOKEHO encadre les enquêteurs sur le terrain. Fort de ses compétences techniques, il supervise les protocoles de saisie électronique, gère les flux cryptés et résout les problèmes de terrain liés aux formulaires.</span>
+                  <span data-lang="en" class="d-none">Charles KOUCHOKEHO guides active survey enumerators. Leveraging deep technical expertise, he coordinates field survey capture rules, maintains encrypted data logs, and supports field teams on SurveyCTO templates.</span>
+                </p>
+              </div>
+              <div class="d-flex gap-3">
+                <a href="#" class="modal-social-btn"><i class="bi bi-linkedin"></i></a>
+                <a href="#" class="modal-social-btn"><i class="bi bi-google"></i></a>
+                <a href="#" class="modal-social-btn"><i class="bi bi-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 8: Lucien Allosse -->
+  <div class="modal fade" id="modal-lucien" tabindex="-1" aria-labelledby="modalLucienLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0">
+        <div class="modal-header border-0 py-3">
+          <h5 class="modal-title fw-bold text-white font-display" id="modalLucienLabel">
+            <span data-lang="fr">Profil KEMT - Gestion Données</span>
+            <span data-lang="en" class="d-none">KEMT Profile - Database</span>
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body bg-white text-navy">
+          <div class="row align-items-center g-4">
+            <div class="col-md-4 text-center">
+              <img src="assets/img/team/team-3.jpg" class="modal-avatar" alt="Lucien Allosse">
+            </div>
+            <div class="col-md-8">
+              <h3 class="fw-bold font-display text-navy mb-1">Lucien Allosse</h3>
+              <p class="text-gold-mid fw-bold font-mono mb-4 text-uppercase" style="font-size: 0.85rem; letter-spacing:0.08em;">
+                <span data-lang="fr">Administrateur Base de Données</span>
+                <span data-lang="en" class="d-none">Database Administrator</span>
+              </p>
+              <div class="mb-4">
+                <h5 class="fw-bold text-navy mb-2" style="font-size: 1rem; border-left: 3px solid var(--gold); padding-left: 8px;">Biography</h5>
+                <p class="text-muted lh-lg" style="font-size: 0.95rem; font-weight: 300;">
+                  <span data-lang="fr">Lucien Allosse est responsable de l'architecture et de la sécurité des bases de données de recherche. Spécialiste de l'anonymisation et de la protection RGPD, il garantit la sécurité des serveurs cloud sécurisés du Center.</span>
+                  <span data-lang="en" class="d-none">Lucien Allosse manages academic database architectures and storage security. A specialist in anonymization and strict GDPR protection, he maintains the KEMT Center's encrypted cloud server grids.</span>
+                </p>
+              </div>
+              <div class="d-flex gap-3">
+                <a href="#" class="modal-social-btn"><i class="bi bi-linkedin"></i></a>
+                <a href="#" class="modal-social-btn"><i class="bi bi-google"></i></a>
+                <a href="#" class="modal-social-btn"><i class="bi bi-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div data-include="includes/footer.html"></div>
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
-<div id="preloader">
-  <div class="ring-loader"><span></span></div>
-  <div class="preloader-text"><strong>KEMT Center</strong><small>Recherche & Impact</small></div>
-</div>
+  <div id="preloader">
+    <div class="ring-loader"><span></span></div>
+    <div class="preloader-text"><strong>KEMT Center</strong><small>Recherche & Impact</small></div>
+  </div>
+
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
@@ -255,16 +765,9 @@
 
   <!-- Main JS File -->
   <script src="assets/js/include-html.js"></script>
-<script src='assets/js/lang-switcher.js'></script>
-<script src="assets/js/main.js"></script>
+  <script src='assets/js/lang-switcher.js'></script>
+  <script src="assets/js/main.js"></script>
 
 </body>
 
 </html>
-
-
-
-
-
-
-

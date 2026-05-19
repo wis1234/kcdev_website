@@ -6,100 +6,114 @@
   <title>Partenaires - KEMT Center</title>
   <meta name="description" content="Partenaires institutionnels et collaborations du KEMT Center.">
   <meta name="keywords" content="partenaires, collaborations, institutions, recherche">
+
+  <!-- Favicons -->
+  <link href="assets/img/kemt_center.png" rel="icon">
+  <link href="assets/img/kemt_center.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+
   <style>
     .partner-hero {
-      background: linear-gradient(rgba(9, 30, 66, 0.72), rgba(9, 30, 66, 0.72)), url('assets/img/about.jpg') center/cover no-repeat;
+      background: linear-gradient(rgba(10, 22, 40, 0.85), rgba(10, 22, 40, 0.85)), url('assets/img/hero-carousel/hero-carousel-1.jpg') center/cover no-repeat;
       color: #fff;
       position: relative;
+      border-bottom: 2px solid rgba(201, 168, 76, 0.3);
     }
-    .partner-hero .container {
-      position: relative;
-      z-index: 2;
+    .partner-hero h1 {
+      font-family: var(--font-display) !important;
+      font-weight: 700;
+      color: var(--white) !important;
     }
-    .partner-hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(9, 30, 66, 0.5);
-      z-index: 1;
-    }
-    .partner-hero h1,
     .partner-hero p {
-      color: #fff !important;
+      font-family: var(--font-body) !important;
+      color: rgba(255, 255, 255, 0.8) !important;
     }
     .partner-title {
-      font-size: 2.1rem;
+      font-family: var(--font-display) !important;
+      font-size: 2rem;
       font-weight: 700;
-      letter-spacing: 0.02em;
-      margin-bottom: 0.75rem;
+      color: var(--navy);
+      margin-bottom: 0.85rem;
     }
     .partner-label {
       display: inline-block;
       padding: 0.35rem 0.95rem;
       border-radius: 999px;
-      background: rgba(255,255,255,0.14);
-      color: #fff;
+      background: var(--gold-pale);
+      color: var(--gray-800);
+      font-weight: 600;
       text-transform: uppercase;
-      font-size: 0.78rem;
-      letter-spacing: 0.18em;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
       margin-bottom: 1rem;
+      font-family: var(--font-mono);
     }
     .partner-card {
       background: #fff;
       border-radius: 1.2rem;
       overflow: hidden;
-      box-shadow: 0 28px 65px rgba(15, 23, 42, 0.12);
-      border: 1px solid rgba(15, 23, 42, 0.06);
+      box-shadow: var(--shadow-md);
+      border: 1px solid rgba(10, 22, 40, 0.05);
+      transition: var(--transition);
+    }
+    .partner-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-4px);
     }
     .partner-card .partner-image {
-      min-height: 340px;
+      min-height: 380px;
       background-size: cover;
       background-position: center;
     }
-    .partner-card .partner-image::after {
-      content: '';
-      display: block;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(180deg, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.42) 100%);
-    }
     .partner-card .partner-info {
-      padding: 2.5rem 2rem;
+      padding: 3rem 2.5rem;
     }
     .partner-card .partner-info p {
-      color: #4d5563;
-      line-height: 1.75;
+      font-family: var(--font-body);
+      color: var(--gray-600);
+      line-height: 1.8;
+      font-size: 16px;
     }
     .partner-card .partner-details {
       list-style: none;
       padding: 0;
-      margin: 1.5rem 0 0;
+      margin: 2rem 0 0;
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1rem;
+      gap: 1.5rem;
+      border-top: 1px solid var(--gray-200);
+      padding-top: 1.5rem;
     }
     .partner-card .partner-details li {
       font-weight: 600;
-      color: #334155;
+      color: var(--navy);
+      font-size: 14.5px;
     }
     .partner-card .partner-details li span {
       display: block;
-      color: #64748b;
+      color: var(--gray-600);
       font-weight: 400;
       margin-top: 0.35rem;
-    }
-    .partner-card.alt .partner-info {
-      padding: 2.5rem 2rem 2.5rem 2.5rem;
+      font-size: 13.5px;
     }
     @media (max-width: 991px) {
       .partner-card .row {
         flex-direction: column;
       }
       .partner-card .partner-image {
-        min-height: 260px;
+        min-height: 280px;
       }
       .partner-card .partner-details {
         grid-template-columns: 1fr;
@@ -108,81 +122,198 @@
   </style>
 </head>
 <body class="lang-fr">
-<div data-include="includes/header.html"></div>
-<main class="main">
-  <section class="section partner-hero py-6">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-8 text-center">
-          <p class="text-uppercase text-white-50 mb-3" style="letter-spacing:0.2em; font-size:0.85rem;"><span data-lang="fr">Collaboration stratégique</span><span data-lang="en" class="d-none">Strategic collaboration</span></p>
-          <h1 class="display-5 fw-bold"><span data-lang="fr">Partenaires d’impact</span><span data-lang="en" class="d-none">Impact Partners</span></h1>
-          <p class="lead mt-4"><span data-lang="fr">Découvrez nos partenariats professionnels qui allient innovation numérique, excellence académique et développement durable au Bénin.</span><span data-lang="en" class="d-none">Discover our professional partnerships that combine digital innovation, academic excellence and sustainable development in Benin.</span></p>
+  <!-- Header -->
+  <div data-include="includes/header.html"></div>
+
+  <main class="main">
+    <!-- Page Header (Hero style) -->
+    <section class="section partner-hero py-6" data-aos="fade-down">
+      <div class="container py-4">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center">
+            <p class="text-uppercase text-gold-light mb-3" style="letter-spacing:0.2em; font-size:0.85rem; font-family:var(--font-mono);">
+              <span data-lang="fr">COLLABORATIONS STRATÉGIQUES</span>
+              <span data-lang="en" class="d-none">STRATEGIC COLLABORATIONS</span>
+            </p>
+            <h1 class="display-4 fw-bold">
+              <span data-lang="fr">Partenaires d’Impact</span>
+              <span data-lang="en" class="d-none">Impact Partners</span>
+            </h1>
+            <p class="lead mt-3 fs-5">
+              <span data-lang="fr">Découvrez nos partenariats professionnels qui allient innovation numérique, excellence académique et développement durable au Bénin.</span>
+              <span data-lang="en" class="d-none">Discover our professional partnerships that combine digital innovation, academic excellence and sustainable development in Benin.</span>
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section py-5">
-    <div class="container">
-      <div class="section-title">
-        <h2><span data-lang="fr">Nos collaborations principales</span><span data-lang="en" class="d-none">Our flagship collaborations</span></h2>
-        <p><span data-lang="fr">Deux partenariats illustrant notre capacité à conduire des programmes professionnels et à générer des résultats concrets.</span><span data-lang="en" class="d-none">Two partnerships demonstrating our ability to deliver professional programs and generate measurable outcomes.</span></p>
-      </div>
+    <!-- Main Content Section -->
+    <section class="section py-5">
+      <div class="container">
+        
+        <div class="section-title text-center mb-5" data-aos="fade-up">
+          <h2 class="fw-bold text-navy" style="font-family:var(--font-display) !important;">
+            <span data-lang="fr">Nos collaborations principales</span>
+            <span data-lang="en" class="d-none">Our Flagship Collaborations</span>
+          </h2>
+          <p class="text-muted max-width-600 mx-auto mt-2">
+            <span data-lang="fr">Trois partenariats clés illustrant notre capacité à conduire des programmes professionnels et à générer des résultats concrets de recherche et d'action.</span>
+            <span data-lang="en" class="d-none">Three key partnerships demonstrating our ability to deliver professional programs and generate measurable research and action outcomes.</span>
+          </p>
+        </div>
 
-      <div class="partner-card mb-5">
-        <div class="row g-0 align-items-center">
-          <div class="col-lg-6">
-            <div class="partner-image" style="background-image:url('assets/img/about.jpg');"></div>
-          </div>
-          <div class="col-lg-6">
-            <div class="partner-info">
-              <span class="partner-label"><span data-lang="fr">Revelateur Benin</span><span data-lang="en" class="d-none">Revelateur Benin</span></span>
-              <h3 class="partner-title"><span data-lang="fr">Digitalisation du paiement des frais via l’application Successco</span><span data-lang="en" class="d-none">Digitalization of tuition payments with the Successco app</span></h3>
-              <p><span data-lang="fr">Nous avons conduit un programme de transformation digitale avec Revelateur Benin pour moderniser le paiement des frais de scolarité. Successco offre une expérience fluide pour les parents, les étudiants et les établissements, avec des paiements sécurisés et un suivi transparent des transactions.</span><span data-lang="en" class="d-none">We delivered a digital transformation program with Revelateur Benin to modernize tuition payment. Successco provides a smooth experience for parents, students and institutions with secure payments and transparent transaction tracking.</span></p>
-              <ul class="partner-details">
-                <li><strong><span data-lang="fr">Programme</span><span data-lang="en" class="d-none">Program</span></strong><span><span data-lang="fr">Digitalisation des frais de scolarité</span><span data-lang="en" class="d-none">Tuition payment digitalization</span></span></li>
-                <li><strong><span data-lang="fr">Solution</span><span data-lang="en" class="d-none">Solution</span></strong><span><span data-lang="fr">Application Successco</span><span data-lang="en" class="d-none">Successco app</span></span></li>
-                <li><strong><span data-lang="fr">Impact</span><span data-lang="en" class="d-none">Impact</span></strong><span><span data-lang="fr">Paiements rapides, réduction des erreurs et meilleure transparence</span><span data-lang="en" class="d-none">Faster payments, fewer errors and improved transparency</span></span></li>
-                <li><strong><span data-lang="fr">Zone</span><span data-lang="en" class="d-none">Region</span></strong><span><span data-lang="fr">Bénin</span><span data-lang="en" class="d-none">Benin</span></span></li>
-              </ul>
+        <!-- Partnership Card 1: Successco Payment App -->
+        <div class="partner-card mb-5" data-aos="fade-up">
+          <div class="row g-0 align-items-center">
+            <div class="col-lg-6">
+              <div class="partner-image" style="background-image:url('assets/img/work_shop/workshop_boh_3.jpeg');"></div>
+            </div>
+            <div class="col-lg-6">
+              <div class="partner-info">
+                <span class="partner-label">
+                  <span data-lang="fr">Révélateur Bénin</span>
+                  <span data-lang="en" class="d-none">Revelateur Benin</span>
+                </span>
+                <h3 class="partner-title">
+                  <span data-lang="fr">Digitalisation des frais de scolarité via l’application Successco</span>
+                  <span data-lang="en" class="d-none">Digitalization of Tuition Payments via the Successco App</span>
+                </h3>
+                <p>
+                  <span data-lang="fr">Nous avons conduit un programme d'accompagnement à la transformation digitale avec Révélateur Bénin pour moderniser le paiement des frais de scolarité dans les écoles secondaires. Successco offre une expérience simplifiée et sécurisée pour les parents, réduisant ainsi les risques de vol d'espèces et d'erreurs administratives tout en assurant un suivi en temps réel des transactions pour les établissements scolaires.</span>
+                  <span data-lang="en" class="d-none">We led a comprehensive digital transformation advisory program with Revelateur Benin to modernize tuition fee collection in secondary schools. Successco provides a simplified and secure experience for parents, minimizing cash-handling security risks and administrative errors while offering real-time transaction tracking for schools.</span>
+                </p>
+                <ul class="partner-details">
+                  <li>
+                    <strong><span data-lang="fr">Programme</span><span data-lang="en" class="d-none">Program</span></strong>
+                    <span><span data-lang="fr">Inclusion Financière & FinTech Éducative</span><span data-lang="en" class="d-none">Financial Inclusion & EdTech</span></span>
+                  </li>
+                  <li>
+                    <strong><span data-lang="fr">Solution Technique</span><span data-lang="en" class="d-none">Technical Solution</span></strong>
+                    <span><span data-lang="fr">Application Mobile Successco</span><span data-lang="en" class="d-none">Successco Mobile Application</span></span>
+                  </li>
+                  <li>
+                    <strong><span data-lang="fr">Bénéfices constatés</span><span data-lang="en" class="d-none">Measured Outcomes</span></strong>
+                    <span><span data-lang="fr">Paiements instantanés, suivi digitalisé des budgets</span><span data-lang="en" class="d-none">Instant payments, digital ledger budget tracking</span></span>
+                  </li>
+                  <li>
+                    <strong><span data-lang="fr">Région d'intervention</span><span data-lang="en" class="d-none">Region</span></strong>
+                    <span><span data-lang="fr">Bénin méridional</span><span data-lang="en" class="d-none">Southern Benin</span></span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="partner-card mb-5 alt">
-        <div class="row g-0 align-items-center flex-lg-row-reverse">
-          <div class="col-lg-6">
-            <div class="partner-image" style="background-image:url('assets/img/services.jpg');"></div>
-          </div>
-          <div class="col-lg-6">
-            <div class="partner-info">
-              <span class="partner-label"><span data-lang="fr">Illinois University</span><span data-lang="en" class="d-none">Illinois University</span></span>
-              <h3 class="partner-title"><span data-lang="fr">Programme d’études à l’étranger au Bénin</span><span data-lang="en" class="d-none">Study abroad program in Benin</span></h3>
-              <p><span data-lang="fr">Notre partenariat avec Illinois University a permis de lancer un programme académique international au Bénin. Les étudiants bénéficient de cours immersifs, de recherches de terrain et d’un engagement direct avec les acteurs locaux.</span><span data-lang="en" class="d-none">Our partnership with Illinois University led to an international academic program in Benin. Students benefit from immersive courses, field research and direct engagement with local stakeholders.</span></p>
-              <ul class="partner-details">
-                <li><strong><span data-lang="fr">Programme</span><span data-lang="en" class="d-none">Program</span></strong><span><span data-lang="fr">Études à l’étranger</span><span data-lang="en" class="d-none">Study abroad</span></span></li>
-                <li><strong><span data-lang="fr">Objectif</span><span data-lang="en" class="d-none">Objective</span></strong><span><span data-lang="fr">Renforcer les échanges académiques et la mobilité étudiante</span><span data-lang="en" class="d-none">Strengthen academic exchange and student mobility</span></span></li>
-                <li><strong><span data-lang="fr">Résultats</span><span data-lang="en" class="d-none">Outcomes</span></strong><span><span data-lang="fr">Expérience interculturelle, projets de recherche sur le terrain</span><span data-lang="en" class="d-none">Cross-cultural experience and field research projects</span></span></li>
-                <li><strong><span data-lang="fr">Localisation</span><span data-lang="en" class="d-none">Location</span></strong><span><span data-lang="fr">Bénin</span><span data-lang="en" class="d-none">Benin</span></span></li>
-              </ul>
+        <!-- Partnership Card 2: Illinois University Study Abroad -->
+        <div class="partner-card mb-5" data-aos="fade-up">
+          <div class="row g-0 align-items-center flex-lg-row-reverse">
+            <div class="col-lg-6">
+              <div class="partner-image" style="background-image:url('assets/img/study_abroad/illinois_1.jpeg');"></div>
+            </div>
+            <div class="col-lg-6">
+              <div class="partner-info">
+                <span class="partner-label">
+                  <span data-lang="fr">Illinois University</span>
+                  <span data-lang="en" class="d-none">Illinois University</span>
+                </span>
+                <h3 class="partner-title">
+                  <span data-lang="fr">Programme d’études internationales et mobilité académique</span>
+                  <span data-lang="en" class="d-none">International Studies & Academic Mobility Program</span>
+                </h3>
+                <p>
+                  <span data-lang="fr">Notre partenariat stratégique avec Illinois University a permis d'accueillir et de structurer des programmes d'études internationaux au Bénin. Les étudiants étrangers et locaux collaborent sur des enquêtes sociologiques de terrain, bénéficient de séminaires interdisciplinaires communs et de recherches appliquées de haut niveau dans nos zones rurales d'intervention.</span>
+                  <span data-lang="en" class="d-none">Our strategic partnership with Illinois University established a robust framework for international studies in Benin. Visiting and local students collaborate directly on rural sociological surveys, taking part in joint interdisciplinary seminars and high-level applied research programs in our rural field sites.</span>
+                </p>
+                <ul class="partner-details">
+                  <li>
+                    <strong><span data-lang="fr">Programme</span><span data-lang="en" class="d-none">Program</span></strong>
+                    <span><span data-lang="fr">Études à l’étranger & Coopération</span><span data-lang="en" class="d-none">Study Abroad & Academic Exchange</span></span>
+                  </li>
+                  <li>
+                    <strong><span data-lang="fr">Objectif global</span><span data-lang="en" class="d-none">Core Objective</span></strong>
+                    <span><span data-lang="fr">Partage méthodologique et recherche croisée</span><span data-lang="en" class="d-none">Methodological sharing & cross-research</span></span>
+                  </li>
+                  <li>
+                    <strong><span data-lang="fr">Résultats concrets</span><span data-lang="en" class="d-none">Concrete Results</span></strong>
+                    <span><span data-lang="fr">Projets de recherche conjoints, co-publications</span><span data-lang="en" class="d-none">Joint research projects, co-publications</span></span>
+                  </li>
+                  <li>
+                    <strong><span data-lang="fr">Localisation</span><span data-lang="en" class="d-none">Location</span></strong>
+                    <span><span data-lang="fr">Cotonou & Bohicon, Bénin</span><span data-lang="en" class="d-none">Cotonou & Bohicon, Benin</span></span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
+
+        <!-- Partnership Card 3: Cotonou Public School Networks (New Card!) -->
+        <div class="partner-card mb-5" data-aos="fade-up">
+          <div class="row g-0 align-items-center">
+            <div class="col-lg-6">
+              <div class="partner-image" style="background-image:url('assets/img/social_actions/kpakpame_exam_revision2.jpeg');"></div>
+            </div>
+            <div class="col-lg-6">
+              <div class="partner-info">
+                <span class="partner-label">
+                  <span data-lang="fr">Écoles Publiques du Bénin</span>
+                  <span data-lang="en" class="d-none">Benin Public Schools</span>
+                </span>
+                <h3 class="partner-title">
+                  <span data-lang="fr">Réseaux d'écoles expérimentales et évaluations par RCT</span>
+                  <span data-lang="en" class="d-none">Experimental Schools Network & RCT Field Evaluations</span>
+                </h3>
+                <p>
+                  <span data-lang="fr">En collaboration directe avec le Ministère des Enseignements Secondaire, Technique et de la Formation Professionnelle, le KEMT Center a développé un large réseau d'écoles partenaires pour tester nos innovations pédagogiques. Ce réseau permet la mise en place d'essais contrôlés randomisés (RCT) rigoureux pour évaluer l'impact des livrets scolaires simplifiés et du mentorat des filles.</span>
+                  <span data-lang="en" class="d-none">In direct partnership with the Ministry of Secondary Education, the KEMT Center established an extensive network of experimental schools to evaluate pedagogical innovations. This network forms the foundation of rigorous randomized controlled trials (RCTs) assessing the impacts of simplified report cards and girls' mentorship programs.</span>
+                </p>
+                <ul class="partner-details">
+                  <li>
+                    <strong><span data-lang="fr">Programme</span><span data-lang="en" class="d-none">Program</span></strong>
+                    <span><span data-lang="fr">Évaluation des politiques publiques d'éducation</span><span data-lang="en" class="d-none">Public Policy & Education Evaluation</span></span>
+                  </li>
+                  <li>
+                    <strong><span data-lang="fr">Méthodologie</span><span data-lang="en" class="d-none">Methodology</span></strong>
+                    <span><span data-lang="fr">Essais Contrôlés Randomisés (RCT)</span><span data-lang="en" class="d-none">Randomized Controlled Trials (RCTs)</span></span>
+                  </li>
+                  <li>
+                    <strong><span data-lang="fr">Impact direct</span><span data-lang="en" class="d-none">Direct Impact</span></strong>
+                    <span><span data-lang="fr">Plus de 15 000 élèves suivis dans 120 écoles</span><span data-lang="en" class="d-none">Over 15,000 students tracked across 120 schools</span></span>
+                  </li>
+                  <li>
+                    <strong><span data-lang="fr">Régions</span><span data-lang="en" class="d-none">Regions</span></strong>
+                    <span><span data-lang="fr">Zou, Atlantique, et Ouémé</span><span data-lang="en" class="d-none">Zou, Atlantique, and Ouémé</span></span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
-    </div>
-  </section>
-</main>
-<footer class="footer dark-background py-4">
-  <div class="container text-center text-white">
-    <p><span data-lang="fr">KEMT Center - Centre international de recherche</span><span data-lang="en" class="d-none">KEMT Center - International research hub</span></p>
-  </div>
-</footer>
-<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="assets/js/include-html.js"></script>
-<script src="assets/js/lang-switcher.js"></script>
-<script src="assets/js/main.js"></script>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <div data-include="includes/footer.html"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+
+  <!-- Main JS Files -->
+  <script src="assets/js/include-html.js"></script>
+  <script src="assets/js/lang-switcher.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
 </body>
 </html>
-
-

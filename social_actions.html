@@ -1,21 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Social Initiatives | KEMT Center</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Actions Sociales | KEMT Center</title>
+  <meta name="description" content="Découvrez nos initiatives d'impact social pour l'éducation, le genre et la digitalisation des écoles rurales.">
+  <meta name="keywords" content="actions sociales, KEMT Center, éducation, normes de genre, Bénin">
 
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-
-  <!-- Google Fonts -->
+  <!-- Favicons -->
   <link href="assets/img/kemt_center.png" rel="icon">
   <link href="assets/img/kemt_center.png" rel="apple-touch-icon">
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -23,446 +22,446 @@
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
   <style>
-    /* Reset and basics */
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background: #f8f9fa;
-      color: #333;
-      scroll-behavior: smooth;
-    }
-
-    a {
-      text-decoration: none;
-    }
-
-    /* HERO SECTION */
-    .hero {
+    /* Premium Page-Specific Adjustments keeping in line with KEMT guidelines */
+    .premium-hero {
       position: relative;
-      background: linear-gradient(135deg, #0767A7 0%, #087f23 100%);
-      color: white;
-      padding: 6rem 2rem 5rem;
-      text-align: center;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+      color: var(--white);
+      padding: 7rem 0 5rem;
       overflow: hidden;
+      border-bottom: 2px solid var(--gold);
     }
-
-    .floating-element {
+    .premium-hero::before {
+      content: "";
       position: absolute;
-      animation: floatUpDown 4s ease-in-out infinite;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 80% 20%, rgba(201, 168, 76, 0.12) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .floating-accent {
+      position: absolute;
+      opacity: 0.15;
+      font-size: 4rem;
       user-select: none;
       pointer-events: none;
-      opacity: 0.8;
     }
-
-    .floating-element:nth-child(2) {
-      animation-delay: 1s;
+    .stats-section {
+      background: var(--white);
+      padding: 5rem 0;
     }
-    .floating-element:nth-child(3) {
-      animation-delay: 2s;
-    }
-    .floating-element:nth-child(4) {
-      animation-delay: 3s;
-    }
-    .floating-element:nth-child(5) {
-      animation-delay: 0.5s;
-    }
-
-    @keyframes floatUpDown {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-15px);
-      }
-    }
-
-    .hero-content h1 {
-      font-weight: 700;
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      text-shadow: 0 2px 6px rgba(0,0,0,0.3);
-    }
-
-    .hero-content p {
-      font-size: 1.25rem;
-      margin-bottom: 2rem;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-      text-shadow: 0 1px 4px rgba(0,0,0,0.3);
-    }
-    
-    .hero-content h1 {
-      color: white !important;
-      text-shadow: 0 1px 4px rgba(0,0,0,0.3);
-    }
-
-    .btn {
-      background-color: #fff;
-      color: #0767A7;
-      font-weight: 600;
-      padding: 0.75rem 2rem;
-      border-radius: 50px;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 12px rgb(76 175 80 / 0.3);
-    }
-
-    .btn:hover {
-      background-color: #388e3c;
-      color: #fff;
-      box-shadow: 0 6px 18px rgb(56 142 60 / 0.6);
-    }
-
-    /* IMPACT STATS */
-    .impact-stats {
-      padding: 4rem 2rem;
-      background: #fff;
+    .premium-stat-card {
+      background: var(--navy);
+      border: 1px solid rgba(201, 168, 76, 0.2);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem 2rem;
       text-align: center;
+      transition: all var(--transition);
+      box-shadow: var(--shadow-md);
     }
-
-    .stats-container {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
+    .premium-stat-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--gold);
+      box-shadow: 0 15px 35px rgba(10, 22, 40, 0.25);
     }
-
-    .stat-card {
-      flex: 1 1 280px;
-      background: #e8f5e9;
-      border-radius: 12px;
-      padding: 2rem 1.5rem;
-      box-shadow: 0 6px 18px rgb(76 175 80 / 0.15);
-      transition: transform 0.3s ease;
-      cursor: default;
-    }
-    .stat-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 30px rgb(76 175 80 / 0.3);
-    }
-
-    .stat-card h3 {
-      font-size: 3rem;
-      color: #0767A7;
-      margin-bottom: 1rem;
+    .premium-stat-card h3 {
+      font-family: var(--font-display);
+      font-size: 3.5rem;
       font-weight: 700;
-      user-select: none;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
     }
-
-    .stat-card p {
-      font-size: 1rem;
-      color: #0767A7;
-      font-weight: 600;
+    .premium-stat-card p {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--white);
+      opacity: 0.85;
+      margin-bottom: 0;
     }
-
-    /* PROJECTS SECTION */
-    .projects {
-      padding: 4rem 2rem;
-      background: #f0f4f3;
+    .initiatives-section {
+      background: var(--gray-100);
+      padding: 6rem 0;
     }
-
-    .projects-container {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
-      gap: 2.5rem;
-    }
-
-    .project-card {
-      background: white;
-      border-radius: 14px;
+    .premium-action-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
       overflow: hidden;
-      box-shadow: 0 8px 24px rgb(0 0 0 / 0.08);
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-      cursor: pointer;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--gray-200);
+      transition: all var(--transition);
+      height: 100%;
       display: flex;
       flex-direction: column;
     }
-
-    .project-card:hover {
+    .premium-action-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 12px 40px rgb(0 0 0 / 0.15);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--gold-pale);
     }
-
-    .project-image {
-      height: 200px;
+    .action-card-img {
+      height: 250px;
       background-size: cover;
-      background-position: center center;
-      border-top-left-radius: 14px;
-      border-top-right-radius: 14px;
+      background-position: center;
+      position: relative;
     }
-
-    .project-content {
-      padding: 1.5rem 2rem 2rem;
+    .action-card-img::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: linear-gradient(to top, rgba(255, 255, 255, 0.95), transparent);
+    }
+    .action-card-body {
+      padding: 2.25rem 2rem;
       flex-grow: 1;
       display: flex;
       flex-direction: column;
     }
-
-    .project-content h3 {
+    .action-card-body h3 {
+      font-family: var(--font-display);
+      color: var(--navy);
       font-weight: 700;
-      margin-bottom: 1rem;
-      color: #0767A7;
+      margin-bottom: 1.25rem;
+      font-size: 1.5rem;
     }
-
-    .project-content p {
+    .action-card-body p {
+      font-size: 0.95rem;
+      color: var(--gray-600);
+      line-height: 1.65;
+      margin-bottom: 2rem;
       flex-grow: 1;
-      font-size: 1rem;
-      color: #444;
-      line-height: 1.5;
-      margin-bottom: 1rem;
+      font-weight: 300;
     }
-
-    .project-content .btn {
-      align-self: flex-start;
-      padding: 0.5rem 1.5rem;
-      font-weight: 700;
-      font-size: 0.9rem;
-      background-color: #0767A7;
-      color: white;
-      box-shadow: none;
+    .testimonials-section {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+      color: var(--white);
+      padding: 6rem 0;
+      position: relative;
     }
-
-    .project-content .btn:hover {
-      background-color: #388e3c;
-      box-shadow: 0 4px 12px rgb(56 142 60 / 0.4);
-    }
-
-    /* TESTIMONIALS */
-    .testimonials {
-      background: #e8f5e9;
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-
-    .testimonials-container {
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .testimonials-container h2 {
+    .testimonials-section h2 {
+      font-family: var(--font-display);
       font-weight: 700;
       font-size: 2.5rem;
-      margin-bottom: 3rem;
-      color: #0767A7;
+      margin-bottom: 4rem;
+      color: var(--white);
     }
-
-    .testimonial-card {
-      background: white;
-      border-radius: 14px;
-      padding: 2rem 2.5rem;
-      box-shadow: 0 6px 18px rgb(76 175 80 / 0.15);
-      margin-bottom: 2rem;
-      transition: transform 0.3s ease;
+    .premium-testimonial-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-lg);
+      padding: 3rem 2.5rem;
+      height: 100%;
+      transition: all var(--transition);
+    }
+    .premium-testimonial-card:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: var(--gold);
+      transform: translateY(-5px);
+    }
+    .testimonial-quote {
+      font-size: 1.1rem;
       font-style: italic;
-      color: #0767A7;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 2rem;
+      font-weight: 300;
     }
-
-    .testimonial-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 10px 28px rgb(76 175 80 / 0.3);
+    .testimonial-author-block {
+      display: flex;
+      align-items: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 1.25rem;
     }
-
-    .testimonial-text {
-      font-size: 1.125rem;
-      margin-bottom: 1rem;
-      user-select: none;
+    .testimonial-author-name {
+      font-weight: 600;
+      color: var(--gold);
+      margin-bottom: 2px;
     }
-
-    .testimonial-author {
-      font-weight: 700;
-      text-align: right;
-      color: #388e3c;
-      user-select: none;
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 767px) {
-      .hero-content h1 {
-        font-size: 2.25rem;
-      }
-      .hero-content p {
-        font-size: 1rem;
-      }
-      .stat-card h3 {
-        font-size: 2.5rem;
-      }
+    .testimonial-author-role {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.6);
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
   </style>
 </head>
-<body>
-<div data-include="includes/header.html"></div>
-<!-- HERO SECTION -->
-  <section class="hero">
-    <div class="floating-element" style="top: 15%; left: 10%; font-size: 2rem; color: #0767A7;">❤️</div>
-    <div class="floating-element" style="top: 25%; left: 75%; font-size: 3rem; color: #0767A7;">🌍</div>
-    <div class="floating-element" style="top: 70%; left: 20%; font-size: 2.5rem; color: #0767A7;">🌱</div>
-    <div class="floating-element" style="top: 65%; left: 80%; font-size: 2rem; color: #0767A7;">💧</div>
-    <div class="hero-content">
-      <h1>Our Social Initiatives</h1>
-      <p>Discover how we’re making a positive difference through education, health, and environmental actions.</p>
-      <a href="about" class="btn">Join Our Mission</a>
-    </div>
-  </section>
+<body class="social-actions-page">
 
-  <!-- IMPACT STATS -->
-  <section class="impact-stats">
-    <div class="stats-container" id="stats-container">
-      <div class="stat-card">
-        <h3><span class="counter" data-target="50">0</span>+</h3>
-        <p>Communities Served</p>
-      </div>
-      <div class="stat-card">
-        <h3><span class="counter" data-target="2000">0</span>+</h3>
-        <p>Volunteers Engaged</p>
-      </div>
-      <div class="stat-card">
-        <h3><span class="counter" data-target="150">0</span>+</h3>
-        <p>Projects Completed</p>
-      </div>
-      <div class="stat-card">
-        <h3><span class="counter" data-target="10">0</span>+</h3>
-        <p>Years of Impact</p>
-      </div>
-    </div>
-  </section>
+  <!-- Header -->
+  <div data-include="includes/header.html"></div>
 
-  <!-- PROJECTS -->
-  <section class="projects">
-    <div class="projects-container">
-      <div class="project-card" tabindex="0" aria-label="Education Projects">
-        <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=600&q=80');"></div>
-        <div class="project-content">
-          <h3>Education for All</h3>
-          <p>Providing quality education materials and support to underserved children.</p>
-          <a href="#" class="btn" role="button" aria-pressed="false">Learn More</a>
-        </div>
-      </div>
-
-      <div class="project-card" tabindex="0" aria-label="Health Initiatives">
-<div class="project-image" style="background-image: url('assets/img/team/planning.png');"></div>
-        <div class="project-content">
-          <h3>Health & Wellness</h3>
-          <p>Organizing health camps and awareness drives to improve community wellbeing.</p>
-          <a href="#" class="btn" role="button" aria-pressed="false">Learn More</a>
-        </div>
-      </div>
-
-      <div class="project-card" tabindex="0" aria-label="Environmental Actions">
-        <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80');"></div>
-        <div class="project-content">
-          <h3>Environmental Care</h3>
-          <p>Tree planting drives and clean water projects to protect our planet.</p>
-          <a href="#" class="btn" role="button" aria-pressed="false">Learn More</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS -->
-  <section class="testimonials" aria-label="Testimonials">
-    <div class="testimonials-container">
-      <h2>What People Say</h2>
-      <div class="testimonial-card" tabindex="0">
-        <p class="testimonial-text">"The education project changed my child's future completely. So grateful!"</p>
-        <p class="testimonial-author">— Maria, Community Member</p>
-      </div>
-      <div class="testimonial-card" tabindex="0">
-        <p class="testimonial-text">"Volunteering here has been one of the most rewarding experiences of my life."</p>
-        <p class="testimonial-author">— James, Volunteer</p>
-      </div>
-      <div class="testimonial-card" tabindex="0">
-        <p class="testimonial-text">"The clean water initiative brought health and hope to our village."</p>
-        <p class="testimonial-author">— Fatima, Local Leader</p>
-      </div>
-    </div>
-  </section>
-
-
-  <footer id="footer" class="footer dark-background">
-    <div class="container footer-top">
-      <div class="row gy-4">
-        <div class="col-lg-4 col-md-6 footer-about">
-          <a href="index" class="logo d-flex align-items-center">
-            <span class="sitename">KEMT Center</span>
-          </a>
-          <div class="footer-contact pt-3">
-            <p>Benin Republic</p>
-            <p>Abomey-calavi, TANKPE</p>
-            <p class="mt-3"><strong>Email:</strong> <span>research@kemt.com</span></p>
-          </div>
-          <div class="social-links d-flex mt-4">
-            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-            <a href="#" class="researchgate"><i class="bi bi-journal"></i></a>
-            <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-          </div>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Research Ethics</h4>
-          <ul>
-            <li><a href="#">IRB Protocols</a></li>
-            <li><a href="#">Data Privacy</a></li>
-            <li><a href="#">Fieldwork Standards</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Publications</h4>
-          <ul>
-            <li><a href="#">Working Papers</a></li>
-            <li><a href="#">Journal Articles</a></li>
-            <li><a href="#">Policy Briefs</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-4 col-md-12 footer-newsletter">
-          <h4>Research Updates</h4>
-          <p>Subscribe to receive our latest publications and project updates</p>
-          <form action="forms/newsletter.php" method="post" class="php-email-form">
-            <div class="newsletter-form"><input type="email" name="email" placeholder="...">
-            <input type="submit" value="Subscribe"></div>
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <div class="container copyright text-center mt-4">
-      <div class="social-icons">
-      <a href="#">📱</a>
-      <a href="#">📬</a>
-      <a href="#">📸</a>
-      <a href="#">📝</a>
-    </div>
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">KEMT Center</strong> <span>All Rights Reserved</span></p>
-      <div class="credits">
-        <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> -->
-      </div>
-    </div>
+  <!-- Hero Section -->
+  <section class="premium-hero">
+    <div class="floating-accent" style="top: 15%; left: 8%;">🎓</div>
+    <div class="floating-accent" style="top: 25%; right: 10%; font-size: 5rem;">💡</div>
+    <div class="floating-accent" style="bottom: 10%; left: 15%; font-size: 3rem;">⚡</div>
     
-  </footer>
+    <div class="container text-center py-5">
+      <div class="row justify-content-center" data-aos="zoom-in">
+        <div class="col-lg-8">
+          <span class="badge bg-gold text-navy text-uppercase px-3 py-2 fw-semibold mb-3" style="letter-spacing: 0.1em; font-size: 0.8rem;">
+            <span data-lang="fr">Recherche Action</span>
+            <span data-lang="en" class="d-none">Action Research</span>
+          </span>
+          <h1 class="display-4 fw-bold text-white mb-4">
+            <span data-lang="fr">Nos Initiatives d'Impact Social</span>
+            <span data-lang="en" class="d-none">Our Social Initiatives</span>
+          </h1>
+          <p class="lead text-white-50 mb-5 fs-5">
+            <span data-lang="fr">Découvrez comment nous traduisons la recherche académique en actions concrètes pour transformer l'éducation et promouvoir l'équité en Afrique de l'Ouest.</span>
+            <span data-lang="en" class="d-none">Discover how we translate academic research into concrete actions to transform educational systems and promote equity in West Africa.</span>
+          </p>
+          <a href="about.html" class="btn btn-gold px-4 py-3 hover-float">
+            <span data-lang="fr">Découvrir Notre Mission</span>
+            <span data-lang="en" class="d-none">Discover Our Mission</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!-- Bootstrap JS Bundle -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Impact Statistics -->
+  <section class="stats-section" id="stats-section">
+    <div class="container">
+      <div class="row g-4" id="stats-container">
+        <div class="col-md-3 col-sm-6" data-aos="fade-up">
+          <div class="premium-stat-card">
+            <h3><span class="counter" data-target="50">0</span>+</h3>
+            <p>
+              <span data-lang="fr">Villages Cibles</span>
+              <span data-lang="en" class="d-none">Villages Served</span>
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="premium-stat-card">
+            <h3><span class="counter" data-target="120">0</span>+</h3>
+            <p>
+              <span data-lang="fr">Écoles Partenaires</span>
+              <span data-lang="en" class="d-none">Partner Schools</span>
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="premium-stat-card">
+            <h3><span class="counter" data-target="8000">0</span>+</h3>
+            <p>
+              <span data-lang="fr">Élèves Impactés</span>
+              <span data-lang="en" class="d-none">Students Impacted</span>
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="premium-stat-card">
+            <h3><span class="counter" data-target="10">0</span>+</h3>
+            <p>
+              <span data-lang="fr">Années d'Impact</span>
+              <span data-lang="en" class="d-none">Years of Impact</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Active Initiatives -->
+  <section class="initiatives-section">
+    <div class="container">
+      <div class="text-center mb-5" data-aos="fade-up">
+        <h2 class="fw-bold text-navy display-6">
+          <span data-lang="fr">Nos Domaines d'Intervention</span>
+          <span data-lang="en" class="d-none">Our Core Initiatives</span>
+        </h2>
+        <div class="bg-gold mx-auto my-3" style="width: 60px; height: 3px;"></div>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+        <!-- STEM & Gender Norms -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up">
+          <div class="premium-action-card">
+            <div class="action-card-img" style="background-image: url('assets/img/social_actions/pahou_social_action1.jpeg');"></div>
+            <div class="action-card-body">
+              <h3>
+                <span data-lang="fr">Normes de Genre & STEM</span>
+                <span data-lang="en" class="d-none">Gender Norms & STEM</span>
+              </h3>
+              <p>
+                <span data-lang="fr">Deconstruction active des stéréotypes patriarcaux biaisant l'orientation des filles vers les sciences. Nous formons les professeurs à une pédagogie inclusive et offrons des bourses de recherche couplées à du mentorat scientifique féminin.</span>
+                <span data-lang="en" class="d-none">Actively deconstructing deep patriarchal stereotypes deterring girls from choosing science. We train teachers on inclusive pedagogies and provide structural scholarships backed by female scientific mentoring.</span>
+              </p>
+              <a href="stem-initiative.html" class="btn btn-navy hover-float mt-auto w-100 text-center text-white py-2">
+                <span data-lang="fr">En Savoir Plus</span>
+                <span data-lang="en" class="d-none">Learn More</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Parental Involvement -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="premium-action-card">
+            <div class="action-card-img" style="background-image: url('assets/img/work_shop/workshop_boh_1.jpeg');"></div>
+            <div class="action-card-body">
+              <h3>
+                <span data-lang="fr">Accompagnement Parental & Nudges</span>
+                <span data-lang="en" class="d-none">Parental Involvement & Nudges</span>
+              </h3>
+              <p>
+                <span data-lang="fr">Déploiement d'un protocole expérimental basé sur des nudges SMS hebdomadaires. Nous aidons les parents peu alphabétisés à s'engager activement dans le suivi scolaire quotidien de leurs enfants grâce à des rappels opérationnels simples.</span>
+                <span data-lang="en" class="d-none">Deploying an experimental messaging framework leveraging weekly SMS nudges. We help low-literacy parents actively monitor their children's homework and class attendance through simplified actionable alerts.</span>
+              </p>
+              <a href="parental-involvement-study.html" class="btn btn-navy hover-float mt-auto w-100 text-center text-white py-2">
+                <span data-lang="fr">En Savoir Plus</span>
+                <span data-lang="en" class="d-none">Learn More</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tuition Payments Digitalisation -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="premium-action-card">
+            <div class="action-card-img" style="background-image: url('assets/img/work_shop/workshop_boh_3.jpeg');"></div>
+            <div class="action-card-body">
+              <h3>
+                <span data-lang="fr">Digitalisation des Scolarités</span>
+                <span data-lang="en" class="d-none">Tuition Payments Digitalisation</span>
+              </h3>
+              <p>
+                <span data-lang="fr">Partenariat avec l'application mobile Successco pour automatiser et sécuriser la collecte des frais de scolarité dans les réseaux d'écoles publiques. Élimine les risques de vol de liquidités et fluidifie la gestion administrative.</span>
+                <span data-lang="en" class="d-none">Strategic partnership with Successco mobile app to automate and secure tuition fee collections in public school networks. Eliminates administrative cash-handling hazards and secures school budgeting transparency.</span>
+              </p>
+              <a href="partners.html" class="btn btn-navy hover-float mt-auto w-100 text-center text-white py-2">
+                <span data-lang="fr">En Savoir Plus</span>
+                <span data-lang="en" class="d-none">Learn More</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials-section" aria-label="Testimonials">
+    <div class="container text-center">
+      <h2 data-aos="fade-up">
+        <span data-lang="fr">Ce Que Disent Les Parents & Communautés</span>
+        <span data-lang="en" class="d-none">What Our Communities Say</span>
+      </h2>
+      
+      <div class="row g-4 justify-content-center">
+        <!-- Testimony 1 -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up">
+          <div class="premium-testimonial-card">
+            <p class="testimonial-quote">
+              <span data-lang="fr">"Les SMS de rappel hebdomadaires m'ont permis de mieux suivre les révisions de mon fils à la maison, même sans savoir lire le français. C'est d'une grande aide."</span>
+              <span data-lang="en" class="d-none">"The weekly SMS nudges allowed me to better track my son's homework at home, even without being able to read French. It is a huge assistance."</span>
+            </p>
+            <div class="testimonial-author-block">
+              <div>
+                <div class="testimonial-author-name">Sandrine</div>
+                <div class="testimonial-author-role">
+                  <span data-lang="fr">Mère d'élève à Bohé</span>
+                  <span data-lang="en" class="d-none">Student's Mother, Bohe</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimony 2 -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="premium-testimonial-card">
+            <p class="testimonial-quote">
+              <span data-lang="fr">"Le programme de mentorat scientifique féminin a donné à ma fille la confiance nécessaire pour s'orienter en série mathématique au lycée de Pahou."</span>
+              <span data-lang="en" class="d-none">"The scientific female mentorship gave my daughter the exact confidence she needed to major in mathematics stream in Pahou high school."</span>
+            </p>
+            <div class="testimonial-author-block">
+              <div>
+                <div class="testimonial-author-name">Marc</div>
+                <div class="testimonial-author-role">
+                  <span data-lang="fr">Parent d'élève à Pahou</span>
+                  <span data-lang="en" class="d-none">Student's Parent, Pahou</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimony 3 -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="premium-testimonial-card">
+            <p class="testimonial-quote">
+              <span data-lang="fr">"Grâce à l'application mobile Successco, le paiement sécurisé de la scolarité de mes trois enfants se fait directement en ligne sans devoir me déplacer."</span>
+              <span data-lang="en" class="d-none">"Thanks to Successco mobile app, paying my three children's school fees is done securely online without requiring tedious travel."</span>
+            </p>
+            <div class="testimonial-author-block">
+              <div>
+                <div class="testimonial-author-name">Fatima</div>
+                <div class="testimonial-author-role">
+                  <span data-lang="fr">Mère de famille à Kpakpamè</span>
+                  <span data-lang="en" class="d-none">Mother of Three, Kpakpame</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div data-include="includes/footer.html"></div>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="ring-loader"><span></span></div>
+    <div class="preloader-text"><strong>KEMT Center</strong><small>Recherche & Impact</small></div>
+  </div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/include-html.js"></script>
+  <script src='assets/js/lang-switcher.js'></script>
+  <script src="assets/js/main.js"></script>
 
   <!-- Counter Animation Script -->
   <script>
-    // Animate counters when visible
     function animateCounters() {
       const counters = document.querySelectorAll('.counter');
       counters.forEach(counter => {
         const updateCount = () => {
           const target = +counter.getAttribute('data-target');
           const count = +counter.innerText;
-          const increment = target / 200; // animation speed
+          const increment = target / 150;
           if (count < target) {
             counter.innerText = Math.ceil(count + increment);
-            setTimeout(updateCount, 10);
+            setTimeout(updateCount, 15);
           } else {
             counter.innerText = target;
           }
@@ -471,8 +470,7 @@
       });
     }
 
-    // Use IntersectionObserver to trigger only when visible
-    const statsSection = document.querySelector('.impact-stats');
+    const statsSection = document.querySelector('.stats-section');
     let counted = false;
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -482,16 +480,10 @@
           observer.unobserve(statsSection);
         }
       });
-    }, { threshold: 0.5 });
+    }, { threshold: 0.3 });
 
     observer.observe(statsSection);
   </script>
 
-  <script src="assets/js/include-html.js"></script>
-  <script src='assets/js/lang-switcher.js'></script>
-<script src="assets/js/main.js"></script>
 </body>
 </html>
-
-
-
