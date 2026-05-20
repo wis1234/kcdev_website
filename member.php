@@ -191,7 +191,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
           <div class="alert-danger"><?= htmlspecialchars($errorMsg) ?></div>
         <?php endif; ?>
 
-        <form action="member.php" method="POST">
+        <form action="" method="POST">
           <input type="hidden" name="login" value="1">
           <div class="form-group">
             <label class="form-label" for="login-email"><span data-lang="fr">Adresse E-mail</span><span data-lang="en" class="d-none">Email Address</span></label>
