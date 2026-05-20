@@ -9,9 +9,9 @@
 <!-- ANNOUNCEMENT BANNER -->
 <div class="announcement-banner">
   <div class="ticker"
-    data-lang-fr="🎓 Recrutement ouvert — Chercheurs & Associés 2025&nbsp;|&nbsp; Candidatures acceptées jusqu'au 30 juin 2025"
-    data-lang-en="🎓 Open recruitment — Researchers & Associates 2025&nbsp;|&nbsp; Applications accepted until June 30, 2025">
-    🎓 Recrutement ouvert — Chercheurs & Associés 2025&nbsp;|&nbsp; Candidatures acceptées jusqu'au 30 juin 2025</div>
+    data-lang-fr="🎓 Recrutement ouvert — Enqueteurs & Facilitateurs, Senior Econmiste 2025&nbsp;|&nbsp; Candidatures acceptées jusqu'au 1er Septembre 2026"
+    data-lang-en="🎓 Open Recruitment — Enumerators & Facilitators, Senior Economist 2025&nbsp;|&nbsp; Applications accepted until September 1, 2026">
+    🎓 Recrutement ouvert — Enqueteurs & Facilitateurs, Senior Econmiste 2025&nbsp;|&nbsp; Candidatures acceptées jusqu'au 1er Septembre 2026</div>
   <a href="careers.html" class="apply-link" data-lang-fr="Postuler" data-lang-en="Apply">Postuler</a>
 </div>
 
