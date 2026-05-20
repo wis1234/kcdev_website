@@ -308,6 +308,12 @@ function timeAgo($dt) {
     </a>
   </div>
   <div class="nav-section">
+    <div class="nav-label">Comptes</div>
+    <a href="collaborators.php" class="nav-item">
+      <i class="bi bi-people-fill"></i> Collaborateurs
+    </a>
+  </div>
+  <div class="nav-section">
     <div class="nav-label">Site</div>
     <a href="../index.html" class="nav-item" target="_blank"><i class="bi bi-box-arrow-up-right"></i> Voir le site</a>
     <a href="../contact.html" class="nav-item" target="_blank"><i class="bi bi-person-lines-fill"></i> Page contact</a>
