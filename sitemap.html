@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title data-lang-fr="Plan du site - KEMT Center" data-lang-en="Sitemap - KEMT Center">Plan du site - KEMT Center</title>
+  <meta name="description" content="Plan du site de KEMT Center, répertoriant toutes nos pages, publications et études de recherche.">
+  <meta name="keywords" content="KEMT Center, plan du site, sitemap, recherche, publications, éthique">
+
+  <!-- Favicons -->
+  <link href="assets/img/kemt_center.png" rel="icon">
+  <link href="assets/img/kemt_center.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --gold-mid: #b8933b;
+    }
+    
+    body {
+      font-family: var(--font-body);
+      background: var(--gray-100);
+      color: var(--navy);
+    }
+
+    .page-title {
+      background: linear-gradient(rgba(10, 22, 40, 0.88), rgba(10, 22, 40, 0.88)), url('assets/img/hero-carousel/hero-carousel-1.jpg') center/cover no-repeat !important;
+      padding: 80px 0 !important;
+      border-bottom: 2px solid rgba(201, 168, 76, 0.3) !important;
+      color: var(--white) !important;
+    }
+    .page-title h1 {
+      font-family: var(--font-display) !important;
+      font-size: 2.8rem !important;
+      font-weight: 700 !important;
+      color: var(--white) !important;
+      margin: 0 0 10px 0 !important;
+    }
+    .page-title .breadcrumbs ol {
+      font-family: var(--font-mono) !important;
+      font-size: 0.8rem !important;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .page-title .breadcrumbs ol li a {
+      color: rgba(255, 255, 255, 0.7) !important;
+      transition: color var(--transition);
+    }
+    .page-title .breadcrumbs ol li a:hover {
+      color: var(--gold-light) !important;
+    }
+    .page-title .breadcrumbs ol li.current {
+      color: var(--gold) !important;
+    }
+    .page-title .breadcrumbs ol li+li::before {
+      color: rgba(255, 255, 255, 0.3) !important;
+    }
+
+    .sitemap-section {
+      padding: 5rem 0;
+    }
+
+    .sitemap-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--gray-200);
+      padding: 2.5rem 2rem;
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sitemap-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--gold);
+    }
+
+    .sitemap-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 1.5rem;
+      border-bottom: 2px solid var(--gold-pale);
+      padding-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .sitemap-card h3 i {
+      color: var(--gold);
+    }
+
+    .sitemap-links {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .sitemap-links li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .sitemap-links li i {
+      color: var(--gold-mid);
+      font-size: 0.95rem;
+      margin-top: 0.2rem;
+      transition: transform var(--transition);
+    }
+
+    .sitemap-links a {
+      color: var(--gray-800);
+      font-weight: 400;
+      font-size: 0.95rem;
+      transition: color var(--transition);
+      text-decoration: none;
+    }
+
+    .sitemap-links a:hover {
+      color: var(--gold-mid);
+    }
+
+    .sitemap-links li:hover i {
+      transform: translateX(3px);
+    }
+  </style>
+</head>
+
+<body class="sitemap-page">
+
+  <!-- Header -->
+  <div data-include="includes/header.html"></div>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title accent-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">
+          <span data-lang-fr="Plan du site" data-lang-en="Sitemap">Plan du site</span>
+        </h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html"><span data-lang-fr="Accueil" data-lang-en="Home">Accueil</span></a></li>
+            <li class="current">
+              <span data-lang-fr="Plan du site" data-lang-en="Sitemap">Plan du site</span>
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Sitemap Cards Grid Section -->
+    <section class="sitemap-section">
+      <div class="container" data-aos="fade-up">
+        <div class="row g-4">
+
+          <!-- Card 1: Navigation & Institution -->
+          <div class="col-lg-4 col-md-6">
+            <div class="sitemap-card">
+              <h3>
+                <i class="bi bi-compass"></i>
+                <span data-lang-fr="Navigation & Institution" data-lang-en="Navigation & Institution">Navigation & Institution</span>
+              </h3>
+              <ul class="sitemap-links">
+                <li><i class="bi bi-chevron-right"></i><a href="index.html" data-lang-fr="Accueil" data-lang-en="Home">Accueil</a></li>
+                <li><i class="bi bi-chevron-right"></i><a href="about.html" data-lang-fr="À propos" data-lang-en="About Us">À propos</a></li>
+                <li><i class="bi bi-chevron-right"></i><a href="team.html" data-lang-fr="Équipe de recherche" data-lang-en="Research Team">Équipe de recherche</a></li>
+                <li><i class="bi bi-chevron-right"></i><a href="partners.html" data-lang-fr="Partenaires" data-lang-en="Partners">Partenaires</a></li>
+                <li><i class="bi bi-chevron-right"></i><a href="contact.html" data-lang-fr="Contact" data-lang-en="Contact">Contact</a></li>
+                <li><i class="bi bi-chevron-right"></i><a href="member.php" data-lang-fr="Espace Chercheur (Portail)" data-lang-en="Researcher Portal">Espace Chercheur (Portail)</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Card 2: Programmes & Projets -->
+          <div class="col-lg-4 col-md-6">
+            <div class="sitemap-card">
+              <h3>
+                <i class="bi bi-journal-text"></i>
+                <span data-lang-fr="Programmes & Projets" data-lang-en="Programs & Projects">Programmes & Projets</span>
+              </h3>
+              <ul class="sitemap-links">
+                <li><i class="bi bi-chevron-right"></i><a href="programs.html" data-lang-fr="Départements & Programmes" data-lang-en="Departments & Programs">Départements & Programmes</a></li>
+                <li><i class="bi bi-chevron-right"></i><a href="portfolio.html" data-lang-fr="Projets de recherche" data-lang-en="Research Projects">Projets de recherche</a></li>
+                <li><i class="bi bi-chevron-right"></i><a href="portfolio-details.html" data-lang-fr="Détails du projet" data-lang-en="Project Details">Détails du projet</a></li>
+                <li><i class="bi bi-chevron-right"></i><a href="services.html" data-lang-fr="Services" data-lang-en="Services">Services</a></li>
+                <li><i class="bi bi-chevron-right"></i><a href="service-details.html" data-lang-fr="Détails des services" data-lang-en="Service Details">Détails des services</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Card 3: Ressources & Actualités -->
+          <div class="col-lg-4 col-md-6">
+            <div class="sitemap-card">
+              <h3>
+                <i class="bi bi-collection"></i>
+                <span data-lang-fr="Ressources & Actus" data-lang-en="Resources & News">Ressources & Actus</span>
+              </h3>
+              <ul class="sitemap-links">
+                <li><i class="bi bi-chevron-right"></i><a href="resources.html" data-lang-fr="Bases de données" data-lang-en="Data Portals">Bases de données</a></li>
+                <li><i class="bi bi-chevron-right"></i><a href="docs.html" data-lang-fr="Documentation" data-lang-en="Documentation">Documentation</a></li>
+                <li><i class="bi bi-chevron-right"></i><a href="gallery.html" data-lang-fr="Galerie & Médias" data-lang-en="Gallery & Media">Galerie & Médias</a></li>
+                <li><i class="bi bi-chevron-right"></i><a href="events.html" data-lang-fr="Événements" data-lang-en="Events">Événements</a></li>
+                <li><i class="bi bi-chevron-right"></i><a href="careers.html" data-lang-fr="Opportunités" data-lang-en="Opportunities">Opportunités</a></li>
+                <li><i class="bi bi-chevron-right"></i><a href="training.html" data-lang-fr="Formations" data-lang-en="Training">Formations</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Card 4: Éthique & Normes -->
+          <div class="col-lg-4 col-md-6">
+            <div class="sitemap-card">
+              <h3>
+                <i class="bi bi-shield-check"></i>
+                <span data-lang-fr="Éthique & Normes" data-lang-en="Ethics & Standards">Éthique & Normes</span>
+              </h3>
+              <ul class="sitemap-links">
+                <li><i class="bi bi-chevron-right"></i><a href="irb-protocols.html" data-lang-fr="Protocoles IRB" data-lang-en="IRB Protocols">Protocoles IRB</a></li>
+                <li><i class="bi bi-chevron-right"></i><a href="data-confidentiality.html" data-lang-fr="Confidentialité des données" data-lang-en="Data Confidentiality">Confidentialité des données</a></li>
+                <li><i class="bi bi-chevron-right"></i><a href="fieldwork-standards.html" data-lang-fr="Normes de terrain" data-lang-en="Fieldwork Standards">Normes de terrain</a></li>
+                <li><i class="bi bi-chevron-right"></i><a href="code-of-conduct.html" data-lang-fr="Code de déontologie" data-lang-en="Code of Conduct">Code de déontologie</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Card 5: Publications & Documents -->
+          <div class="col-lg-4 col-md-6">
+            <div class="sitemap-card">
+              <h3>
+                <i class="bi bi-file-earmark-text"></i>
+                <span data-lang-fr="Publications & Rapports" data-lang-en="Publications & Reports">Publications & Rapports</span>
+              </h3>
+              <ul class="sitemap-links">
+                <li><i class="bi bi-chevron-right"></i><a href="publications.html" data-lang-fr="Toutes les publications" data-lang-en="All Publications">Toutes les publications</a></li>
+                <li><i class="bi bi-chevron-right"></i><a href="working-papers.html" data-lang-fr="Documents de travail" data-lang-en="Working Papers">Documents de travail</a></li>
+                <li><i class="bi bi-chevron-right"></i><a href="scientific-articles.html" data-lang-fr="Articles scientifiques" data-lang-en="Scientific Articles">Articles scientifiques</a></li>
+                <li><i class="bi bi-chevron-right"></i><a href="policy-briefs.html" data-lang-fr="Notes de politique" data-lang-en="Policy Briefs">Notes de politique</a></li>
+                <li><i class="bi bi-chevron-right"></i><a href="annual-reports.html" data-lang-fr="Rapports annuels" data-lang-en="Annual Reports">Rapports annuels</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Card 6: Études & Initiatives -->
+          <div class="col-lg-4 col-md-6">
+            <div class="sitemap-card">
+              <h3>
+                <i class="bi bi-activity"></i>
+                <span data-lang-fr="Études de cas & Impact" data-lang-en="Case Studies & Impact">Études de cas & Impact</span>
+              </h3>
+              <ul class="sitemap-links">
+                <li><i class="bi bi-chevron-right"></i><a href="covid-recovery-study.html" data-lang-fr="Étude récupération Covid" data-lang-en="Covid Recovery Study">Étude récupération Covid</a></li>
+                <li><i class="bi bi-chevron-right"></i><a href="parental-involvement-study.html" data-lang-fr="Étude implication parentale" data-lang-en="Parental Involvement Study">Étude implication parentale</a></li>
+                <li><i class="bi bi-chevron-right"></i><a href="stem-initiative.html" data-lang-fr="Initiative STEM" data-lang-en="STEM Initiative">Initiative STEM</a></li>
+                <li><i class="bi bi-chevron-right"></i><a href="policy-brief-parental-involvement.html" data-lang-fr="Note politique : Parent" data-lang-en="Policy Brief: Parents">Note politique : Parent</a></li>
+                <li><i class="bi bi-chevron-right"></i><a href="policy-brief-reportcards.html" data-lang-fr="Note politique : Bulletins" data-lang-en="Policy Brief: Report Cards">Note politique : Bulletins</a></li>
+                <li><i class="bi bi-chevron-right"></i><a href="social_actions.html" data-lang-fr="Actions sociales" data-lang-en="Social Actions">Actions sociales</a></li>
+                <li><i class="bi bi-chevron-right"></i><a href="conference-summary.html" data-lang-fr="Synthèse de conférence" data-lang-en="Conference Summary">Synthèse de conférence</a></li>
+                <li><i class="bi bi-chevron-right"></i><a href="fieldwork-methods.html" data-lang-fr="Méthodes de terrain" data-lang-en="Fieldwork Methods">Méthodes de terrain</a></li>
+                <li><i class="bi bi-chevron-right"></i><a href="annual-report.html" data-lang-fr="Rapport annuel (Détails)" data-lang-en="Annual Report (Details)">Rapport annuel (Détails)</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Card 7: Légal & Divers -->
+          <div class="col-lg-4 col-md-6 mx-auto">
+            <div class="sitemap-card">
+              <h3>
+                <i class="bi bi-info-circle"></i>
+                <span data-lang-fr="Légal & Informations" data-lang-en="Legal & Info">Légal & Informations</span>
+              </h3>
+              <ul class="sitemap-links">
+                <li><i class="bi bi-chevron-right"></i><a href="privacy-policy.html" data-lang-fr="Politique de confidentialité" data-lang-en="Privacy Policy">Politique de confidentialité</a></li>
+                <li><i class="bi bi-chevron-right"></i><a href="terms-of-service.html" data-lang-fr="Conditions d'utilisation" data-lang-en="Terms of Service">Conditions d'utilisation</a></li>
+                <li><i class="bi bi-chevron-right"></i><a href="accessibility.html" data-lang-fr="Accessibilité" data-lang-en="Accessibility">Accessibilité</a></li>
+                <li><i class="bi bi-chevron-right"></i><a href="faq.html" data-lang-fr="FAQ" data-lang-en="FAQ">FAQ</a></li>
+                <li><i class="bi bi-chevron-right"></i><a href="testimonials.html" data-lang-fr="Témoignages" data-lang-en="Testimonials">Témoignages</a></li>
+                <li><i class="bi bi-chevron-right"></i><a href="pricing.html" data-lang-fr="Tarifs" data-lang-en="Pricing">Tarifs</a></li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <div data-include="includes/footer.html"></div>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="ring-loader"><span></span></div>
+    <div class="preloader-text"><strong>KEMT Center</strong><small>Recherche & Impact</small></div>
+  </div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/include-html.js"></script>
+  <script src="assets/js/lang-switcher.js"></script>
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
