@@ -289,22 +289,29 @@ function timeAgo($dt) {
   </div>
   <div class="nav-section">
     <div class="nav-label">Gestion</div>
-    <a href="messages.php" class="nav-item active">
-      <i class="bi bi-envelope-fill"></i> Messages
+    <a href="messages.php" class="nav-item <?= (!isset($_GET['status']) && !$detail) ? 'active' : '' ?>">
+      <i class="bi bi-envelope-fill"></i> Tous les messages
       <?php if (!empty($counts['new'])): ?><span class="nav-badge"><?= $counts['new'] ?></span><?php endif; ?>
     </a>
-    <a href="messages.php?status=new" class="nav-item">
+    <a href="messages.php?status=new" class="nav-item <?= (($_GET['status'] ?? '') === 'new') ? 'active' : '' ?>">
       <i class="bi bi-bell-fill"></i> Nouveaux
       <?php if (!empty($counts['new'])): ?><span class="nav-badge"><?= $counts['new'] ?></span><?php endif; ?>
     </a>
-    <a href="messages.php?status=replied" class="nav-item">
+    <a href="messages.php?status=read" class="nav-item <?= (($_GET['status'] ?? '') === 'read') ? 'active' : '' ?>">
+      <i class="bi bi-envelope-open-fill"></i> Lus
+      <?php if (!empty($counts['read'])): ?><span class="nav-badge" style="background:rgba(255,255,255,0.2);color:#fff;"><?= $counts['read'] ?></span><?php endif; ?>
+    </a>
+    <a href="messages.php?status=replied" class="nav-item <?= (($_GET['status'] ?? '') === 'replied') ? 'active' : '' ?>">
       <i class="bi bi-check-circle-fill"></i> Répondus
+      <?php if (!empty($counts['replied'])): ?><span class="nav-badge" style="background:rgba(255,255,255,0.2);color:#fff;"><?= $counts['replied'] ?></span><?php endif; ?>
     </a>
-    <a href="messages.php?status=archived" class="nav-item">
+    <a href="messages.php?status=archived" class="nav-item <?= (($_GET['status'] ?? '') === 'archived') ? 'active' : '' ?>">
       <i class="bi bi-archive-fill"></i> Archivés
+      <?php if (!empty($counts['archived'])): ?><span class="nav-badge" style="background:rgba(255,255,255,0.2);color:#fff;"><?= $counts['archived'] ?></span><?php endif; ?>
     </a>
-    <a href="messages.php?status=spam" class="nav-item">
+    <a href="messages.php?status=spam" class="nav-item <?= (($_GET['status'] ?? '') === 'spam') ? 'active' : '' ?>">
       <i class="bi bi-slash-circle-fill"></i> Spam
+      <?php if (!empty($counts['spam'])): ?><span class="nav-badge" style="background:#ef4444;color:#fff;"><?= $counts['spam'] ?></span><?php endif; ?>
     </a>
   </div>
   <div class="nav-section">
