@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confidentialité des Données | KEMT Center</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <style>
+    :root { --navy: #0a1628; --gold: #c9a84c; --gold-pale: #f5e9c8; --gray-light: #F5F3F0; --gray-dark: #4A4A4A; --white: #FFFFFF; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; line-height: 1.7; color: var(--gray-dark); background: var(--white); }
+    .page-header { background: linear-gradient(135deg, var(--navy) 0%, #0d1f35 100%); color: var(--white); padding: 3.5rem 2rem; text-align: center; }
+    .page-header h1 { font-size: 2.5rem; font-weight: 700; margin: 0 0 1rem 0; color: var(--white); }
+    .page-header p { font-size: 1.1rem; opacity: 0.95; }
+    .content-container { max-width: 900px; margin: 0 auto; padding: 2.5rem 2rem; }
+    .section { margin-bottom: 2rem; }
+    .section-title { font-size: 1.6rem; color: var(--navy); margin-bottom: 1rem; padding-bottom: 0.8rem; border-bottom: 3px solid var(--gold); font-weight: 700; }
+    .section p { margin-bottom: 0.9rem; text-align: justify; }
+    .highlight-box { background: #f9f8f6; border-left: 4px solid var(--gold); padding: 1.5rem; margin: 1rem 0; border-radius: 4px; }
+    .highlight-box h4 { color: var(--navy); margin-top: 0; margin-bottom: 1rem; font-weight: 700; }
+    .list-item { margin-bottom: 0.8rem; padding-left: 1.5rem; }
+    .list-item::before { content: "▸"; color: var(--gold); font-weight: bold; margin-left: -1.5rem; margin-right: 0.8rem; }
+  </style>
+</head>
+<body>
+  <header id="header">
+    <div class="container">
+      <a href="index.html" class="logo"><span class="sitename">KEMT Center</span><span class="dot">.</span></a>
+      <nav id="navmenu"><ul><li><a href="index.html" data-lang-fr="Accueil" data-lang-en="Home">Accueil</a></li><li class="dropdown"><a href="#">Institution</a><ul><li><a href="about.html">À propos</a></li></ul></li><li><a href="publications.html">Publications</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
+      <div class="header-actions"><a href="member.html" class="btn-researcher">Espace chercheur</a><div class="lang-switcher"><div class="lang-select-wrapper"><button class="lang-select" type="button"><img src="assets/img/flags/fr.svg" alt="Français" class="current-flag"></button><ul class="lang-select-menu"><li><button type="button" class="lang-option active" data-lang-switch="fr"><img src="assets/img/flags/fr.svg" class="flag-icon me-2">Français</button></li><li><button type="button" class="lang-option" data-lang-switch="en"><img src="assets/img/flags/us.svg" class="flag-icon me-2">English</button></li></ul></div></div></div>
+      <button class="mobile-nav-toggle" id="mobileNavToggle"><i class="bi bi-list"></i></button>
+    </div>
+  </header>
+
+  <div class="page-header">
+    <h1 data-lang-fr="Confidentialité et Protection des Données" data-lang-en="Data Confidentiality and Protection">Confidentialité et Protection des Données</h1>
+    <p data-lang-fr="Normes internationales de sécurité des données" data-lang-en="International data security standards">Normes internationales de sécurité des données</p>
+  </div>
+
+  <main class="content-container">
+    <section class="section">
+      <h2 class="section-title" data-lang-fr="Engagement en Matière de Confidentialité" data-lang-en="Confidentiality Commitment">Engagement en Matière de Confidentialité</h2>
+      <p data-lang-fr="Le KEMT Center respecte la confidentialité de tous les participants à la recherche. Les données sont collectées, traitées et stockées conformément aux lois nationales et internationales de protection des données." data-lang-en="KEMT Center respects the confidentiality of all research participants. Data is collected, processed, and stored in compliance with national and international data protection laws.">Le KEMT Center respecte la confidentialité de tous les participants à la recherche. Les données sont collectées, traitées et stockées conformément aux lois nationales et internationales de protection des données.</p>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title" data-lang-fr="Mesures de Sécurité" data-lang-en="Security Measures">Mesures de Sécurité</h2>
+      <div class="highlight-box">
+        <h4 data-lang-fr="Chiffrement et Stockage" data-lang-en="Encryption and Storage">Chiffrement et Stockage</h4>
+        <p data-lang-fr="Toutes les données sensibles sont chiffrées et stockées sur des serveurs sécurisés avec accès restreint." data-lang-en="All sensitive data is encrypted and stored on secure servers with restricted access.">Toutes les données sensibles sont chiffrées et stockées sur des serveurs sécurisés avec accès restreint.</p>
+      </div>
+
+      <div class="highlight-box">
+        <h4 data-lang-fr="Anonymisation" data-lang-en="Anonymization">Anonymisation</h4>
+        <p data-lang-fr="Les données personnelles sont anonymisées ou pseudonymisées chaque fois que possible pour protéger l'identité des participants." data-lang-en="Personal data is anonymized or pseudonymized whenever possible to protect participant identity.">Les données personnelles sont anonymisées ou pseudonymisées chaque fois que possible pour protéger l'identité des participants.</p>
+      </div>
+
+      <div class="highlight-box">
+        <h4 data-lang-fr="Accès Contrôlé" data-lang-en="Controlled Access">Accès Contrôlé</h4>
+        <p data-lang-fr="Seul le personnel autorisé ayant signé des accords de confidentialité peut accéder aux données." data-lang-en="Only authorized personnel who have signed confidentiality agreements have access to data.">Seul le personnel autorisé ayant signé des accords de confidentialité peut accéder aux données.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title" data-lang-fr="Droits des Participants" data-lang-en="Participant Rights">Droits des Participants</h2>
+      <div class="list-item">Droit d'accès à leurs données personnelles</div>
+      <div class="list-item">Droit de rectification des données inexactes</div>
+      <div class="list-item">Droit à l'oubli ou suppression de données</div>
+      <div class="list-item">Droit de retrait du consentement</div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title" data-lang-fr="Contact" data-lang-en="Contact">Contact</h2>
+      <p data-lang-fr="Pour toute question concernant la confidentialité des données, veuillez contacter:" data-lang-en="For any questions regarding data confidentiality, please contact:">Pour toute question concernant la confidentialité des données, veuillez contacter:</p>
+      <p style="margin-top: 1rem;"><strong>Email:</strong> data-privacy@kemtcenter.org</p>
+    </section>
+  </main>
+
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo"><span class="sitename">KEMT Center</span></a>
+          <p>Centre international de recherche dédié à l'innovation sociale et au développement durable.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Éthique</h4>
+          <ul>
+            <li><a href="irb-protocols.html">Protocoles IRB</a></li>
+            <li><a href="data-confidentiality.html">Confidentialité des données</a></li>
+            <li><a href="fieldwork-standards.html">Normes de terrain</a></li>
+            <li><a href="code-of-conduct.html">Code de déontologie</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Publications</h4>
+          <ul>
+            <li><a href="working-papers.html">Documents de travail</a></li>
+            <li><a href="scientific-articles.html">Articles scientifiques</a></li>
+            <li><a href="policy-briefs.html">Notes de politique</a></li>
+            <li><a href="annual-reports.html">Rapports annuels</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p style="font-size:14px;">research@kemtcenter.org</p>
+          <p style="font-size:14px;">Abomey-Calavi, TANKPE — Bénin</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 KEMT Center. Tous droits réservés.</span>
+        <div style="display:flex;gap:1.5rem;"><a href="privacy-policy.html">Confidentialité</a><a href="terms-of-service.html">Conditions</a><a href="accessibility.html">Accessibilité</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" id="scroll-top"><i class="bi bi-arrow-up-short"></i></a>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/lang-switcher.js"></script>
+  <script>
+    window.addEventListener('scroll', () => {
+      const h = document.getElementById('header');
+      if (window.scrollY > 50) h.classList.add('scrolled'); else h.classList.remove('scrolled');
+      const btn = document.getElementById('scroll-top');
+      if (window.scrollY > 400) btn.classList.add('visible'); else btn.classList.remove('visible');
+    });
+  </script>
+</body>
+</html>

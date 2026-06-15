@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rapport d'Orientation - Implication Parentale et Performance Scolaire | KEMT Center</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <style>
+    :root {
+      --navy: #0a1628;
+      --gold: #c9a84c;
+      --gold-light: #e8c97a;
+      --gold-pale: #f5e9c8;
+      --gray-light: #F5F3F0;
+      --gray-dark: #4A4A4A;
+      --white: #FFFFFF;
+      --font-mono: 'Courier New', monospace;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--gray-dark);
+      background: var(--white);
+    }
+
+    /* ─── HEADER POLICY BRIEF ─── */
+    .pb-header {
+      background: linear-gradient(135deg, var(--navy) 0%, #0d1f35 100%);
+      color: var(--white);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pb-header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      background: rgba(201, 168, 76, 0.08);
+      border-radius: 50%;
+    }
+
+    .pb-header-content {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .pb-header-tag {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      padding: 0.4rem 1.3rem;
+      border-radius: 25px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      letter-spacing: 0.05em;
+    }
+
+    .pb-header h1 {
+      font-size: 2.2rem;
+      margin: 0 0 0.6rem 0;
+      line-height: 1.25;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .pb-header p {
+      font-size: 1.05rem;
+      opacity: 0.95;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .pb-meta {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-top: 1.2rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid rgba(201, 168, 76, 0.3);
+    }
+
+    .pb-meta-item {
+      text-align: center;
+    }
+
+    .pb-meta-label {
+      display: block;
+      font-size: 0.78rem;
+      opacity: 0.85;
+      margin-bottom: 0.3rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .pb-meta-value {
+      display: block;
+      font-size: 1.15rem;
+      font-weight: 600;
+    }
+
+    /* ─── CONTAINER ─── */
+    .pb-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.8rem 2rem;
+    }
+
+    /* ─── TOC ─── */
+    .pb-toc {
+      background: #f9f8f6;
+      padding: 1.3rem 1.8rem;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+      border-left: 4px solid var(--gold);
+    }
+
+    .pb-toc h3 {
+      color: var(--navy);
+      margin: 0 0 0.8rem 0;
+      font-size: 1.15rem;
+    }
+
+    .pb-toc ol {
+      margin: 0;
+      padding-left: 1.4rem;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.4rem 1.5rem;
+    }
+
+    .pb-toc li {
+      margin-bottom: 0;
+    }
+
+    .pb-toc a {
+      color: var(--navy);
+      text-decoration: none;
+      border-bottom: 1px solid var(--gold);
+    }
+
+    .pb-toc a:hover {
+      color: var(--gold);
+    }
+
+    /* ─── SECTIONS ─── */
+    .pb-section {
+      margin-bottom: 1.4rem;
+    }
+
+    .pb-section-title {
+      font-size: 1.35rem;
+      color: var(--navy);
+      margin-bottom: 0.8rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 3px solid var(--gold);
+      font-weight: 700;
+      margin-top: 0;
+    }
+
+    .pb-section p {
+      margin-bottom: 0.7rem;
+      text-align: justify;
+    }
+
+    .pb-section ul, .pb-section ol {
+      margin: 0.6rem 0 0.6rem 2rem;
+    }
+
+    .pb-section li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* ─── HIGHLIGHT BOX ─── */
+    .pb-highlight-box {
+      background: #f9f8f6;
+      border-left: 4px solid var(--gold);
+      padding: 1.1rem 1.4rem;
+      margin: 0.8rem 0;
+      border-radius: 4px;
+    }
+
+    .pb-highlight-box h4 {
+      color: var(--navy);
+      margin-top: 0;
+      margin-bottom: 0.6rem;
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+
+    .pb-highlight-box p {
+      margin-bottom: 0.4rem;
+    }
+
+    .pb-highlight-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .pb-highlight-box strong {
+      color: var(--navy);
+    }
+
+    /* ─── RESULT CARDS - GRID LAYOUT ─── */
+    .pb-results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+
+    .pb-result-card {
+      background: var(--white);
+      border: 2px solid var(--gold-pale);
+      padding: 1.1rem 1.3rem;
+      border-radius: 8px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1.1rem;
+      align-items: center;
+    }
+
+    .pb-result-number {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--gold);
+      min-width: 85px;
+      text-align: center;
+      line-height: 1.1;
+    }
+
+    .pb-result-text {
+      color: var(--navy);
+      font-weight: 600;
+      font-size: 0.92rem;
+      line-height: 1.35;
+    }
+
+    /* ─── GRID 2 (générique) ─── */
+    .pb-grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.2rem;
+      margin: 1.2rem 0;
+    }
+
+    .pb-grid-item {
+      background: #f9f8f6;
+      padding: 1.2rem;
+      border-radius: 8px;
+      border-top: 3px solid var(--gold);
+    }
+
+    .pb-grid-item h5 {
+      color: var(--navy);
+      margin-top: 0;
+      margin-bottom: 0.6rem;
+      font-weight: 700;
+    }
+
+    .pb-grid-item p {
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    /* ─── AUTHOR ─── */
+    .pb-author {
+      background: #f9f8f6;
+      padding: 1.2rem 1.4rem;
+      border-radius: 8px;
+      margin-top: 1.2rem;
+      border-left: 4px solid var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .pb-author h4 {
+      color: var(--navy);
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 700;
+      flex-basis: 100%;
+    }
+
+    .pb-author p {
+      margin: 0;
+      color: var(--gray-dark);
+      font-size: 0.92rem;
+    }
+
+    .pb-author-name {
+      font-weight: 700;
+      color: var(--navy) !important;
+    }
+
+    /* ─── NAV / BUTTONS ─── */
+    .pb-nav {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .pb-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.4rem;
+      border: 2px solid var(--navy);
+      background: var(--navy);
+      color: var(--white);
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .pb-btn:hover {
+      background: var(--white);
+      color: var(--navy);
+    }
+
+    .pb-btn-outline {
+      background: var(--white);
+      color: var(--navy);
+    }
+
+    .pb-btn-outline:hover {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--navy);
+    }
+
+    .pb-btn-primary-download {
+      background: linear-gradient(135deg, var(--navy), #0d1f35);
+      border-color: var(--gold);
+      font-size: 1rem;
+      padding: 1rem 2rem;
+    }
+
+    .pb-btn-primary-download:hover {
+      background: var(--gold);
+      color: var(--navy);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(201, 168, 76, 0.3);
+    }
+
+    /* ─── DOWNLOAD SECTION ─── */
+    .pb-download-section {
+      background: linear-gradient(135deg, rgba(10, 22, 40, 0.04), rgba(201, 168, 76, 0.08));
+      border: 1px solid var(--gold-pale);
+      padding: 1.6rem 1.6rem;
+      border-radius: 8px;
+      text-align: center;
+      margin: 1.2rem 0;
+    }
+
+    .pb-download-section h3 {
+      color: var(--navy);
+      margin-bottom: 0.4rem;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-top: 0;
+    }
+
+    .pb-download-section p {
+      color: var(--gray-dark);
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1100px) {
+      .pb-meta {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+      .pb-toc ol {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .pb-header h1 {
+        font-size: 1.5rem;
+      }
+
+      .pb-header {
+        padding: 2rem 1.2rem;
+      }
+
+      .pb-container {
+        padding: 1.2rem 1rem;
+      }
+
+      .pb-result-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .pb-section-title {
+        font-size: 1.2rem;
+      }
+
+      .pb-meta {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header id="header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <span class="sitename">KEMT Center</span><span class="dot">.</span>
+      </a>
+      <nav id="navmenu">
+        <ul>
+          <li><a href="index.html" class="active" data-lang-fr="Accueil" data-lang-en="Home">Accueil</a></li>
+          <li class="dropdown">
+            <a href="#" data-lang-fr="Institution" data-lang-en="Institution">Institution</a>
+            <ul>
+              <li><a href="about.html" data-lang-fr="À propos" data-lang-en="About">À propos</a></li>
+              <li><a href="team.html" data-lang-fr="Équipe de recherche" data-lang-en="Research team">Équipe de recherche</a></li>
+              <li><a href="partners.html" data-lang-fr="Partenaires" data-lang-en="Partners">Partenaires</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" data-lang-fr="Programmes" data-lang-en="Programs">Programmes</a>
+            <ul>
+              <li><a href="programs.html" data-lang-fr="Départements" data-lang-en="Departments">Départements</a></li>
+              <li><a href="portfolio.html" data-lang-fr="Projets" data-lang-en="Projects">Projets</a></li>
+              <li><a href="publications.html" data-lang-fr="Publications" data-lang-en="Publications">Publications</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" data-lang-fr="Ressources" data-lang-en="Resources">Ressources</a>
+            <ul>
+              <li><a href="resources.html" data-lang-fr="Bases de données" data-lang-en="Data portals">Bases de données</a></li>
+              <li><a href="docs.html" data-lang-fr="Documentation" data-lang-en="Documentation">Documentation</a></li>
+              <li><a href="gallery.html" data-lang-fr="Galerie" data-lang-en="Gallery">Galerie</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" data-lang-fr="Actualités" data-lang-en="News">Actualités</a>
+            <ul>
+              <li><a href="events.html" data-lang-fr="Événements" data-lang-en="Events">Événements</a></li>
+              <li><a href="careers.html" data-lang-fr="Opportunités" data-lang-en="Opportunities">Opportunités</a></li>
+              <li><a href="training.html" data-lang-fr="Formations" data-lang-en="Training">Formations</a></li>
+            </ul>
+          </li>
+          <li><a href="contact.html" data-lang-fr="Contact" data-lang-en="Contact">Contact</a></li>
+          <li class="mobile-only-action">
+            <a href="member.html" class="btn-researcher-mobile">
+              <span data-lang-fr="Espace chercheur" data-lang-en="Researcher portal">Espace chercheur</span>
+              <i class="bi bi-person-fill"></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a href="member.html" class="btn-researcher" data-lang-fr="Espace chercheur" data-lang-en="Researcher portal">Espace chercheur</a>
+        <div class="lang-switcher" role="navigation" aria-label="Language switcher">
+          <div class="lang-select-wrapper">
+            <button class="lang-select" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Switch language">
+              <img src="assets/img/flags/fr.svg" alt="Français" class="current-flag">
+            </button>
+            <ul class="lang-select-menu" role="listbox" aria-label="Language selection">
+              <li><button type="button" class="lang-option active d-flex align-items-center" data-lang-switch="fr" title="Français"><img src="assets/img/flags/fr.svg" class="flag-icon me-2" alt="Français">Français</button></li>
+              <li><button type="button" class="lang-option d-flex align-items-center" data-lang-switch="en" title="English"><img src="assets/img/flags/us.svg" class="flag-icon me-2" alt="English">English</button></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <button class="mobile-nav-toggle" id="mobileNavToggle">
+        <i class="bi bi-list"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- POLICY BRIEF HEADER -->
+  <div class="pb-header">
+    <div class="pb-header-content">
+      <div class="pb-header-tag" data-lang-fr="Rapport d'Orientation" data-lang-en="Policy Brief">Rapport d'Orientation</div>
+      <h1 data-lang-fr="Implication Parentale et Performance Scolaire" data-lang-en="Parental Involvement and School Performance">Implication Parentale et Performance Scolaire</h1>
+      <p data-lang-fr="Le Rôle du Capital Managérial des Parents : Résultats d'une étude expérimentale en zones rurales, Bénin (2022–2023)" data-lang-en="The Role of Parental Managerial Capital: Results of an experimental study in rural areas, Benin (2022-2023)">Le Rôle du Capital Managérial des Parents : Résultats d'une étude expérimentale en zones rurales, Bénin (2022–2023)</p>
+
+      <div class="pb-meta">
+        <div class="pb-meta-item">
+          <span class="pb-meta-label" data-lang-fr="Chercheur" data-lang-en="Researcher">Chercheur</span>
+          <span class="pb-meta-value">Dr Mahounan Yedomiffi</span>
+        </div>
+        <div class="pb-meta-item">
+          <span class="pb-meta-label" data-lang-fr="Institution" data-lang-en="Institution">Institution</span>
+          <span class="pb-meta-value">Dartmouth College</span>
+        </div>
+        <div class="pb-meta-item">
+          <span class="pb-meta-label" data-lang-fr="Période" data-lang-en="Period">Période</span>
+          <span class="pb-meta-value">2022–2023</span>
+        </div>
+        <div class="pb-meta-item">
+          <span class="pb-meta-label" data-lang-fr="Statut" data-lang-en="Status">Statut</span>
+          <span class="pb-meta-value" data-lang-fr="Résultats préliminaires" data-lang-en="Preliminary results">Résultats préliminaires</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <main class="pb-container">
+
+    <!-- TABLE OF CONTENTS -->
+    <div class="pb-toc">
+      <h3 data-lang-fr="Contenu" data-lang-en="Contents">Contenu</h3>
+      <ol>
+        <li><a href="#capital-manageria" data-lang-fr="Le Capital Managérial Parental" data-lang-en="Parental Managerial Capital">Le Capital Managérial Parental</a></li>
+        <li><a href="#intervention-coaching" data-lang-fr="Intervention innovante par coaching" data-lang-en="Innovative telephone coaching intervention">Intervention innovante par coaching</a></li>
+        <li><a href="#comportements" data-lang-fr="Résultats sur les comportements parentaux" data-lang-en="Results on parental behaviors">Résultats sur les comportements</a></li>
+        <li><a href="#resultats-scolaires" data-lang-fr="Impact sur les résultats scolaires" data-lang-en="Impact on academic results">Impact sur les résultats scolaires</a></li>
+        <li><a href="#effets-long-terme" data-lang-fr="Effets à long terme" data-lang-en="Long-term effects">Effets à long terme</a></li>
+        <li><a href="#rentabilite" data-lang-fr="Solution rentable pour les politiques" data-lang-en="Cost-effective policy solution">Solution rentable pour les politiques</a></li>
+      </ol>
+    </div>
+
+    <!-- 1. LE CAPITAL MANAGÉRIAL PARENTAL -->
+    <section class="pb-section" id="capital-manageria">
+      <h2 class="pb-section-title" data-lang-fr="1. Le Capital Managérial Parental : Un levier pour l'éducation" data-lang-en="1. Parental Managerial Capital: A Lever for Education">1. Le Capital Managérial Parental : Un levier pour l'éducation</h2>
+
+      <p data-lang-fr="Cette étude s'intéresse à une question fondamentale : pourquoi certains ménages ne parviennent-ils pas à transformer leurs investissements éducatifs en apprentissage réel ? L'auteur introduit le concept de capital managérial parental, défini comme la capacité des parents à organiser le temps des enfants, à surveiller leurs efforts et à maintenir des routines favorisant l'apprentissage." data-lang-en="This study addresses a fundamental question: why do some households fail to translate their educational investments into actual learning? The author introduces the concept of parental managerial capital, defined as parents' ability to organize children's time, monitor their efforts, and maintain routines that foster learning.">
+        Cette étude s'intéresse à une question fondamentale : pourquoi certains ménages ne parviennent-ils pas à transformer leurs investissements éducatifs en apprentissage réel ? L'auteur introduit le concept de capital managérial parental, défini comme la capacité des parents à organiser le temps des enfants, à surveiller leurs efforts et à maintenir des routines favorisant l'apprentissage.
+      </p>
+
+      <p data-lang-fr="Au Bénin, l'étude révèle un écart important entre l'intention et l'action : si 90 % des parents considèrent qu'il est de leur responsabilité de suivre la scolarité, seule une minorité met en œuvre des routines concrètes comme le suivi des devoirs ou la vérification de l'assiduité." data-lang-en="In Benin, the study reveals a significant gap between intention and action: while 90% of parents believe it is their responsibility to monitor schooling, only a minority implement concrete routines such as homework follow-up or attendance verification.">
+        Au Bénin, l'étude révèle un écart important entre l'intention et l'action : si 90 % des parents considèrent qu'il est de leur responsabilité de suivre la scolarité, seule une minorité met en œuvre des routines concrètes comme le suivi des devoirs ou la vérification de l'assiduité.
+      </p>
+
+      <div class="pb-highlight-box">
+        <h4 data-lang-fr="L'idée centrale : le parent gestionnaire" data-lang-en="Central idea: The parent as manager">L'idée centrale : le parent gestionnaire</h4>
+        <p data-lang-fr="Le parent n'a pas besoin d'être instruit pour soutenir efficacement la réussite scolaire de son enfant ; il peut jouer un rôle déterminant en tant que gestionnaire du temps, de l'effort et de l'environnement de travail de l'enfant." data-lang-en="A parent does not need to be educated to effectively support their child's academic success; they can play a decisive role as a manager of the child's time, effort, and work environment.">
+          Le parent n'a pas besoin d'être instruit pour soutenir efficacement la réussite scolaire de son enfant ; il peut jouer un rôle déterminant en tant que gestionnaire du temps, de l'effort et de l'environnement de travail de l'enfant.
+        </p>
+      </div>
+    </section>
+
+    <!-- 2. INTERVENTION PAR COACHING TÉLÉPHONIQUE -->
+    <section class="pb-section" id="intervention-coaching">
+      <h2 class="pb-section-title" data-lang-fr="2. Une intervention innovante par coaching téléphonique" data-lang-en="2. Innovative telephone coaching intervention">2. Une intervention innovante par coaching téléphonique</h2>
+
+      <p data-lang-fr="Pour tester l'impact de ce capital managérial, un essai contrôlé randomisé a été mené auprès de 2 094 ménages dans 40 écoles secondaires publiques du Bénin. L'intervention a consisté en un programme de coaching téléphonique interactif d'une durée de quatre mois." data-lang-en="To test the impact of managerial capital, a randomized controlled trial was conducted with 2,094 households across 40 public secondary schools in Benin. The intervention consisted of a four-month interactive telephone coaching program.">
+        Pour tester l'impact de ce capital managérial, un essai contrôlé randomisé a été mené auprès de 2 094 ménages dans 40 écoles secondaires publiques du Bénin. L'intervention a consisté en un programme de coaching téléphonique interactif d'une durée de quatre mois.
+      </p>
+
+      <div class="pb-results-grid">
+        <div class="pb-result-card">
+          <div class="pb-result-number">10</div>
+          <div class="pb-result-text" data-lang-fr="Appels téléphoniques structurés reçus en moyenne par chaque parent" data-lang-en="Structured phone calls received on average by each parent">Appels téléphoniques structurés reçus en moyenne par chaque parent</div>
+        </div>
+      </div>
+
+      <p data-lang-fr="Ces appels ne fournissaient aucune aide scolaire directe ou bulletin de notes, mais proposaient une « technologie managériale » simple et adaptée aux parents, même analphabètes, pour structurer l'effort de l'enfant à la maison." data-lang-en="These calls provided no direct tutoring or grade reports, but offered simple 'managerial technology' adapted to parents, even illiterate ones, to structure the child's learning efforts at home.">
+        Ces appels ne fournissaient aucune aide scolaire directe ou bulletin de notes, mais proposaient une « technologie managériale » simple et adaptée aux parents, même analphabètes, pour structurer l'effort de l'enfant à la maison.
+      </p>
+    </section>
+
+    <!-- 3. RÉSULTATS SUR LES COMPORTEMENTS PARENTAUX -->
+    <section class="pb-section" id="comportements">
+      <h2 class="pb-section-title" data-lang-fr="3. Résultats sur les comportements parentaux" data-lang-en="3. Results on parental behaviors">3. Résultats sur les comportements parentaux</h2>
+
+      <p data-lang-fr="L'intervention a réussi à réduire de 17 % l'écart entre les intentions des parents et leurs actions réelles. Les principaux changements observés incluent :" data-lang-en="The intervention succeeded in reducing the gap between parents' intentions and actual actions by 17%. The main observed changes include:">
+        L'intervention a réussi à réduire de 17 % l'écart entre les intentions des parents et leurs actions réelles. Les principaux changements observés incluent :
+      </p>
+
+      <div class="pb-results-grid">
+        <div class="pb-result-card">
+          <div class="pb-result-number">11-14 pts</div>
+          <div class="pb-result-text" data-lang-fr="Augmentation : élèves dispensés de corvées ménagères pour étudier" data-lang-en="Increase: students exempted from household chores to study">Augmentation : élèves dispensés de corvées ménagères pour étudier</div>
+        </div>
+
+        <div class="pb-result-card">
+          <div class="pb-result-number">-11 %</div>
+          <div class="pb-result-text" data-lang-fr="Réduction de l'absentéisme scolaire" data-lang-en="School absenteeism reduction">Réduction de l'absentéisme scolaire</div>
+        </div>
+
+        <div class="pb-result-card">
+          <div class="pb-result-number">+6 pts</div>
+          <div class="pb-result-text" data-lang-fr="Amélioration : précision des parents dans la connaissance des résultats de l'enfant" data-lang-en="Improvement: parents' accuracy in knowing their child's results">Amélioration : précision des parents dans la connaissance des résultats de l'enfant</div>
+        </div>
+      </div>
+
+      <div class="pb-highlight-box">
+        <p data-lang-fr="Bien que le programme ne fournisse aucune note, les parents sont devenus plus précis dans leur connaissance des résultats de leur enfant, prouvant qu'un meilleur suivi génère naturellement de l'information." data-lang-en="Although the program provided no grades, parents became more accurate in their knowledge of their child's results, proving that better monitoring naturally generates information.">
+          Bien que le programme ne fournisse aucune note, les parents sont devenus plus précis dans leur connaissance des résultats de leur enfant, prouvant qu'un meilleur suivi génère naturellement de l'information.
+        </p>
+      </div>
+    </section>
+
+    <!-- 4. IMPACT SUR LES RÉSULTATS SCOLAIRES -->
+    <section class="pb-section" id="resultats-scolaires">
+      <h2 class="pb-section-title" data-lang-fr="4. Impact sur les résultats scolaires et la progression" data-lang-en="4. Impact on academic results and progression">4. Impact sur les résultats scolaires et la progression</h2>
+
+      <p data-lang-fr="L'amélioration de la gestion domestique s'est traduite par des gains académiques significatifs :" data-lang-en="Improved household management translated into significant academic gains:">
+        L'amélioration de la gestion domestique s'est traduite par des gains académiques significatifs :
+      </p>
+
+      <div class="pb-results-grid">
+        <div class="pb-result-card">
+          <div class="pb-result-number">+0,11 σ</div>
+          <div class="pb-result-text" data-lang-fr="Augmentation de la moyenne générale (GPA), avec gains particulièrement marqués en STEM" data-lang-en="Increase in GPA, with particularly strong gains in STEM">Augmentation de la moyenne générale (GPA), avec gains particulièrement marqués en STEM</div>
+        </div>
+
+        <div class="pb-result-card">
+          <div class="pb-result-number">+4 pts</div>
+          <div class="pb-result-text" data-lang-fr="Augmentation du taux de passage en classe supérieure" data-lang-en="Increase in grade progression rate">Augmentation du taux de passage en classe supérieure</div>
+        </div>
+
+        <div class="pb-result-card">
+          <div class="pb-result-number">+12 pts</div>
+          <div class="pb-result-text" data-lang-fr="Parmi les élèves initialement les plus en difficulté (quartile inférieur)" data-lang-en="Among initially struggling students (bottom quartile)">Parmi les élèves initialement les plus en difficulté (quartile inférieur)</div>
+        </div>
+      </div>
+
+      <div class="pb-highlight-box">
+        <p data-lang-fr="L'impact est massif pour les élèves initialement les plus en difficulté, dont le taux de réussite a bondi de 12 points de pourcentage." data-lang-en="The impact is massive for initially struggling students, whose success rate jumped by 12 percentage points.">
+          L'impact est massif pour les élèves initialement les plus en difficulté, dont le taux de réussite a bondi de 12 points de pourcentage.
+        </p>
+      </div>
+    </section>
+
+    <!-- 5. EFFETS À LONG TERME ET DÉCROCHAGE -->
+    <section class="pb-section" id="effets-long-terme">
+      <h2 class="pb-section-title" data-lang-fr="5. Effets à long terme et lutte contre le décrochage" data-lang-en="5. Long-term effects and dropout prevention">5. Effets à long terme et lutte contre le décrochage</h2>
+
+      <p data-lang-fr="Un an après la fin de l'intervention, les effets positifs persistent, surtout chez les plus vulnérables. Le taux de décrochage scolaire a chuté significativement :" data-lang-en="One year after the end of the intervention, positive effects persist, especially among the most vulnerable. The school dropout rate fell significantly:">
+        Un an après la fin de l'intervention, les effets positifs persistent, surtout chez les plus vulnérables. Le taux de décrochage scolaire a chuté significativement :
+      </p>
+
+      <div class="pb-results-grid">
+        <div class="pb-result-card">
+          <div class="pb-result-number">-34 %</div>
+          <div class="pb-result-text" data-lang-fr="Réduction du décrochage chez les enfants de parents analphabètes (baisse de 4,1 points)" data-lang-en="Dropout reduction for children of illiterate parents (4.1 percentage point decrease)">Réduction du décrochage chez les enfants de parents analphabètes (baisse de 4,1 points)</div>
+        </div>
+
+        <div class="pb-result-card">
+          <div class="pb-result-number">-3,6 pts</div>
+          <div class="pb-result-text" data-lang-fr="Réduction du décrochage chez les filles" data-lang-en="Dropout reduction for girls">Réduction du décrochage chez les filles</div>
+        </div>
+      </div>
+
+      <div class="pb-highlight-box">
+        <p data-lang-fr="Ces résultats suggèrent que l'intervention a durablement modifié les normes de gestion du temps au sein des foyers, créant ainsi un changement comportemental qui persiste au-delà du programme." data-lang-en="These results suggest that the intervention durably changed time management norms within households, creating behavioral change that persists beyond the program.">
+          Ces résultats suggèrent que l'intervention a durablement modifié les normes de gestion du temps au sein des foyers, créant ainsi un changement comportemental qui persiste au-delà du programme.
+        </p>
+      </div>
+    </section>
+
+    <!-- 6. RENTABILITÉ POUR LES POLITIQUES -->
+    <section class="pb-section" id="rentabilite">
+      <h2 class="pb-section-title" data-lang-fr="6. Une solution hautement rentable pour les politiques publiques" data-lang-en="6. A highly cost-effective solution for public policy">6. Une solution hautement rentable pour les politiques publiques</h2>
+
+      <p data-lang-fr="D'un point de vue économique, cette intervention est extrêmement efficace." data-lang-en="From an economic perspective, this intervention is extremely efficient.">
+        D'un point de vue économique, cette intervention est extrêmement efficace.
+      </p>
+
+      <div class="pb-results-grid">
+        <div class="pb-result-card">
+          <div class="pb-result-number">$9,50</div>
+          <div class="pb-result-text" data-lang-fr="Coût par élève" data-lang-en="Cost per student">Coût par élève</div>
+        </div>
+      </div>
+
+      <div class="pb-highlight-box">
+        <h4 data-lang-fr="Bilan économique" data-lang-en="Economic balance">Bilan économique</h4>
+        <p data-lang-fr="En évitant les redoublements, qui coûtent cher au système public, l'intervention génère des économies de ressources (enseignants, places en classe) supérieures à son coût de mise en œuvre." data-lang-en="By preventing grade repetition, which costs the public system dearly, the intervention generates resource savings (teachers, classroom seats) that exceed its implementation cost.">
+          En évitant les redoublements, qui coûtent cher au système public, l'intervention génère des économies de ressources (enseignants, places en classe) supérieures à son coût de mise en œuvre.
+        </p>
+        <p style="font-weight: 600; font-size: 1.05rem;" data-lang-fr="Chaque dollar investi permet d'éviter environ 2,3 dollars de coûts de redoublement" data-lang-en="Every dollar invested saves approximately $2.3 in grade repetition costs">
+          <i class="bi bi-check-circle"></i> Chaque dollar investi permet d'éviter environ 2,3 dollars de coûts de redoublement
+        </p>
+      </div>
+
+      <div class="pb-highlight-box">
+        <h4 data-lang-fr="Conclusion" data-lang-en="Conclusion">Conclusion</h4>
+        <p data-lang-fr="Cette intervention démontre que des solutions « légères » sur le plan comportemental peuvent compléter efficacement des politiques éducatives plus lourdes, tout en restant auto-financées pour les États et offrant un retour sur investissement massif." data-lang-en="This intervention demonstrates that 'light' behavioral solutions can effectively complement heavier educational policies, while remaining self-financing for states and offering massive return on investment.">
+          Cette intervention démontre que des solutions « légères » sur le plan comportemental peuvent compléter efficacement des politiques éducatives plus lourdes, tout en restant auto-financées pour les États et offrant un retour sur investissement massif.
+        </p>
+      </div>
+    </section>
+
+    <!-- REPORT DOWNLOAD SECTION -->
+    <div class="pb-download-section">
+      <h3 data-lang-fr="Accédez au rapport complet" data-lang-en="Access the full report">Accédez au rapport complet</h3>
+      <p data-lang-fr="Pour une analyse détaillée, données complètes et méthodologie approfondie :" data-lang-en="For detailed analysis, complete data, and thorough methodology:">Pour une analyse détaillée, données complètes et méthodologie approfondie :</p>
+      <a href="#" class="pb-btn pb-btn-primary-download">
+        <i class="bi bi-file-earmark-pdf"></i>
+        <span data-lang-fr="Télécharger le rapport complet (PDF)" data-lang-en="Download full report (PDF)">Télécharger le rapport complet (PDF)</span>
+      </a>
+    </div>
+
+    <!-- AUTHOR SECTION -->
+    <div class="pb-author">
+      <h4 data-lang-fr="À propos de l'auteur" data-lang-en="About the author">À propos de l'auteur</h4>
+      <p class="pb-author-name">Dr Mahounan Yedomiffi</p>
+      <p data-lang-fr="Enseignant-Chercheur en Sciences Économiques du Développement | Dartmouth College, États-Unis" data-lang-en="Assistant Professor in Development Economics | Dartmouth College, USA">Enseignant-Chercheur en Sciences Économiques du Développement | Dartmouth College, États-Unis</p>
+    </div>
+
+    <!-- NAVIGATION -->
+    <div class="pb-nav">
+      <a href="index.html" class="pb-btn pb-btn-outline">
+        <i class="bi bi-arrow-left"></i>
+        <span data-lang-fr="Retour à l'accueil" data-lang-en="Back to home">Retour à l'accueil</span>
+      </a>
+    </div>
+
+  </main>
+
+  <!-- ─── FOOTER ─── -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <span class="sitename">KEMT Center</span><span class="dot">.</span>
+          </a>
+          <p data-lang-fr="Centre international de recherche dédié à l'innovation sociale, aux politiques publiques fondées sur des preuves et au développement durable en Afrique."
+            data-lang-en="International research center dedicated to social innovation, evidence-based public policies, and sustainable development in Africa.">
+            Centre international de recherche dédié à l'innovation sociale, aux politiques publiques fondées sur des preuves et au développement durable en Afrique.</p>
+          <div class="footer-socials">
+            <a href="#" class="footer-social-btn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="#" class="footer-social-btn" aria-label="ResearchGate"><i class="bi bi-journal"></i></a>
+            <a href="#" class="footer-social-btn" aria-label="Twitter/X"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="footer-social-btn" aria-label="Email"><i class="bi bi-envelope"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-lang-fr="Éthique" data-lang-en="Ethics">Éthique</h4>
+          <ul>
+            <li><a href="irb-protocols.html" data-lang-fr="Protocoles IRB" data-lang-en="IRB Protocols">Protocoles IRB</a></li>
+            <li><a href="data-confidentiality.html" data-lang-fr="Confidentialité des données" data-lang-en="Data Confidentiality">Confidentialité des données</a></li>
+            <li><a href="fieldwork-standards.html" data-lang-fr="Normes de terrain" data-lang-en="Fieldwork Standards">Normes de terrain</a></li>
+            <li><a href="code-of-conduct.html" data-lang-fr="Code de déontologie" data-lang-en="Code of Conduct">Code de déontologie</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-lang-fr="Publications" data-lang-en="Publications">Publications</h4>
+          <ul>
+            <li><a href="working-papers.html" data-lang-fr="Documents de travail" data-lang-en="Working Papers">Documents de travail</a></li>
+            <li><a href="scientific-articles.html" data-lang-fr="Articles scientifiques" data-lang-en="Scientific Articles">Articles scientifiques</a></li>
+            <li><a href="policy-briefs.html" data-lang-fr="Notes de politique" data-lang-en="Policy Briefs">Notes de politique</a></li>
+            <li><a href="annual-reports.html" data-lang-fr="Rapports annuels" data-lang-en="Annual Reports">Rapports annuels</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-lang-fr="Actualités" data-lang-en="News">Actualités</h4>
+          <p style="font-size:14px;color:rgba(255,255,255,0.4);font-weight:300;margin-bottom:1rem;"
+            data-lang-fr="Abonnez-vous pour recevoir nos dernières publications et mises à jour."
+            data-lang-en="Subscribe to receive our latest publications and updates.">Abonnez-vous pour recevoir nos dernières publications et mises à jour.</p>
+          <div class="newsletter-form-footer">
+            <input type="email" placeholder="Votre adresse email" data-lang-placeholder-fr="Votre adresse email" data-lang-placeholder-en="Your email address">
+            <button type="button" data-lang-fr="S'abonner" data-lang-en="Subscribe">S'abonner</button>
+          </div>
+          <ul class="footer-contact-info" style="list-style:none;padding:0;">
+            <li><i class="bi bi-geo-alt"></i> <span data-lang-fr="Abomey-Calavi, TANKPE — Bénin" data-lang-en="Abomey-Calavi, TANKPE — Benin">Abomey-Calavi, TANKPE — Bénin</span></li>
+            <li><i class="bi bi-envelope"></i> research@kemtcenter.org</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span data-lang-fr="© 2025 KEMT Center for Development. Tous droits réservés." data-lang-en="© 2025 KEMT Center for Development. All rights reserved.">© 2025 KEMT Center for Development. Tous droits réservés.</span>
+        <div style="display:flex;gap:1.5rem;">
+          <a href="privacy-policy.html" data-lang-fr="Politique de confidentialité" data-lang-en="Privacy Policy">Politique de confidentialité</a>
+          <a href="terms-of-service.html" data-lang-fr="Conditions d'utilisation" data-lang-en="Terms of Service">Conditions d'utilisation</a>
+          <a href="accessibility.html" data-lang-fr="Accessibilité" data-lang-en="Accessibility">Accessibilité</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" id="scroll-top" aria-label="Retour en haut"><i class="bi bi-arrow-up-short"></i></a>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/lang-switcher.js"></script>
+
+  <script>
+    // ─── HEADER SCROLL ───
+    window.addEventListener('scroll', () => {
+      const h = document.getElementById('header');
+      if (window.scrollY > 50) h.classList.add('scrolled');
+      else h.classList.remove('scrolled');
+      const btn = document.getElementById('scroll-top');
+      if (window.scrollY > 400) btn.classList.add('visible');
+      else btn.classList.remove('visible');
+    });
+
+    // ─── MOBILE NAV ───
+    const mobileToggle = document.getElementById('mobileNavToggle');
+    mobileToggle.addEventListener('click', () => {
+      document.body.classList.toggle('mobile-nav-active');
+      const icon = mobileToggle.querySelector('i');
+      icon.classList.toggle('bi-list');
+      icon.classList.toggle('bi-x');
+    });
+    document.querySelectorAll('#navmenu .dropdown > a').forEach(a => {
+      a.addEventListener('click', (e) => {
+        if (document.body.classList.contains('mobile-nav-active')) {
+          e.preventDefault();
+          a.parentElement.classList.toggle('open');
+        }
+      });
+    });
+
+    // ─── SMOOTH SCROLL ───
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+      });
+    });
+  </script>
+</body>
+</html>

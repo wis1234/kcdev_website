@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Protocoles IRB | KEMT Center</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <style>
+    :root {
+      --navy: #0a1628;
+      --gold: #c9a84c;
+      --gold-light: #e8c97a;
+      --gold-pale: #f5e9c8;
+      --gray-light: #F5F3F0;
+      --gray-dark: #4A4A4A;
+      --white: #FFFFFF;
+      --font-mono: 'Courier New', monospace;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.7;
+      color: var(--gray-dark);
+      background: var(--white);
+    }
+
+    .page-header {
+      background: linear-gradient(135deg, var(--navy) 0%, #0d1f35 100%);
+      color: var(--white);
+      padding: 3.5rem 2rem;
+      text-align: center;
+    }
+
+    .page-header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin: 0 0 1rem 0;
+      color: var(--white);
+    }
+
+    .page-header p {
+      font-size: 1.1rem;
+      opacity: 0.95;
+    }
+
+    .content-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2.5rem 2rem;
+    }
+
+    .section {
+      margin-bottom: 2rem;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      color: var(--navy);
+      margin-bottom: 1rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 3px solid var(--gold);
+      font-weight: 700;
+    }
+
+    .section p {
+      margin-bottom: 0.9rem;
+      text-align: justify;
+    }
+
+    .highlight-box {
+      background: #f9f8f6;
+      border-left: 4px solid var(--gold);
+      padding: 1.5rem;
+      margin: 1rem 0;
+      border-radius: 4px;
+    }
+
+    .highlight-box h4 {
+      color: var(--navy);
+      margin-top: 0;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .list-item {
+      margin-bottom: 0.8rem;
+      padding-left: 1.5rem;
+    }
+
+    .list-item::before {
+      content: "▸";
+      color: var(--gold);
+      font-weight: bold;
+      margin-left: -1.5rem;
+      margin-right: 0.8rem;
+    }
+
+    @media (max-width: 768px) {
+      .page-header h1 {
+        font-size: 1.6rem;
+      }
+      .page-header {
+        padding: 2.5rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header id="header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <span class="sitename">KEMT Center</span><span class="dot">.</span>
+      </a>
+      <nav id="navmenu">
+        <ul>
+          <li><a href="index.html" data-lang-fr="Accueil" data-lang-en="Home">Accueil</a></li>
+          <li class="dropdown"><a href="#" data-lang-fr="Institution" data-lang-en="Institution">Institution</a><ul><li><a href="about.html" data-lang-fr="À propos" data-lang-en="About">À propos</a></li><li><a href="team.html" data-lang-fr="Équipe" data-lang-en="Team">Équipe</a></li></ul></li>
+          <li class="dropdown"><a href="#" data-lang-fr="Programmes" data-lang-en="Programs">Programmes</a><ul><li><a href="programs.html" data-lang-fr="Projets" data-lang-en="Projects">Projets</a></li><li><a href="publications.html" data-lang-fr="Publications" data-lang-en="Publications">Publications</a></li></ul></li>
+          <li><a href="resources.html" data-lang-fr="Ressources" data-lang-en="Resources">Ressources</a></li>
+          <li><a href="contact.html" data-lang-fr="Contact" data-lang-en="Contact">Contact</a></li>
+          <li class="mobile-only-action"><a href="member.html" class="btn-researcher-mobile"><span data-lang-fr="Espace chercheur" data-lang-en="Researcher portal">Espace chercheur</span></a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a href="member.html" class="btn-researcher" data-lang-fr="Espace chercheur" data-lang-en="Researcher portal">Espace chercheur</a>
+        <div class="lang-switcher" role="navigation"><div class="lang-select-wrapper"><button class="lang-select" type="button"><img src="assets/img/flags/fr.svg" alt="Français" class="current-flag"></button><ul class="lang-select-menu" role="listbox"><li><button type="button" class="lang-option active" data-lang-switch="fr"><img src="assets/img/flags/fr.svg" class="flag-icon me-2" alt="Français">Français</button></li><li><button type="button" class="lang-option" data-lang-switch="en"><img src="assets/img/flags/us.svg" class="flag-icon me-2" alt="English">English</button></li></ul></div></div>
+      </div>
+      <button class="mobile-nav-toggle" id="mobileNavToggle"><i class="bi bi-list"></i></button>
+    </div>
+  </header>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <h1 data-lang-fr="Protocoles et Approbations IRB" data-lang-en="IRB Protocols and Approvals">Protocoles et Approbations IRB</h1>
+    <p data-lang-fr="Normes éthiques rigoreuses et conformité internationale" data-lang-en="Rigorous ethical standards and international compliance">Normes éthiques rigoreuses et conformité internationale</p>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <main class="content-container">
+    <section class="section">
+      <h2 class="section-title" data-lang-fr="Engagements Éthiques" data-lang-en="Ethical Commitments">Engagements Éthiques</h2>
+      <p data-lang-fr="Le KEMT Center s'engage à respecter les plus hautes normes éthiques dans tous ses travaux de recherche. Tous nos protocoles de recherche sont soumis à des examens rigoureux par les comités d'éthique de la recherche (IRB) avant leur mise en œuvre." data-lang-en="KEMT Center is committed to maintaining the highest ethical standards in all research activities. All research protocols are subject to rigorous review by research ethics committees (IRB) before implementation.">Le KEMT Center s'engage à respecter les plus hautes normes éthiques dans tous ses travaux de recherche. Tous nos protocoles de recherche sont soumis à des examens rigoureux par les comités d'éthique de la recherche (IRB) avant leur mise en œuvre.</p>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title" data-lang-fr="Approches Rigoureuses" data-lang-en="Rigorous Approaches">Approches Rigoureuses</h2>
+      <div class="highlight-box">
+        <h4 data-lang-fr="Consentement Éclairé" data-lang-en="Informed Consent">Consentement Éclairé</h4>
+        <p data-lang-fr="Tous les participants recevront une explication complète des objectifs, procédures et risques potentiels avant de participer à l'étude." data-lang-en="All participants receive comprehensive information about study objectives, procedures, and potential risks before participation.">Tous les participants recevront une explication complète des objectifs, procédures et risques potentiels avant de participer à l'étude.</p>
+      </div>
+
+      <div class="highlight-box">
+        <h4 data-lang-fr="Protection de la Confidentialité" data-lang-en="Confidentiality Protection">Protection de la Confidentialité</h4>
+        <p data-lang-fr="Toutes les données personnelles sont traitées de manière confidentielle et sécurisée selon les réglementations applicables." data-lang-en="All personal data is handled confidentially and securely in compliance with applicable regulations.">Toutes les données personnelles sont traitées de manière confidentielle et sécurisée selon les réglementations applicables.</p>
+      </div>
+
+      <div class="highlight-box">
+        <h4 data-lang-fr="Minimisation des Risques" data-lang-en="Risk Minimization">Minimisation des Risques</h4>
+        <p data-lang-fr="Les protocoles sont conçus pour minimiser tout risque ou préjudice potentiel pour les participants." data-lang-en="Protocols are designed to minimize any potential risk or harm to participants.">Les protocoles sont conçus pour minimiser tout risque ou préjudice potentiel pour les participants.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title" data-lang-fr="Examens et Approbations" data-lang-en="Reviews and Approvals">Examens et Approbations</h2>
+      <p data-lang-fr="Chaque projet de recherche est examiné par des comités d'éthique compétents. Nos travaux ont reçu l'approbation de:" data-lang-en="Each research project is reviewed by appropriate ethics committees. Our work has received approval from:">Chaque projet de recherche est examiné par des comités d'éthique compétents. Nos travaux ont reçu l'approbation de:</p>
+      <div class="list-item">IRBs locales au Bénin</div>
+      <div class="list-item">Institutions partenaires internationales</div>
+      <div class="list-item">Autorités de réglementation nationales</div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title" data-lang-fr="Documentation" data-lang-en="Documentation">Documentation</h2>
+      <p data-lang-fr="Pour plus de détails sur nos protocoles éthiques, veuillez contacter:" data-lang-en="For more details on our ethical protocols, please contact:">Pour plus de détails sur nos protocoles éthiques, veuillez contacter:</p>
+      <p style="margin-top: 1rem;"><strong data-lang-fr="Email:" data-lang-en="Email:">Email:</strong> research@kemtcenter.org</p>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo"><span class="sitename">KEMT Center</span><span class="dot">.</span></a>
+          <p data-lang-fr="Centre international de recherche" data-lang-en="International research center">Centre international de recherche dédié à l'innovation sociale et au développement durable.</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-lang-fr="Éthique" data-lang-en="Ethics">Éthique</h4>
+          <ul>
+            <li><a href="irb-protocols.html" data-lang-fr="Protocoles IRB" data-lang-en="IRB Protocols">Protocoles IRB</a></li>
+            <li><a href="data-confidentiality.html" data-lang-fr="Confidentialité" data-lang-en="Confidentiality">Confidentialité</a></li>
+            <li><a href="fieldwork-standards.html" data-lang-fr="Normes de terrain" data-lang-en="Fieldwork Standards">Normes de terrain</a></li>
+            <li><a href="code-of-conduct.html" data-lang-fr="Code de déontologie" data-lang-en="Code of Conduct">Code de déontologie</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-lang-fr="Publications" data-lang-en="Publications">Publications</h4>
+          <ul>
+            <li><a href="working-papers.html" data-lang-fr="Working Papers" data-lang-en="Working Papers">Working Papers</a></li>
+            <li><a href="scientific-articles.html" data-lang-fr="Articles" data-lang-en="Articles">Articles</a></li>
+            <li><a href="policy-briefs.html" data-lang-fr="Policy Briefs" data-lang-en="Policy Briefs">Policy Briefs</a></li>
+            <li><a href="annual-reports.html" data-lang-fr="Rapports" data-lang-en="Reports">Rapports</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-lang-fr="Contact" data-lang-en="Contact">Contact</h4>
+          <p style="font-size:14px;">research@kemtcenter.org</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span data-lang-fr="© 2025 KEMT Center. Tous droits réservés." data-lang-en="© 2025 KEMT Center. All rights reserved.">© 2025 KEMT Center. Tous droits réservés.</span>
+        <div style="display:flex;gap:1.5rem;"><a href="privacy-policy.html" data-lang-fr="Confidentialité" data-lang-en="Privacy">Confidentialité</a><a href="terms-of-service.html" data-lang-fr="Conditions" data-lang-en="Terms">Conditions</a><a href="accessibility.html" data-lang-fr="Accessibilité" data-lang-en="Accessibility">Accessibilité</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" id="scroll-top" aria-label="Top"><i class="bi bi-arrow-up-short"></i></a>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/lang-switcher.js"></script>
+  <script>
+    window.addEventListener('scroll', () => {
+      const h = document.getElementById('header');
+      if (window.scrollY > 50) h.classList.add('scrolled'); else h.classList.remove('scrolled');
+      const btn = document.getElementById('scroll-top');
+      if (window.scrollY > 400) btn.classList.add('visible'); else btn.classList.remove('visible');
+    });
+    const mobileToggle = document.getElementById('mobileNavToggle');
+    mobileToggle?.addEventListener('click', () => {
+      document.body.classList.toggle('mobile-nav-active');
+      const icon = mobileToggle.querySelector('i');
+      icon.classList.toggle('bi-list'); icon.classList.toggle('bi-x');
+    });
+  </script>
+</body>
+</html>
