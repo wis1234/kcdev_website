@@ -28,197 +28,46 @@
   <link href="assets/css/main.css" rel="stylesheet">
 
   <style type="text/css" media="all">
-    /* Harmonized Theme Colors and Custom Typography */
-    :root {
-      --gold-mid: #b8933b;
-    }
-    
-    body {
-      font-family: var(--font-body);
-      background: var(--gray-100);
-      color: var(--navy);
-    }
-    
-    .inner-title {
-      font-family: var(--font-display);
-      font-size: 2.2rem;
-      font-weight: 700;
-      color: var(--navy);
-    }
+    :root { --gold-mid: #b8933b; }
+    body { font-family: var(--font-body); background: var(--gray-100); color: var(--navy); }
+    .inner-title { font-family: var(--font-display); font-size: 2.2rem; font-weight: 700; color: var(--navy); }
 
-    /* Page Title styled similar to partners hero for absolute harmony */
     .page-title {
       background: linear-gradient(rgba(10, 22, 40, 0.88), rgba(10, 22, 40, 0.88)), url('assets/img/hero-carousel/hero-carousel-1.jpg') center/cover no-repeat !important;
       padding: 80px 0 !important;
       border-bottom: 2px solid rgba(201, 168, 76, 0.3) !important;
       color: var(--white) !important;
     }
-    .page-title h1 {
-      font-family: var(--font-display) !important;
-      font-size: 2.8rem !important;
-      font-weight: 700 !important;
-      color: var(--white) !important;
-      margin: 0 0 10px 0 !important;
-    }
-    .page-title .breadcrumbs ol {
-      font-family: var(--font-mono) !important;
-      font-size: 0.8rem !important;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-    .page-title .breadcrumbs ol li a {
-      color: rgba(255, 255, 255, 0.7) !important;
-      transition: color var(--transition);
-    }
-    .page-title .breadcrumbs ol li a:hover {
-      color: var(--gold-light) !important;
-    }
-    .page-title .breadcrumbs ol li.current {
-      color: var(--gold) !important;
-    }
-    .page-title .breadcrumbs ol li+li::before {
-      color: rgba(255, 255, 255, 0.3) !important;
-    }
+    .page-title h1 { font-family: var(--font-display) !important; font-size: 2.8rem !important; font-weight: 700 !important; color: var(--white) !important; margin: 0 0 10px 0 !important; }
+    .page-title .breadcrumbs ol { font-family: var(--font-mono) !important; font-size: 0.8rem !important; text-transform: uppercase; letter-spacing: 0.05em; }
+    .page-title .breadcrumbs ol li a { color: rgba(255, 255, 255, 0.7) !important; transition: color var(--transition); }
+    .page-title .breadcrumbs ol li a:hover { color: var(--gold-light) !important; }
+    .page-title .breadcrumbs ol li.current { color: var(--gold) !important; }
+    .page-title .breadcrumbs ol li+li::before { color: rgba(255, 255, 255, 0.3) !important; }
 
-    .text-gold-mid {
-      color: var(--gold-mid) !important;
-    }
-    .bg-gold-pale {
-      background-color: var(--gold-pale) !important;
-    }
-    .bg-gold {
-      background-color: var(--gold) !important;
-    }
+    .text-gold-mid { color: var(--gold-mid) !important; }
+    .bg-gold-pale { background-color: var(--gold-pale) !important; }
+    .bg-gold { background-color: var(--gold) !important; }
 
-    /* Premium Custom Modal Social Buttons */
-    .modal-social-btn {
-      width: 36px;
-      height: 36px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      border: 1px solid var(--gold);
-      color: var(--navy);
-      background: transparent;
-      transition: all var(--transition);
-      text-decoration: none;
-    }
-    .modal-social-btn:hover {
-      background: var(--navy);
-      color: var(--gold);
-      border-color: var(--navy);
-      transform: translateY(-2px);
-    }
+    .modal-social-btn { width: 36px; height: 36px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; border: 1px solid var(--gold); color: var(--navy); background: transparent; transition: all var(--transition); text-decoration: none; }
+    .modal-social-btn:hover { background: var(--navy); color: var(--gold); border-color: var(--navy); transform: translateY(-2px); }
 
-    /* Team Cards styled similar to partners card/index cards */
-    #team {
-      background: var(--white);
-      padding: 6rem 0;
-      border-top: 1px solid var(--gray-200);
-      border-bottom: 1px solid var(--gray-200);
-    }
-    .team-member-card {
-      background: var(--white);
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--gray-200);
-      padding: 2.5rem 1.5rem;
-      text-align: center;
-      transition: all var(--transition);
-      cursor: pointer;
-      box-shadow: var(--shadow-sm);
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .team-member-card:hover {
-      transform: translateY(-8px);
-      border-color: var(--gold);
-      box-shadow: var(--shadow-lg);
-    }
-    .member-avatar-wrapper {
-      position: relative;
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      overflow: hidden;
-      margin-bottom: 1.5rem;
-      border: 3px solid var(--white);
-      box-shadow: 0 4px 15px rgba(10, 22, 40, 0.15);
-      transition: all var(--transition);
-    }
-    .team-member-card:hover .member-avatar-wrapper {
-      border-color: var(--gold);
-      transform: scale(1.03);
-    }
-    .member-avatar-wrapper img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-    }
-    .member-name {
-      font-family: var(--font-display);
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 0.35rem;
-    }
-    .member-role {
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--gold-mid);
-      font-weight: 600;
-      margin-bottom: 1.2rem;
-    }
-    .view-profile-btn {
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--navy);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      border-bottom: 1px solid var(--gold);
-      padding-bottom: 2px;
-      transition: all var(--transition);
-      margin-top: auto;
-    }
-    .team-member-card:hover .view-profile-btn {
-      color: var(--gold-mid);
-      border-bottom-color: var(--navy);
-    }
+    #team { background: var(--white); padding: 6rem 0; border-top: 1px solid var(--gray-200); border-bottom: 1px solid var(--gray-200); }
+    .team-member-card { background: var(--white); border-radius: var(--radius-lg); border: 1px solid var(--gray-200); padding: 2.5rem 1.5rem; text-align: center; transition: all var(--transition); cursor: pointer; box-shadow: var(--shadow-sm); height: 100%; display: flex; flex-direction: column; align-items: center; }
+    .team-member-card:hover { transform: translateY(-8px); border-color: var(--gold); box-shadow: var(--shadow-lg); }
+    .member-avatar-wrapper { position: relative; width: 140px; height: 140px; border-radius: 50%; overflow: hidden; margin-bottom: 1.5rem; border: 3px solid var(--white); box-shadow: 0 4px 15px rgba(10, 22, 40, 0.15); transition: all var(--transition); }
+    .team-member-card:hover .member-avatar-wrapper { border-color: var(--gold); transform: scale(1.03); }
+    .member-avatar-wrapper img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+    .member-name { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--navy); margin-bottom: 0.35rem; }
+    .member-role { font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold-mid); font-weight: 600; margin-bottom: 1.2rem; }
+    .view-profile-btn { font-size: 0.8rem; font-weight: 600; color: var(--navy); text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--gold); padding-bottom: 2px; transition: all var(--transition); margin-top: auto; }
+    .team-member-card:hover .view-profile-btn { color: var(--gold-mid); border-bottom-color: var(--navy); }
 
-    /* Premium Custom Modal Styling */
-    .modal-content {
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      border: 1px solid var(--gold);
-      box-shadow: var(--shadow-lg);
-    }
-    .modal-header {
-      background: var(--navy);
-      color: var(--white);
-      border-bottom: 2px solid var(--gold);
-    }
-    .modal-header .btn-close {
-      filter: invert(1) grayscale(1) brightness(2);
-    }
-    .modal-body {
-      padding: 3rem 2rem;
-    }
-    .modal-avatar {
-      width: 100%;
-      max-width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid var(--gold);
-      box-shadow: var(--shadow-md);
-      margin: 0 auto;
-      display: block;
-    }
+    .modal-content { border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--gold); box-shadow: var(--shadow-lg); }
+    .modal-header { background: var(--navy); color: var(--white); border-bottom: 2px solid var(--gold); }
+    .modal-header .btn-close { filter: invert(1) grayscale(1) brightness(2); }
+    .modal-body { padding: 3rem 2rem; }
+    .modal-avatar { width: 100%; max-width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 3px solid var(--gold); box-shadow: var(--shadow-md); margin: 0 auto; display: block; }
   </style>
 
 </head>
@@ -262,7 +111,7 @@
       <div class="container">
         <div class="row g-4 justify-content-center">
 
-          <!-- Member: Dr Bénédicte ATCHADE -->
+          <!-- Member 1: Dr Bénédicte ATCHADE -->
           <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="team-member-card" data-bs-toggle="modal" data-bs-target="#modal-benedicte">
               <div class="member-avatar-wrapper">
@@ -271,7 +120,7 @@
               <h4 class="member-name">Dr Bénédicte ATCHADE</h4>
               <p class="member-role">
                 <span data-lang="fr">Directrice de la Recherche et de l'Apprentissage</span>
-                <span data-lang="en" class="d-none">Research & Learning Director</span>
+                <span data-lang="en" class="d-none">Research &amp; Learning Director</span>
               </p>
               <span class="view-profile-btn">
                 <span data-lang="fr">Voir Profil</span>
@@ -298,7 +147,7 @@
             </div>
           </div>
 
-          <!-- Member: Léonie KOUMASSA -->
+          <!-- Member 3: Léonie KOUMASSA -->
           <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="250">
             <div class="team-member-card" data-bs-toggle="modal" data-bs-target="#modal-leonie">
               <div class="member-avatar-wrapper">
@@ -316,7 +165,7 @@
             </div>
           </div>
 
-          <!-- Member 3: Ronaldo AGBOHOU -->
+          <!-- Member 4: Ronaldo AGBOHOU -->
           <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
             <div class="team-member-card" data-bs-toggle="modal" data-bs-target="#modal-ronaldo">
               <div class="member-avatar-wrapper">
@@ -334,16 +183,16 @@
             </div>
           </div>
 
-          <!-- Member 4: Sègnon AKOHOU GBACADJA -->
+          <!-- Member 5: Sègnon AKOHOU GBACADA -->
           <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
             <div class="team-member-card" data-bs-toggle="modal" data-bs-target="#modal-segnon">
               <div class="member-avatar-wrapper">
-                <img src="assets/img/team/segnon.jpg" alt="Sègnon AKOHOU GBACADJA">
+                <img src="assets/img/team/segnon.jpg" alt="Sègnon AKOHOU GBACADA">
               </div>
-              <h4 class="member-name">Sègnon AKOHOU</h4>
+              <h4 class="member-name">Sègnon AKOHOU GBACADA</h4>
               <p class="member-role">
-                <span data-lang="fr">Responsable des Opérations</span>
-                <span data-lang="en" class="d-none">Operations Manager</span>
+                <span data-lang="fr">Directrice Exécutive</span>
+                <span data-lang="en" class="d-none">Executive Director</span>
               </p>
               <span class="view-profile-btn">
                 <span data-lang="fr">Voir Profil</span>
@@ -352,7 +201,7 @@
             </div>
           </div>
 
-          <!-- Member 5: Hugues Irénée Djima -->
+          <!-- Member 6: Hugues I. Djima -->
           <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
             <div class="team-member-card" data-bs-toggle="modal" data-bs-target="#modal-hugues">
               <div class="member-avatar-wrapper">
@@ -370,7 +219,7 @@
             </div>
           </div>
 
-          <!-- Member 6: Danfi David -->
+          <!-- Member 7: Danfi David -->
           <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
             <div class="team-member-card" data-bs-toggle="modal" data-bs-target="#modal-david">
               <div class="member-avatar-wrapper">
@@ -388,7 +237,7 @@
             </div>
           </div>
 
-          <!-- Member 7: Charles KOUCHOKEHO -->
+          <!-- Member 8: Charles KOUCHOKEHO -->
           <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="700">
             <div class="team-member-card" data-bs-toggle="modal" data-bs-target="#modal-charles">
               <div class="member-avatar-wrapper">
@@ -406,7 +255,7 @@
             </div>
           </div>
 
-          <!-- Member 8: Lucien Allosse -->
+          <!-- Member 9: Lucien Allosse -->
           <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="800">
             <div class="team-member-card" data-bs-toggle="modal" data-bs-target="#modal-lucien">
               <div class="member-avatar-wrapper">
@@ -424,15 +273,15 @@
             </div>
           </div>
 
-          <!-- Member 1: Keith AKOHOU GBACADA -->
-          <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="team-member-card" data-bs-toggle="modal" data-bs-target="#modal-moustapha">
+          <!-- Member 10: Keith AKOHOU GBACADA -->
+          <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="900">
+            <div class="team-member-card" data-bs-toggle="modal" data-bs-target="#modal-keith">
               <div class="member-avatar-wrapper">
                 <img src="assets/img/team/keith.png" alt="Keith AKOHOU GBACADA">
               </div>
               <h4 class="member-name">Keith AKOHOU GBACADA</h4>
               <p class="member-role">
-                <span data-lang="fr">Secretaire strategique</span>
+                <span data-lang="fr">Secrétaire Stratégique</span>
                 <span data-lang="en" class="d-none">Strategic Secretary</span>
               </p>
               <span class="view-profile-btn">
@@ -448,9 +297,9 @@
 
   </main>
 
-  <!-- Team Profile Modals (Bilingual & High Fidelity) -->
+  <!-- Team Profile Modals (Bilingual) -->
 
-  <!-- Modal: Dr Bénédicte ATCHADE -->
+  <!-- Modal 1: Dr Bénédicte ATCHADE -->
   <div class="modal fade" id="modal-benedicte" tabindex="-1" aria-labelledby="modalBenedicteLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
       <div class="modal-content border-0">
@@ -470,54 +319,16 @@
               <h3 class="fw-bold font-display text-navy mb-1">Dr Bénédicte ATCHADE</h3>
               <p class="text-gold-mid fw-bold font-mono mb-4 text-uppercase" style="font-size: 0.85rem; letter-spacing:0.08em;">
                 <span data-lang="fr">Directrice de la Recherche et de l'Apprentissage</span>
-                <span data-lang="en" class="d-none">Research & Learning Director</span>
+                <span data-lang="en" class="d-none">Research &amp; Learning Director</span>
               </p>
               <div class="mb-4">
-                <h5 class="fw-bold text-navy mb-2" style="font-size: 1rem; border-left: 3px solid var(--gold); padding-left: 8px;">Biography</h5>
+                <h5 class="fw-bold text-navy mb-2" style="font-size: 1rem; border-left: 3px solid var(--gold); padding-left: 8px;">
+                  <span data-lang="fr">Biographie</span>
+                  <span data-lang="en" class="d-none">Biography</span>
+                </h5>
                 <p class="text-muted lh-lg" style="font-size: 0.95rem; font-weight: 300;">
                   <span data-lang="fr">Dr Bénédicte ATCHADE dirige la stratégie scientifique du KEMT Center et pilote les activités de recherche et d'apprentissage, afin de transformer les résultats des études en enseignements utiles pour les politiques éducatives.</span>
                   <span data-lang="en" class="d-none">Dr Bénédicte ATCHADE leads the scientific strategy of KEMT Center and oversees its research and learning activities, turning study findings into actionable lessons for education policy.</span>
-                </p>
-              </div>
-              <div class="d-flex gap-3">
-                <a href="#" class="modal-social-btn"><i class="bi bi-linkedin"></i></a>
-                <a href="#" class="modal-social-btn"><i class="bi bi-google"></i></a>
-                <a href="#" class="modal-social-btn"><i class="bi bi-envelope"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal: Léonie KOUMASSA -->
-  <div class="modal fade" id="modal-leonie" tabindex="-1" aria-labelledby="modalLeonieLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-      <div class="modal-content border-0">
-        <div class="modal-header border-0 py-3">
-          <h5 class="modal-title fw-bold text-white font-display" id="modalLeonieLabel">
-            <span data-lang="fr">Profil KEMT - Terrain</span>
-            <span data-lang="en" class="d-none">KEMT Profile - Field</span>
-          </h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body bg-white text-navy">
-          <div class="row align-items-center g-4">
-            <div class="col-md-4 text-center">
-              <img src="assets/img/team/leonie.jpeg" class="modal-avatar" alt="Léonie KOUMASSA">
-            </div>
-            <div class="col-md-8">
-              <h3 class="fw-bold font-display text-navy mb-1">Léonie KOUMASSA</h3>
-              <p class="text-gold-mid fw-bold font-mono mb-4 text-uppercase" style="font-size: 0.85rem; letter-spacing:0.08em;">
-                <span data-lang="fr">Coordinatrice de Terrain</span>
-                <span data-lang="en" class="d-none">Field Coordinator</span>
-              </p>
-              <div class="mb-4">
-                <h5 class="fw-bold text-navy mb-2" style="font-size: 1rem; border-left: 3px solid var(--gold); padding-left: 8px;">Biography</h5>
-                <p class="text-muted lh-lg" style="font-size: 0.95rem; font-weight: 300;">
-                  <span data-lang="fr">Léonie KOUMASSA coordonne les activités de terrain du KEMT Center : organisation des équipes d'enquêteurs, suivi de la collecte de données et relation avec les écoles et communautés partenaires.</span>
-                  <span data-lang="en" class="d-none">Léonie KOUMASSA coordinates KEMT Center's field activities: organizing enumerator teams, monitoring data collection, and liaising with partner schools and communities.</span>
                 </p>
               </div>
               <div class="d-flex gap-3">
@@ -555,7 +366,10 @@
                 <span data-lang="en" class="d-none">Research Manager</span>
               </p>
               <div class="mb-4">
-                <h5 class="fw-bold text-navy mb-2" style="font-size: 1rem; border-left: 3px solid var(--gold); padding-left: 8px;">Biography</h5>
+                <h5 class="fw-bold text-navy mb-2" style="font-size: 1rem; border-left: 3px solid var(--gold); padding-left: 8px;">
+                  <span data-lang="fr">Biographie</span>
+                  <span data-lang="en" class="d-none">Biography</span>
+                </h5>
                 <p class="text-muted lh-lg" style="font-size: 0.95rem; font-weight: 300;">
                   <span data-lang="fr">Elodie LAWIN est spécialiste des sciences de l'éducation et de la parité. Ses recherches se concentrent sur la sociologie de l'éducation en milieu rural et la levée des normes de genre freinant le parcours scientifique des jeunes filles.</span>
                   <span data-lang="en" class="d-none">Elodie LAWIN is a specialist in education systems and gender balance. Her research centers on rural sociology and eliminating patriarchal norms limiting girls' trajectories in scientific and mathematics paths.</span>
@@ -573,7 +387,51 @@
     </div>
   </div>
 
-  <!-- Modal 3: Ronaldo AGBOHOU -->
+  <!-- Modal 3: Léonie KOUMASSA -->
+  <div class="modal fade" id="modal-leonie" tabindex="-1" aria-labelledby="modalLeonieLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0">
+        <div class="modal-header border-0 py-3">
+          <h5 class="modal-title fw-bold text-white font-display" id="modalLeonieLabel">
+            <span data-lang="fr">Profil KEMT - Terrain</span>
+            <span data-lang="en" class="d-none">KEMT Profile - Field</span>
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body bg-white text-navy">
+          <div class="row align-items-center g-4">
+            <div class="col-md-4 text-center">
+              <img src="assets/img/team/leonie.jpeg" class="modal-avatar" alt="Léonie KOUMASSA">
+            </div>
+            <div class="col-md-8">
+              <h3 class="fw-bold font-display text-navy mb-1">Léonie KOUMASSA</h3>
+              <p class="text-gold-mid fw-bold font-mono mb-4 text-uppercase" style="font-size: 0.85rem; letter-spacing:0.08em;">
+                <span data-lang="fr">Coordinatrice de Terrain</span>
+                <span data-lang="en" class="d-none">Field Coordinator</span>
+              </p>
+              <div class="mb-4">
+                <h5 class="fw-bold text-navy mb-2" style="font-size: 1rem; border-left: 3px solid var(--gold); padding-left: 8px;">
+                  <span data-lang="fr">Biographie</span>
+                  <span data-lang="en" class="d-none">Biography</span>
+                </h5>
+                <p class="text-muted lh-lg" style="font-size: 0.95rem; font-weight: 300;">
+                  <span data-lang="fr">Léonie KOUMASSA coordonne les activités de terrain du KEMT Center : organisation des équipes d'enquêteurs, suivi de la collecte de données et relation avec les écoles et communautés partenaires.</span>
+                  <span data-lang="en" class="d-none">Léonie KOUMASSA coordinates KEMT Center's field activities: organizing enumerator teams, monitoring data collection, and liaising with partner schools and communities.</span>
+                </p>
+              </div>
+              <div class="d-flex gap-3">
+                <a href="#" class="modal-social-btn"><i class="bi bi-linkedin"></i></a>
+                <a href="#" class="modal-social-btn"><i class="bi bi-google"></i></a>
+                <a href="#" class="modal-social-btn"><i class="bi bi-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 4: Ronaldo AGBOHOU -->
   <div class="modal fade" id="modal-ronaldo" tabindex="-1" aria-labelledby="modalRonaldoLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
       <div class="modal-content border-0">
@@ -596,7 +454,10 @@
                 <span data-lang="en" class="d-none">Research Assistant</span>
               </p>
               <div class="mb-4">
-                <h5 class="fw-bold text-navy mb-2" style="font-size: 1rem; border-left: 3px solid var(--gold); padding-left: 8px;">Biography</h5>
+                <h5 class="fw-bold text-navy mb-2" style="font-size: 1rem; border-left: 3px solid var(--gold); padding-left: 8px;">
+                  <span data-lang="fr">Biographie</span>
+                  <span data-lang="en" class="d-none">Biography</span>
+                </h5>
                 <p class="text-muted lh-lg" style="font-size: 0.95rem; font-weight: 300;">
                   <span data-lang="fr">Ronaldo AGBOHOU gère le traitement des données et les flux statistiques. Il est responsable de la programmation des formulaires d'enquête numériques et de l'intégrité des bases de données collectées par l'équipe.</span>
                   <span data-lang="en" class="d-none">Ronaldo AGBOHOU administers institutional statistical workflows and database designs. He programs electronic data capture templates and manages real-time fieldwork consistency audits.</span>
@@ -614,33 +475,36 @@
     </div>
   </div>
 
-  <!-- Modal 4: Sègnon AKOHOU GBACADJA -->
+  <!-- Modal 5: Sègnon AKOHOU GBACADA -->
   <div class="modal fade" id="modal-segnon" tabindex="-1" aria-labelledby="modalSegnonLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
       <div class="modal-content border-0">
         <div class="modal-header border-0 py-3">
           <h5 class="modal-title fw-bold text-white font-display" id="modalSegnonLabel">
-            <span data-lang="fr">Profil KEMT - Opérations</span>
-            <span data-lang="en" class="d-none">KEMT Profile - Operations</span>
+            <span data-lang="fr">Profil KEMT - Direction Exécutive</span>
+            <span data-lang="en" class="d-none">KEMT Profile - Executive Director</span>
           </h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body bg-white text-navy">
           <div class="row align-items-center g-4">
             <div class="col-md-4 text-center">
-              <img src="assets/img/team/segnon.jpg" class="modal-avatar" alt="Sègnon AKOHOU GBACADJA">
+              <img src="assets/img/team/segnon.jpg" class="modal-avatar" alt="Sègnon AKOHOU GBACADA">
             </div>
             <div class="col-md-8">
-              <h3 class="fw-bold font-display text-navy mb-1">Sègnon AKOHOU</h3>
+              <h3 class="fw-bold font-display text-navy mb-1">Sègnon AKOHOU GBACADA</h3>
               <p class="text-gold-mid fw-bold font-mono mb-4 text-uppercase" style="font-size: 0.85rem; letter-spacing:0.08em;">
-                <span data-lang="fr">Responsable des Opérations</span>
-                <span data-lang="en" class="d-none">Operations Manager</span>
+                <span data-lang="fr">Directrice Exécutive</span>
+                <span data-lang="en" class="d-none">Executive Director</span>
               </p>
               <div class="mb-4">
-                <h5 class="fw-bold text-navy mb-2" style="font-size: 1rem; border-left: 3px solid var(--gold); padding-left: 8px;">Biography</h5>
+                <h5 class="fw-bold text-navy mb-2" style="font-size: 1rem; border-left: 3px solid var(--gold); padding-left: 8px;">
+                  <span data-lang="fr">Biographie</span>
+                  <span data-lang="en" class="d-none">Biography</span>
+                </h5>
                 <p class="text-muted lh-lg" style="font-size: 0.95rem; font-weight: 300;">
-                  <span data-lang="fr">Sègnon AKOHOU coordonne toute la logistique terrain. Il gère le déploiement des équipes d'enquêteurs dans les réseaux scolaires ruraux et assure la liaison opérationnelle avec les directions d'écoles publiques.</span>
-                  <span data-lang="en" class="d-none">Sègnon AKOHOU coordinates complex logistical aspects of field operations. He handles enumerator distributions in rural networks and drives administrative dialogues with local partner schools.</span>
+                  <span data-lang="fr">Sègnon AKOHOU coordonne toutes les activités du centre.</span>
+                  <span data-lang="en" class="d-none">Sègnon AKOHOU coordinates activities across departments.</span>
                 </p>
               </div>
               <div class="d-flex gap-3">
@@ -655,7 +519,7 @@
     </div>
   </div>
 
-  <!-- Modal 5: Hugues Irénée Djima -->
+  <!-- Modal 6: Hugues I. Djima -->
   <div class="modal fade" id="modal-hugues" tabindex="-1" aria-labelledby="modalHuguesLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
       <div class="modal-content border-0">
@@ -678,7 +542,10 @@
                 <span data-lang="en" class="d-none">Consultant</span>
               </p>
               <div class="mb-4">
-                <h5 class="fw-bold text-navy mb-2" style="font-size: 1rem; border-left: 3px solid var(--gold); padding-left: 8px;">Biography</h5>
+                <h5 class="fw-bold text-navy mb-2" style="font-size: 1rem; border-left: 3px solid var(--gold); padding-left: 8px;">
+                  <span data-lang="fr">Biographie</span>
+                  <span data-lang="en" class="d-none">Biography</span>
+                </h5>
                 <p class="text-muted lh-lg" style="font-size: 0.95rem; font-weight: 300;">
                   <span data-lang="fr">Hugues Djima apporte une expertise avancée en économétrie quantitative. Il conseille le KEMT Center sur les plans d'échantillonnage de nos RCT, les tests statistiques robustes et l'analyse microéconomique fine.</span>
                   <span data-lang="en" class="d-none">Hugues Djima provides senior advisory on advanced econometrics. He designs experimental sampling grids, advises on statistical robustness checks, and conducts quantitative microeconomic studies.</span>
@@ -696,7 +563,7 @@
     </div>
   </div>
 
-  <!-- Modal 6: Danfi David -->
+  <!-- Modal 7: Danfi David -->
   <div class="modal fade" id="modal-david" tabindex="-1" aria-labelledby="modalDavidLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
       <div class="modal-content border-0">
@@ -719,10 +586,13 @@
                 <span data-lang="en" class="d-none">Research Intern</span>
               </p>
               <div class="mb-4">
-                <h5 class="fw-bold text-navy mb-2" style="font-size: 1rem; border-left: 3px solid var(--gold); padding-left: 8px;">Biography</h5>
+                <h5 class="fw-bold text-navy mb-2" style="font-size: 1rem; border-left: 3px solid var(--gold); padding-left: 8px;">
+                  <span data-lang="fr">Biographie</span>
+                  <span data-lang="en" class="d-none">Biography</span>
+                </h5>
                 <p class="text-muted lh-lg" style="font-size: 0.95rem; font-weight: 300;">
-                  <span data-lang="fr">Danfi David est stagiaire en recherche, spécialisé dans la collecte de données terrain et le soutien aux équipes d'enquête.</span>
-                  <span data-lang="en" class="d-none">Danfi David is a research intern specializing in field data collection and supporting survey teams.</span>
+                  <span data-lang="fr">David DANFI encadre les enquêteurs sur le terrain. Fort de ses compétences techniques, il supervise les protocoles de saisie électronique, gère les flux cryptés et résout les problèmes de terrain liés aux formulaires.</span>
+                  <span data-lang="en" class="d-none">David DANFI guides active survey enumerators. Leveraging deep technical expertise, he coordinates field survey capture rules, maintains encrypted data logs, and supports field teams on SurveyCTO templates.</span>
                 </p>
               </div>
               <div class="d-flex gap-3">
@@ -737,14 +607,14 @@
     </div>
   </div>
 
-  <!-- Modal 7: Charles KOUCHOKEHO -->
+  <!-- Modal 8: Charles KOUCHOKEHO -->
   <div class="modal fade" id="modal-charles" tabindex="-1" aria-labelledby="modalCharlesLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
       <div class="modal-content border-0">
         <div class="modal-header border-0 py-3">
           <h5 class="modal-title fw-bold text-white font-display" id="modalCharlesLabel">
-            <span data-lang="fr">Profil KEMT - Recherche</span>
-            <span data-lang="en" class="d-none">KEMT Profile - Research</span>
+            <span data-lang="fr">Profil KEMT - Enquête Terrain</span>
+            <span data-lang="en" class="d-none">KEMT Profile - Survey Ops</span>
           </h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
@@ -760,10 +630,13 @@
                 <span data-lang="en" class="d-none">Research Intern</span>
               </p>
               <div class="mb-4">
-                <h5 class="fw-bold text-navy mb-2" style="font-size: 1rem; border-left: 3px solid var(--gold); padding-left: 8px;">Biography</h5>
+                <h5 class="fw-bold text-navy mb-2" style="font-size: 1rem; border-left: 3px solid var(--gold); padding-left: 8px;">
+                  <span data-lang="fr">Biographie</span>
+                  <span data-lang="en" class="d-none">Biography</span>
+                </h5>
                 <p class="text-muted lh-lg" style="font-size: 0.95rem; font-weight: 300;">
-                  <span data-lang="fr">Charles KOUCHOKEHO est stagiaire en recherche, spécialisé dans l'analyse de données de terrain.</span>
-                  <span data-lang="en" class="d-none">Charles KOUCHOKEHO is a research intern specializing in field data analysis.</span>
+                  <span data-lang="fr">Charles KOUCHOKEHO encadre les enquêteurs sur le terrain. Fort de ses compétences techniques, il supervise les protocoles de saisie électronique, gère les flux cryptés et résout les problèmes de terrain liés aux formulaires.</span>
+                  <span data-lang="en" class="d-none">Charles KOUCHOKEHO guides active survey enumerators. Leveraging deep technical expertise, he coordinates field survey capture rules, maintains encrypted data logs, and supports field teams on SurveyCTO templates.</span>
                 </p>
               </div>
               <div class="d-flex gap-3">
@@ -778,14 +651,14 @@
     </div>
   </div>
 
-  <!-- Modal 8: Lucien Allosse -->
+  <!-- Modal 9: Lucien Allosse -->
   <div class="modal fade" id="modal-lucien" tabindex="-1" aria-labelledby="modalLucienLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
       <div class="modal-content border-0">
         <div class="modal-header border-0 py-3">
           <h5 class="modal-title fw-bold text-white font-display" id="modalLucienLabel">
-            <span data-lang="fr">Profil KEMT - Recherche</span>
-            <span data-lang="en" class="d-none">KEMT Profile - Research</span>
+            <span data-lang="fr">Profil KEMT - Gestion Données</span>
+            <span data-lang="en" class="d-none">KEMT Profile - Database</span>
           </h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
@@ -801,10 +674,13 @@
                 <span data-lang="en" class="d-none">Research Assistant</span>
               </p>
               <div class="mb-4">
-                <h5 class="fw-bold text-navy mb-2" style="font-size: 1rem; border-left: 3px solid var(--gold); padding-left: 8px;">Biography</h5>
+                <h5 class="fw-bold text-navy mb-2" style="font-size: 1rem; border-left: 3px solid var(--gold); padding-left: 8px;">
+                  <span data-lang="fr">Biographie</span>
+                  <span data-lang="en" class="d-none">Biography</span>
+                </h5>
                 <p class="text-muted lh-lg" style="font-size: 0.95rem; font-weight: 300;">
-                  <span data-lang="fr">Lucien Allosse est assistant de recherche, travaillant sur la collecte de données et la modélisation statistique.</span>
-                  <span data-lang="en" class="d-none">Lucien Allosse is a research assistant working on data collection and statistical modeling.</span>
+                  <span data-lang="fr">Lucien Allosse est responsable de l'architecture et de la sécurité des bases de données de recherche. Spécialiste de l'anonymisation et de la protection RGPD, il garantit la sécurité des serveurs cloud sécurisés du Center.</span>
+                  <span data-lang="en" class="d-none">Lucien Allosse manages academic database architectures and storage security. A specialist in anonymization and strict GDPR protection, he maintains the KEMT Center's encrypted cloud server grids.</span>
                 </p>
               </div>
               <div class="d-flex gap-3">
@@ -819,14 +695,14 @@
     </div>
   </div>
 
-  <!-- Modal 9: Keith AKOHOU GBACADA -->
-  <div class="modal fade" id="modal-moustapha" tabindex="-1" aria-labelledby="modalMoustaphaLabel" aria-hidden="true">
+  <!-- Modal 10: Keith AKOHOU GBACADA -->
+  <div class="modal fade" id="modal-keith" tabindex="-1" aria-labelledby="modalKeithLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
       <div class="modal-content border-0">
         <div class="modal-header border-0 py-3">
-          <h5 class="modal-title fw-bold text-white font-display" id="modalMoustaphaLabel">
-            <span data-lang="fr">Profil KEMT - Recherche</span>
-            <span data-lang="en" class="d-none">KEMT Profile - Research</span>
+          <h5 class="modal-title fw-bold text-white font-display" id="modalKeithLabel">
+            <span data-lang="fr">Profil KEMT - Administration</span>
+            <span data-lang="en" class="d-none">KEMT Profile - Administration</span>
           </h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
@@ -838,13 +714,16 @@
             <div class="col-md-8">
               <h3 class="fw-bold font-display text-navy mb-1">Keith AKOHOU GBACADA</h3>
               <p class="text-gold-mid fw-bold font-mono mb-4 text-uppercase" style="font-size: 0.85rem; letter-spacing:0.08em;">
-                <span data-lang="fr">Secretaire strategique</span>
+                <span data-lang="fr">Secrétaire Stratégique</span>
                 <span data-lang="en" class="d-none">Strategic Secretary</span>
               </p>
               <div class="mb-4">
-                <h5 class="fw-bold text-navy mb-2" style="font-size: 1rem; border-left: 3px solid var(--gold); padding-left: 8px;">Biography</h5>
+                <h5 class="fw-bold text-navy mb-2" style="font-size: 1rem; border-left: 3px solid var(--gold); padding-left: 8px;">
+                  <span data-lang="fr">Biographie</span>
+                  <span data-lang="en" class="d-none">Biography</span>
+                </h5>
                 <p class="text-muted lh-lg" style="font-size: 0.95rem; font-weight: 300;">
-                  <span data-lang="fr">Keith AKOHOU GBACADA travaille comme secretaire strategique, soutenant les activités administratives et la gestion des projets.</span>
+                  <span data-lang="fr">Keith AKOHOU GBACADA travaille comme secrétaire stratégique, soutenant les activités administratives et la gestion des projets.</span>
                   <span data-lang="en" class="d-none">Keith AKOHOU GBACADA works as a strategic secretary, supporting administrative activities and project management.</span>
                 </p>
               </div>
@@ -869,7 +748,7 @@
   <!-- Preloader -->
   <div id="preloader">
     <div class="ring-loader"><span></span></div>
-    <div class="preloader-text"><strong>KEMT Center</strong><small>Recherche & Impact</small></div>
+    <div class="preloader-text"><strong>KEMT Center</strong><small>Recherche &amp; Impact</small></div>
   </div>
 
   <!-- Vendor JS Files -->
@@ -885,6 +764,28 @@
   <script src="assets/js/include-html.js"></script>
   <script src='assets/js/lang-switcher.js'></script>
   <script src="assets/js/main.js"></script>
+
+  <script>
+    // Photos d'équipe : si un fichier est introuvable avec l'extension indiquée,
+    // on essaie automatiquement les autres extensions courantes (jpeg, jpg, png, webp).
+    (function () {
+      var exts = ['jpeg', 'jpg', 'png', 'webp'];
+      function retry(img) {
+        var src = img.getAttribute('src') || '';
+        var base = img.dataset.base || src.replace(/\.[a-z0-9]+$/i, '');
+        var i = parseInt(img.dataset.try || '0', 10);
+        img.dataset.base = base;
+        while (i < exts.length && src === base + '.' + exts[i]) { i++; }
+        if (i >= exts.length) { return; }
+        img.dataset.try = i + 1;
+        img.src = base + '.' + exts[i];
+      }
+      document.querySelectorAll('img[src*="assets/img/team/"]').forEach(function (img) {
+        img.addEventListener('error', function () { retry(img); });
+        if (img.complete && img.naturalWidth === 0) { retry(img); }
+      });
+    })();
+  </script>
 
 </body>
 

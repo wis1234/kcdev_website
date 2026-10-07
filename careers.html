@@ -62,6 +62,14 @@
     .btn-apply { display: inline-flex; align-items: center; gap: 0.4rem; font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--navy); border: 1.5px solid var(--gold); border-radius: 50px; padding: 0.42rem 1.1rem; text-decoration: none; background: transparent; transition: all 0.25s ease; }
     .btn-apply:hover { background: var(--navy); color: var(--gold); border-color: var(--navy); }
 
+    /* Postes clôturés */
+    .job-card.is-closed { opacity: 0.72; background: var(--gray-100); }
+    .job-card.is-closed:hover { transform: none; border-left: 1px solid var(--gray-200); box-shadow: var(--shadow-sm); }
+    .job-card.is-closed .job-icon { background: rgba(120,120,120,0.12); color: var(--gray-500); }
+    .closed-badge { display: inline-flex; align-items: center; gap: 0.3rem; font-family: var(--font-mono); font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #fff; background: #8a8f98; border-radius: 3px; padding: 2px 8px; margin: 0 0 0.6rem 0.4rem; }
+    .btn-apply.btn-closed { color: var(--gray-500); border-color: var(--gray-300, #c9ccd1); background: transparent; cursor: not-allowed; pointer-events: none; }
+    .btn-apply.btn-closed:hover { background: transparent; color: var(--gray-500); border-color: var(--gray-300, #c9ccd1); }
+
     /* Process steps */
     #process { background: var(--navy); padding: 5rem 0; }
     .process-step { text-align: center; padding: 1.5rem 1rem; position: relative; }
@@ -135,8 +143,9 @@
             <span data-lang="en" class="d-none">We are looking for talented and motivated profiles to strengthen our research team and field operations.</span>
           </p>
         </div>
-                <div class="d-flex flex-column gap-4">
+        <div class="d-flex flex-column gap-4">
 
+          <!-- Poste ouvert -->
           <div class="job-card" data-aos="fade-up" data-aos-delay="100">
             <div class="job-icon"><i class="bi bi-people-fill"></i></div>
             <div class="job-body">
@@ -149,14 +158,15 @@
                 <span><i class="bi bi-mortarboard"></i> Bac+2 minimum</span>
               </div>
               <div class="job-tags"><span class="job-tag">SurveyCTO</span><span class="job-tag"><span data-lang="fr">Terrain</span><span data-lang="en" class="d-none">Fieldwork</span></span><span class="job-tag"><span data-lang="fr">Enquêtes</span><span data-lang="en" class="d-none">Surveys</span></span></div>
-              <a href="contact.html" class="btn-apply"><i class="bi bi-send-fill"></i> <span data-lang="fr">Postuler</span><span data-lang="en" class="d-none">Apply</span></a>
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLScqWoyPJDNX4GW9OQLgiQF0Rxm7RX3YGc5lUWkeuHiOMCx7Nw/viewform?usp=header" target="_blank" rel="noopener" class="btn-apply"><i class="bi bi-send-fill"></i> <span data-lang="fr">Postuler</span><span data-lang="en" class="d-none">Apply</span></a>
             </div>
           </div>
 
-          <div class="job-card" data-aos="fade-up" data-aos-delay="150">
+          <!-- Postes clôturés : pour rouvrir un poste, retirer la classe is-closed et le badge Clôturé, et remplacer le bouton btn-closed par un lien btn-apply -->
+          <div class="job-card is-closed" data-aos="fade-up" data-aos-delay="150">
             <div class="job-icon"><i class="bi bi-megaphone-fill"></i></div>
             <div class="job-body">
-              <span class="job-type-badge"><i class="bi bi-briefcase-fill"></i> <span data-lang="fr">CDD · Mission terrain</span><span data-lang="en" class="d-none">Fieldwork Contract</span></span>
+              <span class="job-type-badge"><i class="bi bi-briefcase-fill"></i> <span data-lang="fr">CDD · Mission terrain</span><span data-lang="en" class="d-none">Fieldwork Contract</span></span><span class="closed-badge"><i class="bi bi-lock-fill"></i> <span data-lang="fr">Clôturé</span><span data-lang="en" class="d-none">Closed</span></span>
               <h4><span data-lang="fr">Facilitateur(trice)</span><span data-lang="en" class="d-none">Facilitator</span></h4>
               <p><span data-lang="fr">Animation des sessions d'intervention éducatives et liaison avec les acteurs locaux (parents, enseignants, mairies). Excellentes capacités de communication et pédagogie.</span><span data-lang="en" class="d-none">Facilitation of educational intervention sessions and liaison with local stakeholders (parents, teachers, municipalities). Excellent communication and teaching skills.</span></p>
               <div class="job-meta">
@@ -165,14 +175,14 @@
                 <span><i class="bi bi-mortarboard"></i> Bac+3 minimum</span>
               </div>
               <div class="job-tags"><span class="job-tag"><span data-lang="fr">Animation</span><span data-lang="en" class="d-none">Facilitation</span></span><span class="job-tag"><span data-lang="fr">Pédagogie</span><span data-lang="en" class="d-none">Pedagogy</span></span></div>
-              <a href="contact.html" class="btn-apply"><i class="bi bi-send-fill"></i> <span data-lang="fr">Postuler</span><span data-lang="en" class="d-none">Apply</span></a>
+              <span class="btn-apply btn-closed" aria-disabled="true"><i class="bi bi-send-fill"></i> <span data-lang="fr">Postuler</span><span data-lang="en" class="d-none">Apply</span></span>
             </div>
           </div>
 
-          <div class="job-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="job-card is-closed" data-aos="fade-up" data-aos-delay="200">
             <div class="job-icon"><i class="bi bi-camera-video-fill"></i></div>
             <div class="job-body">
-              <span class="job-type-badge"><i class="bi bi-briefcase-fill"></i> <span data-lang="fr">Consultant · Freelance</span><span data-lang="en" class="d-none">Consultant · Freelance</span></span>
+              <span class="job-type-badge"><i class="bi bi-briefcase-fill"></i> <span data-lang="fr">Consultant · Freelance</span><span data-lang="en" class="d-none">Consultant · Freelance</span></span><span class="closed-badge"><i class="bi bi-lock-fill"></i> <span data-lang="fr">Clôturé</span><span data-lang="en" class="d-none">Closed</span></span>
               <h4><span data-lang="fr">Cinéaste / Réalisateur Vidéo</span><span data-lang="en" class="d-none">Filmmaker / Videographer</span></h4>
               <p><span data-lang="fr">Réalisation de documentaires, interviews et capsules vidéo professionnelles pour mettre en valeur les recherches et l'impact du KEMT Center sur le terrain.</span><span data-lang="en" class="d-none">Production of documentaries, interviews, and professional video capsules to showcase the research and field impact of the KEMT Center.</span></p>
               <div class="job-meta">
@@ -180,30 +190,30 @@
                 <span><i class="bi bi-clock"></i> <span data-lang="fr">Flexible</span><span data-lang="en" class="d-none">Flexible</span></span>
               </div>
               <div class="job-tags"><span class="job-tag"><span data-lang="fr">Vidéo</span><span data-lang="en" class="d-none">Video</span></span><span class="job-tag"><span data-lang="fr">Montage</span><span data-lang="en" class="d-none">Editing</span></span><span class="job-tag">Documentaire</span></div>
-              <a href="contact.html" class="btn-apply"><i class="bi bi-send-fill"></i> <span data-lang="fr">Postuler</span><span data-lang="en" class="d-none">Apply</span></a>
+              <span class="btn-apply btn-closed" aria-disabled="true"><i class="bi bi-send-fill"></i> <span data-lang="fr">Postuler</span><span data-lang="en" class="d-none">Apply</span></span>
             </div>
           </div>
 
-          <div class="job-card" data-aos="fade-up" data-aos-delay="250">
+          <div class="job-card is-closed" data-aos="fade-up" data-aos-delay="250">
             <div class="job-icon"><i class="bi bi-bar-chart-steps"></i></div>
             <div class="job-body">
-              <span class="job-type-badge"><i class="bi bi-briefcase-fill"></i> <span data-lang="fr">CDI · Temps plein</span><span data-lang="en" class="d-none">Full-time</span></span>
-              <h4><span data-lang="fr">Expert(e) en Suivi et Évaluation de Projet</span><span data-lang="en" class="d-none">Monitoring & Evaluation Expert</span></h4>
+              <span class="job-type-badge"><i class="bi bi-briefcase-fill"></i> <span data-lang="fr">CDI · Temps plein</span><span data-lang="en" class="d-none">Full-time</span></span><span class="closed-badge"><i class="bi bi-lock-fill"></i> <span data-lang="fr">Clôturé</span><span data-lang="en" class="d-none">Closed</span></span>
+              <h4><span data-lang="fr">Expert(e) en Suivi et Évaluation de Projet</span><span data-lang="en" class="d-none">Monitoring &amp; Evaluation Expert</span></h4>
               <p><span data-lang="fr">Développement des cadres logiques, suivi rigoureux des indicateurs de performance, rédaction de rapports d'impact et appui méthodologique aux évaluations.</span><span data-lang="en" class="d-none">Development of logical frameworks, rigorous monitoring of performance indicators, writing impact reports, and methodological support for evaluations.</span></p>
               <div class="job-meta">
                 <span><i class="bi bi-geo-alt"></i> Cotonou, Bénin</span>
                 <span><i class="bi bi-clock"></i> <span data-lang="fr">Temps plein</span><span data-lang="en" class="d-none">Full time</span></span>
-                <span><i class="bi bi-mortarboard"></i> Master S&E / Économie</span>
+                <span><i class="bi bi-mortarboard"></i> Master S&amp;E / Économie</span>
               </div>
-              <div class="job-tags"><span class="job-tag">M&E</span><span class="job-tag"><span data-lang="fr">Impact</span><span data-lang="en" class="d-none">Impact</span></span><span class="job-tag"><span data-lang="fr">Rapports</span><span data-lang="en" class="d-none">Reporting</span></span></div>
-              <a href="contact.html" class="btn-apply"><i class="bi bi-send-fill"></i> <span data-lang="fr">Postuler</span><span data-lang="en" class="d-none">Apply</span></a>
+              <div class="job-tags"><span class="job-tag">M&amp;E</span><span class="job-tag"><span data-lang="fr">Impact</span><span data-lang="en" class="d-none">Impact</span></span><span class="job-tag"><span data-lang="fr">Rapports</span><span data-lang="en" class="d-none">Reporting</span></span></div>
+              <span class="btn-apply btn-closed" aria-disabled="true"><i class="bi bi-send-fill"></i> <span data-lang="fr">Postuler</span><span data-lang="en" class="d-none">Apply</span></span>
             </div>
           </div>
 
-          <div class="job-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="job-card is-closed" data-aos="fade-up" data-aos-delay="300">
             <div class="job-icon"><i class="bi bi-journal-text"></i></div>
             <div class="job-body">
-              <span class="job-type-badge"><i class="bi bi-briefcase-fill"></i> <span data-lang="fr">CDI · Temps plein</span><span data-lang="en" class="d-none">Full-time</span></span>
+              <span class="job-type-badge"><i class="bi bi-briefcase-fill"></i> <span data-lang="fr">CDI · Temps plein</span><span data-lang="en" class="d-none">Full-time</span></span><span class="closed-badge"><i class="bi bi-lock-fill"></i> <span data-lang="fr">Clôturé</span><span data-lang="en" class="d-none">Closed</span></span>
               <h4><span data-lang="fr">Secrétaire de Direction</span><span data-lang="en" class="d-none">Executive Secretary</span></h4>
               <p><span data-lang="fr">Gestion administrative quotidienne du centre, organisation des agendas, accueil des partenaires, traitement du courrier et appui logistique aux chercheurs.</span><span data-lang="en" class="d-none">Daily administrative management of the center, organizing schedules, welcoming partners, handling correspondence, and providing logistical support to researchers.</span></p>
               <div class="job-meta">
@@ -212,14 +222,14 @@
                 <span><i class="bi bi-mortarboard"></i> Bac+3 Assistanat / Secrétariat</span>
               </div>
               <div class="job-tags"><span class="job-tag"><span data-lang="fr">Administration</span><span data-lang="en" class="d-none">Admin</span></span><span class="job-tag"><span data-lang="fr">Organisation</span><span data-lang="en" class="d-none">Organization</span></span></div>
-              <a href="contact.html" class="btn-apply"><i class="bi bi-send-fill"></i> <span data-lang="fr">Postuler</span><span data-lang="en" class="d-none">Apply</span></a>
+              <span class="btn-apply btn-closed" aria-disabled="true"><i class="bi bi-send-fill"></i> <span data-lang="fr">Postuler</span><span data-lang="en" class="d-none">Apply</span></span>
             </div>
           </div>
 
-          <div class="job-card" data-aos="fade-up" data-aos-delay="350">
+          <div class="job-card is-closed" data-aos="fade-up" data-aos-delay="350">
             <div class="job-icon"><i class="bi bi-graph-up-arrow"></i></div>
             <div class="job-body">
-              <span class="job-type-badge"><i class="bi bi-briefcase-fill"></i> <span data-lang="fr">CDI · Temps plein</span><span data-lang="en" class="d-none">Full-time</span></span>
+              <span class="job-type-badge"><i class="bi bi-briefcase-fill"></i> <span data-lang="fr">CDI · Temps plein</span><span data-lang="en" class="d-none">Full-time</span></span><span class="closed-badge"><i class="bi bi-lock-fill"></i> <span data-lang="fr">Clôturé</span><span data-lang="en" class="d-none">Closed</span></span>
               <h4><span data-lang="fr">Senior Économiste</span><span data-lang="en" class="d-none">Senior Economist</span></h4>
               <p><span data-lang="fr">Direction des projets de recherche, conception d'essais randomisés (RCT), analyses économétriques complexes et rédaction de publications scientifiques de premier plan.</span><span data-lang="en" class="d-none">Leading research projects, designing randomized controlled trials (RCTs), complex econometric analyses, and authoring top-tier scientific publications.</span></p>
               <div class="job-meta">
@@ -228,7 +238,7 @@
                 <span><i class="bi bi-mortarboard"></i> PhD en Économie</span>
               </div>
               <div class="job-tags"><span class="job-tag">RCT</span><span class="job-tag">Stata/R</span><span class="job-tag"><span data-lang="fr">Recherche</span><span data-lang="en" class="d-none">Research</span></span><span class="job-tag">Leadership</span></div>
-              <a href="contact.html" class="btn-apply"><i class="bi bi-send-fill"></i> <span data-lang="fr">Postuler</span><span data-lang="en" class="d-none">Apply</span></a>
+              <span class="btn-apply btn-closed" aria-disabled="true"><i class="bi bi-send-fill"></i> <span data-lang="fr">Postuler</span><span data-lang="en" class="d-none">Apply</span></span>
             </div>
           </div>
 
